@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link rel="{{ asset('/css/layout.css') }}" href="style.css">
         <!-- Styles -->
         <style>
             html, body {
@@ -96,5 +96,6 @@
                 </div>
             </div>
         </div>
+        @include('subviews.footer')
     </body>
 </html>
