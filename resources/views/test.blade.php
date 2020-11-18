@@ -14,11 +14,11 @@
     @yield('title')
     @yield('head')
 </head>
-<body style="background-color: silver">
+<body style="">
     <header class="header">
         <div class="container logo-nav-container">
             <a href="" class="logo"><img src="{{ asset('/img/logos/transparente-cut.png') }}"></a>
-            <span class="menu-icon"><img src="{{ asset('/img/ico/menu2-dark.png') }}" width="50px" height="50px"></span>
+            <span class="menu-icon"><img src="{{ asset('/img/ico/menu2-dark.png') }}"></span>
             <nav class="navigation">
                 <ul>
                     <li><a href="#">INICIO</a></li>
@@ -32,11 +32,20 @@
     <main class="main">
         <div class="container">
             <h1>titulo jsjsjs</h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+            {{-- <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+            --}}
         </div>
     </main>
 
