@@ -38,3 +38,98 @@
 .OBR70{
     margin-top: 70px;
 }
+.OContactUs{
+    width: 377px;
+    min-height: 269px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+    margin-bottom: 39px;
+}
+
+.OContactUs h1{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 29px;
+
+    color: #222B58;
+    margin-top:27px;
+    margin-bottom:39px;
+    text-align: center;
+}
+.OContactUsItem{
+    font-family: Roboto;
+    color: #222222;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.OContactUsImg{
+    width: 22px;
+    height: 22px;
+    margin-left: 49px;
+    display: flex;
+}
+.OContactUsTitle{
+    font-style: italic;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    margin-left: 6px;
+}
+.OContactUsValue{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    margin-left: 77px;
+    margin-top:16px;
+    margin-bottom: 16px;
+}
+.OWidth100{
+    width: 100%;
+    display: flex;
+}
+
+.OButtonInicio{
+    width: 195px;
+    height: 42px;
+    border: 1.5px solid #222B58;
+    box-sizing: border-box;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 150px;
+    transition: ease-in 0.1s;
+}
+.OButtonInicio:hover{
+    width: 205px;
+    transition: ease-in 0.1s;
+}
+.OButtonInicioArrow{
+    width: 42px;
+    height: 42px;
+    background: #222B58;
+    margin-left: auto;
+    margin-right: 0px;
+    padding: 15px;
+}
+.OButtonInicioText{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 15px;
+    color: #222B58;
+    margin-left: 55px;
+    text-decoration: none;
+}
+.OCenterItem{
+    display: flex;
+    justify-content: center;
+}
