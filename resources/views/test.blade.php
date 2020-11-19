@@ -29,6 +29,7 @@
             </nav>
         </div>
     </header>
+    @include('subviews.busqueda')
     <main class="main">
         <div class="container">
             <h1>titulo jsjsjs</h1>
