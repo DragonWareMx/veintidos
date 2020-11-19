@@ -228,9 +228,9 @@ footer{
     height: 56.9px;
 }
 
-.main{
-    /* padding-top:70px; */
-}
+/* .main{
+    padding-top:70px; 
+} */
 
 .menu-icon{
     display: none;
@@ -390,12 +390,109 @@ footer{
     right: 0;
     top: 70px;
     width: 100%;
-    height: 73px;
+    min-height: 58px;
     background-color: #E5E5E5;
     z-index: 999;
     border-bottom: 0.2px solid #222B58;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .header{
     z-index: 99999;
+}
+
+.search-50{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.search-50.left{
+    padding-right: 20%;
+    padding-left: 29px;
+    justify-content: space-between;
+}
+
+.options-search{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    height: 27px;
+    color: #222222;
+    background-color: transparent;
+
+    border: 0.2px solid #222B58;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.search-50.left select{
+    width: 134px;
+}
+
+
+.cuadro-busqueda{
+    width: 80%;
+}
+
+.search-button{
+    width: 19px;
+    height: 19px;
+    margin-left: 1vw;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.search-50.right{
+    justify-content: center;
+}
+
+@media only screen and (max-width: 768px){
+    .search-50.left select{
+        width: auto !important;
+    }
+    .search-50.left{
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .barra-busqueda{
+        padding: 10px 0;
+    }  
+}
+
+@media only screen and (max-width: 1500px){
+    .search-50.left{
+        padding-right: 15%;
+        padding-left: 25px;
+    } 
+}
+
+@media only screen and (max-width: 1285px){
+    .search-50.left{
+        padding-right: 10%;
+        padding-left: 20px;
+    } 
+}
+
+@media only screen and (max-width: 1120px){
+    .search-50.left{
+        padding-right: 5%;
+        padding-left: 15px;
+    } 
+}
+
+@media only screen and (max-width: 930px){
+    .search-50.left{
+        padding-right: 10px;
+        padding-left: 10px;
+    } 
+    .search-50.left select{
+        width: 100px;
+    }
 }
