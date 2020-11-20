@@ -1,0 +1,99 @@
+.container_sideBar{
+    width: 100%;
+    min-height: 1250px;
+    background-color: #E5E5E5;
+}
+.sideBar_left{
+    width: 271px;
+    padding-top: 92px;
+}
+.sideBar_menu{
+    display: flex;
+    width: 242px;
+    min-height: 1087px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+    margin-left: auto;
+    margin-right: 0px;
+    flex-wrap: wrap;
+}
+.sideBar_title{
+    width: 211px;
+    height: 31px;
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    color: #222222;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 35px;
+    border-bottom: 0.2px solid #000000;
+}
+.sideBar_li{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    color: #222B58;
+    margin-left: 26px;
+    margin-bottom: 50px;
+    width: 80%;
+    height: 25px;
+    text-decoration: none;
+}
+.sideBar_li_image{
+    width: 23px;
+    height: 23px;
+    margin-right: 6px;
+}
+.sideBar_logo{
+    width: 100px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.sideBar_textA{
+    margin-top: 20px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    width: 183px;
+    color: #222B58;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sideBar_link{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    text-align: center;
+    width: 60%;
+    color: #222B58;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 29;
+}
+.sideBar_textB{
+    margin-top: 14px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    width: 100%;
+    color: #222222;
+    margin-bottom: 29px;
+}

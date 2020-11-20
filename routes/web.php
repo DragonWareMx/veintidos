@@ -24,3 +24,7 @@ Route::get('/test', function () {
 Route::get('/notFound', function () {
     return view('notFound');
 });
+
+Route::get('/sideBar', function () {
+    return view('layouts.sideBar');
+});
