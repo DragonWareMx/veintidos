@@ -16,10 +16,12 @@
     @yield('head')
 </head>
 <body style="">
-    <header class="header">
+    <header class="header {{ Request::url() == route('inicio') ? '' : 'dark' }}">
         <div class="container logo-nav-container">
-            <a href="" class="logo"><img src="{{ asset('/img/logos/transparente-cut.png') }}"></a>
-            <span class="menu-icon"><img src="{{ asset('/img/ico/menu2-dark.png') }}"></span>
+            <a href="" class="logo azul"><img src="{{ asset('/img/logos/transparente-cut.png') }}"></a>
+            <a href="" class="logo blanco"><img src="{{ asset('/img/logos/transparenteBlanco.png') }}"></a>
+            <span class="menu-icon azul"><img src="{{ asset('/img/ico/menu2-dark.png') }}"></span>
+            <span class="menu-icon blanco"><img src="{{ asset('/img/ico/menu2-white.png') }}"></span>
             <nav class="navigation">
                 <ul>
                     <li><a href="#">INICIO</a></li>

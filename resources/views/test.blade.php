@@ -1,55 +1,27 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('/css/layout.css') }}">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="{{ asset('/js/app.js') }}"></script>
-    <script src="https://kit.fontawesome.com/ba2b187421.js" crossorigin="anonymous"></script>
-    <title>Document</title>
-    @yield('title')
-    @yield('head')
-</head>
-<body style="">
-    <header class="header">
-        <div class="container logo-nav-container">
-            <a href="" class="logo"><img src="{{ asset('/img/logos/transparente-cut.png') }}"></a>
-            <span class="menu-icon"><img src="{{ asset('/img/ico/menu2-dark.png') }}"></span>
-            <nav class="navigation">
-                <ul>
-                    <li><a href="#">INICIO</a></li>
-                    <li><a href="#">PROPIEDADES</a></li>
-                    <li><a href="#">¿QUIÉNES SOMOS?</a></li>
-                    <li><a href="#">CONTÁCTANOS</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    @include('subviews.busqueda')
-    <main class="main">
-        <div class="container">
-            <h1>titulo jsjsjs</h1>
-            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
-            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
-            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
-            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
-            {{-- <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
-            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
-            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
-            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
-            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
-            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
-            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
-            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
-            <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
-            --}}
-        </div>
-    </main>
+@extends('layouts.publi')
 
-    @include('subviews.footer')
-</body>
-</html>
+@section('title')
+    Inicio
+@endsection
+
+@section('barra-busqueda')
+    @include('subviews.busqueda')
+@endsection
+
+@section('content')
+<h1>titulo jsjsjs</h1>
+<p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+<p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+<p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+<p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+{{-- <p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+<p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+<p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+<p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+<p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+<p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+<p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+<p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+<p style="width:50%">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi sapiente perferendis aliquid sit porro a fuga reiciendis quaerat, praesentium et cupiditate veritatis vel voluptatum repellat maiores corrupti ipsa optio magni.</p>
+--}}    
+@endsection

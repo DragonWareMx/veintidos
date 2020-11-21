@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/test', function () {
     return view('test');
-});
+})->name('inicio');
 
 Route::get('/notFound', function () {
     return view('notFound');
@@ -28,3 +29,12 @@ Route::get('/notFound', function () {
 Route::get('/sideBar', function () {
     return view('layouts.sideBar');
 });
+
+Route::get('/aver', function () {
+    if(Request::url()== route('caca')){
+        return 'simonkey';
+    }
+    else{
+        return 'nelson';
+    }
+})->name('caca');
