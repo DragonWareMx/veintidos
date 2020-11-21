@@ -17,26 +17,30 @@
         <div class="sideBar_left">
             <div class="sideBar_menu"> 
                 <div class="sideBar_title">¿QUÉ BUSCAS?</div>
-                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="img/ico/casa2.png" alt="">Casas</a>
-                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="img/ico/terreno.png" alt="">Terrenos</a>
-                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="img/ico/bodega.png" alt="">Bodegas</a>
-                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="img/ico/local.png" alt="">Locales</a>
-                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="img/ico/edificios.png" alt="">Edificios</a>
-                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="img/ico/departamentos.png" alt="">Departamentos</a>
-                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="img/ico/oficina.png" alt="">Oficinas</a>
-                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="img/ico/consultorio.png" alt="">Consultorios</a>
-                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="img/ico/rancho.png" alt="">Ranchos</a>
+                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/casa2.png')}}" alt="">Casas</a>
+                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/terreno.png')}}" alt="">Terrenos</a>
+                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/bodega.png')}}" alt="">Bodegas</a>
+                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/local.png')}}" alt="">Locales</a>
+                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/edificios.png')}}" alt="">Edificios</a>
+                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/departamentos.png')}}" alt="">Departamentos</a>
+                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/oficina.png')}}" alt="">Oficinas</a>
+                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/consultorio.png')}}" alt="">Consultorios</a>
+                <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/rancho.png')}}" alt="">Ranchos</a>
                 <div class="sideBar_title">CONTACTO</div>
-                <img class="sideBar_logo" src="img/logos/transparente-cut.png" alt="">
+                <img class="sideBar_logo" src="{{ asset('img/logos/transparente-cut.png')}}" alt="">
                 <div class="sideBar_textA">¿Quieres vender o rentar tu propiedad?</div>
                 <a class="sideBar_link" href="#">Clic aquí</a>
                 <div class="sideBar_textB">Tel. 4433370550</div>
                 <div class="sideBar_textB">contacto@veintidos.mx</div>
             </div>
+            <button class="sideBar_button"><img src="{{ asset('img/ico/menu-white-v.png')}}" alt=""></button> 
         </div>
         <div class="sideBar_right">
             @yield('content2')
         </div>
     </div>
 </body>
+<script>
+    
+</script>
 </html>

@@ -1,4 +1,4 @@
-@extends('layouts.publi')
+@extends('layouts.publiSide')
 @section('title')
     Sin Resultados
 @endsection
