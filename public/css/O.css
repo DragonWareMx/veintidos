@@ -106,6 +106,7 @@
     text-decoration: none;
     margin-bottom: 150px;
     transition: ease-in 0.1s;
+    padding-right: 0px;
 }
 .OButtonInicio:hover{
     width: 205px;
@@ -132,4 +133,120 @@
 .OCenterItem{
     display: flex;
     justify-content: center;
+}
+
+@media only screen and (max-width: 450px){
+
+    .Otitle h1{
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .Otitle h2{
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .OGreenText{
+        font-size: 18px;
+        line-height: 21px;
+    }
+    .OContactUs h1{
+        font-size: 23px;
+        line-height: 27px;
+        margin-top:27px;
+        margin-bottom:30px;
+    }
+    .OContactUsImg{
+        width: 20px;
+        height: 20px;
+        margin-left: 49px;
+    }
+    .OContactUsTitle{
+        font-size: 16px;
+        line-height: 19px;
+        margin-left: 6px;
+    }
+    .OContactUsValue{
+        font-size: 14px;
+        line-height: 17px;
+        margin-left: 77px;
+        margin-top:16px;
+        margin-bottom: 16px;
+    }
+    .OContactUs{
+        width: 340px;
+        min-height: 240px;
+        margin-bottom: 39px;
+    }
+    .OButtonInicio{
+        width: 185px;
+        height: 40px;
+    }
+    .OButtonInicio:hover{
+        width: 195px;
+    }
+    .OButtonInicioText{
+        font-size: 12px;
+        line-height: 13px;
+    }
+    .OButtonInicioArrow{
+        width: 40px;
+        height: 40px;
+        padding: 15px;
+    }
+    
+}
+
+@media only screen and (max-width:375px){
+
+    .Otitle h1{
+        font-size: 25px;
+        line-height: 25px;
+    }
+    .Otitle h2{
+        font-size: 25px;
+        line-height: 25px;
+    }
+    .OGreenText{
+        font-size: 18px;
+        line-height: 21px;
+    }
+    .OContactUs h1{
+        font-size: 21px;
+        line-height: 25px;
+        margin-top:27px;
+        margin-bottom:30px;
+    }
+    .OContactUsImg{
+        width: 18px;
+        height: 18px;
+        margin-left: 49px;
+    }
+    .OContactUsTitle{
+        font-size: 14px;
+        line-height: 17px;
+        margin-left: 6px;
+    }
+    .OContactUsValue{
+        font-size: 12px;
+        line-height: 15px;
+        margin-left: 77px;
+        margin-top:16px;
+        margin-bottom: 16px;
+    }
+    .OContactUs{
+        width: 300px;
+        min-height: 220px;
+        margin-bottom: 39px;
+    }
+    .OButtonInicio{
+        width: 185px;
+        height: 40px;
+    }
+    .OButtonInicio:hover{
+        width: 195px;
+    }
+    .OButtonInicioText{
+        font-size: 12px;
+        line-height: 13px;
+    }
 }
