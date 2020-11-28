@@ -441,7 +441,7 @@ footer{
     min-height: 58px;
     background-color: #F8F8F8;
     z-index: 999;
-    border-bottom: 0.2px solid #222B58;
+    border-bottom: 0.1px solid #222b589d;
     display: flex;
     flex-wrap: wrap;
 }
@@ -475,7 +475,8 @@ footer{
     color: #222222;
     background-color: transparent;
 
-    border: 0.2px solid #222B58;
+    border: 0.2px solid #222b589d;
+    outline: none;
     box-sizing: border-box;
     border-radius: 5px;
 }
