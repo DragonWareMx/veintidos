@@ -12,12 +12,12 @@
         @if (true)
             <div class="row">
                 {{-- PROPIEDAD --}}
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-4 mt-4">
                     {{-- TARJETA DE LA PROPIEDAD --}}
                     <div class="border rounded-bottom shadow bg-white">
-                        <div style="height: 470px">
+                        <div style="height:auto; min-height: 470px; line-height: 12px !important;">
                             {{-- IMAGEN --}}
-                            <div class="h-50" style="background-color: black">
+                            <div style="background-color: black; height:220px;">
                                 {{-- DIRECCION Y FOTOS --}}
                                 <div class="row h-100 align-items-end text-white">
                                     <div class="col-8 text-left">
@@ -30,26 +30,91 @@
                             </div>
                             {{-- DATOS --}}
                             {{-- TITULO --}}
-                            <h5 class="px-2">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
+                            <h5 class="px-2 pt-1 text-blue22">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
                             </h5>
                             {{-- PRECIO Y CLAVE --}}
                             <div class="row align-items-end px-2">
-                                <div class="col-8 text-left">
+                                <div class="col-7 text-left">
                                     <p class="m-1">$3,173,000</p>
                                 </div>
-                                <div class="col-4 text-right">
+                                <div class="col-5 text-right">
                                     <p class="m-1">Clave: <b>8071</b></p>
+                                </div>
+                            </div>
+
+                            {{-- DATOS PRINCIPALES --}}
+                            <div class="row px-2 mt-4">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Casa</b>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Estado
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Tipo
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Recámara
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Baños
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Construcción
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row px-2">
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary w-100" style="background: #58AD30; border-color: #58AD30;"><b>Me interesa</b></button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-4 mt-4">
                     {{-- TARJETA DE LA PROPIEDAD --}}
                     <div class="border rounded-bottom shadow bg-white">
-                        <div style="height: 470px">
+                        <div style="height:auto; min-height: 470px; line-height: 12px !important;">
                             {{-- IMAGEN --}}
-                            <div class="h-50" style="background-color: black">
+                            <div style="background-color: black; height:220px;">
                                 {{-- DIRECCION Y FOTOS --}}
                                 <div class="row h-100 align-items-end text-white">
                                     <div class="col-8 text-left">
@@ -62,26 +127,91 @@
                             </div>
                             {{-- DATOS --}}
                             {{-- TITULO --}}
-                            <h5 class="px-2">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
+                            <h5 class="px-2 pt-1 text-blue22">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
                             </h5>
                             {{-- PRECIO Y CLAVE --}}
                             <div class="row align-items-end px-2">
-                                <div class="col-8 text-left">
+                                <div class="col-7 text-left">
                                     <p class="m-1">$3,173,000</p>
                                 </div>
-                                <div class="col-4 text-right">
+                                <div class="col-5 text-right">
                                     <p class="m-1">Clave: <b>8071</b></p>
+                                </div>
+                            </div>
+
+                            {{-- DATOS PRINCIPALES --}}
+                            <div class="row px-2 mt-4">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Casa</b>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Estado
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Tipo
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Recámara
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Baños
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Construcción
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row px-2">
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary w-100" style="background: #58AD30; border-color: #58AD30;"><b>Me interesa</b></button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-4 mt-4">
                     {{-- TARJETA DE LA PROPIEDAD --}}
                     <div class="border rounded-bottom shadow bg-white">
-                        <div style="height: 470px">
+                        <div style="height:auto; min-height: 470px; line-height: 12px !important;">
                             {{-- IMAGEN --}}
-                            <div class="h-50" style="background-color: black">
+                            <div style="background-color: black; height:220px;">
                                 {{-- DIRECCION Y FOTOS --}}
                                 <div class="row h-100 align-items-end text-white">
                                     <div class="col-8 text-left">
@@ -94,15 +224,1050 @@
                             </div>
                             {{-- DATOS --}}
                             {{-- TITULO --}}
-                            <h5 class="px-2">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
+                            <h5 class="px-2 pt-1 text-blue22">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
                             </h5>
                             {{-- PRECIO Y CLAVE --}}
                             <div class="row align-items-end px-2">
-                                <div class="col-8 text-left">
+                                <div class="col-7 text-left">
                                     <p class="m-1">$3,173,000</p>
                                 </div>
-                                <div class="col-4 text-right">
+                                <div class="col-5 text-right">
                                     <p class="m-1">Clave: <b>8071</b></p>
+                                </div>
+                            </div>
+
+                            {{-- DATOS PRINCIPALES --}}
+                            <div class="row px-2 mt-4">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Casa</b>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Estado
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Tipo
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Recámara
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Baños
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Construcción
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row px-2">
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary w-100" style="background: #58AD30; border-color: #58AD30;"><b>Me interesa</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mt-4">
+                    {{-- TARJETA DE LA PROPIEDAD --}}
+                    <div class="border rounded-bottom shadow bg-white">
+                        <div style="height:auto; min-height: 470px; line-height: 12px !important;">
+                            {{-- IMAGEN --}}
+                            <div style="background-color: black; height:220px;">
+                                {{-- DIRECCION Y FOTOS --}}
+                                <div class="row h-100 align-items-end text-white">
+                                    <div class="col-8 text-left">
+                                        <p class="m-1">Fracc. Mirasoles, Morelia</p>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <p class="m-1">17</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- DATOS --}}
+                            {{-- TITULO --}}
+                            <h5 class="px-2 pt-1 text-blue22">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
+                            </h5>
+                            {{-- PRECIO Y CLAVE --}}
+                            <div class="row align-items-end px-2">
+                                <div class="col-7 text-left">
+                                    <p class="m-1">$3,173,000</p>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <p class="m-1">Clave: <b>8071</b></p>
+                                </div>
+                            </div>
+
+                            {{-- DATOS PRINCIPALES --}}
+                            <div class="row px-2 mt-4">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Casa</b>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Estado
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Tipo
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Recámara
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Baños
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Construcción
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row px-2">
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary w-100" style="background: #58AD30; border-color: #58AD30;"><b>Me interesa</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mt-4">
+                    {{-- TARJETA DE LA PROPIEDAD --}}
+                    <div class="border rounded-bottom shadow bg-white">
+                        <div style="height:auto; min-height: 470px; line-height: 12px !important;">
+                            {{-- IMAGEN --}}
+                            <div style="background-color: black; height:220px;">
+                                {{-- DIRECCION Y FOTOS --}}
+                                <div class="row h-100 align-items-end text-white">
+                                    <div class="col-8 text-left">
+                                        <p class="m-1">Fracc. Mirasoles, Morelia</p>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <p class="m-1">17</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- DATOS --}}
+                            {{-- TITULO --}}
+                            <h5 class="px-2 pt-1 text-blue22">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
+                            </h5>
+                            {{-- PRECIO Y CLAVE --}}
+                            <div class="row align-items-end px-2">
+                                <div class="col-7 text-left">
+                                    <p class="m-1">$3,173,000</p>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <p class="m-1">Clave: <b>8071</b></p>
+                                </div>
+                            </div>
+
+                            {{-- DATOS PRINCIPALES --}}
+                            <div class="row px-2 mt-4">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Casa</b>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Estado
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Tipo
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Recámara
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Baños
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Construcción
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row px-2">
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary w-100" style="background: #58AD30; border-color: #58AD30;"><b>Me interesa</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mt-4">
+                    {{-- TARJETA DE LA PROPIEDAD --}}
+                    <div class="border rounded-bottom shadow bg-white">
+                        <div style="height:auto; min-height: 470px; line-height: 12px !important;">
+                            {{-- IMAGEN --}}
+                            <div style="background-color: black; height:220px;">
+                                {{-- DIRECCION Y FOTOS --}}
+                                <div class="row h-100 align-items-end text-white">
+                                    <div class="col-8 text-left">
+                                        <p class="m-1">Fracc. Mirasoles, Morelia</p>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <p class="m-1">17</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- DATOS --}}
+                            {{-- TITULO --}}
+                            <h5 class="px-2 pt-1 text-blue22">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
+                            </h5>
+                            {{-- PRECIO Y CLAVE --}}
+                            <div class="row align-items-end px-2">
+                                <div class="col-7 text-left">
+                                    <p class="m-1">$3,173,000</p>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <p class="m-1">Clave: <b>8071</b></p>
+                                </div>
+                            </div>
+
+                            {{-- DATOS PRINCIPALES --}}
+                            <div class="row px-2 mt-4">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Casa</b>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Estado
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Tipo
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Recámara
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Baños
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Construcción
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row px-2">
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary w-100" style="background: #58AD30; border-color: #58AD30;"><b>Me interesa</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mt-4">
+                    {{-- TARJETA DE LA PROPIEDAD --}}
+                    <div class="border rounded-bottom shadow bg-white">
+                        <div style="height:auto; min-height: 470px; line-height: 12px !important;">
+                            {{-- IMAGEN --}}
+                            <div style="background-color: black; height:220px;">
+                                {{-- DIRECCION Y FOTOS --}}
+                                <div class="row h-100 align-items-end text-white">
+                                    <div class="col-8 text-left">
+                                        <p class="m-1">Fracc. Mirasoles, Morelia</p>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <p class="m-1">17</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- DATOS --}}
+                            {{-- TITULO --}}
+                            <h5 class="px-2 pt-1 text-blue22">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
+                            </h5>
+                            {{-- PRECIO Y CLAVE --}}
+                            <div class="row align-items-end px-2">
+                                <div class="col-7 text-left">
+                                    <p class="m-1">$3,173,000</p>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <p class="m-1">Clave: <b>8071</b></p>
+                                </div>
+                            </div>
+
+                            {{-- DATOS PRINCIPALES --}}
+                            <div class="row px-2 mt-4">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Casa</b>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Estado
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Tipo
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Recámara
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Baños
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Construcción
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row px-2">
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary w-100" style="background: #58AD30; border-color: #58AD30;"><b>Me interesa</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mt-4">
+                    {{-- TARJETA DE LA PROPIEDAD --}}
+                    <div class="border rounded-bottom shadow bg-white">
+                        <div style="height:auto; min-height: 470px; line-height: 12px !important;">
+                            {{-- IMAGEN --}}
+                            <div style="background-color: black; height:220px;">
+                                {{-- DIRECCION Y FOTOS --}}
+                                <div class="row h-100 align-items-end text-white">
+                                    <div class="col-8 text-left">
+                                        <p class="m-1">Fracc. Mirasoles, Morelia</p>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <p class="m-1">17</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- DATOS --}}
+                            {{-- TITULO --}}
+                            <h5 class="px-2 pt-1 text-blue22">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
+                            </h5>
+                            {{-- PRECIO Y CLAVE --}}
+                            <div class="row align-items-end px-2">
+                                <div class="col-7 text-left">
+                                    <p class="m-1">$3,173,000</p>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <p class="m-1">Clave: <b>8071</b></p>
+                                </div>
+                            </div>
+
+                            {{-- DATOS PRINCIPALES --}}
+                            <div class="row px-2 mt-4">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Casa</b>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Estado
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Tipo
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Recámara
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Baños
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Construcción
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row px-2">
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary w-100" style="background: #58AD30; border-color: #58AD30;"><b>Me interesa</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mt-4">
+                    {{-- TARJETA DE LA PROPIEDAD --}}
+                    <div class="border rounded-bottom shadow bg-white">
+                        <div style="height:auto; min-height: 470px; line-height: 12px !important;">
+                            {{-- IMAGEN --}}
+                            <div style="background-color: black; height:220px;">
+                                {{-- DIRECCION Y FOTOS --}}
+                                <div class="row h-100 align-items-end text-white">
+                                    <div class="col-8 text-left">
+                                        <p class="m-1">Fracc. Mirasoles, Morelia</p>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <p class="m-1">17</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- DATOS --}}
+                            {{-- TITULO --}}
+                            <h5 class="px-2 pt-1 text-blue22">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
+                            </h5>
+                            {{-- PRECIO Y CLAVE --}}
+                            <div class="row align-items-end px-2">
+                                <div class="col-7 text-left">
+                                    <p class="m-1">$3,173,000</p>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <p class="m-1">Clave: <b>8071</b></p>
+                                </div>
+                            </div>
+
+                            {{-- DATOS PRINCIPALES --}}
+                            <div class="row px-2 mt-4">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Casa</b>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Estado
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Tipo
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Recámara
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Baños
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Construcción
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row px-2">
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary w-100" style="background: #58AD30; border-color: #58AD30;"><b>Me interesa</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mt-4">
+                    {{-- TARJETA DE LA PROPIEDAD --}}
+                    <div class="border rounded-bottom shadow bg-white">
+                        <div style="height:auto; min-height: 470px; line-height: 12px !important;">
+                            {{-- IMAGEN --}}
+                            <div style="background-color: black; height:220px;">
+                                {{-- DIRECCION Y FOTOS --}}
+                                <div class="row h-100 align-items-end text-white">
+                                    <div class="col-8 text-left">
+                                        <p class="m-1">Fracc. Mirasoles, Morelia</p>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <p class="m-1">17</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- DATOS --}}
+                            {{-- TITULO --}}
+                            <h5 class="px-2 pt-1 text-blue22">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
+                            </h5>
+                            {{-- PRECIO Y CLAVE --}}
+                            <div class="row align-items-end px-2">
+                                <div class="col-7 text-left">
+                                    <p class="m-1">$3,173,000</p>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <p class="m-1">Clave: <b>8071</b></p>
+                                </div>
+                            </div>
+
+                            {{-- DATOS PRINCIPALES --}}
+                            <div class="row px-2 mt-4">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Casa</b>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Estado
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Tipo
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Recámara
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Baños
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Construcción
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row px-2">
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary w-100" style="background: #58AD30; border-color: #58AD30;"><b>Me interesa</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mt-4">
+                    {{-- TARJETA DE LA PROPIEDAD --}}
+                    <div class="border rounded-bottom shadow bg-white">
+                        <div style="height:auto; min-height: 470px; line-height: 12px !important;">
+                            {{-- IMAGEN --}}
+                            <div style="background-color: black; height:220px;">
+                                {{-- DIRECCION Y FOTOS --}}
+                                <div class="row h-100 align-items-end text-white">
+                                    <div class="col-8 text-left">
+                                        <p class="m-1">Fracc. Mirasoles, Morelia</p>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <p class="m-1">17</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- DATOS --}}
+                            {{-- TITULO --}}
+                            <h5 class="px-2 pt-1 text-blue22">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
+                            </h5>
+                            {{-- PRECIO Y CLAVE --}}
+                            <div class="row align-items-end px-2">
+                                <div class="col-7 text-left">
+                                    <p class="m-1">$3,173,000</p>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <p class="m-1">Clave: <b>8071</b></p>
+                                </div>
+                            </div>
+
+                            {{-- DATOS PRINCIPALES --}}
+                            <div class="row px-2 mt-4">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Casa</b>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Estado
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Tipo
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Recámara
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Baños
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Construcción
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row px-2">
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary w-100" style="background: #58AD30; border-color: #58AD30;"><b>Me interesa</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mt-4">
+                    {{-- TARJETA DE LA PROPIEDAD --}}
+                    <div class="border rounded-bottom shadow bg-white">
+                        <div style="height:auto; min-height: 470px; line-height: 12px !important;">
+                            {{-- IMAGEN --}}
+                            <div style="background-color: black; height:220px;">
+                                {{-- DIRECCION Y FOTOS --}}
+                                <div class="row h-100 align-items-end text-white">
+                                    <div class="col-8 text-left">
+                                        <p class="m-1">Fracc. Mirasoles, Morelia</p>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <p class="m-1">17</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- DATOS --}}
+                            {{-- TITULO --}}
+                            <h5 class="px-2 pt-1 text-blue22">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
+                            </h5>
+                            {{-- PRECIO Y CLAVE --}}
+                            <div class="row align-items-end px-2">
+                                <div class="col-7 text-left">
+                                    <p class="m-1">$3,173,000</p>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <p class="m-1">Clave: <b>8071</b></p>
+                                </div>
+                            </div>
+
+                            {{-- DATOS PRINCIPALES --}}
+                            <div class="row px-2 mt-4">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Casa</b>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Estado
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Tipo
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Recámara
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Baños
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Construcción
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row px-2">
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary w-100" style="background: #58AD30; border-color: #58AD30;"><b>Me interesa</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4 mt-4">
+                    {{-- TARJETA DE LA PROPIEDAD --}}
+                    <div class="border rounded-bottom shadow bg-white">
+                        <div style="height:auto; min-height: 470px; line-height: 12px !important;">
+                            {{-- IMAGEN --}}
+                            <div style="background-color: black; height:220px;">
+                                {{-- DIRECCION Y FOTOS --}}
+                                <div class="row h-100 align-items-end text-white">
+                                    <div class="col-8 text-left">
+                                        <p class="m-1">Fracc. Mirasoles, Morelia</p>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <p class="m-1">17</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- DATOS --}}
+                            {{-- TITULO --}}
+                            <h5 class="px-2 pt-1 text-blue22">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
+                            </h5>
+                            {{-- PRECIO Y CLAVE --}}
+                            <div class="row align-items-end px-2">
+                                <div class="col-7 text-left">
+                                    <p class="m-1">$3,173,000</p>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <p class="m-1">Clave: <b>8071</b></p>
+                                </div>
+                            </div>
+
+                            {{-- DATOS PRINCIPALES --}}
+                            <div class="row px-2 mt-4">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Casa</b>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Estado
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Tipo
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <b>Venta</b>
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Recámara
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Baños
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Construcción
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row px-2">
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary w-100" style="background: #58AD30; border-color: #58AD30;"><b>Me interesa</b></button>
                                 </div>
                             </div>
                         </div>

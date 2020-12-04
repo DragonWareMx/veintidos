@@ -135,6 +135,15 @@
     justify-content: center;
 }
 
+.text-blue22{
+    color: #222B58 !important;
+}
+
+.b-blue22{
+    color: #222B58 !important;
+    border-color: #222B58 !important;
+}
+
 @media only screen and (max-width: 450px){
 
     .Otitle h1{
