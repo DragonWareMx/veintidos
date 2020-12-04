@@ -38,3 +38,8 @@ Route::get('/aver', function () {
         return 'nelson';
     }
 })->name('caca');
+
+//------------------------ RUTAS PROPIEDADES ------------------------
+Route::get('/propiedades', function () {
+    return view('propiedades.propiedades');
+});

@@ -33,7 +33,7 @@
         </div>
     </header>
     @include('subviews.busqueda')
-    <main class="main">
+    <main class="main" style="background-color: #F8F8F8;">
         <div class="container">
             <div class="container_sideBar">
                 <div class="sideBar_right">
