@@ -16,6 +16,13 @@ class CreateWarehousesTable extends Migration
         Schema::create('warehouses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+
+            $table->unsignedBigInteger('propertie_id');     //id de la propiedad asociada
+            $table->unsignedTinyInteger('terrain');         //terreno m2
+            $table->unsignedTinyInteger('construction');    //construccion m2
+            $table->boolean('office');                      //oficina
+
+            $table->foreign('propertie_id')->references('id')->on('properties')->onDelete('cascade');
         });
     }
 

@@ -13,18 +13,20 @@ class CreateProposalsTable extends Migration
      */
     public function up()
     {
+        //propuestas de propiedades
         Schema::create('proposals', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             
-            $table->string('phone_number', 50);
-            $table->string('name');
-            $table->string('email', 320);
-            $table->enum('propertie_type', 
-                ['house', 'department','premises','office','terrain','warehouse']);
-            $table->enum('deal', ['sale','rent']);
-            $table->decimal('price', 17, 2);
-            $table->enum('status', ['available','accepted','rejected']);
+            $table->string('phone_number', 50);                                     //numero de telefono del que hace la propuesta
+            $table->string('name');                                                 //nombre(s)
+            $table->string('lastname');                                             //apellido(s)
+            $table->string('email', 320)->nullable();                               //correo electrónico (opcional)
+            $table->enum('propertie_type',          
+                ['house', 'department','premises','office','terrain','warehouse']); //tipo de propiedad propuesta
+            $table->enum('deal', ['sale','rent']);                                  //renta o venta
+            $table->decimal('price', 17, 2);                                        //precio propuesto
+            $table->enum('status', ['available','accepted','rejected']);            //estado de la propuesta, disponible (sin revisar), aceptado, rechazado
         });
     }
 

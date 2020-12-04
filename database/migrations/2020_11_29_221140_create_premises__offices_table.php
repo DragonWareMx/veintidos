@@ -16,6 +16,16 @@ class CreatePremisesOfficesTable extends Migration
         Schema::create('premises__offices', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+
+            $table->unsignedBigInteger('propertie_id');         //id de la propiedad asociada
+            $table->unsignedTinyInteger('construction');        //construccion m2
+            $table->unsignedTinyInteger('half_bathrooms');      //medios baños
+            $table->unsignedTinyInteger('floor')->nullable();   //piso
+            $table->boolean('cistern');                         //cisterna
+            $table->boolean('elevator');                        //tiene elevador o no
+            $table->boolean('security_vigilance');              //hay vigilancia o no (caseta o no se :v)
+
+            $table->foreign('propertie_id')->references('id')->on('properties')->onDelete('cascade');
         });
     }
 
