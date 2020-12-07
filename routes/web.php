@@ -43,3 +43,6 @@ Route::get('/aver', function () {
 Route::get('/propiedades', function () {
     return view('propiedades.propiedades');
 });
+Route::get('/propiedad', function () {
+    return view('propiedades.propiedad');
+});
