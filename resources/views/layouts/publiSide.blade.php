@@ -15,7 +15,7 @@
     <title>@yield('title')</title>
     @yield('head')
 </head>
-<body style="">
+<body style="background-color: #F8F8F8;">
     <header class="header {{ Request::url() == route('inicio') ? '' : 'dark' }}">
         <div class="container logo-nav-container">
             <a href="" class="logo azul"><img src="{{ asset('/img/logos/transparente-cut.png') }}"></a>
@@ -33,7 +33,7 @@
         </div>
     </header>
     @include('subviews.busqueda')
-    <main class="main" style="background-color: #F8F8F8;">
+    <main class="main">
         <div class="container">
             <div class="container_sideBar">
                 <div class="sideBar_right">

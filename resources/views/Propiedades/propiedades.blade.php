@@ -18,34 +18,18 @@
                         <div style="height:auto; min-height: 470px; line-height: 12px !important;">
                             {{-- IMAGEN --}}
                             <div  style="
-                            position: relative;
-                            background: linear-gradient(180deg, rgba(1,1,1,0) 0%, rgba(0,0,0,0.2805497198879552) 55%, rgba(0,0,0,0.35898109243697474) 65%, rgba(0,0,0,0.7035189075630253) 87%, rgba(0,0,0,0.8911939775910365) 100%);
-                            height:220px;">
-                            <div style="
-                            position: absolute;
-                            top: 0; 
-                            left: 0;
-                            right: 0;
-                            bottom: 0;
                             background: url('{{ asset('img/test/pexels-pixabay-276593.jpg')}}') no-repeat center center;
-                            width:100%;
-                            height:100%;
-                            background-size: cover;">
-                            </div>
+                            background-size: cover;
+                            height:220px;">
                                 {{-- DIRECCION Y FOTOS --}}
                                 <div class="row h-100 align-items-end text-white">
                                     <div class="col-8 text-left">
-                                        <div style="
-                                            width:16px;
-                                            height:auto;
-                                            background-image: url('{{ asset('img/ico/ubicacion.png')}}');
-                                            background-position: center center;">
-                                        </div>
-                                        <img style="width:16px; height:auto;" src="{{ asset('img/ico/casa2.png')}}" alt="">
-                                            <p class="m-1">Fracc. Mirasoles, Morelia</p>
+                                        <img class="d-inline mb-1 ml-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/ubicacion.png')}}" alt="">
+                                        <p class="my-1 d-inline" style="text-shadow: 1px 1px 3px black; ">Fracc. Mirasoles, Morelia</p>
                                     </div>
                                     <div class="col-4 text-right">
-                                        <p class="m-1">17</p>
+                                        <img class="d-inline mb-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/images.png')}}" alt="">
+                                        <p class="m-1 d-inline" style="text-shadow: 1px 1px 3px black; ">17</p>
                                     </div>
                                 </div>
                             </div>
@@ -66,9 +50,11 @@
                             {{-- DATOS PRINCIPALES --}}
                             <div class="row px-2 mt-4">
                                 <div class="col">
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/estado.png')}}" alt="">
                                     <b>Venta</b>
                                 </div>
                                 <div class="col">
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/casa.png')}}" alt="">
                                     <b>Casa</b>
                                 </div>
                                 <div class="col">
@@ -92,13 +78,16 @@
                             </div>
                             <div class="row px-2">
                                 <div class="col">
-                                    <b>Venta</b>
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cama.png')}}" alt="">
+                                    <b>4</b>
                                 </div>
                                 <div class="col">
-                                    <b>Venta</b>
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/bath.png')}}" alt="">
+                                    <b>2</b>
                                 </div>
                                 <div class="col">
-                                    <b>Venta</b>
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/construccion.png')}}" alt="">
+                                    <b>190 m<sup>2</sup></b>
                                 </div>
                             </div>
                             <div class="row px-2">
@@ -118,7 +107,6 @@
                                     </p>
                                 </div>
                             </div>
-
                             <div class="row px-2">
                                 <div class="col">
                                     <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
@@ -135,14 +123,19 @@
                     <div class="border rounded-bottom shadow bg-white">
                         <div style="height:auto; min-height: 470px; line-height: 12px !important;">
                             {{-- IMAGEN --}}
-                            <div style="background-color: black; height:220px;">
+                            <div  style="
+                            background: url('{{ asset('img/test/pexels-pixabay-276593.jpg')}}') no-repeat center center;
+                            background-size: cover;
+                            height:220px;">
                                 {{-- DIRECCION Y FOTOS --}}
                                 <div class="row h-100 align-items-end text-white">
                                     <div class="col-8 text-left">
-                                        <p class="m-1">Fracc. Mirasoles, Morelia</p>
+                                        <img class="d-inline mb-1 ml-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/ubicacion.png')}}" alt="">
+                                        <p class="my-1 d-inline" style="text-shadow: 1px 1px 3px black; ">Fracc. Mirasoles, Morelia</p>
                                     </div>
                                     <div class="col-4 text-right">
-                                        <p class="m-1">17</p>
+                                        <img class="d-inline mb-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/images.png')}}" alt="">
+                                        <p class="m-1 d-inline" style="text-shadow: 1px 1px 3px black; ">17</p>
                                     </div>
                                 </div>
                             </div>
@@ -163,9 +156,11 @@
                             {{-- DATOS PRINCIPALES --}}
                             <div class="row px-2 mt-4">
                                 <div class="col">
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/estado.png')}}" alt="">
                                     <b>Venta</b>
                                 </div>
                                 <div class="col">
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/casa.png')}}" alt="">
                                     <b>Casa</b>
                                 </div>
                                 <div class="col">
@@ -189,13 +184,16 @@
                             </div>
                             <div class="row px-2">
                                 <div class="col">
-                                    <b>Venta</b>
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cama.png')}}" alt="">
+                                    <b>4</b>
                                 </div>
                                 <div class="col">
-                                    <b>Venta</b>
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/bath.png')}}" alt="">
+                                    <b>2</b>
                                 </div>
                                 <div class="col">
-                                    <b>Venta</b>
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/construccion.png')}}" alt="">
+                                    <b>190 m<sup>2</sup></b>
                                 </div>
                             </div>
                             <div class="row px-2">
@@ -215,7 +213,6 @@
                                     </p>
                                 </div>
                             </div>
-
                             <div class="row px-2">
                                 <div class="col">
                                     <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
@@ -226,20 +223,24 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 mt-4">
+                </div><div class="col-12 col-md-6 col-lg-4 mt-4">
                     {{-- TARJETA DE LA PROPIEDAD --}}
                     <div class="border rounded-bottom shadow bg-white">
                         <div style="height:auto; min-height: 470px; line-height: 12px !important;">
                             {{-- IMAGEN --}}
-                            <div style="background-color: black; height:220px;">
+                            <div  style="
+                            background: url('{{ asset('img/test/pexels-pixabay-276593.jpg')}}') no-repeat center center;
+                            background-size: cover;
+                            height:220px;">
                                 {{-- DIRECCION Y FOTOS --}}
                                 <div class="row h-100 align-items-end text-white">
                                     <div class="col-8 text-left">
-                                        <p class="m-1">Mirasoles, Morelia</p>
+                                        <img class="d-inline mb-1 ml-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/ubicacion.png')}}" alt="">
+                                        <p class="my-1 d-inline" style="text-shadow: 1px 1px 3px black; ">Fracc. Mirasoles, Morelia</p>
                                     </div>
                                     <div class="col-4 text-right">
-                                        <p class="m-1">17</p>
+                                        <img class="d-inline mb-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/images.png')}}" alt="">
+                                        <p class="m-1 d-inline" style="text-shadow: 1px 1px 3px black; ">17</p>
                                     </div>
                                 </div>
                             </div>
@@ -260,9 +261,11 @@
                             {{-- DATOS PRINCIPALES --}}
                             <div class="row px-2 mt-4">
                                 <div class="col">
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/estado.png')}}" alt="">
                                     <b>Venta</b>
                                 </div>
                                 <div class="col">
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/casa.png')}}" alt="">
                                     <b>Casa</b>
                                 </div>
                                 <div class="col">
@@ -286,13 +289,16 @@
                             </div>
                             <div class="row px-2">
                                 <div class="col">
-                                    <b>Venta</b>
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cama.png')}}" alt="">
+                                    <b>4</b>
                                 </div>
                                 <div class="col">
-                                    <b>Venta</b>
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/bath.png')}}" alt="">
+                                    <b>2</b>
                                 </div>
                                 <div class="col">
-                                    <b>Venta</b>
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/construccion.png')}}" alt="">
+                                    <b>190 m<sup>2</sup></b>
                                 </div>
                             </div>
                             <div class="row px-2">
@@ -312,7 +318,216 @@
                                     </p>
                                 </div>
                             </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary w-100" style="background: #58AD30; border-color: #58AD30;"><b>Me interesa</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="col-12 col-md-6 col-lg-4 mt-4">
+                    {{-- TARJETA DE LA PROPIEDAD --}}
+                    <div class="border rounded-bottom shadow bg-white">
+                        <div style="height:auto; min-height: 470px; line-height: 12px !important;">
+                            {{-- IMAGEN --}}
+                            <div  style="
+                            background: url('{{ asset('img/test/pexels-pixabay-276593.jpg')}}') no-repeat center center;
+                            background-size: cover;
+                            height:220px;">
+                                {{-- DIRECCION Y FOTOS --}}
+                                <div class="row h-100 align-items-end text-white">
+                                    <div class="col-8 text-left">
+                                        <img class="d-inline mb-1 ml-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/ubicacion.png')}}" alt="">
+                                        <p class="my-1 d-inline" style="text-shadow: 1px 1px 3px black; ">Fracc. Mirasoles, Morelia</p>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <img class="d-inline mb-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/images.png')}}" alt="">
+                                        <p class="m-1 d-inline" style="text-shadow: 1px 1px 3px black; ">17</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- DATOS --}}
+                            {{-- TITULO --}}
+                            <h5 class="px-2 pt-1 text-blue22">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
+                            </h5>
+                            {{-- PRECIO Y CLAVE --}}
+                            <div class="row align-items-end px-2">
+                                <div class="col-7 text-left">
+                                    <p class="m-1">$3,173,000</p>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <p class="m-1">Clave: <b>8071</b></p>
+                                </div>
+                            </div>
 
+                            {{-- DATOS PRINCIPALES --}}
+                            <div class="row px-2 mt-4">
+                                <div class="col">
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/estado.png')}}" alt="">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/casa.png')}}" alt="">
+                                    <b>Casa</b>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Estado
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Tipo
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cama.png')}}" alt="">
+                                    <b>4</b>
+                                </div>
+                                <div class="col">
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/bath.png')}}" alt="">
+                                    <b>2</b>
+                                </div>
+                                <div class="col">
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/construccion.png')}}" alt="">
+                                    <b>190 m<sup>2</sup></b>
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Recámara
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Baños
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Construcción
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
+                                </div>
+                                <div class="col">
+                                    <button type="button" class="btn btn-primary w-100" style="background: #58AD30; border-color: #58AD30;"><b>Me interesa</b></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><div class="col-12 col-md-6 col-lg-4 mt-4">
+                    {{-- TARJETA DE LA PROPIEDAD --}}
+                    <div class="border rounded-bottom shadow bg-white">
+                        <div style="height:auto; min-height: 470px; line-height: 12px !important;">
+                            {{-- IMAGEN --}}
+                            <div  style="
+                            background: url('{{ asset('img/test/pexels-pixabay-276593.jpg')}}') no-repeat center center;
+                            background-size: cover;
+                            height:220px;">
+                                {{-- DIRECCION Y FOTOS --}}
+                                <div class="row h-100 align-items-end text-white">
+                                    <div class="col-8 text-left">
+                                        <img class="d-inline mb-1 ml-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/ubicacion.png')}}" alt="">
+                                        <p class="my-1 d-inline" style="text-shadow: 1px 1px 3px black; ">Fracc. Mirasoles, Morelia</p>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <img class="d-inline mb-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/images.png')}}" alt="">
+                                        <p class="m-1 d-inline" style="text-shadow: 1px 1px 3px black; ">17</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- DATOS --}}
+                            {{-- TITULO --}}
+                            <h5 class="px-2 pt-1 text-blue22">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
+                            </h5>
+                            {{-- PRECIO Y CLAVE --}}
+                            <div class="row align-items-end px-2">
+                                <div class="col-7 text-left">
+                                    <p class="m-1">$3,173,000</p>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <p class="m-1">Clave: <b>8071</b></p>
+                                </div>
+                            </div>
+
+                            {{-- DATOS PRINCIPALES --}}
+                            <div class="row px-2 mt-4">
+                                <div class="col">
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/estado.png')}}" alt="">
+                                    <b>Venta</b>
+                                </div>
+                                <div class="col">
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/casa.png')}}" alt="">
+                                    <b>Casa</b>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Estado
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Tipo
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cama.png')}}" alt="">
+                                    <b>4</b>
+                                </div>
+                                <div class="col">
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/bath.png')}}" alt="">
+                                    <b>2</b>
+                                </div>
+                                <div class="col">
+                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/construccion.png')}}" alt="">
+                                    <b>190 m<sup>2</sup></b>
+                                </div>
+                            </div>
+                            <div class="row px-2">
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Recámara
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Baños
+                                    </p>
+                                </div>
+                                <div class="col">
+                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px;">
+                                        Construcción
+                                    </p>
+                                </div>
+                            </div>
                             <div class="row px-2">
                                 <div class="col">
                                     <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
