@@ -1,5 +1,6 @@
 .Odiv100{
-    background-color: #F8F8F8;
+    /* background-color: #F8F8F8; */
+    background-color: pink;
     width: 100%;
     padding-top: 130px;
     display: flex;
