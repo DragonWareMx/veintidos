@@ -53,7 +53,6 @@ body {
   line-height: 1.5;
   color: #212529;
   background-color: #f8f8f8;
-  margin: 0% !important;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -84,6 +83,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 }
 
 h1, .h1 {
+  margin-top: 90px;
   font-weight: bold;
 
 }
@@ -129,8 +129,38 @@ h6, .h6 {
 }
 
 p {
-  margin-top: 0;
+  font-weight: 300;
+  color:       #222222;
+  font-size:  13px;
+  margin-top:    0;
   margin-bottom: 1rem;
+}
+
+
+.p-b{
+  font-weight: 600;
+  font-size:   16px;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+p i{
+  font-size: 15;
+  margin-right: 10px;
+}
+
+@media (min-width: 900px) {
+  p {
+    font-size: 15px;
+  }
+
+  p i{
+    font-size: 17px;
+  }
+
+  .p-b{
+    font-size: 19px;
+  }
 }
 
 abbr[title],
@@ -212,11 +242,11 @@ sup {
 }
 
 a {
-  color: #0d6efd;
+  color: #222222;
   text-decoration: underline;
 }
 a:hover {
-  color: #0a58ca;
+  color: #0f0f0f;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -307,6 +337,10 @@ th {
 }
 
 label {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #222B58;
   display: inline-block;
 }
 
@@ -605,12 +639,9 @@ progress {
 .container-md,
 .container-sm {
   width: 100%;
-  padding-right: var(--bs-gutter-x, 0.75rem);
-  padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
   margin-left: auto;
-  background-color: #055160;
-  text-align: center;
+  text-align: left;
 }
 
 /* @media (min-width: 576px) {
@@ -2159,10 +2190,9 @@ progress {
   display: block;
   width: 100%;
   padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
+  font-weight: 300;
+  color:       #222222;
+  font-size:  14px;
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
@@ -2186,9 +2216,9 @@ progress {
 .form-control:focus {
   color: #212529;
   background-color: #fff;
-  border-color: #86b7fe;
+  border-color:#222b58;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(34, 43, 88, 0.25);
 }
 .form-control::-webkit-date-and-time-value {
   height: 1.5em;
@@ -2347,7 +2377,7 @@ textarea.form-control-lg {
   font-weight: 400;
   line-height: 1.5;
   color: #212529;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   background-color: #fff;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
