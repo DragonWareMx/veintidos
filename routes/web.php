@@ -34,6 +34,10 @@ Route::get('/contactanos', function () {
     return view('contactanos');
 });
 
+Route::get('/veintidos', function () {
+    return view('veintidos');
+});
+
 
 
 
