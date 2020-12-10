@@ -13,7 +13,7 @@
         <img src="/img/whiteHouse.jpg" class="float-start">
         <img src="/img/salaGris.jpg" class="float-end">
         <div class="div_contactUs">
-            <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>
+            <p class="text-center txt-aboutHideNot">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>
             <div class="containerInfo">
                 <div class="div_info1 text-start">
                     <p class="p-b"><a href="#"><i class="fas fa-phone-alt"></i>Télefono</a></p>
@@ -34,8 +34,8 @@
 
     <div class="containerForm">
         <div class="div_FormContactUs">
-            <p class="text-start w-75">¿TE INTERESA VENDER O RENTAR TU PROPIEDAD?, <b>CONTÁCTANOS</b></p>
-            <p class="text-start">Información de contacto y de la propiedad</p>
+            <p class="text-start w-75 txt-tituloForm">¿TE INTERESA VENDER O RENTAR TU PROPIEDAD?, <b>CONTÁCTANOS</b></p>
+            <p class="text-start txt-tituloForm2">Información de contacto y de la propiedad</p>
             <p class="text-start fs-6">Favor de llenar los siguiente datos y un asesor en breve le contactará. </p>
             <form class="row g-3">
                 <div class="col-md-6">
@@ -68,9 +68,16 @@
                 <div class="col-md-6">
                     <label for="inputAdress" class="form-label">Dirección *</label>
                     <input type="text" class="form-control" id="inputAdress" placeholder="Dirección completa">
-                  </div>
+                </div>
 
-              </form>
+            </form>
+            <div class="div_btns float-end div_ajustar_btns">
+                <a href="#" class="btn-txt-only">Cancelar</a>
+                <button type="button" class="btn btn-primary">Enviar</button>
+            </div>
+            <p class="txt-footerContactUs">* Campos obligatorios</p>
+            <p class="txt-footerContactUs">Al hacer clic en "Enviar" aceptas nuestros <a href="#">Términos y condiciones</a>, así como el <a href="#">Aviso de privacidad</a>.</p>
+
         </div>
         <div class="div_FormImg">
             <img src="/img/contact.jpg">

@@ -78,6 +78,8 @@
     width:         100%;
     margin-top:    60px;
     padding:       40px;
+    padding-bottom: 15px;
+    margin-bottom: 60px;
     display:       flex;
 }
 
@@ -85,13 +87,13 @@
     width: 65%;
 }
 
-.div_FormContactUs p:nth-child(1){
+.txt-tituloForm{
     font-size:   30px;
     line-height: 35px;
     color:       #222b58;
 }
 
-.div_FormContactUs p:nth-child(2){
+.txt-tituloForm2{
     margin-top:  35px;
     font-weight: 600;
     font-size:   18px;
@@ -109,4 +111,89 @@
     border-left:     solid white 10px;
     object-fit:      cover;
     object-position: center center;
+}
+
+.txt-footerContactUs{
+    width:100%;
+    font-size: 14px;
+    line-height: 16px;
+}
+.div_ajustar_btns{
+    padding-right:10%;
+}
+.txt-aboutHide{
+    display: none;
+}
+@media(max-width:767px){
+    .div_ajustar_btns{
+        padding-right:20%;
+    } 
+}
+
+@media(max-width:700px){
+    .div_FormImg{
+        display: none;
+    }
+    .div_FormContactUs{
+        width: 100%;
+    }
+    .form-control{
+        width: 100%;
+    }
+    .div_ajustar_btns{
+        padding-right:0%;
+    } 
+    .txt-tituloForm{
+        width: 100% !important;
+    }
+    .div_contactUs{
+        width: 90%;
+    }
+    .containerInfo{
+        padding-left: 40px;
+    }
+}
+
+@media(max-width:600px){
+    .btn-txt-only, .btn{
+        font-size: 16px;
+    }
+    .txt-tituloForm{
+        font-size: 25px !important;
+    }
+    .txt-tituloForm2{
+        font-size: 16px;
+    }
+    .txt-footerContactUs{
+        font-size: 13px;
+    }
+    .div_contactUs{
+        width: 80%;
+        padding-top: 0px !important;
+    }
+    .containerInfo{
+        flex-wrap: wrap;
+        padding-left: 0px;
+        top: -380px;
+    }
+    .div_info1{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center !important;
+        margin-top: 5px;
+    }
+    .div_info1 p{
+        text-align: center !important;
+        width: 100%;
+    }
+    .txt-aboutHideNot{
+        display: none;
+    }
+    .containerInfo a:after {
+        margin-left: auto !important;
+    }
+    .containerInfo  a:hover:after {
+        margin-left: auto !important;
+    }
 }
