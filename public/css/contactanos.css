@@ -197,3 +197,13 @@
         margin-left: auto !important;
     }
 }
+
+@media(min-width:2145px){
+    .containerInfo {
+        padding-left: 80px;
+        width: 100%;
+        display: flex;
+        position: relative;
+        top: 42px;
+    }
+}
