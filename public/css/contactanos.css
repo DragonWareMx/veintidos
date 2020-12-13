@@ -1,0 +1,199 @@
+.div_banner{
+    background:       url("/img/cocinaBLUE.png") no-repeat fixed ;
+    background-color: rgba(34, 43, 88, 0.95);
+    margin-top:       10px;
+    width:            100%;
+    height:           400px;
+
+    -webkit-background-size: cover;
+    -moz-background-size:    cover;
+    -o-background-size:      cover;
+    background-size:         cover;
+    
+}
+
+.div_banner img{
+    width:           30%;
+    height:          100%;
+    object-fit:      cover;
+    object-position: center center;
+}
+
+.div_contactUs{
+    position:      relative;
+    width:         65%;
+    height:        95%;
+    margin-left:   auto;
+    margin-right:  auto;
+    top:           50px;
+    background:    #FFFFFF;
+    box-shadow:    0px 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+    z-index:       1;
+    padding-top:   20px;
+}
+
+.containerInfo{
+    padding-left: 80px;
+    width:        100%;
+    display:      flex;
+    position:     relative;
+    top:          -300px;
+}
+
+.containerInfo a{
+    color:           #222222;
+    text-decoration: none;
+    transition:      all ease-in-out 0.25s;
+}
+
+.containerInfo a:hover{
+    color:      #222b58;
+    transition: all ease-in-out 0.25s;
+}
+
+.containerInfo a:after {
+    content:     "";
+    display:     block;
+    margin:      auto;
+    height:      2px;
+    width:       0px;
+    transition:  all .8s;
+    margin-left: 0% !important;
+}
+.containerInfo  a:hover:after {
+    width:       50%;
+    margin-left: 0% !important;
+    background:  #222b58;
+}
+
+.div_info1{
+    width: 50%; 
+}
+
+.containerForm{
+    background:    #FFFFFF;
+    box-shadow:    0px 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+    width:         100%;
+    margin-top:    60px;
+    padding:       40px;
+    padding-bottom: 15px;
+    margin-bottom: 60px;
+    display:       flex;
+}
+
+.div_FormContactUs{
+    width: 65%;
+}
+
+.txt-tituloForm{
+    font-size:   30px;
+    line-height: 35px;
+    color:       #222b58;
+}
+
+.txt-tituloForm2{
+    margin-top:  35px;
+    font-weight: 600;
+    font-size:   18px;
+    line-height: 23px;
+    color:     #222b58;;
+}
+
+.div_FormImg{
+    width: 35%;
+}
+
+.div_FormImg img{
+    width:           100%;
+    height:          454px;
+    border-left:     solid white 10px;
+    object-fit:      cover;
+    object-position: center center;
+}
+
+.txt-footerContactUs{
+    width:100%;
+    font-size: 14px;
+    line-height: 16px;
+}
+.div_ajustar_btns{
+    padding-right:10%;
+}
+.txt-aboutHide{
+    display: none;
+}
+@media(max-width:767px){
+    .div_ajustar_btns{
+        padding-right:20%;
+    } 
+}
+
+@media(max-width:700px){
+    .div_FormImg{
+        display: none;
+    }
+    .div_FormContactUs{
+        width: 100%;
+    }
+    .form-control{
+        width: 100%;
+    }
+    .div_ajustar_btns{
+        padding-right:0%;
+    } 
+    .txt-tituloForm{
+        width: 100% !important;
+    }
+    .div_contactUs{
+        width: 90%;
+    }
+    .containerInfo{
+        padding-left: 40px;
+    }
+}
+
+@media(max-width:600px){
+    .btn-txt-only, .btn{
+        font-size: 16px;
+    }
+    .txt-tituloForm{
+        font-size: 25px !important;
+    }
+    .txt-tituloForm2{
+        font-size: 16px;
+    }
+    .txt-footerContactUs{
+        font-size: 13px;
+    }
+    .div_contactUs{
+        width: 80%;
+        padding-top: 0px !important;
+    }
+    .containerInfo{
+        flex-wrap: wrap;
+        padding-left: 0px;
+        top: -380px;
+    }
+    .div_info1{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center !important;
+        margin-top: 5px;
+    }
+    .div_info1 p{
+        text-align: center !important;
+        width: 100%;
+    }
+    .txt-aboutHideNot{
+        display: none;
+    }
+    .containerInfo a:after {
+        margin-left: auto !important;
+    }
+    .containerInfo  a:hover:after {
+        margin-left: auto !important;
+    }
+}

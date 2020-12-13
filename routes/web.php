@@ -30,6 +30,19 @@ Route::get('/sideBar', function () {
     return view('layouts.sideBar');
 });
 
+Route::get('/contactanos', function () {
+    return view('contactanos');
+});
+
+Route::get('/veintidos', function () {
+    return view('veintidos');
+});
+
+
+
+
+
+
 Route::get('/aver', function () {
     if(Request::url()== route('caca')){
         return 'simonkey';

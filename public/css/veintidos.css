@@ -1,0 +1,143 @@
+body{
+    background:url("/img/fondoEdificioBLUE2.png") no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size:    cover;
+    -o-background-size:      cover;
+    background-size:         cover;
+}
+.logo22{
+    width: 28%;
+}
+.text-small{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 35px;
+    line-height: 41px;
+    text-align: center;
+    color: white;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+.div_Iconos{
+    margin-top: 15%;
+    width: 15%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-between;
+}
+.div_Iconos img{
+    width: 45px;
+}
+
+.div_Iconos a{
+    text-decoration: none;
+}
+
+@media(min-width:1180px){
+    .div_Iconos{
+        margin-top: 8%;
+    }
+}
+
+@media(min-width:1482px){
+    .div_Iconos{
+        margin-top: 2%;
+    }
+}
+
+@media(min-width:1500px){
+    .text-small{
+        margin-top: 5%;
+    }
+    .div_Iconos{
+        margin-top: 8%;
+    }
+}
+
+@media(min-width:1800px){
+    .div_Iconos{
+        margin-top: 2%;
+    }
+}
+
+@media(max-width:1050px){
+    .div_Iconos{
+        width: 20%;
+        margin-top: 20%;
+    }
+    .text-small{
+        width: 65%;
+    }
+}
+
+@media(max-width:950px){
+    .text-small{
+        margin-top: 15%;
+        font-size: 30px;
+    }
+    .div_Iconos{
+        margin-top: 15%;
+    }
+    .div_Iconos img{
+        width: 40px;
+    }
+}
+
+@media(max-width:850px){
+    .div_Iconos{
+        width: 25%;
+        margin-top: 25%;
+    }
+}
+
+@media(max-width:700px){
+    .text-small{
+        margin-top: 25%;
+        font-size: 25px;
+    }
+    .logo22{
+        width: 35%;
+    }
+}
+
+@media(max-width:600px){
+    .text-small{
+        width: 75%;
+    }
+    .div_Iconos{
+        width: 35%;
+        margin-top: 32%;
+    }
+}
+
+@media(max-width:500px){
+    .logo22{
+        width: 45%;
+    }
+    .text-small{
+        width: 100%;
+    }
+    .text-small{
+        margin-top: 30%;
+        font-size: 20px;
+    }
+    .div_Iconos{
+        width: 35%;
+        margin-top: 40%;
+    }
+}
+
+@media(max-width:400px){
+    .div_Iconos{
+        width: 45%;
+        margin-top: 45%;
+    }
+    .text-small{
+        margin-top: 45%;
+        font-size: 20px;
+    }
+}
