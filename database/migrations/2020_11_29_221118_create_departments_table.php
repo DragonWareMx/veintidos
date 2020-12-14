@@ -25,7 +25,6 @@ class CreateDepartmentsTable extends Migration
             $table->unsignedTinyInteger('half_bathrooms');  //medios baños
             $table->unsignedTinyInteger('bedrooms');        //habitaciones
             $table->unsignedTinyInteger('bathrooms');       //baños completos
-            $table->unsignedTinyInteger('garages');         //garages
             $table->boolean('yard');                        //patio
             $table->boolean('service_yard');                //patio de servicio
             $table->boolean('service_room');                //cuartos de servicio
@@ -34,7 +33,7 @@ class CreateDepartmentsTable extends Migration
             $table->boolean('security_vigilance');          //hay vigilancia o no (caseta o no se :v)
             $table->boolean('cistern');                     //cisterna
             $table->unsignedTinyInteger('antiquity');       //antigüedad
-            $table->unsignedTinyInteger('construction');    //constriccion m2
+            $table->unsignedSmallInteger('construction');    //constriccion m2
             $table->unsignedTinyInteger('floors');          //pisos
             $table->unsignedTinyInteger('floor');           //piso
             $table->boolean('elevator');                    //tiene elevador o no

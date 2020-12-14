@@ -18,8 +18,8 @@ class CreateWarehousesTable extends Migration
             $table->timestamps();
 
             $table->unsignedBigInteger('propertie_id');     //id de la propiedad asociada
-            $table->unsignedTinyInteger('terrain');         //terreno m2
-            $table->unsignedTinyInteger('construction');    //construccion m2
+            $table->unsignedSmallInteger('terrain');         //terreno m2
+            $table->unsignedSmallInteger('construction');    //construccion m2
             $table->boolean('office');                      //oficina
 
             $table->foreign('propertie_id')->references('id')->on('properties')->onDelete('cascade');

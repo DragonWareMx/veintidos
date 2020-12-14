@@ -18,7 +18,7 @@ class CreateTerrainsTable extends Migration
             $table->timestamps();
 
             $table->unsignedBigInteger('propertie_id');     //id de la propiedad asociada
-            $table->unsignedTinyInteger('terrain');         //terreno m2
+            $table->unsignedSmallInteger('terrain');         //terreno m2
             $table->boolean('access_roads');                //acceso a carretera/calles
 
             $table->foreign('propertie_id')->references('id')->on('properties')->onDelete('cascade');

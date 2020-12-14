@@ -18,7 +18,7 @@ class CreatePremisesOfficesTable extends Migration
             $table->timestamps();
 
             $table->unsignedBigInteger('propertie_id');         //id de la propiedad asociada
-            $table->unsignedTinyInteger('construction');        //construccion m2
+            $table->unsignedSmallInteger('construction');        //construccion m2
             $table->unsignedTinyInteger('half_bathrooms');      //medios baños
             $table->unsignedTinyInteger('floor')->nullable();   //piso
             $table->boolean('cistern');                         //cisterna
