@@ -28,7 +28,7 @@
                     <li><a href="#">INICIO</a></li>
                     <li><a href="#">PROPIEDADES</a></li>
                     <li><a href="#">¿QUIÉNES SOMOS?</a></li>
-                    <li><a href="#">CONTÁCTANOS</a></li>
+                    <li><a href="{{ route('contactanos') }}">CONTÁCTANOS</a></li>
                 </ul>
             </nav>
         </div>

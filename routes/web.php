@@ -32,7 +32,7 @@ Route::get('/sideBar', function () {
 
 Route::get('/contactanos', function () {
     return view('contactanos');
-});
+})->name('contactanos');
 
 Route::get('/veintidos', function () {
     return view('veintidos');
