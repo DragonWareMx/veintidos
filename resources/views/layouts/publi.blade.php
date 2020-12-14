@@ -33,9 +33,7 @@
     </header>
     @yield('barra-busqueda')
     <main class="main">
-        <div class="container">
             @yield('content')
-        </div>
     </main>
 
     @include('subviews.footer')
