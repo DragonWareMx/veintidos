@@ -40,9 +40,6 @@ Route::get('/veintidos', function () {
 
 
 
-
-
-
 Route::get('/aver', function () {
     if(Request::url()== route('caca')){
         return 'simonkey';

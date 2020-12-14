@@ -12,6 +12,7 @@
     <script src="{{ asset('/js/app.js') }}"></script>
     <script src="{{ asset('/js/sideBar.js') }}"></script>
     <script src="https://kit.fontawesome.com/ba2b187421.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="{{ asset('img/logos/favicon.png') }}">
     <title>@yield('title')</title>
     @yield('head')
 </head>
