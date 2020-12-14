@@ -56,6 +56,8 @@ footer{
 
     display: flex;
     align-items: center;
+
+    margin-bottom: 0px !important;
 }
 
 .column1{
@@ -77,11 +79,12 @@ footer{
     line-height: 21px;
     letter-spacing: 0rem;
     color: #222222;
+    margin-top: 10px !important;
 
 }
 
 .column1 .linea_c1{
-    border: 0.5px solid #696969;
+    border-top: 0.2px solid #696969;
     width: 353px;
     max-width: 80% !important;
     margin-bottom: 11px;
@@ -580,4 +583,25 @@ footer{
         font-size: 12px;
     }
 
+}
+
+@media only screen and (max-width: 359px){
+    .container-footer{
+        padding: 5px 15px !important;
+        margin-top: 5px !important;
+        height: 35px !important;
+    }
+}
+
+@media only screen and (max-width: 317px){
+    .container-footer{
+        padding: 5px 8px !important;
+        margin-top: 5px !important;
+        height: 30px !important;
+    }
+    .container-footer p{
+        height: 10px;
+        line-height: 10px;
+        font-size: 9px;
+    }
 }
