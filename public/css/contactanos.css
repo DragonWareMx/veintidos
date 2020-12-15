@@ -120,6 +120,8 @@
 }
 .div_ajustar_btns{
     padding-right:10%;
+    display: flex;
+    justify-content: flex-end;
 }
 .txt-aboutHide{
     display: none;
