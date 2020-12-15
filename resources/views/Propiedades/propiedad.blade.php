@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="{{ asset('/plugins/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css') }}">
 
     <script src="{{ asset('/plugins/OwlCarousel2-2.3.4/dist/owl.carousel.min.js') }}"></script>
+    
+    <style>
+        .owl-w{
+            width: 95%;
+        }
+    </style>
+    
 @endsection
 @section('content')
     <div class="container">
@@ -20,37 +27,27 @@
             <div class="border rounded-bottom shadow bg-white mt-4">
                 <div class="row mt-4">
                     {{-- AQUI VA LA GALERIA DE FOTOS --}}
-                    <div class="col">
+                    <div class="col-xl">
                             <div class="w-100 h-100">
                                 {{-- IMAGEN SELECCIONADA --}}
-                                <div class="mx-auto bg-dark" style="height: 400px; width: 95%;">
+                                <div id="imagen-seleccionada" class="mx-auto" style="height: 400px; width: 95%; background: url('{{ asset('img/test/pexels-pixabay-276593.jpg')}}') no-repeat center center; background-size: cover;">
                                 </div>
 
                                 {{-- Carousel --}}
                                 <div class="mx-auto mt-2" style="width: 95%;">
-                                    <ul class="owl-carousel owl-theme">
-                                        <li>
-                                            <a href="http://placehold.it/1280x720" data-size="1280x720"><img  src="http://placehold.it/1280x720" alt="1" title="Imagen 1"></a>
-                                        </li>
-                                        <li>
-                                            <a href="http://placehold.it/720x1280" data-size="720x1280"><img  src="http://placehold.it/720x1280" style="height:70px;" alt="2" title="Imagen 2"></a>
-                                        </li>
-                                        <li>
-                                            <a href="http://placehold.it/1920x1920" data-size="1920x1920">
-                                              <img  src="http://placehold.it/400x300" alt="3">
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="http://placehold.it/960x640" data-size="960x640">
-                                              <img  src="http://placehold.it/400x300" alt="4">
-                                            </a>
-                                        </li>
-                                    </ul>
+                                    <div class="owl-carousel owl-theme mx-auto owl-w">
+                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/test/pexels-pixabay-276593.jpg')}}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset('img/test/pexels-pixabay-276593.jpg')}}')"></div>
+                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/cocina.jpg')}}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset('img/cocina.jpg')}}')"></div>
+                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/fondoEdificio.png')}}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset('img/fondoEdificio.png')}}')"></div>
+                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/salaGris.jpg')}}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset('img/salaGris.jpg')}}')"></div>
+                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/whiteHouse.jpg')}}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset('img/whiteHouse.jpg')}}')"></div>
+                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/cocina.jpg')}}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset('img/cocina.jpg')}}')"></div>
+                                    </div>
                                 </div>
                             </div>
                     </div>
                     {{-- DATOS DE LA PROPIEDAD --}}
-                    <div class="col">
+                    <div class="col-xl">
                         {{-- NOMBRE DE LA PROPIEDAD --}}
                         <h5 class="px-2 pt-1 text-blue22" style="font-weight: 600;">
                             ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA, Lorem ipsum dolor sit amet consectetur
@@ -155,24 +152,28 @@
 
     <script>
         $(document).ready(function(){
-            $(".owl-carousel").owlCarousel({
-                loop:false,
+            $('.owl-carousel').owlCarousel({
                 margin:10,
-                nav:true,
-                autoWidth:false,
-                autoHeight:false,
-                responsive:{
-                    0:{
-                        items:1
-                    },
-                    600:{
-                        items:3
-                    },
-                    1000:{
-                        items:5
-                    }
-                }
-            });
+                loop:false,
+                autoWidth:true,
+                items:4,
+            })
         });
+
+        
+    //pre es el elemento donde se muestra la previsualizacion de la imagen seleccionada
+    //"imagen-seleccionada" es el visualizador de la imagen
+    var pre = document.getElementById("imagen-seleccionada");
+    //imagen es la imagen que se ha seleccionado
+    var imagen = pre.style.backgroundImage;
+
+    //controla cuando se selecciona una imagen
+    function clickImagen(nuevaImagen){
+        console.log(imagen);
+        //hace que se muestre la nueva imagen en el visualizador
+        pre.style.backgroundImage = "url('"+ nuevaImagen + "')";
+
+        imagen = nuevaImagen;
+    }
     </script>
 @endsection
