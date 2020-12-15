@@ -648,7 +648,7 @@ progress {
   text-align: left;
 }
 
-/* @media (min-width: 576px) {
+@media (min-width: 576px) {
   .container-sm, .container {
     max-width: 540px;
   }
@@ -672,7 +672,7 @@ progress {
   .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1320px;
   }
-} */
+}
 .row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -7186,6 +7186,12 @@ textarea.form-control-lg {
 .fw-bolder {
   font-weight: bolder !important;
 }
+
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+.text-nowrap         { white-space: nowrap; }
 
 .text-lowercase {
   text-transform: lowercase !important;

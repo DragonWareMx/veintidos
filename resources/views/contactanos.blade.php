@@ -9,10 +9,13 @@
 @section('content')
 <div class="container">
     <h1 class="h1 text-center">CONTÁCTANOS</h1>
-    <div class="div_banner">
+</div>
+
+<section class="contactanos">
+    <div class="div_banner container-fluid">
         <img src="/img/whiteHouse.jpg" class="float-start">
         <img src="/img/salaGris.jpg" class="float-end">
-        <div class="div_contactUs">
+        <div class="div_contactUs" style="max-width: 858px">
             <p class="text-center txt-aboutHideNot">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>
             <div class="containerInfo">
                 <div class="div_info1 text-start">
@@ -31,6 +34,7 @@
             </div>   
         </div>
     </div>
+<div class="container">
 
     <div class="containerForm">
         <div class="div_FormContactUs">

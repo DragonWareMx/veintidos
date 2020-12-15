@@ -32,7 +32,7 @@ Route::get('/sideBar', function () {
 
 Route::get('/contactanos', function () {
     return view('contactanos');
-});
+})->name('contactanos');
 
 Route::get('/quienes_somos', function () {
     return view('quienesSomos');
@@ -44,9 +44,6 @@ Route::get('/veintidos', function () {
 
 
 
-
-
-
 Route::get('/aver', function () {
     if(Request::url()== route('caca')){
         return 'simonkey';
@@ -55,3 +52,12 @@ Route::get('/aver', function () {
         return 'nelson';
     }
 })->name('caca');
+
+//------------------------ RUTAS PROPIEDADES ------------------------
+// Route::get('/propiedades', function () {
+//     return view('propiedades.propiedades');
+// });
+Route::get('/propiedades','propiedadesController@ver')->name('verPropiedades');
+Route::get('/propiedad', function () {
+    return view('propiedades.propiedad');
+});

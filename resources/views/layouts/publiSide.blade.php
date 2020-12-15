@@ -12,10 +12,11 @@
     <script src="{{ asset('/js/app.js') }}"></script>
     <script src="{{ asset('/js/sideBar.js') }}"></script>
     <script src="https://kit.fontawesome.com/ba2b187421.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="{{ asset('img/logos/favicon.png') }}">
     <title>@yield('title')</title>
     @yield('head')
 </head>
-<body style="">
+<body style="background-color: #F8F8F8;">
     <header class="header {{ Request::url() == route('inicio') ? '' : 'dark' }}">
         <div class="container logo-nav-container">
             <a href="" class="logo azul"><img src="{{ asset('/img/logos/transparente-cut.png') }}"></a>
@@ -27,39 +28,37 @@
                     <li><a href="#">INICIO</a></li>
                     <li><a href="#">PROPIEDADES</a></li>
                     <li><a href="#">¿QUIÉNES SOMOS?</a></li>
-                    <li><a href="#">CONTÁCTANOS</a></li>
+                    <li><a href="{{ route('contactanos') }}">CONTÁCTANOS</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     @include('subviews.busqueda')
     <main class="main">
-        <div class="container">
-            <div class="container_sideBar">
-                <div class="sideBar_right">
-                    @yield('content')
+        <div class="container_sideBar">
+            <div class="sideBar_right">
+                @yield('content')
+            </div>
+            <div class="sideBar_left show">
+                <div class="sideBar_menu"> 
+                    <div class="sideBar_title">¿QUÉ BUSCAS?</div>
+                    <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/casa2.png')}}" alt="">Casas<div class="sideBar_li_num">(578)</div></a>
+                    <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/departamentos.png')}}" alt="">Departamentos<div class="sideBar_li_num">(1599)</div></a>
+                    <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/local.png')}}" alt="">Locales<div class="sideBar_li_num">(34)</div></a>
+                    <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/oficina.png')}}" alt="">Oficinas<div class="sideBar_li_num">(6)</div></a>
+                    <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/terreno.png')}}" alt="">Terrenos<div class="sideBar_li_num">(42)</div></a>
+                    <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/bodega.png')}}" alt="">Bodegas<div class="sideBar_li_num">(8)</div></a>
+                    {{-- <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/edificios.png')}}" alt="">Edificios<div class="sideBar_li_num">(322)</div></a>
+                    <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/consultorio.png')}}" alt="">Consultorios<div class="sideBar_li_num">(205)</div></a>
+                    <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/rancho.png')}}" alt="">Ranchos<div class="sideBar_li_num">(17)</div></a> --}}
+                    <div class="sideBar_title">CONTACTO</div>
+                    <img class="sideBar_logo" src="{{ asset('img/logos/transparente-cut.png')}}" alt="">
+                    <div class="sideBar_textA">¿Quieres vender o rentar tu propiedad?</div>
+                    <a class="sideBar_link" href="#">Clic aquí</a>
+                    <div class="sideBar_textB">Tel. 4433370550</div>
+                    <div class="sideBar_textB">contacto@veintidos.mx</div>
                 </div>
-                <div class="sideBar_left show">
-                    <div class="sideBar_menu"> 
-                        <div class="sideBar_title">¿QUÉ BUSCAS?</div>
-                        <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/casa2.png')}}" alt="">Casas<div class="sideBar_li_num">(578)</div></a>
-                        <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/departamentos.png')}}" alt="">Departamentos<div class="sideBar_li_num">(1599)</div></a>
-                        <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/local.png')}}" alt="">Locales<div class="sideBar_li_num">(34)</div></a>
-                        <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/oficina.png')}}" alt="">Oficinas<div class="sideBar_li_num">(6)</div></a>
-                        <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/terreno.png')}}" alt="">Terrenos<div class="sideBar_li_num">(42)</div></a>
-                        <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/bodega.png')}}" alt="">Bodegas<div class="sideBar_li_num">(8)</div></a>
-                        {{-- <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/edificios.png')}}" alt="">Edificios<div class="sideBar_li_num">(322)</div></a>
-                        <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/consultorio.png')}}" alt="">Consultorios<div class="sideBar_li_num">(205)</div></a>
-                        <a href="#" class="sideBar_li"><img class="sideBar_li_image" src="{{ asset('img/ico/rancho.png')}}" alt="">Ranchos<div class="sideBar_li_num">(17)</div></a> --}}
-                        <div class="sideBar_title">CONTACTO</div>
-                        <img class="sideBar_logo" src="{{ asset('img/logos/transparente-cut.png')}}" alt="">
-                        <div class="sideBar_textA">¿Quieres vender o rentar tu propiedad?</div>
-                        <a class="sideBar_link" href="#">Clic aquí</a>
-                        <div class="sideBar_textB">Tel. 4433370550</div>
-                        <div class="sideBar_textB">contacto@veintidos.mx</div>
-                    </div>
-                    <button class="sideBar_button"><img src="{{ asset('img/ico/menu-white-v.png')}}" alt=""></button> 
-                </div>
+                <button class="sideBar_button"><img src="{{ asset('img/ico/menu-white-v.png')}}" alt=""></button> 
             </div>
         </div>
     </main>
@@ -67,3 +66,4 @@
     @include('subviews.footer')
 </body>
 </html>
+

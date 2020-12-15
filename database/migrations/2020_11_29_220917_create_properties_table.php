@@ -18,7 +18,7 @@ class CreatePropertiesTable extends Migration
             $table->timestamps();
 
             $table->string('owner_name');                                           //nombre del dueño o responsable de la propiedad
-            $table->string('descripton');                                           //descripcion de la propiedad
+            $table->string('description',700);                                           //descripcion de la propiedad
 
             //DATOS DE LA DIRECCION DE LA PROPIEDAD
             $table->string('street', 255)->nullable();                              //calle
@@ -32,6 +32,7 @@ class CreatePropertiesTable extends Migration
             $table->enum('deal', ['sale','rent']);                                  //indica si la propiedad esta en renta o venta
             $table->decimal('price', 11, 2);                                        //precio de la propiedad
             $table->enum('status', ['available','occupied','deleted']);             //estatus de la propiedad
+            $table->string('photo');                                                 //ubicacion donde se encuentra la foto  
         });
     }
 

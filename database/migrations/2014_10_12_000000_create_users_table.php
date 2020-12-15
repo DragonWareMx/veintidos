@@ -15,7 +15,8 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');                             //nombre del usuario administrador
+            $table->string('name');                             //nombre(s) del usuario administrador
+            $table->string('lastname');                         //apellido(s)
             $table->string('email')->unique();                  //correo electrónico del usuario administrador
             $table->timestamp('email_verified_at')->nullable(); //verificacion del correo
             $table->string('password');                         //contrasena del usuario administrador
