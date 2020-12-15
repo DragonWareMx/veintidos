@@ -24,6 +24,19 @@ class properties_table extends Seeder
             'deal'=>'sale',
             'price'=>2500000,
             'status'=>'available',
+            'photo'=>'img/photos/casa1.jpg',
+        ]);
+        DB::table('photos')->insert([
+            'propertie_id'=>1,
+            'path'=>'img/photos/casa1.1jpg',
+        ]);
+        DB::table('photos')->insert([
+            'propertie_id'=>1,
+            'path'=>'img/photos/casa1.2.jpg',
+        ]);
+        DB::table('photos')->insert([
+            'propertie_id'=>1,
+            'path'=>'img/photos/casa1.3.jpg',
         ]);
         DB::table('houses')->insert([
             'propertie_id'=>1,
@@ -59,6 +72,19 @@ class properties_table extends Seeder
             'deal'=>'rent',
             'price'=>7000,
             'status'=>'available',
+            'photo'=>'img/photos/apato1.jpeg',
+        ]);
+        DB::table('photos')->insert([
+            'propertie_id'=>2,
+            'path'=>'img/photos/apato1.2.png',
+        ]);
+        DB::table('photos')->insert([
+            'propertie_id'=>2,
+            'path'=>'img/photos/apato1.1.png',
+        ]);
+        DB::table('photos')->insert([
+            'propertie_id'=>2,
+            'path'=>'img/photos/apato1.3.jpg',
         ]);
         DB::table('departments')->insert([
             'propertie_id'=>2,
@@ -95,6 +121,11 @@ class properties_table extends Seeder
             'deal'=>'sale',
             'price'=>200000,
             'status'=>'available',
+            'photo'=>'img/photos/terreno1.jpeg',
+        ]);
+        DB::table('photos')->insert([
+            'propertie_id'=>3,
+            'path'=>'img/photos/terreno1.1.jpg',
         ]);
         DB::table('terrains')->insert([
             'propertie_id'=>3,

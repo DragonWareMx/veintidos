@@ -50,9 +50,10 @@ Route::get('/aver', function () {
 })->name('caca');
 
 //------------------------ RUTAS PROPIEDADES ------------------------
-Route::get('/propiedades', function () {
-    return view('propiedades.propiedades');
-});
+// Route::get('/propiedades', function () {
+//     return view('propiedades.propiedades');
+// });
+Route::get('/propiedades','propiedadesController@ver')->name('verPropiedades');
 Route::get('/propiedad', function () {
     return view('propiedades.propiedad');
 });

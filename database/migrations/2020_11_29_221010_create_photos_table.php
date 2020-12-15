@@ -16,8 +16,10 @@ class CreatePhotosTable extends Migration
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->unsignedBigInteger('propertie_id');             //propiedad a la que le pertenece la foto
+            $table->string('path');                                 //ubicacion donde se encuentra la foto
 
-            $table->string('path'); //ubicacion donde se encuentra la foto
+            $table->foreign('propertie_id')->references('id')->on('properties')->onDelete('cascade');
         });
     }
 

@@ -22,4 +22,8 @@ class Propertie extends Model
     {
         return $this->hasOne('App\Department');
     }
+    public function photos()
+    {
+        return $this->hasMany('App\Photo');
+    }
 }
