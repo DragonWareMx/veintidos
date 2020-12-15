@@ -31,19 +31,19 @@
                                         </div>
                                         <div class="col-4 text-right">
                                             <img class="d-inline mb-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/images.png')}}" alt="">
-                                            <p class="m-1 d-inline text-white font-weight-bold" style="text-shadow: 1px 1px 3px black; font-weight: 500;">17</p>
+                                            <p class="m-1 d-inline text-white font-weight-bold" style="text-shadow: 1px 1px 3px black; font-weight: 500;">{{count($propiedad->photos()->get())}}</p>
                                         </div>
                                     </div>
                                 </div>
                                 {{-- DATOS --}}
                                 {{-- TITULO --}}
                                 <h5 class="px-2 pt-1 text-blue22" style="font-weight: 600;">
-                                    ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA P...
+                                    {{ \Illuminate\Support\Str::limit($propiedad->description, $limit = 65, $end = '...') }}
                                 </h5>
                                 {{-- PRECIO Y CLAVE --}}
                                 <div class="row align-items-end px-2">
                                     <div class="col-7 text-left">
-                                        <p class="m-1">$3,173,000</p>
+                                        <p class="m-1">${{number_format($propiedad->price,2)}} </p>
                                     </div>
                                     <div class="col-5 text-right">
                                         <p class="m-1">Clave: <b>{{str_pad($propiedad->id, 4, '0', STR_PAD_LEFT)}}</b></p>
@@ -54,11 +54,25 @@
                                 <div class="row px-2 mt-4">
                                     <div class="col">
                                         <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/estado.png')}}" alt="">
-                                        <b>Venta</b>
+                                        @if ($propiedad->deal=='sale')
+                                            <b>Venta</b>
+                                        @else
+                                            <b>Renta</b>
+                                        @endif
                                     </div>
                                     <div class="col">
                                         <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/casa.png')}}" alt="">
-                                        <b>Casa</b>
+                                        @if (count($propiedad->house()->get())==1)
+                                            <b>Casa</b>
+                                        @elseif (count($propiedad->department()->get())==1)
+                                            <b>Depa.</b>
+                                        @elseif (count($propiedad->terrain()->get())==1)
+                                            <b>Terreno</b>
+                                        @elseif (count($propiedad->warehouse()->get())==1)
+                                            <b>Bodega</b>
+                                        @elseif (count($propiedad->office()->get())==1)
+                                            <b>Oficina</b>
+                                        @endif
                                     </div>
                                     <div class="col">
                                         
@@ -82,15 +96,49 @@
                                 <div class="row px-2">
                                     <div class="col">
                                         <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cama.png')}}" alt="">
-                                        <b>4</b>
+                                        <b>
+                                            @if (count($propiedad->house()->get())==1)
+                                                {{$propiedad->house->bedrooms}}
+                                            @elseif (count($propiedad->department()->get())==1)
+                                                {{$propiedad->department->bedrooms}}
+                                            @elseif (count($propiedad->terrain()->get())==1)
+                                                0
+                                            @elseif (count($propiedad->warehouse()->get())==1)
+                                                0
+                                            @elseif (count($propiedad->office()->get())==1)
+                                                0
+                                            @endif 
+                                        </b>
                                     </div>
                                     <div class="col">
                                         <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/bath.png')}}" alt="">
-                                        <b>2</b>
+                                        <b>
+                                            @if (count($propiedad->house()->get())==1)
+                                                {{$propiedad->house->bathrooms}}
+                                            @elseif (count($propiedad->department()->get())==1)
+                                                {{$propiedad->department->bathrooms}}
+                                            @elseif (count($propiedad->terrain()->get())==1)
+                                                0
+                                            @elseif (count($propiedad->warehouse()->get())==1)
+                                                0
+                                            @elseif (count($propiedad->office()->get())==1)
+                                                {{$propiedad->department->half_bathrooms}}
+                                            @endif 
+                                        </b>
                                     </div>
                                     <div class="col">
                                         <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/construccion.png')}}" alt="">
-                                        <b>190 m<sup>2</sup></b>
+                                        @if (count($propiedad->house()->get())==1)
+                                            <b>{{$propiedad->house->construction}} m<sup>2</sup></b>
+                                        @elseif (count($propiedad->department()->get())==1)
+                                            <b>{{$propiedad->department->construction}} m<sup>2</sup></b>
+                                        @elseif (count($propiedad->terrain()->get())==1)
+                                            <b>{{$propiedad->terrain->terrain}} m<sup>2</sup></b>
+                                        @elseif (count($propiedad->warehouse()->get())==1)
+                                            <b>{{$propiedad->warehouse->construction}} m<sup>2</sup></b>
+                                        @elseif (count($propiedad->office()->get())==1)
+                                            <b>{{$propiedad->office->construction}} m<sup>2</sup></b>
+                                        @endif 
                                     </div>
                                 </div>
                                 <div class="row px-2">

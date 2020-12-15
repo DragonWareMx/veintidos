@@ -22,6 +22,10 @@ class Propertie extends Model
     {
         return $this->hasOne('App\Department');
     }
+    public function office()
+    {
+        return $this->hasOne('App\Premises_Office');
+    }
     public function photos()
     {
         return $this->hasMany('App\Photo');
