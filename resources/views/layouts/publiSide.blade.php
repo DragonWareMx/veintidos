@@ -12,6 +12,7 @@
     <script src="{{ asset('/js/app.js') }}"></script>
     <script src="{{ asset('/js/sideBar.js') }}"></script>
     <script src="https://kit.fontawesome.com/ba2b187421.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="{{ asset('img/logos/favicon.png') }}">
     <title>@yield('title')</title>
     @yield('head')
 </head>
@@ -27,7 +28,7 @@
                     <li><a href="#">INICIO</a></li>
                     <li><a href="#">PROPIEDADES</a></li>
                     <li><a href="#">¿QUIÉNES SOMOS?</a></li>
-                    <li><a href="#">CONTÁCTANOS</a></li>
+                    <li><a href="{{ route('contactanos') }}">CONTÁCTANOS</a></li>
                 </ul>
             </nav>
         </div>
