@@ -12,6 +12,12 @@
 
     <script src="{{ asset('/plugins/OwlCarousel2-2.3.4/dist/owl.carousel.min.js') }}"></script>
     
+    <style>
+        .owl-w{
+            width: 95%;
+        }
+    </style>
+    
 @endsection
 @section('content')
     <div class="container">
@@ -21,29 +27,27 @@
             <div class="border rounded-bottom shadow bg-white mt-4">
                 <div class="row mt-4">
                     {{-- AQUI VA LA GALERIA DE FOTOS --}}
-                    <div class="col">
+                    <div class="col-xl">
                             <div class="w-100 h-100">
                                 {{-- IMAGEN SELECCIONADA --}}
-                                <div id="imagen-seleccionada" class="mx-auto" style="height: 400px; width: 95%; background: url('') no-repeat center center; background-size: cover;">
+                                <div id="imagen-seleccionada" class="mx-auto" style="height: 400px; width: 95%; background: url('{{ asset('img/test/pexels-pixabay-276593.jpg')}}') no-repeat center center; background-size: cover;">
                                 </div>
 
                                 {{-- Carousel --}}
                                 <div class="mx-auto mt-2" style="width: 95%;">
-                                    <div class="owl-carousel owl-theme mx-auto"  style="width: 500px;">
+                                    <div class="owl-carousel owl-theme mx-auto owl-w">
                                         <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/test/pexels-pixabay-276593.jpg')}}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset('img/test/pexels-pixabay-276593.jpg')}}')"></div>
-                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/test/pexels-pixabay-276593.jpg')}}') no-repeat center center; background-size: cover;"></div>
-                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/test/pexels-pixabay-276593.jpg')}}') no-repeat center center; background-size: cover;"></div>
-                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/test/pexels-pixabay-276593.jpg')}}') no-repeat center center; background-size: cover;"></div>
-                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/test/pexels-pixabay-276593.jpg')}}') no-repeat center center; background-size: cover;"></div>
-                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/test/pexels-pixabay-276593.jpg')}}') no-repeat center center; background-size: cover;"></div>
-                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/test/pexels-pixabay-276593.jpg')}}') no-repeat center center; background-size: cover;"></div>
-                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/test/pexels-pixabay-276593.jpg')}}') no-repeat center center; background-size: cover;"></div>
+                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/cocina.jpg')}}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset('img/cocina.jpg')}}')"></div>
+                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/fondoEdificio.png')}}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset('img/fondoEdificio.png')}}')"></div>
+                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/salaGris.jpg')}}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset('img/salaGris.jpg')}}')"></div>
+                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/whiteHouse.jpg')}}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset('img/whiteHouse.jpg')}}')"></div>
+                                        <div class="item" style="width:110px; height:80px; background: url('{{ asset('img/cocina.jpg')}}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset('img/cocina.jpg')}}')"></div>
                                     </div>
                                 </div>
                             </div>
                     </div>
                     {{-- DATOS DE LA PROPIEDAD --}}
-                    <div class="col">
+                    <div class="col-xl">
                         {{-- NOMBRE DE LA PROPIEDAD --}}
                         <h5 class="px-2 pt-1 text-blue22" style="font-weight: 600;">
                             ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA, Lorem ipsum dolor sit amet consectetur
