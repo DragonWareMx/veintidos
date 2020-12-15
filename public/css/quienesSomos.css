@@ -1,6 +1,7 @@
 .div_vision_mision{
     margin-top: 10px;
     width: 95%;
+    max-width:     1900px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -77,7 +78,7 @@
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
     margin-top: -5px;
     padding: 1%;
-    padding-top: 7%;
+    padding-top: 40px;
 }
 .div_info_busqueda{
     width: 45%;
@@ -97,6 +98,7 @@
 }
 .img_big{
     width: 100%;
+    height: 500px;
     object-fit:      cover;
     object-position: center center;
 }
@@ -107,12 +109,12 @@
     position:      relative;
     z-index:       2;
     float: right;
-    bottom: 150px;
+    bottom:20%;
 }
 .div_info_busqueda button{
     height: 50px;
-    float: right;
-    margin-left: 310px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .div_25{
     width: 25%;
@@ -134,4 +136,75 @@
 #info-more, #button-less{
     display: none;
     transition: all 0.25 ease-in-out;
+}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+    .div_txt_info{
+        height: 450px;
+    }
+    .div_carrousel img{
+        height: 480px;
+    }
+    .div_que_hacemos{
+        padding-left: 1%;
+        padding-top: 1%;
+    }
+    .div_que_hacemos img{
+        margin-top: 0px;
+        /* border: none; */
+        /* height: 100%; */
+        width: 50%;
+    }
+}
+@media(max-width:900px){
+    .div_25{
+        width: 50%;
+    }
+}
+@media(max-width:700px){
+    .txt-titleQ{
+        font-size: 26px;
+    }
+    .div_titleQuote img{
+        width: 33px;
+        height: 33px;
+    }
+    .div_vision_mision{
+        width: 100%;
+    }
+}
+@media(max-width:600px){
+    .div_25-txt{
+        padding: 0.5%;
+    }
+    .div_txt_info, .div_carrousel{
+        width: 100%;
+        height: 380px;
+    }
+    .div_carrousel{
+        border: solid 5px white;
+        height: 300px;
+    }
+    .div_carrousel img{
+        height: 300px;
+    }
+    .div_vision_mision{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .div_info_q, .div_info_busqueda, .div_imgb{
+        width: 100%;
+    }
+    .div_que_hacemos img{
+        display: none;
+    }
+}
+@media(max-width:400px){
+    .div_txt_info{
+        height: 400px;
+    }
+    .txt-busquedaT{
+        margin-bottom:30px;
+    }
 }

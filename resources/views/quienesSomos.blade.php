@@ -26,7 +26,7 @@
     </script>
 @endsection
 @section('content')
-<div class="container">
+
     <h1 class="h1 text-center">¿QUIÉNES SOMOS?</h1>
     <div class="div_vision_mision">
         <div class="div_txt_info">
@@ -43,7 +43,6 @@
         </div>
 
         <div class="div_carrousel">
-
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active" data-bs-interval="4000">
@@ -64,7 +63,7 @@
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="visually-hidden">Siguiente</span>
                 </a>
-              </div>
+            </div>
         </div>
     </div>
 
@@ -88,27 +87,27 @@
         <p style="color: white" id="info-more">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod 
           tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
           exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. </p>
-        <a href="javascript:mostrar();" id="button-more"><button type="button" class="btn btn-outline-secondary">LEER MÁS<i class="fas fa-caret-right"></i></button></a>
-        <a href="javascript:cerrar();" id="button-less"><button type="button" class="btn btn-outline-secondary">LEER MENOS<i class="fas fa-caret-right"></i></button></a>
+        <a href="javascript:mostrar();" id="button-more"><button type="button" class="btn btn-outline-secondary" style="margin-bottom: 15px">LEER MÁS<i class="fas fa-caret-right"></i></button></a>
+        <a href="javascript:cerrar();" id="button-less"><button type="button" class="btn btn-outline-secondary" style="margin-bottom: 15px">LEER MENOS<i class="fas fa-caret-right"></i></button></a>
       </div>      
     </div>
     <div class="div_vision_mision div_busqueda">
       <div class="div_info_busqueda">
-        <p class="txt-titleQ" style="color:#222B58">BÚSQUEDA DE <b>PROPIEDADES</b></p>
+        <p class="txt-titleQ txt-busquedaT" style="color:#222B58">BÚSQUEDA DE <b>PROPIEDADES</b></p>
         <p style="width:100%">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor 
           incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
           ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate 
           velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, 
           sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <button type="button" class="btn btn-outline-primary float-end">COMENZAR<i class="fas fa-caret-right"></i></button>
+          <button type="button" class="btn btn-outline-primary">COMENZAR<i class="fas fa-caret-right"></i></button>
       </div>
       <div class="div_imgb">
         <img class="img_big" src="/img/img1.jpg">
-        <img class="img_small" src="/img/whiteHouse.jpg">
+        {{-- <img class="img_small" src="/img/whiteHouse.jpg"> --}}
       </div>  
     </div>
 
-    <h1 class="h1 text-center" style="margin-top: 50px;">OTROS <b>SERVICIOS</b> </h1>
+    <h1 class="h1 text-center" style="margin-top: 50px; margin-bottom:30px">OTROS SERVICIOS</h1>
     <div class="div_vision_mision div_busqueda" style="padding: 0%; flex-wrap:wrap">
       <div class="div_25">
         <img class="img_big" src="/img/service1.jpg">
@@ -153,9 +152,6 @@
       <a href="/contactanos"><button type="button" class="btn btn-outline-primary text-center">CONTÁCTANOS<i class="fas fa-caret-right"></i></button></a>
     </div>
 
-
-
-</div>
 
 <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
 @endsection

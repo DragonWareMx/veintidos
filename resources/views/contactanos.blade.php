@@ -34,8 +34,8 @@
             </div>   
         </div>
     </div>
-<div class="container">
 
+<div class="div_100_contactanos">
     <div class="containerForm">
         <div class="div_FormContactUs">
             <p class="text-start w-75 txt-tituloForm">¿TE INTERESA VENDER O RENTAR TU PROPIEDAD?, <b>CONTÁCTANOS</b></p>
@@ -87,8 +87,6 @@
             <img src="/img/contact.jpg">
         </div>
     </div>
-
-    
 </div>
 @endsection
 
