@@ -36,7 +36,7 @@ Route::get('/contactanos', function () {
 
 Route::get('/quienes_somos', function () {
     return view('quienesSomos');
-});
+})->name('quienesSomos');
 
 Route::get('/veintidos', function () {
     return view('veintidos');

@@ -1,0 +1,39 @@
+.bocadillo-cuadrado {
+    position: absolute;
+    top:180px;
+    left:5%;
+    height: 400px;
+    width: 60%;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 1px 12px 33px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+.bocadillo-cuadrado:before {
+    border: 25px solid  rgba(255, 255, 255, 0.6);
+    content: '';
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    bottom: 400px;
+    left: 90%;
+}
+.botonesIndex{
+    position: relative;
+    display: flex;
+    flex: inline;
+    height: 30%;
+    margin-right: 20%;
+    margin-left: 20%;
+}
+.botonIndex{
+    width: 50%;
+    margin: 20px;
+    text-align: center;
+    color: white;
+    background: rgba(34, 43, 88, 0.9);
+    padding-top: 20px;
+}
+.botonIndex:hover{
+    cursor: pointer;
+}

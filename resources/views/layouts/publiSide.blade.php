@@ -25,9 +25,9 @@
             <span class="menu-icon blanco"><img src="{{ asset('/img/ico/menu2-white.png') }}"></span>
             <nav class="navigation">
                 <ul>
-                    <li><a href="#">INICIO</a></li>
-                    <li><a href="#">PROPIEDADES</a></li>
-                    <li><a href="#">¿QUIÉNES SOMOS?</a></li>
+                    <li><a href="{{route('inicio')}}">INICIO</a></li>
+                    <li><a href="{{route('verPropiedades')}}">PROPIEDADES</a></li>
+                    <li><a href="{{route('quienesSomos')}}">¿QUIÉNES SOMOS?</a></li>
                     <li><a href="{{ route('contactanos') }}">CONTÁCTANOS</a></li>
                 </ul>
             </nav>
