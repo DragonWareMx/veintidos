@@ -26,12 +26,19 @@
 
     color: #222B58;
     text-decoration:    none;
+    display: inline-block;
 }
 
 .overflow-admin{
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow: auto;
+    overflow-inline: scroll;
     max-height: 53px;
-    white-space: nowrap;
+    display: flex;
     flex-wrap: nowrap !important;
+}
+
+@media only screen and (max-width: 600px){
+    .overflow-admin{
+        margin: 0px 5px !important;;
+    }
 }

@@ -32,27 +32,29 @@
     <div class="container">
         @yield('content')
     </div>
-    <nav class="navbar fixed-bottom navbar-light bg-light px-3 justify-content-center border-veintidos overflow-admin">
-        <a class="link-veintidos d-flex flex-wrap justify-content-center mx-5" href="#" style="width:40px">
-            <img src="{{ asset('img/sistema/inicio.png') }}" alt="" width="20" height="20">
-            Inicio
-        </a>
-        <a class="link-veintidos d-flex flex-wrap justify-content-center mx-5" href="#" style="width:40px">
-            <img src="{{ asset('img/sistema/cuenta.png') }}" alt="" width="20" height="20">
-            Cuenta
-        </a>
-        <a class="link-veintidos d-flex flex-wrap justify-content-center mx-5" href="#" style="width:40px">
-            <img src="{{ asset('img/sistema/inmuebles.png') }}" alt="" width="20" height="20">
-            Propiedades
-        </a>
-        <a class="link-veintidos d-flex flex-wrap justify-content-center mx-5" href="#" style="width:40px">
-            <img src="{{ asset('img/sistema/mensajes.png') }}" alt="" width="20" height="20">
-            Mensajes
-        </a>
-        <a class="link-veintidos d-flex flex-wrap justify-content-center mx-5" href="#" style="width:40px">
-            <img src="{{ asset('img/sistema/solicitudes.png') }}" alt="" width="20" height="20">
-            Solicitudes
-        </a>
+    <nav class="navbar fixed-bottom navbar-light bg-light justify-content-center border-veintidos">
+        <div class="w-100  overflow-admin  justify-content-center">
+            <a class="link-veintidos d-flex flex-wrap justify-content-center mx-5" href="#" style="width:40px">
+                <img src="{{ asset('img/sistema/inicio.png') }}" alt="" width="20" height="20">
+                Inicio
+            </a>
+            <a class="link-veintidos d-flex flex-wrap justify-content-center mx-5" href="#" style="width:40px">
+                <img src="{{ asset('img/sistema/cuenta.png') }}" alt="" width="20" height="20">
+                Cuenta
+            </a>
+            <a class="link-veintidos d-flex flex-wrap justify-content-center mx-5" href="#" style="width:40px">
+                <img src="{{ asset('img/sistema/inmuebles.png') }}" alt="" width="20" height="20">
+                Propiedades
+            </a>
+            <a class="link-veintidos d-flex flex-wrap justify-content-center mx-5" href="#" style="width:40px">
+                <img src="{{ asset('img/sistema/mensajes.png') }}" alt="" width="20" height="20">
+                Mensajes
+            </a>
+            <a class="link-veintidos d-flex flex-wrap justify-content-center mx-5" href="#" style="width:40px">
+                <img src="{{ asset('img/sistema/solicitudes.png') }}" alt="" width="20" height="20">
+                Solicitudes
+            </a>
+        </div>
     </nav>
 </body>
 
