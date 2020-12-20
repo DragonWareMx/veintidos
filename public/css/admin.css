@@ -1,0 +1,37 @@
+.bg-veintidos{
+    background-color: #222B58;
+}
+
+.border-veintidos{
+    border-top: 0.2px solid  #222B58;
+}
+
+.link-veintidos{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #666666;
+    text-decoration:    none;
+}
+
+.link-veintidos-active{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #222B58;
+    text-decoration:    none;
+}
+
+.overflow-admin{
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-height: 53px;
+    white-space: nowrap;
+    flex-wrap: nowrap !important;
+}

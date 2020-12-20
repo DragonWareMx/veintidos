@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Request;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('inicio');
 });
 
-Route::get('/test', function () {
+Route::get('/inicio', function () {
     return view('test');
 })->name('inicio');
 
@@ -45,19 +45,22 @@ Route::get('/veintidos', function () {
 
 
 Route::get('/aver', function () {
-    if(Request::url()== route('caca')){
+    if (Request::url() == route('caca')) {
         return 'simonkey';
-    }
-    else{
+    } else {
         return 'nelson';
     }
 })->name('caca');
+
+Route::get('/admin', function () {
+    return view('layouts.admin');
+});
 
 //------------------------ RUTAS PROPIEDADES ------------------------
 // Route::get('/propiedades', function () {
 //     return view('propiedades.propiedades');
 // });
-Route::get('/propiedades','propiedadesController@ver')->name('verPropiedades');
+Route::get('/propiedades', 'propiedadesController@ver')->name('verPropiedades');
 Route::get('/propiedad', function () {
     return view('propiedades.propiedad');
 });
