@@ -61,6 +61,4 @@ Route::get('/admin', function () {
 //     return view('propiedades.propiedades');
 // });
 Route::get('/propiedades', 'propiedadesController@ver')->name('verPropiedades');
-Route::get('/propiedad', function () {
-    return view('propiedades.propiedad');
-});
+Route::get('/propiedad/{id}', 'propiedadesController@propiedad');
