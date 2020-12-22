@@ -1,0 +1,50 @@
+.Agregar-propiedades-margin-top{
+    margin-top:110px;
+}
+
+.O-background{
+    background-color: tomato;
+}
+.O-background2{
+    background-color: teal;
+}
+.O-images-loader{
+    height: 428px;
+    overflow-y: scroll;
+    border: 1px solid #D1D1D1;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+.O-inmueble-advise-images{
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #878787;
+    text-align: right;
+    margin-top: 6px;
+}
+.O-form-text{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #222B58;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    margin-right: 50px;
+}
+
+::-webkit-scrollbar-track {
+    background:none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #C4C4C4;
+    border-radius: 3px;
+}
