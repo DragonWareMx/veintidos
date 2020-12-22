@@ -42,7 +42,7 @@ Route::get('/veintidos', function () {
     return view('veintidos');
 });
 
-
+// TESTEO------------------------------------------------------------------------
 
 Route::get('/aver', function () {
     if (Request::url() == route('caca')) {
@@ -52,7 +52,15 @@ Route::get('/aver', function () {
     }
 })->name('caca');
 
+
+Route::get('/sesion', function () {
+    return view('BORRARalterminar');
+});
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 // ADMINISTRACIÓN------------------------------------------------------------------------
+Auth::routes(['register' => false]);
 
 Route::get('/admin', function () {
     return view('layouts.admin');
@@ -71,4 +79,5 @@ Route::get('/admin/cuenta', function () {
 //     return view('propiedades.propiedades');
 // });
 Route::get('/propiedades', 'propiedadesController@ver')->name('verPropiedades');
+
 Route::get('/propiedad/{id}', 'propiedadesController@propiedad');
