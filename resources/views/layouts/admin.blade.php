@@ -10,9 +10,11 @@
         rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('/css/admin.css') }}">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="{{ asset('/plugins/bootstrap/js/bootstrap.js') }}"></script>
     <script src="https://kit.fontawesome.com/ba2b187421.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('/plugins/bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/O.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/admin_style.css') }}">
     <link rel="icon" href="{{ asset('img/logos/favicon.png') }}">
     <title>@yield('title')</title>
     @yield('head')

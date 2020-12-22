@@ -3006,9 +3006,11 @@ textarea.form-control-lg {
 }
 
 .btn-secondary {
+  padding-left: 20px;
+  padding-right: 20px;
   color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: #8c8d8f;
+  border-color:  #8c8d8f;
 }
 .btn-secondary:hover {
   color: #fff;
@@ -3036,36 +3038,40 @@ textarea.form-control-lg {
 }
 
 .btn-success {
+  padding-left: 20px;
+  padding-right: 20px;
   color: #fff;
-  background-color: #198754;
-  border-color: #198754;
+  background-color: #222B58;
+  border-color: #222B58;
 }
 .btn-success:hover {
   color: #fff;
-  background-color: #157347;
-  border-color: #146c43;
+  background-color: #1a2044;
+  border-color: #1a2044;
 }
 .btn-check:focus + .btn-success, .btn-success:focus {
   color: #fff;
-  background-color: #157347;
-  border-color: #146c43;
-  box-shadow: 0 0 0 0.25rem rgba(60, 153, 110, 0.5);
+  background-color:  #1a2044;
+  border-color:  #1a2044;
+  box-shadow: 0 0 0 0.25rem rgba(21, 7, 71, 0.5);
 }
 .btn-check:checked + .btn-success, .btn-check:active + .btn-success, .btn-success:active, .btn-success.active, .show > .btn-success.dropdown-toggle {
   color: #fff;
-  background-color: #146c43;
-  border-color: #13653f;
+  background-color: #222B58;
+  border-color: #222B58;
 }
 .btn-check:checked + .btn-success:focus, .btn-check:active + .btn-success:focus, .btn-success:active:focus, .btn-success.active:focus, .show > .btn-success.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.25rem rgba(60, 153, 110, 0.5);
 }
 .btn-success:disabled, .btn-success.disabled {
   color: #fff;
-  background-color: #198754;
-  border-color: #198754;
+  background-color:#31408a;
+  border-color: #31408a;
 }
 
 .btn-info {
+  padding-left: 20px;
+  padding-right: 20px;
   color: #000;
   background-color: #0dcaf0;
   border-color: #0dcaf0;
@@ -3096,6 +3102,8 @@ textarea.form-control-lg {
 }
 
 .btn-warning {
+  padding-left: 20px;
+  padding-right: 20px;
   color: #000;
   background-color: #ffc107;
   border-color: #ffc107;
@@ -3126,6 +3134,8 @@ textarea.form-control-lg {
 }
 
 .btn-danger {
+  padding-left: 20px;
+  padding-right: 20px;
   color: #fff;
   background-color: #dc3545;
   border-color: #dc3545;
@@ -3156,6 +3166,8 @@ textarea.form-control-lg {
 }
 
 .btn-light {
+  padding-left: 20px;
+  padding-right: 20px;
   color: #000;
   background-color: #f8f9fa;
   border-color: #f8f9fa;
@@ -3186,6 +3198,8 @@ textarea.form-control-lg {
 }
 
 .btn-dark {
+  padding-left: 20px;
+  padding-right: 20px;
   color: #fff;
   background-color: #212529;
   border-color: #212529;
@@ -4234,6 +4248,16 @@ textarea.form-control-lg {
 .navbar-dark .navbar-text a:hover,
 .navbar-dark .navbar-text a:focus {
   color: #fff;
+}
+
+.cardAdmin{
+  box-shadow: 0px 2px 8px rgba(63, 63, 63, 0.2);
+  border-radius: 2px;
+  margin-top: 100px;
+}
+
+.cardAdmin h1{
+  margin-top: 0px;
 }
 
 .card {
