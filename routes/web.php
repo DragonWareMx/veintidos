@@ -58,11 +58,11 @@ Route::get('/admin', function () {
     return view('layouts.admin');
 });
 
-Route::get('/inicioAdmin', function () {
+Route::get('/admin/inicio', function () {
     return view('admin.inicio');
 });
 
-Route::get('/cuenta', function () {
+Route::get('/admin/cuenta', function () {
     return view('admin.cuenta');
 });
 
