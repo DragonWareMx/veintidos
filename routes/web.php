@@ -52,8 +52,18 @@ Route::get('/aver', function () {
     }
 })->name('caca');
 
+// ADMINISTRACIÓN------------------------------------------------------------------------
+
 Route::get('/admin', function () {
     return view('layouts.admin');
+});
+
+Route::get('/admin/inicio', function () {
+    return view('admin.inicio');
+});
+
+Route::get('/admin/cuenta', function () {
+    return view('admin.cuenta');
 });
 
 //------------------------ RUTAS PROPIEDADES ------------------------
