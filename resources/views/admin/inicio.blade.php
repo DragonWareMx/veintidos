@@ -16,6 +16,11 @@ Inicio - Veintidós
 
 @section('content')
 <div class="card cardAdmin">
+  @if (session('status'))
+  <div class="alert alert-success" role="alert">
+    {{ session('status') }}
+  </div>
+  @endif
   <div class="card-body">
     <h1 style="color:#222222">Bienvenido de nuevo</h1>
     <p class="txt-resumen">Resumen</p>
