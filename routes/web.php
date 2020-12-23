@@ -76,6 +76,10 @@ Route::get('/admin/cuenta', function () {
 Route::get('/admin/agregar/propiedad', 'adminPropiedades@agregar')->name('agregarPropiedad');
 
 
+Route::get('/admin/mensajes', function () {
+    return view('admin.mensajes');
+});
+
 //------------------------ RUTAS PROPIEDADES ------------------------
 // Route::get('/propiedades', function () {
 //     return view('propiedades.propiedades');

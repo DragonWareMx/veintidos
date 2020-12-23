@@ -117,3 +117,25 @@
 .div-datos-pssw{
     display: none;
 }
+.cardAdmin tr{
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+}
+.div-body-info{
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: pink; */
+    width: 50%;
+}
+.txt-modal-etiq{
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.txt-modal-info{
+    width: 100%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
