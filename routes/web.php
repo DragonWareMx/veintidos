@@ -26,10 +26,6 @@ Route::get('/notFound', function () {
     return view('notFound');
 });
 
-Route::get('/sideBar', function () {
-    return view('layouts.sideBar');
-});
-
 Route::get('/contactanos', function () {
     return view('contactanos');
 })->name('contactanos');
@@ -43,6 +39,9 @@ Route::get('/veintidos', function () {
 });
 
 // TESTEO------------------------------------------------------------------------
+Route::get('/sideBar', function () {
+    return view('layouts.sideBar');
+});
 
 Route::get('/aver', function () {
     if (Request::url() == route('caca')) {
@@ -57,22 +56,22 @@ Route::get('/sesion', function () {
     return view('BORRARalterminar');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 // ADMINISTRACIÓN------------------------------------------------------------------------
 Auth::routes(['register' => false]);
 
 Route::get('/admin', function () {
-    return view('layouts.admin');
-});
+    return redirect('/admin/inicio');
+})->middleware('auth');
 
 Route::get('/admin/inicio', function () {
     return view('admin.inicio');
-});
+})->middleware('auth');
 
 Route::get('/admin/cuenta', function () {
     return view('admin.cuenta');
-});
+})->middleware('auth');
 
 //------------------------ RUTAS PROPIEDADES ------------------------
 // Route::get('/propiedades', function () {
