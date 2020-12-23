@@ -43,6 +43,7 @@
     <div class="container">
         <div class="Odiv100 d-block">
             @if($propiedad)
+
                 {{-- NOS SIRVE PARA SABER QUÉ TIPO DE PROPIEDAD ES--}}
                 @php
                     $tipo;
@@ -69,6 +70,7 @@
                         $tipo = 'OFICINA';
                     @endphp
                 @endif
+
                 <div class="Otitle"><h1>PROPIEDADES | </h1><h2>{{ $tipo }}</h2></div>
 
                 <div class="border rounded-bottom shadow bg-white mt-4">
@@ -83,9 +85,15 @@
                                     {{-- Carousel --}}
                                     <div class="mx-auto mt-2" style="width: 95%;">
                                         <div class="owl-carousel owl-theme mx-auto owl-w">
-                                            <div class="item" style="width:110px; height:80px; background: url('{{ asset($propiedad->photo) }}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset($propiedad->photo) }}')"></div>
+                                            <div class="item" style="width:110px; height:80px; background: url('{{ asset($propiedad->photo) }}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset($propiedad->photo) }}'); setIndex(0)"></div>
+                                            @php
+                                                $index = 0;
+                                            @endphp
                                             @foreach ($propiedad->photos as $photo)
-                                                <div class="item" style="width:110px; height:80px; background: url('{{ asset($photo->path) }}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset($photo->path) }}')"></div>
+                                                @php
+                                                    $index++;
+                                                @endphp
+                                                <div class="item" style="width:110px; height:80px; background: url('{{ asset($photo->path) }}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset($photo->path) }}'); setIndex({{ $index }})"></div>
                                             @endforeach
                                         </div>
                                     </div>
@@ -95,82 +103,133 @@
                         <div class="col-xl">
                             {{-- NOMBRE DE LA PROPIEDAD --}}
                             <h5 class="px-2 pt-1 text-blue22" style="font-weight: 600;">
-                                ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA, Lorem ipsum dolor sit amet consectetur
+                                {{ $propiedad->title }}
                             </h5>
 
                             {{-- COSTO CLAVE Y COMPARTIR --}}
                             <div class="row align-items-end" style="padding-right: 2rem; padding-left: 0.5rem">
                                 <div class="col-7 text-left">
-                                    <p class="m-1" style="font-weight: 600; font-size: 24px;">$3,173,000</p>
+                                    <p class="m-1" style="font-weight: 600; font-size: 24px;">${{ number_format($propiedad->price, 2) }}</p>
                                 </div>
                                 <div class="col-5 text-right d-flex justify-content-between">
-                                    <p class="m-1">Clave: <b>8071</b></p>
+                                    <p class="m-1">Clave: <b>{{ $propiedad->id }}</b></p>
                                     <img class="ml-auto" style="width:17px; height:17px; " src="{{ asset('img/ico/share.png')}}" alt="">
                                 </div>
                             </div>
 
                             {{-- UBICACION --}}
+                            <div class="row" style="padding-right: 2rem; padding-left: 0.5rem">
+                                <div class="col-12 text-left d-flex mt-2">
+                                    <img class="m-1" style="width:17px; height:17px; " src="{{ asset('img/ico/ubicacion2.png')}}" alt="">
+                                    <p class="m-1">{{ $propiedad->street }}
+                                        @if ($propiedad->ext_number)
+                                            #{{ $propiedad->ext_number }}
+                                        @else
+                                            S/N
+                                        @endif,
+                                        @if ($propiedad->int_number)
+                                            número interior #{{ $propiedad->int_number }},
+                                        @endif
+                                        {{ $propiedad->suburb }},
+                                        {{ $propiedad->town }},
+                                        {{ $propiedad->state }},
+                                        México.
+                                    </p>
+                                </div>
+                            </div>
 
                             {{-- DATOS GENERALES --}}
-                            <div class="row px-2 mt-4">
-                                <div class="col">
-                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/estado.png')}}" alt="">
-                                    <b>Venta</b>
-                                </div>
-                                <div class="col">
-                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/casa.png')}}" alt="">
-                                    <b>Casa</b>
-                                </div>
-                                <div class="col">
+                            @switch($tipo)
+                                @case('CASA')
+                                    {{-- ESTADO / TIPO / TERRENO --}}
+                                    <div class="row px-2 mt-4">
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/estado.png')}}" alt="">
+                                            @if ($propiedad->deal == 'sale')
+                                                <b>Venta</b>
+                                            @else
+                                                <b>Renta</b>
+                                            @endif
+                                        </div>
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/casa.png')}}" alt="">
+                                            <b>Casa</b>
+                                        </div>
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/terreno2.png')}}" alt="">
+                                            <b>{{ $propiedad->house->terrain }} m<sup>2</sup></b>
+                                        </div>
+                                    </div>
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Estado
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Tipo
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Terreno
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {{-- RECAMARAS / BAÑOS / CONSTRUCCION --}}
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cama.png')}}" alt="">
+                                            <b>{{ $propiedad->house->bedrooms }}</b>
+                                        </div>
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/bath.png')}}" alt="">
+                                            <b>{{ $propiedad->house->bathrooms }}</b>
+                                        </div>
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/construccion.png')}}" alt="">
+                                            <b>{{ $propiedad->house->construction }} m<sup>2</sup></b>
+                                        </div>
+                                    </div>
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Recámaras
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Baños
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Construcción
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {{-- COCINAS / COCINAS INTEGRALES / COMEDORES --}}
+                                    {{-- SALAS / MEDIOS BAÑOS / PATIO --}}
+                                    {{-- PATIO DE SERVICIO / CUARTO DE SERVICIO / COCHERA --}}
+                                    {{-- ESTUDIOS / CISTERNA / PISOS --}}
+                                    {{-- VIGILANCIA / ANTIGUEDAD --}}
+                                    @break
+                                @case('DEPARTAMENTO')
                                     
-                                </div>
-                            </div>
-                            <div class="row px-2">
-                                <div class="col">
-                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
-                                        Estado
-                                    </p>
-                                </div>
-                                <div class="col">
-                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
-                                        Tipo
-                                    </p>
-                                </div>
-                                <div class="col">
+                                    @break
+                                @case('TERRENO')
                                     
-                                </div>
-                            </div>
-                            <div class="row px-2">
-                                <div class="col">
-                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cama.png')}}" alt="">
-                                    <b>4</b>
-                                </div>
-                                <div class="col">
-                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/bath.png')}}" alt="">
-                                    <b>2</b>
-                                </div>
-                                <div class="col">
-                                    <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/construccion.png')}}" alt="">
-                                    <b>190 m<sup>2</sup></b>
-                                </div>
-                            </div>
-                            <div class="row px-2">
-                                <div class="col">
-                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
-                                        Recámara
-                                    </p>
-                                </div>
-                                <div class="col">
-                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
-                                        Baños
-                                    </p>
-                                </div>
-                                <div class="col">
-                                    <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
-                                        Construcción
-                                    </p>
-                                </div>
-                            </div>
+                                    @break
+                                @case('ALMACÉN')
+                                    
+                                    @break
+                                @case('OFICINA')
+                                    
+                                    @break
+                                @default
+                                    
+                            @endswitch
 
                             {{-- DESCRIPCION --}}
                             <div class="row text-justify" style="padding-right: 2rem; padding-left: 0.5rem">
@@ -216,7 +275,6 @@
 
     //controla cuando se selecciona una imagen
     function clickImagen(nuevaImagen){
-        console.log(imagen);
         //hace que se muestre la nueva imagen en el visualizador
         pre.style.backgroundImage = "url('"+ nuevaImagen + "')";
 
@@ -296,50 +354,56 @@
 <script>
     var pswpElement = document.querySelectorAll('.pswp')[0];
 
-// build items array
-var openPhotoSwipe = function() {
-    var items = [
-        {
-            src: '{{asset("/")}}{{ $propiedad->photo }}',
-            w: 0,
-            h: 0
-        },
-        @foreach ($propiedad->photos as $photo)
+    var index = 0;
+
+    function setIndex(i){
+        index = i;
+    }
+
+    // build items array
+    var openPhotoSwipe = function() {
+        var items = [
             {
-                src: '{{asset("/")}}{{ $photo->path }}',
+                src: '{{asset("/")}}{{ $propiedad->photo }}',
                 w: 0,
                 h: 0
             },
-        @endforeach
-    ];
+            @foreach ($propiedad->photos as $photo)
+                {
+                    src: '{{asset("/")}}{{ $photo->path }}',
+                    w: 0,
+                    h: 0
+                },
+            @endforeach
+        ];
 
-    // define options (if needed)
-    var options = {
-        // optionName: 'option value'
-        // for example:
-        index: 0 // start at first slide
+        // define options (if needed)
+        var options = {
+            // optionName: 'option value'
+            // for example:
+            index: index // start at first slide
+        };
+
+        // Initializes and opens PhotoSwipe
+        var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+
+        gallery.listen('gettingData', function(index, item) {
+            if (item.w < 1 || item.h < 1) { // unknown size
+                var img = new Image(); 
+                img.onload = function() { // will get size after load
+                    item.w = this.width; // set image width
+                    item.h = this.height; // set image height
+                    gallery.invalidateCurrItems(); // reinit Items
+                    gallery.updateSize(true); // reinit Items
+                }
+                img.src = item.src; // let's download image
+            }
+        });
+
+        gallery.init();
     };
 
-    // Initializes and opens PhotoSwipe
-    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-
-    gallery.listen('gettingData', function(index, item) {
-        if (item.w < 1 || item.h < 1) { // unknown size
-            var img = new Image(); 
-            img.onload = function() { // will get size after load
-                item.w = this.width; // set image width
-                item.h = this.height; // set image height
-                gallery.invalidateCurrItems(); // reinit Items
-                gallery.updateSize(true); // reinit Items
-            }
-            img.src = item.src; // let's download image
-        }
-    });
-
-    gallery.init();
-};
-
-document.getElementById('imagen-seleccionada').onclick = openPhotoSwipe;
+    document.getElementById('imagen-seleccionada').onclick = openPhotoSwipe;
 </script>
     
 @endsection
