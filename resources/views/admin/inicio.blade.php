@@ -49,9 +49,12 @@ Inicio - Veintidós
         Selecciona "Cerrar sesión" si está listo para salir del sistema.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-          style="font-size: 15px">Cancelar</button>
-        <button type="button" class="btn btn-success" style="font-size: 15px">Cerrar sesión</button>
+        <form action="{{ route('logout') }}" method="post">
+          @csrf
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+            style="font-size: 15px">Cancelar</button>
+          <button type="submit" class="btn btn-success" style="font-size: 15px">Cerrar sesión</button>
+        </form>
       </div>
     </div>
   </div>

@@ -26,10 +26,6 @@ Route::get('/notFound', function () {
     return view('notFound');
 });
 
-Route::get('/sideBar', function () {
-    return view('layouts.sideBar');
-});
-
 Route::get('/contactanos', function () {
     return view('contactanos');
 })->name('contactanos');
@@ -42,7 +38,10 @@ Route::get('/veintidos', function () {
     return view('veintidos');
 });
 
-
+// TESTEO------------------------------------------------------------------------
+Route::get('/sideBar', function () {
+    return view('layouts.sideBar');
+});
 
 Route::get('/aver', function () {
     if (Request::url() == route('caca')) {
@@ -52,19 +51,27 @@ Route::get('/aver', function () {
     }
 })->name('caca');
 
+
+Route::get('/sesion', function () {
+    return view('BORRARalterminar');
+});
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
 // ADMINISTRACIÓN------------------------------------------------------------------------
+Auth::routes(['register' => false]);
 
 Route::get('/admin', function () {
-    return view('layouts.admin');
-});
+    return redirect('/admin/inicio');
+})->middleware('auth');
 
 Route::get('/admin/inicio', function () {
     return view('admin.inicio');
-});
+})->middleware('auth');
 
 Route::get('/admin/cuenta', function () {
     return view('admin.cuenta');
-});
+})->middleware('auth');
 
 Route::get('/agregar/propiedad', 'adminPropiedades@agregar')->name('agregarPropiedad');
 
@@ -74,6 +81,5 @@ Route::get('/agregar/propiedad', 'adminPropiedades@agregar')->name('agregarPropi
 //     return view('propiedades.propiedades');
 // });
 Route::get('/propiedades', 'propiedadesController@ver')->name('verPropiedades');
-Route::get('/propiedad', function () {
-    return view('propiedades.propiedad');
-});
+
+Route::get('/propiedad/{id}', 'propiedadesController@propiedad');
