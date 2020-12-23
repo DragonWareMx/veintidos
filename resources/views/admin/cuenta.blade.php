@@ -5,7 +5,6 @@ Cuenta - Veintidós
 @endsection
 
 @section('head')
-<link rel="stylesheet" href="{{ asset('/css/sideBar.css') }}">
 <script languague="javascript">
   function editar() {
       txt = document.getElementById('txt-editarC');
@@ -21,8 +20,8 @@ Cuenta - Veintidós
 @endsection
 
 @section('navbar')
-<a class="navbar-brand" onclick="history.go(-1)" style="cursor: pointer">
-  <img src="{{ asset('img/sistema/backwhite.png') }}" alt="" style="height:23px;width:23px">
+<a class="navbar-brand" onclick="history.go(-1)" style="cursor: pointer;">
+  <img src="{{ asset('img/sistema/backwhite.png') }}" alt="" style="height:23px;width:20px">
   &nbsp; Cuenta
 </a>
 @endsection
@@ -65,11 +64,11 @@ Cuenta - Veintidós
         <div class="mb-3">
           <label for="formEditar" class="form-label">Nombre</label>
           <input type="text" class="form-control" style="width: 100%" id="nombre"
-            placeholder="José Agustín Aguilar Solórzano">
+            placeholder="José Agustín Aguilar Solórzano" required>
         </div>
         <div class="mb-3">
           <label for="formEditar" class="form-label">Correo</label>
-          <input type="email" class="form-control" style="width: 100%" id="correo" placeholder="name@example.com">
+          <input type="email" class="form-control" style="width: 100%" id="correo" required placeholder="name@example.com">
         </div>
         <div class="mb-3">
           <label class="form-label" id="txt-editarC"><a href="javascript:editar();" style="color: #222B58;">Cambiar
@@ -78,15 +77,15 @@ Cuenta - Veintidós
         <div class="div-datos-pssw" id="div-datos-pssw">
           <div class="mb-3">
             <label for="formEditar" class="form-label">Contraseña actual</label>
-            <input type="password" class="form-control" style="width: 100%" id="contraseña">
+            <input type="password" class="form-control" required style="width: 100%" id="contraseña">
           </div>
           <div class="mb-3">
             <label for="formEditar" class="form-label">Contraseña nueva</label>
-            <input type="password" class="form-control" style="width: 100%" id="contraseñaNueva">
+            <input type="password" class="form-control" required style="width: 100%" id="contraseñaNueva">
           </div>
           <div class="mb-3">
             <label for="formEditar" class="form-label">Confirmar contraseña</label>
-            <input type="password" class="form-control" style="width: 100%" id="contraseñaConf">
+            <input type="password" class="form-control"  required style="width: 100%" id="contraseñaConf">
           </div>
         </div>
       </div>

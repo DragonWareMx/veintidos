@@ -66,6 +66,10 @@ Route::get('/admin/cuenta', function () {
     return view('admin.cuenta');
 });
 
+Route::get('/admin/mensajes', function () {
+    return view('admin.mensajes');
+});
+
 //------------------------ RUTAS PROPIEDADES ------------------------
 // Route::get('/propiedades', function () {
 //     return view('propiedades.propiedades');

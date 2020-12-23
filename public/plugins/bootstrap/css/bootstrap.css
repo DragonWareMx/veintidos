@@ -1972,7 +1972,7 @@ progress {
   --bs-table-active-color: #212529;
   --bs-table-active-bg: rgba(0, 0, 0, 0.1);
   --bs-table-hover-color: #212529;
-  --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+  --bs-table-hover-bg: rgba(230, 234, 253, 1);
   width: 100%;
   margin-bottom: 1rem;
   color: #212529;
@@ -2005,6 +2005,7 @@ progress {
 
 .table-bordered > :not(caption) > * {
   border-width: 1px 0;
+  border-right: 0px transparent;
 }
 .table-bordered > :not(caption) > * > * {
   border-width: 0 1px;
@@ -3984,10 +3985,11 @@ textarea.form-control-lg {
   justify-content: space-between;
 }
 .navbar-brand {
+  font-weight: 600;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
   margin-right: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -4254,6 +4256,7 @@ textarea.form-control-lg {
   box-shadow: 0px 2px 8px rgba(63, 63, 63, 0.2);
   border-radius: 2px;
   margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .cardAdmin h1{
@@ -4553,7 +4556,7 @@ textarea.form-control-lg {
 .page-link {
   position: relative;
   display: block;
-  color: #0d6efd;
+  color: #222B58;
   text-decoration: none;
   background-color: #fff;
   border: 1px solid #dee2e6;
@@ -4566,16 +4569,17 @@ textarea.form-control-lg {
 }
 .page-link:hover {
   z-index: 2;
-  color: #0a58ca;
+  color: #222B58;
   background-color: #e9ecef;
   border-color: #dee2e6;
 }
 .page-link:focus {
   z-index: 3;
-  color: #0a58ca;
+  color: #222B58;
   background-color: #e9ecef;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  /* HERE */
+  box-shadow: 0 0 0 0.25rem rgba(2, 46, 112, 0.25);
 }
 
 .page-item:not(:first-child) .page-link {
@@ -4584,8 +4588,8 @@ textarea.form-control-lg {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: #222B58;
+  border-color: #222B58;
 }
 .page-item.disabled .page-link {
   color: #6c757d;
