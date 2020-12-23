@@ -36,6 +36,8 @@
             @yield('content')
     </main>
 
+    @yield('photoswipe')
+
     @include('subviews.footer')
 </body>
 </html>

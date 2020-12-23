@@ -29,6 +29,8 @@ class CreatePropertiesTable extends Migration
             $table->string('city', 255)->nullable();                                //ciudad
             $table->string('state', 255);                                           //estado
 
+            $table->string('title', 255);                                           //titulo de la casas
+
             $table->enum('deal', ['sale','rent']);                                  //indica si la propiedad esta en renta o venta
             $table->decimal('price', 11, 2);                                        //precio de la propiedad
             $table->enum('status', ['available','occupied','deleted']);             //estatus de la propiedad

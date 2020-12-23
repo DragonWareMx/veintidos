@@ -25,10 +25,11 @@ class properties_table extends Seeder
             'price'=>2500000,
             'status'=>'available',
             'photo'=>'img/photos/casa1.jpg',
+            'title'=>'Casa lujosa de 3 pisos en el CENTRO DE MORELIA'
         ]);
         DB::table('photos')->insert([
             'propertie_id'=>1,
-            'path'=>'img/photos/casa1.1jpg',
+            'path'=>'img/photos/casa1.1.jpg',
         ]);
         DB::table('photos')->insert([
             'propertie_id'=>1,
@@ -73,6 +74,7 @@ class properties_table extends Seeder
             'price'=>7000,
             'status'=>'available',
             'photo'=>'img/photos/apato1.jpeg',
+            'title'=>'Departamento en el edificio más lujoso de Tacámbaro!!!!'
         ]);
         DB::table('photos')->insert([
             'propertie_id'=>2,
@@ -122,6 +124,7 @@ class properties_table extends Seeder
             'price'=>200000,
             'status'=>'available',
             'photo'=>'img/photos/terreno1.jpeg',
+            'title'=>'El terreno más grande y a mejor precio en TODO MORELIA!!'
         ]);
         DB::table('photos')->insert([
             'propertie_id'=>3,
