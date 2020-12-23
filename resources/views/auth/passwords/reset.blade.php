@@ -1,73 +1,44 @@
-@extends('layouts.app')
+@extends('layouts.login')
+
+@section('title')
+Reestablecer contraseña
+@endsection
+
+@section('left-title')
+Reestablecer Contraseña
+@endsection
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('password.update') }}">
-                        @csrf
-
-                        <input type="hidden" name="token" value="{{ $token }}">
-
-                        <div class="form-group row">
-                            <label for="email"
-                                class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                    name="email" value="{{ $email ?? old('email') }}" required autocomplete="email"
-                                    autofocus>
-
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password"
-                                class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password"
-                                    class="form-control @error('password') is-invalid @enderror" name="password"
-                                    required autocomplete="new-password">
-
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm"
-                                class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control"
-                                    name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Reset Password') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+@if (session('status'))
+<div class="alert alert-success" role="alert">
+    {{ session('status') }}
 </div>
+@endif
+<p class="iniciar-sesion right" style="color: #FFFFFF">
+    Reestablecer contraseña
+</p>
+<form class="form-signin" method="POST" action="{{ route('password.update') }}">
+    @csrf
+    <input type="hidden" name="token" value="{{ $token }}">
+    <label class="text-login mt-2">Correo</label>
+    <input type="email" id="email" class="form-control trial-input" placeholder="correo@ejemplo.com" name="email"
+        value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
+    <label class="text-login mt-4">Contraseña</label>
+    <input type="password" id="password" class="form-control trial-input" name="password" required
+        autocomplete="new-password">
+    <label class="text-login mt-4">Confirmar contraseña</label>
+    <input type="password" id="password-confirm" class="form-control trial-input" name="password_confirmation" required
+        autocomplete="new-password">
+    @error('password')
+    <span class="error-login my-2" role="alert">
+        <strong>{{ $message }}</strong>
+    </span>
+    @enderror
+    @error('email')
+    <span class="error-login my-2" role="alert">
+        <strong>{{ $message }}</strong>
+    </span>
+    @enderror
+    <button class="btn btn-custom w-100 mt-3">Reestablecer contraseña</button>
+</form>
 @endsection
