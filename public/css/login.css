@@ -20,7 +20,7 @@ body {
   .card-signin {
     border: 0;
     border-radius: 0;
-    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1); */
     overflow: hidden;
   }
 
@@ -31,18 +31,79 @@ body {
   }
 
   .card-signin .card-img-left {
-    width: 35%;
+    width: 30%;
     /* Link to your background image using in the property below! */
 
   }
 
+  .vilecard{
+    width: 100%;
+    height: 70%;
+    margin: auto 0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #FFFFFF;
+    padding: 30px 25px 10px 25px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .vilecard p{
+    text-align: center;
+  }
+
+  .iniciar-sesion{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+    text-transform: capitalize;
+
+    color: #222222;
+  }
+
+  .slogan{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    text-transform: capitalize;
+
+    color: #222222;
+
+  }
+
+  .copyright{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .login-input{
+    background: #404871 !important;
+    border-radius: 5px !important;
+    width: 100%;
+  }
+  .card-login img{
+    width: calc(645px * 0.3);
+    height: calc(245px * 0.3);
+  }
+  .card-img-left{
+    width: 30%;;
+  }
+
   .card-signin .card-body {
-    padding: 2rem;
+    padding: 5rem 2rem;
   }
 
   .card-login{
     background: #222B58;
-
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.25);
   }
 
   .form-signin {
@@ -129,3 +190,103 @@ body {
     color: white;
     background-color: #3b5998;
   }
+
+
+  /*8adsasdadsa*/
+
+  .form-control{
+    box-shadow: none !important;
+    color: #fff;
+    height: 46px;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-control:focus{
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.account_box .form-control::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.account_box .form-control::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.account_box .form-control:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.account_box .form-control:-moz-placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.text-login{
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  color:  #FFFFFF;
+}
+
+.olvidaste-text{
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 15px;
+
+  color: #FFFFFF;
+  text-decoration: none !important;
+  float: right;
+}
+
+.olvidaste-text:hover{
+  color: #cfcfcf;
+}
+
+.btn-custom {
+  background-color: #FFFFFF;
+  border: 2px solid #404871 !important;
+  border-radius: 0 !important;
+  color: #404871;
+  font-size: 14px;
+  transition: all 0.5s;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  font-family: Roboto;
+}
+.btn-custom:hover{
+  opacity: 0.8;
+}
+
+@media only screen and (max-width: 460px) {
+  .card-body{
+    padding: 4rem 1rem !important;
+  }
+}
+
+.error-login{
+  color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 14px;
+  float: left;
+}
+
+@media only screen and (max-width: 767px) {
+  .iniciar-sesion.right{
+    display: block !important;
+  }
+}
+
+.iniciar-sesion.right{
+  display: none;
+}
