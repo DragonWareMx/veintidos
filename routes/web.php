@@ -63,14 +63,12 @@ Auth::routes(['register' => false]);
 
 Route::get('/admin', 'adminController@index')->name('adminIndex');
 
-// ->middleware('auth');
+Route::get('/admin/cuenta', 'adminController@cuenta')->name('cuenta');
+
+Route::patch('/admin/cuenta/{id}', 'adminController@cuentaUpdate')->name('cuenta-update');
 
 Route::get('/admin/inicio', function () {
     return view('admin.inicio');
-})->middleware('auth');
-
-Route::get('/admin/cuenta', function () {
-    return view('admin.cuenta');
 })->middleware('auth');
 
 Route::get('/admin/agregar/propiedad', 'adminPropiedades@agregar')->name('agregarPropiedad');
