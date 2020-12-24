@@ -24,15 +24,14 @@ Inicio - Veintidós
   <div class="card-body">
     <h1 style="color:#222222">Bienvenido de nuevo</h1>
     <p class="txt-resumen">Resumen</p>
-    <p class="txt-resumen txt-totalP">Total de propiedades: 247</p>
+    <p class="txt-resumen txt-totalP">Total de propiedades: {{$propiedades}}</p>
     <div class="div-rowP">
-      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/casa2.png')}}" alt="">Casas<div>(578)</div></a>
-      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/departamentos.png')}}" alt="">Departamentos<div>(1599)
-        </div></a>
-      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/local.png')}}" alt="">Locales<div>(34)</div></a>
-      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/oficina.png')}}" alt="">Oficinas<div>(6)</div></a>
-      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/terreno.png')}}" alt="">Terrenos<div>(42)</div></a>
-      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/bodega.png')}}" alt="">Bodegas<div>(8)</div></a>
+      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/casa2.png')}}" alt="">Casas<div>({{$casas}})</div></a>
+      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/departamentos.png')}}" alt="">Departamentos<div>({{$departamentos}})</div></a>
+      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/local.png')}}" alt="">Locales<div>({{$locales}})</div></a>
+      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/oficina.png')}}" alt="">Oficinas<div>({{$oficinas}})</div></a>
+      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/terreno.png')}}" alt="">Terrenos<div>({{$terrenos}})</div></a>
+      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/bodega.png')}}" alt="">Bodegas<div>({{$bodegas}})</div></a>
     </div>
     <div class="div-cerrar-sesion">
       <a href="#" class="a-cerrar-sesion" data-bs-toggle="modal" data-bs-target="#cerrar-sesion">Cerrar sesión<img
@@ -58,6 +57,8 @@ Inicio - Veintidós
           @csrf
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
             style="font-size: 15px">Cancelar</button>
+            <form action="{{route('logout')}}" method="POST">
+              {{csrf_field()}}
           <button type="submit" class="btn btn-success" style="font-size: 15px">Cerrar sesión</button>
         </form>
       </div>

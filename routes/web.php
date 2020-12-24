@@ -61,9 +61,9 @@ Route::get('/sesion', function () {
 // ADMINISTRACIÓN------------------------------------------------------------------------
 Auth::routes(['register' => false]);
 
-Route::get('/admin', function () {
-    return redirect('/admin/inicio');
-})->middleware('auth');
+Route::get('/admin', 'adminController@index')->name('adminIndex');
+
+// ->middleware('auth');
 
 Route::get('/admin/inicio', function () {
     return view('admin.inicio');
@@ -74,7 +74,6 @@ Route::get('/admin/cuenta', function () {
 })->middleware('auth');
 
 Route::get('/admin/agregar/propiedad', 'adminPropiedades@agregar')->name('agregarPropiedad');
-
 
 Route::get('/admin/mensajes', function () {
     return view('admin.mensajes');
