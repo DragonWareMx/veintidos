@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Mensajes - Veintidós
+Solicitudes - Veintidós
 @endsection
 
 @section('head')
@@ -40,7 +40,7 @@ Mensajes - Veintidós
 @section('content')
 <div class="card cardAdmin">
     <div class="card-body">
-        <h1 style="font-size: 20px; margin-bottom:20px">Interesados en comprar o rentar una propiedad</h1>
+        <h1 style="font-size: 20px; margin-bottom:20px">Solicitudes para añadir propiedades</h1>
         <div class="table-responsive-xl">
             <table class="table table-hover table-bordered justify-content-center">
                 <thead>
@@ -50,7 +50,7 @@ Mensajes - Veintidós
                       <th scope="col">NOMBRE</th>
                       <th scope="col">TELÉFONO</th>
                       <th scope="col">COMPRA/RENTA</th>
-                      <th scope="col">PROPIEDAD</th>
+                      <th scope="col">TIPO</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,7 +60,7 @@ Mensajes - Veintidós
                         <td>José Agustín Aguilar Solórzano</td>
                         <td>4444444444</td>
                         <td>Compra</td>
-                        <td>8071</td>
+                        <td>Casa</td>
                     </tr>
                     <tr>
                         <th scope="row">1</th>
@@ -68,7 +68,7 @@ Mensajes - Veintidós
                         <td>José Agustín Aguilar Solórzano</td>
                         <td>4444444444</td>
                         <td>Compra</td>
-                        <td>8071</td>
+                        <td>Casa</td>
                     </tr>
                     <tr>
                         <th scope="row">1</th>
@@ -76,7 +76,7 @@ Mensajes - Veintidós
                         <td>José Agustín Aguilar Solórzano</td>
                         <td>4444444444</td>
                         <td>Compra</td>
-                        <td>8071</td>
+                        <td>Casa</td>
                     </tr>
                     <tr>
                         <th scope="row">1</th>
@@ -84,7 +84,7 @@ Mensajes - Veintidós
                         <td>José Agustín Aguilar Solórzano</td>
                         <td>4444444444</td>
                         <td>Compra</td>
-                        <td>8071</td>
+                        <td>Casa</td>
                       </tr>
                     <tr>
                         <th scope="row">1</th>
@@ -92,7 +92,7 @@ Mensajes - Veintidós
                         <td>José Agustín Aguilar Solórzano</td>
                         <td>4444444444</td>
                         <td>Compra</td>
-                        <td>8071</td>
+                        <td>Casa</td>
                     </tr>
                     <tr>
                         <th scope="row">1</th>
@@ -100,7 +100,7 @@ Mensajes - Veintidós
                         <td>José Agustín Aguilar Solórzano</td>
                         <td>4444444444</td>
                         <td>Compra</td>
-                        <td>8071</td>
+                        <td>Casa</td>
                     </tr>
                     <tr>
                       <th scope="row">1</th>
@@ -108,7 +108,7 @@ Mensajes - Veintidós
                       <td>José Agustín Aguilar Solórzano</td>
                       <td>4444444444</td>
                       <td>Compra</td>
-                      <td>8071</td>
+                      <td>Casa</td>
                     </tr>
                     <tr>
                         <th scope="row">1</th>
@@ -116,7 +116,7 @@ Mensajes - Veintidós
                         <td>José Agustín Aguilar Solórzano</td>
                         <td>4444444444</td>
                         <td>Compra</td>
-                        <td>8071</td>
+                        <td>Casa</td>
                     </tr>
                     <tr>
                         <th scope="row">1</th>
@@ -124,7 +124,7 @@ Mensajes - Veintidós
                         <td>José Agustín Aguilar Solórzano</td>
                         <td>4444444444</td>
                         <td>Compra</td>
-                        <td>8071</td>
+                        <td>Casa</td>
                     </tr>
                 </tbody>
             </table>
@@ -154,14 +154,13 @@ Mensajes - Veintidós
 
 <!-- Modal info-->
 <div class="modal fade" id="modalInfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered  modal-xl">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Mensajes</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Solicitudes</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" style="font-weight: 400; color:#8c8d8f; display:flex; flex-wrap:wrap">
-          <div class="div-body-info">
               <p class="txt-modal-etiq">Id:</p>
               <p class="txt-modal-info">48</p>
               <p class="txt-modal-etiq">Estado:</p>
@@ -178,22 +177,18 @@ Mensajes - Veintidós
               <p class="txt-modal-info">4444444444</p>
               <p class="txt-modal-etiq">Compra/Renta:</p>
               <p class="txt-modal-info">Compra</p>
-              <p class="txt-modal-etiq">Comentarios:</p>
+              <p class="txt-modal-etiq">Tipo de propiedad:</p>
+              <p class="txt-modal-info">Casa</p>
+              <p class="txt-modal-etiq">Precio propuesto:</p>
+              <p class="txt-modal-info">$1,587,00</p>
+              <p class="txt-modal-etiq">Dirección:</p>
+              <p class="txt-modal-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <p class="txt-modal-etiq">Descripción:</p>
               <p class="txt-modal-info" style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi illum quis laudantium blanditiis labore! Natus dolore dolores iure vitae nisi quis blanditiis, odio ab ad repellendus maxime perferendis quae omnis.</p>
-          </div>
-          <div class="div-body-propiedad">
-            <div class="div-modal-propiedad">
-              <img class="img-propiedad-modal" src="{{ asset('img/photos/casa1.1.jpg') }}">
-              <div class="div-info-propiedad">
-                <p class="txt-title-mod-p"><a href="#">ESTRENA CASA EN VENTA EN FRACC. MIRASOLES, MORELIA...</a></p>
-                <p><i class="fas fa-map-marker-alt"></i>Fracc. Mirasoles, Morelia.</p>
-                <p>$3,173,00</p>
-                <p style="margin-bottom: 0px">Clave: <b>8071</b></p>
-              </div>
-            </div>
-            
-          </div>
+              
+              <a href="#" style="margin-top: 10px; color:#222B58; font-size:14px">Agregar propiedad</a>
         </div>
+
         <div class="modal-footer">
           <div  id="edit-estado-modal-btns">
             <a href="javascript:noeditar();"><button type="button" class="btn btn-secondary" 

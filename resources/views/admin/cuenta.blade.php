@@ -13,8 +13,11 @@ Cuenta - Veintidós
       div.style.display = 'block';
   }
   function cerrar() {
+    txt = document.getElementById('txt-editarC');
       div = document.getElementById('div-datos-pssw');
       div.style.display = 'none';
+      txt.style.display = 'block';
+      $('#editar-datos').modal('hide'); 
   }
 </script>
 @endsection
@@ -32,7 +35,7 @@ Cuenta - Veintidós
     <div class="div-info-cuenta">
       <div class="div-foto-cuenta">
         <img src="{{ asset('img/sistema/userphoto.png')}}" alt="">
-        <div><a href="javascript:cerrar();" class="a-cerrar-sesion" data-bs-toggle="modal"
+        <div><a href="#" class="a-cerrar-sesion" data-bs-toggle="modal"
             data-bs-target="#editar-datos">Editar datos<img src="{{ asset('img/sistema/edit.png')}}"
               style="height:12px; width: 13px; margin-left:10px; margin-bottom:2px" alt=""></a></div>
       </div>
@@ -90,8 +93,8 @@ Cuenta - Veintidós
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-          style="font-size: 15px">Cancelar</button>
+        <a href="javascript:cerrar();"><button type="button" class="btn btn-secondary" 
+          style="font-size: 15px">Cancelar</button></a>
         <button type="button" class="btn btn-success" style="font-size: 15px">Guardar</button>
       </div>
     </div>
