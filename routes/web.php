@@ -89,4 +89,7 @@ Route::get('/admin/mensajes', function () {
 Route::get('/propiedades', 'propiedadesController@ver')->name('verPropiedades');
 
 //VER UNA PROPIEDAD
-Route::get('/propiedad/{id}', 'propiedadesController@propiedad');
+Route::get('/propiedad/{id}', 'propiedadesController@propiedad')->name('propiedad');
+
+//PROPUESTA DE PROPIEDAD
+Route::post('/propiedad/{id}', 'propiedadesController@propuesta');

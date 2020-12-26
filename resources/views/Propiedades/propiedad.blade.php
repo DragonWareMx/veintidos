@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="{{ asset('/plugins/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css') }}">
 
     <script src="{{ asset('/plugins/OwlCarousel2-2.3.4/dist/owl.carousel.min.js') }}"></script>
+
+    {{-- VALIDACION --}}
+    <script src="http://parsleyjs.org/dist/parsley.js"></script>
     
     <style>
         .owl-w{
@@ -18,6 +21,11 @@
         }
         .pswp {
             z-index: 99999;
+        }
+
+        .btnC-b:focus, .btnC-b:active{
+            outline: none !important;
+            box-shadow: none;
         }
     </style>
 
@@ -448,11 +456,66 @@
                             @endif
                         </div>
                     </div>
-                    <div class="row px-4 d-flex flex-row-reverse my-4">
-                        <div style="width: fit-content">
-                            <button type="button" class="btn btn-primary" style="background: #58AD30; border-color: #58AD30;"><b>Me interesa</b></button>
+
+                    <form class="Agregar-propiedades-margin-top container" id="formMI" action="/propiedad/{{ $propiedad->id }}" method="POST">
+                        @csrf
+                        {{-- FORMULARIO --}}
+                        <div class="row px-4" id="formularioMI" style="display: none">
+                            <h5 class="px-2 pt-1 text-blue22" style="font-weight: 600;">
+                                Información de contacto
+                            </h5>
+                            <p>Favor de llenar los siguiente datos y un asesor en breve le contactará.</p>
+
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="form-group">
+                                        <label class="text-blue22" style="font-weight: 600" for="nombre">Nombre *</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" autocomplete="off" placeholder="Nombre completo" required data-parsley-pattern="[a-zA-Z áéíóúÁÉÍÓÚ]+$" data-parsley-trigger="keyup" data-parsley-error-message="El texto introducido no es válido.">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="text-blue22" style="font-weight: 600" for="email">Correo electrónico</label>
+                                        <input type="text" class="form-control" id="email" name="email" placeholder="Correo electrónico" data-parsley-type="email" data-parsley-trigger="keyup"  data-parsley-error-message="El correo electrónico introducido no es válido.">
+                                    </div>
+                                </div>
+                                <div class="col-sm">
+                                    <div class="form-group">
+                                        <label class="text-blue22" style="font-weight: 600" for="tel">Número de teléfono *</label>
+                                        <input type="text" class="form-control" id="tel" name="tel" placeholder="Número de teléfono" data-parsley-debounce="500" 
+                                        data-parsley-type="digits" 
+                                        data-parsley-minlength="10" 
+                                        data-parsley-maxlength="50"
+                                        data-parsley-minlength-message="El número puede tener como mínimo 10 dígitos."
+                                        data-parsley-maxlength-message="El número puede tener como máximo 50 dígitos."
+                                        data-parsley-type-message="Sólo se admiten dígitos.">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="text-blue22" style="font-weight: 600" for="comentario">Comentarios</label>
+                                        <textarea class="form-control" id="comentario" name="comentario" rows="3" placeholder="Comentarios (máximo 255 caracteres)" data-parsley-maxlength="255" data-parsley-maxlength-message="El comentario puede tener como máximo 255 caracteres." data-parsley-pattern="[a-zA-Z áéíóúÁÉÍÓÚ]+$" data-parsley-trigger="keyup"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <p>
+                                    * Campos obligatorios       
+                                </p>
+                                <p class="mb-0">
+                                    Al hacer clic en “Enviar” aceptas nuestros Términos y condiciones, asi como el Aviso de privacidad.
+                                </p>
+                            </div>
+
                         </div>
-                    </div>
+                        <div class="row px-4 d-flex flex-row-reverse my-4">
+                            <div style="width: fit-content" id="btnMI" style="display: block">
+                                <button type="button" class="btn btn-primary" style="background: #58AD30; border-color: #58AD30;" onclick="btnMI()"><b>Me interesa</b></button>
+                            </div>
+                            <div style="width: fit-content; display: none;" id="enviarFORM">
+                                <button type="submit" class="btn btn-primary" style="background: #58AD30; border-color: #58AD30;" id="submit"><b>Enviar</b></button>
+                            </div>
+                            <div style="width: fit-content; display: none;" id="btnC">
+                                <button type="button" class="btn btn-link btnC-b" style="color: #58AD30; text-decoration: none;" onclick="btnC()"><b>Cancelar</b></button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             @endif
 
@@ -462,29 +525,85 @@
 
     <script>
 
+        //OWL CAROUSEL
         $(document).ready(function(){
             $('.owl-carousel').owlCarousel({
                 margin:10,
                 loop:false,
                 autoWidth:true,
                 items:4,
-            })
+            });
+
+            $('#formMI').parsley();
+
+            // $('#formMI').on('submit', function(event){
+            //     event.preventDefault();
+
+            //     if($('#formMI').parsley().isValid())
+            //     {
+            //         $.ajax({
+            //             url: '/propiedad/{{ $propiedad->id }}',
+            //             method:"POST",
+            //             data:$(this).serialize(),
+            //             dataType:"json",
+            //             beforeSend:function()
+            //             {
+            //                 $('#submit').attr('disabled', 'disabled');
+            //                 $('#submit').val('Submitting...');
+            //             },
+            //             success:function(data)
+            //             {
+            //                 $('#formMI')[0].reset();
+            //                 $('#formMI').parsley().reset();
+            //                 $('#submit').attr('disabled', false);
+            //                 $('#submit').val('Submit');
+            //                 alert(data.success);
+            //             }
+            //         });
+            //     }
+            // });
         });
 
-        
-    //pre es el elemento donde se muestra la previsualizacion de la imagen seleccionada
-    //"imagen-seleccionada" es el visualizador de la imagen
-    var pre = document.getElementById("imagen-seleccionada");
-    //imagen es la imagen que se ha seleccionado
-    var imagen = pre.style.backgroundImage;
+        //IMAGEN GALERIA
 
-    //controla cuando se selecciona una imagen
-    function clickImagen(nuevaImagen){
-        //hace que se muestre la nueva imagen en el visualizador
-        pre.style.backgroundImage = "url('"+ nuevaImagen + "')";
+        //pre es el elemento donde se muestra la previsualizacion de la imagen seleccionada
+        //"imagen-seleccionada" es el visualizador de la imagen
+        var pre = document.getElementById("imagen-seleccionada");
+        //imagen es la imagen que se ha seleccionado
+        var imagen = pre.style.backgroundImage;
 
-        imagen = nuevaImagen;
-    }
+        //controla cuando se selecciona una imagen
+        function clickImagen(nuevaImagen){
+            //hace que se muestre la nueva imagen en el visualizador
+            pre.style.backgroundImage = "url('"+ nuevaImagen + "')";
+
+            imagen = nuevaImagen;
+        }
+
+        //FORMULARIO
+        function btnMI() {
+            //APARECE EL FORMILARIO
+            document.getElementById("formularioMI").style.display = "block";
+
+            //DESAPARECE EL BOTON ME INTERESA
+            document.getElementById("btnMI").style.display = "none";
+
+            //APARECEN LOS BOTONES CANELAR Y ENVIAR
+            document.getElementById("btnC").style.display = "block";
+            document.getElementById("enviarFORM").style.display = "block";
+        }
+
+        function btnC(){
+            //DESAPARECE EL FORMILARIO
+            document.getElementById("formularioMI").style.display = "none";
+
+            //APARECE EL BOTON ME INTERESA
+            document.getElementById("btnMI").style.display = "block";
+
+            //DESAPARECEN LOS BOTONES CANELAR Y ENVIAR
+            document.getElementById("btnC").style.display = "none";
+            document.getElementById("enviarFORM").style.display = "none";
+        }
     </script>
 @endsection
 

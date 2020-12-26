@@ -83,4 +83,8 @@ class propiedadesController extends Controller
         $propiedad=Propertie::find($id);
         return view('Propiedades.propiedad',['propiedad'=>$propiedad]);
     }
+
+    public function propuesta(Request $request, $id){
+        dd($request);
+    }
 }
