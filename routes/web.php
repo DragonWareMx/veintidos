@@ -72,6 +72,7 @@ Route::get('/admin/inicio', function () {
 })->middleware('auth');
 
 Route::get('/admin/agregar/propiedad', 'adminPropiedades@agregar')->name('agregarPropiedad');
+Route::post('/admin/agregar/propiedad', 'adminPropiedades@agregarPost')->name('agregarPropiedadPost');
 
 Route::get('/admin/mensajes', function () {
     return view('admin.mensajes');
