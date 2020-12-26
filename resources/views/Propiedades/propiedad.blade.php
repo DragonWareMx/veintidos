@@ -36,7 +36,11 @@
     <script src="{{ asset('/plugins/PhotoSwipe/dist/photoswipe.min.js') }}"></script> 
 
     <!-- UI JS file -->
-    <script src="{{ asset('/plugins/PhotoSwipe/dist/photoswipe-ui-default.min.js') }}"></script> 
+    <script src="{{ asset('/plugins/PhotoSwipe/dist/photoswipe-ui-default.min.js') }}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
 @endsection
 @section('content')
@@ -107,13 +111,29 @@
                             </h5>
 
                             {{-- COSTO CLAVE Y COMPARTIR --}}
-                            <div class="row align-items-end" style="padding-right: 2rem; padding-left: 0.5rem">
-                                <div class="col-7 text-left">
+                            <div class="row" style="padding-right: 2rem; padding-left: 0.5rem">
+                                <div class="col-sm-7 text-left">
                                     <p class="m-1" style="font-weight: 600; font-size: 24px;">${{ number_format($propiedad->price, 2) }}</p>
                                 </div>
-                                <div class="col-5 text-right d-flex justify-content-between">
-                                    <p class="m-1">Clave: <b>{{ $propiedad->id }}</b></p>
-                                    <img class="ml-auto" style="width:17px; height:17px; " src="{{ asset('img/ico/share.png')}}" alt="">
+                                <div class="col-sm-5 text-right">
+                                    <div class="row my-1">
+                                        <div class="col text-left"><p class="m-1">Clave: <b>{{ $propiedad->id }}</b></p></div>
+                                        <div class="col">
+                                            <div class="dropdown show pl-5">
+                                                <img class="ml-auto" style="width:17px; height:17px; " src="{{ asset('img/ico/share.png')}}" alt="" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+                                                {{-- <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Dropdown link
+                                                </a> --}}
+                                                
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                    <a class="dropdown-item" href="#">Facebook</a>
+                                                    <a class="dropdown-item" href="#">Instagram</a>
+                                                    <a class="dropdown-item" href="#">Whatsapp</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -210,10 +230,194 @@
                                         </div>
                                     </div>
                                     {{-- COCINAS / COCINAS INTEGRALES / COMEDORES --}}
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            {{-- <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cama.png')}}" alt=""> --}}
+                                            <b>{{ $propiedad->house->kitchens }}</b>
+                                        </div>
+                                        <div class="col">
+                                            {{-- <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/bath.png')}}" alt=""> --}}
+                                            @if ($propiedad->house->integral_kitchen)
+                                                <b>Si</b>
+                                            @else
+                                                <b>No</b>
+                                            @endif
+                                        </div>
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/comedor.png')}}" alt="">
+                                            <b>{{ $propiedad->house->dining_rooms }}</b>
+                                        </div>
+                                    </div>
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Cocinas
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Cocina Integral
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Comedores
+                                            </p>
+                                        </div>
+                                    </div>
                                     {{-- SALAS / MEDIOS BAÑOS / PATIO --}}
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/sala.png')}}" alt="">
+                                            <b>{{ $propiedad->house->living_rooms }}</b>
+                                        </div>
+                                        <div class="col">
+                                            {{-- <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/bath.png')}}" alt=""> --}}
+                                            <b>{{ $propiedad->house->half_bathrooms }}</b>
+                                        </div>
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/patio.png')}}" alt="">
+                                            @if ($propiedad->house->yard)
+                                                <b>Si</b>
+                                            @else
+                                                <b>No</b>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Salas
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Medios Baños
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Patio
+                                            </p>
+                                        </div>
+                                    </div>
                                     {{-- PATIO DE SERVICIO / CUARTO DE SERVICIO / COCHERA --}}
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            {{-- <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cama.png')}}" alt=""> --}}
+                                            @if ($propiedad->house->service_yard)
+                                                <b>Si</b>
+                                            @else
+                                                <b>No</b>
+                                            @endif
+                                        </div>
+                                        <div class="col">
+                                            {{-- <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/bath.png')}}" alt=""> --}}
+                                            @if ($propiedad->house->service_room)
+                                                <b>Si</b>
+                                            @else
+                                                <b>No</b>
+                                            @endif
+                                        </div>
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cochera.png')}}" alt="">
+                                            <b>{{ $propiedad->house->garages }}</b>
+                                        </div>
+                                    </div>
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Patio de Servicio
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Cuarto de Servicio
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Cocheras
+                                            </p>
+                                        </div>
+                                    </div>
                                     {{-- ESTUDIOS / CISTERNA / PISOS --}}
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/estudio.png')}}" alt="">
+                                            <b>{{ $propiedad->house->home_office }}</b>
+                                        </div>
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cistern.png')}}" alt="">
+                                            @if ($propiedad->house->cistern)
+                                                <b>Si</b>
+                                            @else
+                                                <b>No</b>
+                                            @endif
+                                        </div>
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/pisos.png')}}" alt="">
+                                            <b>{{ $propiedad->house->floors }}</b>
+                                        </div>
+                                    </div>
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Estudios
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Cisterna
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Pisos
+                                            </p>
+                                        </div>
+                                    </div>
                                     {{-- VIGILANCIA / ANTIGUEDAD --}}
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/security.png')}}" alt="">
+                                            @if ($propiedad->house->security_vigilance)
+                                                <b>Si</b>
+                                            @else
+                                                <b>No</b>
+                                            @endif
+                                        </div>
+                                        <div class="col">
+                                            {{-- <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/bath.png')}}" alt=""> --}}
+                                            @if ($propiedad->house->antiquity < 1)
+                                                <b>Nueva</b>
+                                            @elseif($propiedad->house->antiquity == 1)
+                                                <b>1 año</b>
+                                            @else
+                                                <b>{{ $propiedad->house->antiquity }} años</b> 
+                                            @endif
+                                        </div>
+                                        <div class="col">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Vigilancia
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Antigüedad
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                
+                                            </p>
+                                        </div>
+                                    </div>
                                     @break
                                 @case('DEPARTAMENTO')
                                     
@@ -232,15 +436,16 @@
                             @endswitch
 
                             {{-- DESCRIPCION --}}
+                            @if ($propiedad->description)
                             <div class="row text-justify" style="padding-right: 2rem; padding-left: 0.5rem">
                                 <p class="font-weight-light pt-1 mb-2" style="color: #818181; font-size: 12px;">
                                     Descripción
                                 </p>
                                 <P>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    {{ $propiedad->description }}
                                 </P>
                             </div>
+                            @endif
                         </div>
                     </div>
                     <div class="row px-4 d-flex flex-row-reverse my-4">

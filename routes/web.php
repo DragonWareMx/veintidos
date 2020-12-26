@@ -84,6 +84,9 @@ Route::get('/admin/mensajes', function () {
 // Route::get('/propiedades', function () {
 //     return view('propiedades.propiedades');
 // });
+
+//VER TODAS LAS PROPIEDADES
 Route::get('/propiedades', 'propiedadesController@ver')->name('verPropiedades');
 
+//VER UNA PROPIEDAD
 Route::get('/propiedad/{id}', 'propiedadesController@propiedad');

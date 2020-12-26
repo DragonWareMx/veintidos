@@ -20,7 +20,7 @@ class CreateHousesTable extends Migration
             $table->unsignedBigInteger('propertie_id');     //id de la propiedad asociada
             $table->unsignedTinyInteger('living_rooms');    //salas
             $table->unsignedTinyInteger('kitchens');        //cocinas
-            $table->unsignedTinyInteger('integral_kitchen');//cocina integrales
+            $table->boolean('integral_kitchen');            //cocina integral
             $table->unsignedTinyInteger('dining_rooms');    //comedores
             $table->unsignedTinyInteger('half_bathrooms');  //medios baños
             $table->unsignedTinyInteger('bathrooms');       //baños completos
