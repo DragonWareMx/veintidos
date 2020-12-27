@@ -1150,9 +1150,16 @@
                         </div>
                     </form>
                 </div>
+                <div class="row text-right my-3">
+                    <a href="{{ url()->previous() }}" style="text-decoration: none; font-weight:400;">
+                        <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/backpage.png')}}" alt="">
+                        Regresar
+                    </a>
+                </div>
             @endif
 
             {{-- AQUI VA EL CARRUSEL DE LAS PROPIEDADES --}}
+            <div class="Otitle"><h1>PROPIEDADES SIMILARES</h2></div>
         </div>
     </div>
 
