@@ -1,6 +1,6 @@
 .bocadillo-cuadrado {
     position: absolute;
-    top:180px;
+    top:100px;
     left:5%;
     height: 400px;
     width: 60%;
@@ -35,5 +35,8 @@
     padding-top: 20px;
 }
 .botonIndex:hover{
+    cursor: pointer;
+}
+.volverbtn:hover{
     cursor: pointer;
 }
