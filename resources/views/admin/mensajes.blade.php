@@ -54,7 +54,7 @@ Mensajes - Veintidós
                     </tr>
                 </thead>
                 <tbody>
-                  <tr href="javascript:noeditar();" data-bs-toggle="modal" data-bs-target="#modalInfo">
+                  <tr data-bs-toggle="modal" data-bs-target="#modalInfo">
                         <th scope="row">1</th>
                         <td>Sin revisar</td>
                         <td>José Agustín Aguilar Solórzano</td>

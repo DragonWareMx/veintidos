@@ -54,7 +54,7 @@ Solicitudes - Veintidós
                     </tr>
                 </thead>
                 <tbody>
-                  <tr href="javascript:noeditar();" data-bs-toggle="modal" data-bs-target="#modalInfo">
+                  <tr data-bs-toggle="modal" data-bs-target="#modalInfo">
                         <th scope="row">1</th>
                         <td>Sin revisar</td>
                         <td>José Agustín Aguilar Solórzano</td>
@@ -181,10 +181,10 @@ Solicitudes - Veintidós
               <p class="txt-modal-info">Casa</p>
               <p class="txt-modal-etiq">Precio propuesto:</p>
               <p class="txt-modal-info">$1,587,00</p>
-              <p class="txt-modal-etiq">Dirección:</p>
+              {{-- <p class="txt-modal-etiq">Dirección:</p>
               <p class="txt-modal-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
               <p class="txt-modal-etiq">Descripción:</p>
-              <p class="txt-modal-info" style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi illum quis laudantium blanditiis labore! Natus dolore dolores iure vitae nisi quis blanditiis, odio ab ad repellendus maxime perferendis quae omnis.</p>
+              <p class="txt-modal-info" style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi illum quis laudantium blanditiis labore! Natus dolore dolores iure vitae nisi quis blanditiis, odio ab ad repellendus maxime perferendis quae omnis.</p> --}}
               
               <a href="#" style="margin-top: 10px; color:#222B58; font-size:14px">Agregar propiedad</a>
         </div>
