@@ -30,7 +30,16 @@
 
 @section('content')
     <div class="card Agregar-propiedades-margin-top mb-3">
-        <form class="container card-body" action="/admin/agregar/propiedad" method="POST">
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+        <form class="container card-body" action="/admin/agregar/propiedad" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row d-flex flex-wrap-reverse ps-1 pe-1">
                 <div class="col-md-5 col-12 mb-3">
@@ -51,7 +60,7 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputType">Tipo de propiedad*</label>
-                        <select id="inputType" class="form-control" required onchange="tipo(this)" name="tipo">
+                        <select id="inputType" class="form-control" required onchange="cambio(this)" name="tipo">
                           <option selected value="" disabled hidden>Tipo...</option>
                           <option value="casa">Casa</option>
                           <option value="departamento">Departamento</option>
@@ -69,8 +78,8 @@
                         <label for="inputSeal">Renta / Venta *</label>
                         <select id="inputSeal" class="form-control" required name="deal">
                           <option selected value="" disabled hidden>Renta / Venta</option>
-                          <option value="venta">Venta</option>
-                          <option value="renta">Renta</option>
+                          <option value="sale">Venta</option>
+                          <option value="rent">Renta</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6 col-12">
@@ -118,110 +127,110 @@
                     </div>
                     <div class="form-group col-md-3 col-6" style="display:none;" id="construccion">
                         <label for="inputConstruct" class="O-form-text">Construcción</label>
-                        <input type="number" class="form-control" id="inputConstruct" min="0" placeholder="En m2" name="construccion">
+                        <input value="0" type="number" class="form-control" id="inputConstruct" min="0" placeholder="En m2" name="construccion">
                     </div>
                     <div class="form-group col-md-3 col-6" style="display:none" id="half">
                         <label for="inputHalf" class="O-form-text">Medios Baños*</label>
-                        <input type="number" class="form-control" id="inputHalf" min="0" placeholder="Medios Baños" name="half">
+                        <input value="0" type="number" class="form-control" id="inputHalf" min="0" placeholder="Medios Baños" name="half">
                     </div>
                     <div class="form-group col-md-3 col-6" style="display:none;" id="bañoC">
                         <label for="inputBat" class="O-form-text">Baños*</label>
-                        <input type="number" class="form-control" id="inputBat" min="0" placeholder="Baños completos" name="bañoC"> 
+                        <input value="0" type="number" class="form-control" id="inputBat" min="0" placeholder="Baños completos" name="bañoC"> 
                     </div>
                     <div class="form-group col-md-3 col-6" style="display:none;" id="salas">
                         <label for="inputRoom" class="O-form-text">Salas*</label>
-                        <input type="number" class="form-control" id="inputRoom" min="0" placeholder="Salas" name="salas">
+                        <input value="0" type="number" class="form-control" id="inputRoom" min="0" placeholder="Salas" name="salas">
                     </div>
                     <div class="form-group col-md-3 col-6" style="display:none;" id="cocinas">
                         <label for="inputKit" class="O-form-text">Cocinas*</label>
-                        <input type="number" class="form-control" id="inputKit" min="0" placeholder="Cocinas" name="cocinas">
+                        <input value="0" type="number" class="form-control" id="inputKit" min="0" placeholder="Cocinas" name="cocinas">
                     </div>
                     <div class="form-group col-md-3 col-6" style="display:none;" id="integrales">
                         <label for="inputKitchen" class="O-form-text">Cocinas integrales*</label>
-                        <input type="number" class="form-control" id="inputKitchen" min="0" placeholder="Cocinas integrales" name="integrales">
+                        <input value="0" type="number" class="form-control" id="inputKitchen" min="0" placeholder="Cocinas integrales" name="integrales">
                     </div>
                     <div class="form-group col-md-3 col-6" style="display:none;" id="comedores">
                         <label for="inputTable" class="O-form-text">Comedores*</label>
-                        <input type="number" class="form-control" id="inputTable" min="0" placeholder="Comedores" name="comedores">
+                        <input value="0" type="number" class="form-control" id="inputTable" min="0" placeholder="Comedores" name="comedores">
                     </div>
                     <div class="form-group col-md-3 col-6" style="display:none;" id="cuartos">
                         <label for="inputBed" class="O-form-text">Recámaras*</label>
-                        <input type="number" class="form-control" id="inputBed" min="0" placeholder="Recámaras" name="cuartos">
+                        <input value="0" type="number" class="form-control" id="inputBed" min="0" placeholder="Recámaras" name="cuartos">
                     </div>
                     <div class="form-group col-md-3 col-6" id="patio" style="display:none;">
                         <label for="inputYard">Patio</label>
                         <select id="inputYard" class="form-control" name="patio">
-                          <option selected value="no">No</option>
-                          <option value="yes">Si</option>
+                          <option selected value="0">No</option>
+                          <option value="1">Si</option>
                         </select>
                     </div>
                     <div class="form-group col-md-3 col-6" id="pServicio" style="display:none;">
                         <label for="inputServiceY">Patio de servicio</label>
                         <select id="inputServiceY" class="form-control" name="pServicio">
-                          <option selected value="no">No</option>
-                          <option value="yes">Si</option>
+                          <option selected value="0">No</option>
+                          <option value="1">Si</option>
                         </select>
                     </div>
                     <div class="form-group col-md-3 col-6" id="cServicio" style="display:none;">
                         <label for="inputServiceR">Cuarto de servicio</label>
                         <select id="inputServiceR" class="form-control" name="cServicio">
-                          <option selected value="no">No</option>
-                          <option value="yes">Si</option>
+                          <option selected value="0">No</option>
+                          <option value="1">Si</option>
                         </select>
                     </div>
                     <div class="form-group col-md-3 col-6" id="estudios" style="display:none;">
                         <label for="inputStudies" class="O-form-text">Estudios*</label>
-                        <input type="number" class="form-control" id="inputStudies" min="0" placeholder="Estudios" name="estudios">
+                        <input value="0" type="number" class="form-control" id="inputStudies" min="0" placeholder="Estudios" name="estudios">
                     </div>
                     <div class="form-group col-md-3 col-6" id="cocheras" style="display:none;">
                         <label for="inputGarages" class="O-form-text">Cocheras*</label>
-                        <input type="number" class="form-control" id="inputGarages" min="0" placeholder="Cocheras" name="cocheras">
+                        <input value="0" type="number" class="form-control" id="inputGarages" min="0" placeholder="Cocheras" name="cocheras">
                     </div>
                     <div class="form-group col-md-3 col-6" id="vigilancia" style="display:none;">
                         <label for="inputVigilance">Vigilancia</label>
                         <select id="inputVigilance" class="form-control" name="vigilancia">
-                          <option selected value="no">No</option>
-                          <option value="yes">Si</option>
+                          <option selected value="0">No</option>
+                          <option value="1">Si</option>
                         </select>
                     </div>
                     <div class="form-group col-md-3 col-6" id="cisterna" style="display:none;">
                         <label for="inputCistern">Cisterna</label>
                         <select id="inputCistern" class="form-control" name="cisterna">
-                          <option selected value="no">No</option>
-                          <option value="yes">Si</option>
+                          <option selected value="0">No</option>
+                          <option value="1">Si</option>
                         </select>
                     </div>
                     <div class="form-group col-md-3 col-6" id="antiguedad" style="display:none;">
                         <label for="inputAnt" class="O-form-text">Antigëdad*</label>
-                        <input type="number" class="form-control" id="inputAnt" min="0" placeholder="Antigëdad" name="antiguedad">
+                        <input value="0" type="number" class="form-control" id="inputAnt" min="0" placeholder="Antigëdad" name="antiguedad">
                     </div>
                     <div class="form-group col-md-3 col-6" id="pisos" style="display:none;">
                         <label for="inputFloors" class="O-form-text">Pisos*</label>
-                        <input type="number" class="form-control" id="inputFloors" min="0" placeholder="Pisos" name="pisos">
+                        <input value="1" type="number" class="form-control" id="inputFloors" min="0" placeholder="Pisos" name="pisos">
                     </div>
                     <div class="form-group col-md-3 col-6" id="piso" style="display:none;">
                         <label for="inputFloor" class="O-form-text">Piso*</label>
-                        <input type="number" class="form-control" id="inputFloor" min="0" placeholder="Piso" name="piso">
+                        <input value="1" type="number" class="form-control" id="inputFloor" min="0" placeholder="Piso" name="piso">
                     </div>
                     <div class="form-group col-md-3 col-6" id="elevador" style="display:none;">
                         <label for="inputElevator">Elevador</label>
                         <select id="inputElevator" class="form-control" name="elevador">
-                          <option selected value="no">No</option>
-                          <option value="yes">Si</option>
+                          <option selected value="0">No</option>
+                          <option value="1">Si</option>
                         </select>
                     </div>
                     <div class="form-group col-md-3 col-6" id="oficina" style="display:none;">
                         <label for="inputElevator">Oficina</label>
                         <select id="inputElevator" class="form-control" name="oficina">
-                          <option selected value="no">No</option>
-                          <option value="yes">Si</option>
+                          <option selected value="0">No</option>
+                          <option value="1">Si</option>
                         </select>
                     </div>
                     <div class="form-group col-md-3 col-6" id="acceso" style="display:none;">
                         <label for="inputAccess">Acceso a carretera</label>
                         <select id="inputAccess" class="form-control" name="acceso">
-                          <option selected value="no">No</option>
-                          <option value="yes">Si</option>
+                          <option selected value="0">No</option>
+                          <option value="1">Si</option>
                         </select>
                     </div>
                     <div class="form-group w-100">
@@ -246,7 +255,7 @@
     </div>
 
 <script>
-    function tipo(valor){
+    function cambio(valor){
         valor=valor.value;
         document.getElementById('terreno').style.display="none";
         document.getElementById('acceso').style.display="none";
