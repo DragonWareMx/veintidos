@@ -75,11 +75,16 @@
                     @endphp
                 @elseif ($propiedad->warehouse()->exists())
                     @php
-                        $tipo = 'ALMACÉN';
+                        $tipo = 'BODEGA';
                     @endphp
                 @elseif ($propiedad->office()->exists())
                     @php
-                        $tipo = 'OFICINA';
+                        if ($propiedad->office->type == 'office') {
+                            $tipo = 'OFICINA';
+                        }
+                        else {
+                            $tipo = 'LOCAL';
+                        }
                     @endphp
                 @endif
 
@@ -133,7 +138,7 @@
                                 </div>
                                 <div class="col-sm-5 text-right">
                                     <div class="row my-1">
-                                        <div class="col text-left"><p class="m-1">Clave: <b>{{ $propiedad->id }}</b></p></div>
+                                        <div class="col text-left"><p class="m-1">Clave: <b>{{str_pad($propiedad->id, 4, '0', STR_PAD_LEFT)}}</b></p></div>
                                         <div class="col">
                                             <div class="dropdown show pl-5">
                                                 <img class="ml-auto" style="width:17px; height:17px; " src="{{ asset('img/ico/share.png')}}" alt="" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -735,7 +740,7 @@
                                         </div>
                                     </div>
                                     {{-- Acceso a vialidades --}}
-                                    <div class="row px-2 mt-4">
+                                    <div class="row px-2 mt-2">
                                         <div class="col">
                                             @if ($propiedad->terrain->access_roads)
                                                 <b>Si</b>
@@ -768,11 +773,294 @@
                                         </div>
                                     </div>
                                     @break
-                                @case('ALMACÉN')
-                                    
+                                @case('BODEGA')
+                                    {{-- ESTADO / TIPO / TERRENO --}}
+                                    <div class="row px-2 mt-4">
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/estado.png')}}" alt="">
+                                            @if ($propiedad->deal == 'sale')
+                                                <b>Venta</b>
+                                            @else
+                                                <b>Renta</b>
+                                            @endif
+                                        </div>
+                                        <div class="col">
+                                            <b>Bodega</b>
+                                        </div>
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/terreno2.png')}}" alt="">
+                                            <b>{{ $propiedad->warehouse->terrain }} m<sup>2</sup></b>
+                                        </div>
+                                    </div>
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Estado
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Tipo
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Terreno
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {{-- MEDIOS BAÑOS / OFICINA / CONSTRUCCION --}}
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <b>{{ $propiedad->warehouse->half_bathrooms }}</b>
+                                        </div>
+                                        <div class="col">
+                                            @if ($propiedad->warehouse->office)
+                                                <b>Si</b>
+                                            @else
+                                                <b>No</b>
+                                            @endif
+                                        </div>
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/construccion.png')}}" alt="">
+                                            <b>{{ $propiedad->warehouse->construction }} m<sup>2</sup></b>
+                                        </div>
+                                    </div>
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Medios Baños
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Oficina
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Construcción
+                                            </p>
+                                        </div>
+                                    </div>
                                     @break
                                 @case('OFICINA')
-                                    
+                                    {{-- ESTADO / TIPO / CONSTRUCCION --}}
+                                    <div class="row px-2 mt-4">
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/estado.png')}}" alt="">
+                                            @if ($propiedad->deal == 'sale')
+                                                <b>Venta</b>
+                                            @else
+                                                <b>Renta</b>
+                                            @endif
+                                        </div>
+                                        <div class="col">
+                                            <b>Oficina</b>
+                                        </div>
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/construccion.png')}}" alt="">
+                                            <b>{{ $propiedad->office->construction }} m<sup>2</sup></b>
+                                        </div>
+                                    </div>
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Estado
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Tipo
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Construcción
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {{-- MEDIOS BAÑOS / CISTERNA / ELEVADOR --}}
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <b>{{ $propiedad->office->half_bathrooms }}</b>
+                                        </div>
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cistern.png')}}" alt="">
+                                            @if ($propiedad->office->cistern)
+                                                <b>Si</b>
+                                            @else
+                                                <b>No</b>
+                                            @endif
+                                        </div>
+                                        <div class="col">
+                                            @if ($propiedad->office->elevator)
+                                                <b>Si</b>
+                                            @else
+                                                <b>No</b>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Medios Baños
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Cisterna
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Elevador
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {{-- VIGILANCIA / PISO /  --}}
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/security.png')}}" alt="">
+                                            @if ($propiedad->office->security_vigilance)
+                                                <b>Si</b>
+                                            @else
+                                                <b>No</b>
+                                            @endif
+                                        </div>
+                                        <div class="col">
+                                            <b>{{$propiedad->office->floor}}</b>
+                                        </div>
+                                        <div class="col">
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Vigilancia
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Piso
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                
+                                            </p>
+                                        </div>
+                                    </div>
+                                    @break
+                                @case('LOCAL')
+                                    {{-- ESTADO / TIPO / CONSTRUCCION --}}
+                                    <div class="row px-2 mt-4">
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/estado.png')}}" alt="">
+                                            @if ($propiedad->deal == 'sale')
+                                                <b>Venta</b>
+                                            @else
+                                                <b>Renta</b>
+                                            @endif
+                                        </div>
+                                        <div class="col">
+                                            <b>Oficina</b>
+                                        </div>
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/construccion.png')}}" alt="">
+                                            <b>{{ $propiedad->office->construction }} m<sup>2</sup></b>
+                                        </div>
+                                    </div>
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Estado
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Tipo
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Construcción
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {{-- MEDIOS BAÑOS / CISTERNA / ELEVADOR --}}
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <b>{{ $propiedad->office->half_bathrooms }}</b>
+                                        </div>
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cistern.png')}}" alt="">
+                                            @if ($propiedad->office->cistern)
+                                                <b>Si</b>
+                                            @else
+                                                <b>No</b>
+                                            @endif
+                                        </div>
+                                        <div class="col">
+                                            @if ($propiedad->office->elevator)
+                                                <b>Si</b>
+                                            @else
+                                                <b>No</b>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Medios Baños
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Cisterna
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Elevador
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {{-- VIGILANCIA / PISO /  --}}
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/security.png')}}" alt="">
+                                            @if ($propiedad->office->security_vigilance)
+                                                <b>Si</b>
+                                            @else
+                                                <b>No</b>
+                                            @endif
+                                        </div>
+                                        <div class="col">
+                                            <b>{{$propiedad->office->floor}}</b>
+                                        </div>
+                                        <div class="col">
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="row px-2">
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Vigilancia
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                Piso
+                                            </p>
+                                        </div>
+                                        <div class="col">
+                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                
+                                            </p>
+                                        </div>
+                                    </div>
                                     @break
                                 @default
                                     

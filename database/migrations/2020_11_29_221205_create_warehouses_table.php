@@ -21,6 +21,7 @@ class CreateWarehousesTable extends Migration
             $table->unsignedSmallInteger('terrain');         //terreno m2
             $table->unsignedSmallInteger('construction');    //construccion m2
             $table->boolean('office');                      //oficina
+            $table->unsignedTinyInteger('half_bathrooms');      //medios baños
 
             $table->foreign('propertie_id')->references('id')->on('properties')->onDelete('cascade');
         });

@@ -135,5 +135,80 @@ class properties_table extends Seeder
             'terrain'=>200,
             'access_roads'=>true,
         ]);
+        DB::table('properties')->insert([
+            'owner_name' => 'Adrián García Sánches Pedraza',
+            'description' => 'Oficina en lujoso edificio de Morelia.',
+            'street' => 'Primitivis',
+            'int_number'=>null,
+            'ext_number'=>12,
+            'suburb'=>'Beauty Moon',
+            'town'=>'Morelia',
+            'city'=>'Morelia',
+            'state'=>'Michoacán',
+            'deal'=>'rent',
+            'price'=>50000,
+            'status'=>'available',
+            'photo'=>'img/photos/terreno1.jpeg',
+            'title'=>'Oficina en lujoso edificio de Morelia.'
+        ]);
+        DB::table('premises__offices')->insert([
+            'propertie_id'=>4,
+            'construction'=>200,
+            'half_bathrooms'=>1,
+            'floor'=>5,
+            'cistern'=>true,
+            'elevator'=>true,
+            'security_vigilance'=>true,
+            'type'=>'office'
+        ]);
+        DB::table('properties')->insert([
+            'owner_name' => 'Adrián García Sánches Pedraza',
+            'description' => 'Local en centro de Morelia.',
+            'street' => 'Primitivis',
+            'int_number'=>null,
+            'ext_number'=>12,
+            'suburb'=>'Centro',
+            'town'=>'Morelia',
+            'city'=>'Morelia',
+            'state'=>'Michoacán',
+            'deal'=>'rent',
+            'price'=>50000,
+            'status'=>'available',
+            'photo'=>'img/photos/terreno1.jpeg',
+            'title'=>'Local en centro de Morelia.'
+        ]);
+        DB::table('premises__offices')->insert([
+            'propertie_id'=>5,
+            'construction'=>200,
+            'half_bathrooms'=>2,
+            'floor'=>1,
+            'cistern'=>true,
+            'elevator'=>false,
+            'security_vigilance'=>false,
+            'type'=>'premises'
+        ]);
+        DB::table('properties')->insert([
+            'owner_name' => 'Adrián García Sánches Pedraza',
+            'description' => 'Almacén muy grande a las afueras de Morelia!!!!',
+            'street' => 'Primitivis',
+            'int_number'=>null,
+            'ext_number'=>12,
+            'suburb'=>'Beauty Moon',
+            'town'=>'Morelia',
+            'city'=>'Morelia',
+            'state'=>'Michoacán',
+            'deal'=>'sale',
+            'price'=>500000,
+            'status'=>'available',
+            'photo'=>'img/photos/terreno1.jpeg',
+            'title'=>'Almacén muy grande a las afueras de Morelia!!!!'
+        ]);
+        DB::table('warehouses')->insert([
+            'propertie_id'=>6,
+            'terrain'=>200,
+            'construction'=>500,
+            'office'=>true,
+            'half_bathrooms'=>2,
+        ]);
     }
 }

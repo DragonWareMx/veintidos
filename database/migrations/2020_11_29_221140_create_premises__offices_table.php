@@ -24,6 +24,7 @@ class CreatePremisesOfficesTable extends Migration
             $table->boolean('cistern');                         //cisterna
             $table->boolean('elevator');                        //tiene elevador o no
             $table->boolean('security_vigilance');              //hay vigilancia o no (caseta o no se :v)
+            $table->enum('type', ['premises','office']);        //tipo de propiedad
 
             $table->foreign('propertie_id')->references('id')->on('properties')->onDelete('cascade');
         });
