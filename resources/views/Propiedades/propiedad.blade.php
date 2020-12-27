@@ -86,6 +86,14 @@
                 <div class="Otitle"><h1>PROPIEDADES | </h1><h2>{{ $tipo }}</h2></div>
 
                 <div class="border rounded-bottom shadow bg-white mt-4">
+                    @if (session('status'))
+                        <div class="row mt-4 px-4">
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                        </div>
+                    @endif
+    
                     <div class="row mt-4">
                         {{-- AQUI VA LA GALERIA DE FOTOS --}}
                         <div class="col-xl">
@@ -457,40 +465,50 @@
                         </div>
                     </div>
 
-                    <form class="Agregar-propiedades-margin-top container" id="formMI" action="/propiedad/{{ $propiedad->id }}" method="POST">
+                    <form class="Agregar-propiedades-margin-top container" id="formMI" action="{{ route('propiedad',['id'=>Crypt::encrypt($propiedad->id)]) }}" method="POST">
                         @csrf
                         {{-- FORMULARIO --}}
-                        <div class="row px-4" id="formularioMI" style="display: none">
+                        <div class="row px-4" id="formularioMI" @if ($errors->any()) style="display: block" @else style="display: none" @endif>
                             <h5 class="px-2 pt-1 text-blue22" style="font-weight: 600;">
                                 Información de contacto
                             </h5>
                             <p>Favor de llenar los siguiente datos y un asesor en breve le contactará.</p>
 
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
                             <div class="row">
                                 <div class="col-sm">
                                     <div class="form-group">
                                         <label class="text-blue22" style="font-weight: 600" for="nombre">Nombre *</label>
-                                        <input type="text" class="form-control" id="nombre" name="nombre" autocomplete="off" placeholder="Nombre completo" required data-parsley-pattern="[a-zA-Z áéíóúÁÉÍÓÚ]+$" data-parsley-trigger="keyup" data-parsley-error-message="El texto introducido no es válido.">
+                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre completo" required data-parsley-pattern="[a-zA-Z áéíóúÁÉÍÓÚ]+$" data-parsley-trigger="keyup" data-parsley-error-message="El texto introducido no es válido."  data-parsley-maxlength="255" data-parsley-maxlength-message="El nombre puede tener como máximo 255 caracteres." value="{{ old('nombre') }}">
                                     </div>
                                     <div class="form-group">
-                                        <label class="text-blue22" style="font-weight: 600" for="email">Correo electrónico</label>
-                                        <input type="text" class="form-control" id="email" name="email" placeholder="Correo electrónico" data-parsley-type="email" data-parsley-trigger="keyup"  data-parsley-error-message="El correo electrónico introducido no es válido.">
+                                        <label class="text-blue22" style="font-weight: 600" for="correo">Correo electrónico</label>
+                                        <input type="text" class="form-control" id="correo" name="correo" placeholder="Correo electrónico" data-parsley-type="email" data-parsley-trigger="keyup"  data-parsley-error-message="El correo electrónico introducido no es válido." value="{{ old('correo') }}">
                                     </div>
                                 </div>
                                 <div class="col-sm">
                                     <div class="form-group">
-                                        <label class="text-blue22" style="font-weight: 600" for="tel">Número de teléfono *</label>
-                                        <input type="text" class="form-control" id="tel" name="tel" placeholder="Número de teléfono" data-parsley-debounce="500" 
+                                        <label class="text-blue22" style="font-weight: 600" for="telefono">Número de teléfono *</label>
+                                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Número de teléfono" data-parsley-debounce="500" 
                                         data-parsley-type="digits" 
                                         data-parsley-minlength="10" 
                                         data-parsley-maxlength="50"
                                         data-parsley-minlength-message="El número puede tener como mínimo 10 dígitos."
                                         data-parsley-maxlength-message="El número puede tener como máximo 50 dígitos."
-                                        data-parsley-type-message="Sólo se admiten dígitos.">
+                                        data-parsley-type-message="Sólo se admiten dígitos." value="{{ old('telefono') }}">
                                     </div>
                                     <div class="form-group">
                                         <label class="text-blue22" style="font-weight: 600" for="comentario">Comentarios</label>
-                                        <textarea class="form-control" id="comentario" name="comentario" rows="3" placeholder="Comentarios (máximo 255 caracteres)" data-parsley-maxlength="255" data-parsley-maxlength-message="El comentario puede tener como máximo 255 caracteres." data-parsley-pattern="[a-zA-Z áéíóúÁÉÍÓÚ]+$" data-parsley-trigger="keyup"></textarea>
+                                        <textarea class="form-control" id="comentario" name="comentario" rows="3" placeholder="Comentarios (máximo 255 caracteres)" data-parsley-maxlength="255" data-parsley-maxlength-message="El comentario puede tener como máximo 255 caracteres." data-parsley-pattern="[a-zA-Z áéíóúÁÉÍÓÚ\,\.]+$" data-parsley-trigger="keyup">{{ old('comentario') }}</textarea>
                                     </div>
                                 </div>
                             </div>
@@ -505,13 +523,13 @@
 
                         </div>
                         <div class="row px-4 d-flex flex-row-reverse my-4">
-                            <div style="width: fit-content" id="btnMI" style="display: block">
+                            <div style="width: fit-content; display: @if ($errors->any()) none @else block @endif ;" id="btnMI">
                                 <button type="button" class="btn btn-primary" style="background: #58AD30; border-color: #58AD30;" onclick="btnMI()"><b>Me interesa</b></button>
                             </div>
-                            <div style="width: fit-content; display: none;" id="enviarFORM">
+                            <div style="width: fit-content; display: @if ($errors->any()) block @else none @endif ;" id="enviarFORM">
                                 <button type="submit" class="btn btn-primary" style="background: #58AD30; border-color: #58AD30;" id="submit"><b>Enviar</b></button>
                             </div>
-                            <div style="width: fit-content; display: none;" id="btnC">
+                            <div style="width: fit-content; display: @if ($errors->any()) block @else none @endif ;" id="btnC">
                                 <button type="button" class="btn btn-link btnC-b" style="color: #58AD30; text-decoration: none;" onclick="btnC()"><b>Cancelar</b></button>
                             </div>
                         </div>

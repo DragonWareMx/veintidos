@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Http\Request;
 use App\Propertie;
+use App\C_Proposal;
 
 class propiedadesController extends Controller
 {
@@ -80,11 +82,47 @@ class propiedadesController extends Controller
     }
 
     public function propiedad($id){
-        $propiedad=Propertie::find($id);
+        $decryptedId = Crypt::decrypt($id);
+
+        $propiedad=Propertie::find($decryptedId);
         return view('Propiedades.propiedad',['propiedad'=>$propiedad]);
     }
 
     public function propuesta(Request $request, $id){
-        dd($request);
+        $decryptedId = Crypt::decrypt($id);
+        //Validacion backend
+        $request->validate([
+            'nombre' => 'required|max:255|regex:/[a-zA-Z áéíóúÁÉÍÓÚ]+$/',
+            'correo' => 'email|max:320',
+            'telefono' => 'required|alpha_num|max:50|min:10',
+            'comentario' => 'nullable|max:255|regex:/[a-zA-Z áéíóúÁÉÍÓÚ\,\.]+$/'
+        ]);
+
+        try {
+            \DB::beginTransaction();
+
+            $proposal = new C_Proposal;
+
+            $proposal->name = $request->nombre;
+            $proposal->email = $request->correo;
+            $proposal->phone_number = $request->telefono;
+            $proposal->comment = $request->comentario;
+
+            //encuentra la propiedad
+            $propertieP = Propertie::findOrFail($decryptedId);
+            
+            $proposal->propertie_id = $propertieP->id;
+
+            $proposal->save();
+
+            \DB::commit();
+
+            return redirect('propiedad/'.$id)->with('status', '¡Solicitud enviada!');
+         }catch(\Exception $e){
+            \DB::rollback();
+            return redirect('propiedad/'.$id)
+                        ->withErrors(['No se pudo mandar la solicitud, intentelo más tarde.'])
+                        ->withInput();
+         }
     }
 }

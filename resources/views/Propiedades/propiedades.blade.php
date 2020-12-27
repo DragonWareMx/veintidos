@@ -37,9 +37,11 @@
                                 </div>
                                 {{-- DATOS --}}
                                 {{-- TITULO --}}
+                                <a href="{{ route('propiedad',['id'=>Crypt::encrypt($propiedad->id)]) }}" style="text-decoration: none">
                                 <h5 class="px-2 pt-1 text-blue22" style="font-weight: 600;">
                                     {{ \Illuminate\Support\Str::limit($propiedad->description, $limit = 65, $end = '...') }}
                                 </h5>
+                                </a>
                                 {{-- PRECIO Y CLAVE --}}
                                 <div class="row align-items-end px-2">
                                     <div class="col-7 text-left">
