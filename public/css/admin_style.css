@@ -134,9 +134,15 @@
     margin-top: 0px;
 }
 .txt-modal-info{
+    border: none; 
+    font-weight: 300;
+    color:  #222222;
+    font-size:  14px;
+    padding: 0%;
     width: 100%;
     margin-bottom: 0px;
     margin-top: 0px;
+    background-color: transparent !important;
 }
 .div-body-propiedad{
     width: 50%;

@@ -54,103 +54,50 @@ Solicitudes - Veintidós
                     </tr>
                 </thead>
                 <tbody>
-                  <tr data-bs-toggle="modal" data-bs-target="#modalInfo">
-                        <th scope="row">1</th>
-                        <td>Sin revisar</td>
-                        <td>José Agustín Aguilar Solórzano</td>
-                        <td>4444444444</td>
-                        <td>Compra</td>
-                        <td>Casa</td>
+                  @foreach ($solicitudes as $proposal)
+                    <tr data-bs-toggle="modal" data-bs-target="#modalInfo" onclick="enviarId('{{$proposal->id}}','{{$proposal->status}}','{{$proposal->name}}','{{$proposal->lastname}}','{{$proposal->email}}','{{$proposal->phone_number}}','{{$proposal->deal}}','{{$proposal->propertie_type}}','{{$proposal->price}}')">
+                        <th scope="row">{{$proposal->id}}</th>
+                        @if($proposal->status=='available')
+                          <td>Disponible</td>
+                        @else
+                          @if($proposal->status=='accepted')
+                          <td>Aceptado</td>
+                          @else
+                          <td>Rechazado</td>
+                          @endif
+                        @endif
+                        <td>{{$proposal->name}}&nbsp;{{$proposal->lastname}}</td>
+                        <td>{{$proposal->phone_number}}</td>
+                        <td>{{$proposal->deal}}</td>
+                        <td>{{$proposal->propertie_type}}</td>
                     </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Sin revisar</td>
-                        <td>José Agustín Aguilar Solórzano</td>
-                        <td>4444444444</td>
-                        <td>Compra</td>
-                        <td>Casa</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Sin revisar</td>
-                        <td>José Agustín Aguilar Solórzano</td>
-                        <td>4444444444</td>
-                        <td>Compra</td>
-                        <td>Casa</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Sin revisar</td>
-                        <td>José Agustín Aguilar Solórzano</td>
-                        <td>4444444444</td>
-                        <td>Compra</td>
-                        <td>Casa</td>
-                      </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Sin revisar</td>
-                        <td>José Agustín Aguilar Solórzano</td>
-                        <td>4444444444</td>
-                        <td>Compra</td>
-                        <td>Casa</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Sin revisar</td>
-                        <td>José Agustín Aguilar Solórzano</td>
-                        <td>4444444444</td>
-                        <td>Compra</td>
-                        <td>Casa</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Sin revisar</td>
-                      <td>José Agustín Aguilar Solórzano</td>
-                      <td>4444444444</td>
-                      <td>Compra</td>
-                      <td>Casa</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Sin revisar</td>
-                        <td>José Agustín Aguilar Solórzano</td>
-                        <td>4444444444</td>
-                        <td>Compra</td>
-                        <td>Casa</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Sin revisar</td>
-                        <td>José Agustín Aguilar Solórzano</td>
-                        <td>4444444444</td>
-                        <td>Compra</td>
-                        <td>Casa</td>
-                    </tr>
+                  @endforeach
+                  
                 </tbody>
             </table>
         </div>
-        <nav aria-label="..." style="margin-top: 20px">
-            <ul class="pagination justify-content-center">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item active" aria-current="page">
-                <a class="page-link" href="#">2</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-        </nav>
+        <div style="display:flex; justify-content: center">
+        {{ $solicitudes->links() }}
+        </div>
     </div>
 </div>
 
+<script>
+  function enviarId($id, $status , $name, $lastname, $email, $phone, $deal, $type, $price){ 
+      $('#id').val($id);
+      $('.status').val('Rechazado');
+      if($status=='available')
+        $('.status').val('Disponible');
+      else if($status=='accepted')
+        $('.status').val('Aceptado');
+      $('#name').val($name);
+      $('#email').val($email);
+      $('#phone').val($phone);
+      $('#deal').val($deal);
+      $('#type').val($type);
+      $('#price').val($price);
+  }
+</script>
 
 <!-- Modal info-->
 <div class="modal fade" id="modalInfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -162,29 +109,27 @@ Solicitudes - Veintidós
         </div>
         <div class="modal-body" style="font-weight: 400; color:#8c8d8f; display:flex; flex-wrap:wrap">
               <p class="txt-modal-etiq">Id:</p>
-              <p class="txt-modal-info">48</p>
+              <input class="txt-modal-info" id="id" readonly disabled>
               <p class="txt-modal-etiq">Estado:</p>
               <select class="form-select form-control" id="edit-estado-modal" style="width: 50%; margin-bottom:10px" aria-label="Default select example">
-                <option selected value="1">Sin revisar</option>
-                <option value="2">Revisado</option>
+                <option selected id="status" value="1">Disponible</option>
+                <option value="2">Aceptado</option>
+                <option value="2">Rechazado</option>
               </select>
-              <p class="txt-modal-info" id="Noedit-estado-modal">Sin revisar</p>
+              <input readonly disabled class="txt-modal-info status" id="Noedit-estado-modal"> 
               <p class="txt-modal-etiq">Nombre:</p>
-              <p class="txt-modal-info">José Agustín Aguilar Solórzano</p>
+              <input class="txt-modal-info" id="name" readonly disabled>
               <p class="txt-modal-etiq">Correo electrónico:</p>
-              <p class="txt-modal-info">correo@ejemplo.com</p>
+              <input readonly disabled class="txt-modal-info" id="email">
               <p class="txt-modal-etiq">Teléfono:</p>
-              <p class="txt-modal-info">4444444444</p>
+              <input readonly disabled class="txt-modal-info" id="phone">
               <p class="txt-modal-etiq">Compra/Renta:</p>
-              <p class="txt-modal-info">Compra</p>
+              <input readonly disabled class="txt-modal-info" id="deal">
               <p class="txt-modal-etiq">Tipo de propiedad:</p>
-              <p class="txt-modal-info">Casa</p>
+              <input readonly disabled class="txt-modal-info" id="type">
               <p class="txt-modal-etiq">Precio propuesto:</p>
-              <p class="txt-modal-info">$1,587,00</p>
-              {{-- <p class="txt-modal-etiq">Dirección:</p>
-              <p class="txt-modal-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-              <p class="txt-modal-etiq">Descripción:</p>
-              <p class="txt-modal-info" style="text-align: justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi illum quis laudantium blanditiis labore! Natus dolore dolores iure vitae nisi quis blanditiis, odio ab ad repellendus maxime perferendis quae omnis.</p> --}}
+              <input readonly disabled class="txt-modal-info" id="price">
+              
               
               <a href="#" style="margin-top: 10px; color:#222B58; font-size:14px">Agregar propiedad</a>
         </div>

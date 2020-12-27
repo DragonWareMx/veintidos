@@ -13,6 +13,7 @@ use App\Department;
 use App\House;
 use App\Terrain;
 use App\WareHouse;
+use App\Proposal;
 use App\Premises_Office;
 use Auth;
 
@@ -93,5 +94,12 @@ class adminController extends Controller
         else{
             return redirect()->back()->withErrors(['error' => 'ERROR: No se pudieron actualizar los datos']);
         }        
+    }
+
+    public function solicitudes()
+    {
+        $solicitudes = Proposal::paginate(10);
+
+        return view('admin.solicitudes', ['solicitudes' => $solicitudes]);
     }
 }

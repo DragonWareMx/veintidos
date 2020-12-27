@@ -67,20 +67,22 @@ Route::get('/admin/cuenta', 'adminController@cuenta')->name('cuenta');
 
 Route::patch('/admin/cuenta/{id}', 'adminController@cuentaUpdate')->name('cuenta-update');
 
-Route::get('/admin/inicio', function () {
-    return view('admin.inicio');
-})->middleware('auth');
+// Route::get('/admin/inicio', function () {
+//     return view('admin.inicio');
+// })->middleware('auth');
 
 Route::get('/admin/agregar/propiedad', 'adminPropiedades@agregar')->name('agregarPropiedad');
 Route::post('/admin/agregar/propiedad', 'adminPropiedades@agregarPost')->name('agregarPropiedadPost');
+
+Route::get('/admin/solicitudes','adminController@solicitudes')->name('solicitudes');
 
 Route::get('/admin/mensajes', function () {
     return view('admin.mensajes');
 })->middleware('auth');
 
-Route::get('/admin/solicitudes', function () {
-    return view('admin.solicitudes');
-})->middleware('auth');
+// Route::get('/admin/solicitudes', function () {
+//     return view('admin.solicitudes');
+// })->middleware('auth');
 
 //------------------------ RUTAS PROPIEDADES ------------------------
 // Route::get('/propiedades', function () {
