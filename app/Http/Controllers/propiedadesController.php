@@ -82,7 +82,12 @@ class propiedadesController extends Controller
     }
 
     public function propiedad($id){
-        $decryptedId = Crypt::decrypt($id);
+        try{
+            $decryptedId = Crypt::decrypt($id);
+        }
+        catch(\Exception $e){
+            abort(404);
+        }
 
         $propiedad=Propertie::find($decryptedId);
         return view('Propiedades.propiedad',['propiedad'=>$propiedad]);
