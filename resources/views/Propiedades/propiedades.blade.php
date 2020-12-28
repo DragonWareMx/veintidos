@@ -9,7 +9,7 @@
 @section('content')
     <div class="container">
         <div class="Odiv100 d-block">
-            <div class="Otitle"><h1>PROPIEDADES | </h1><h2>CASAS</h2></div>
+            <div class="Otitle"><h1>PROPIEDADES | </h1><h2>{{ $tipo }}</h2></div>
             @if ($propiedades)
                 <div class="row">
                     {{-- PROPIEDAD --}}
