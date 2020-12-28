@@ -181,41 +181,34 @@ class adminController extends Controller
 
     public function contactanos(){
         $data=request()->validate([
-            'nombre'=>'required|max:191',
-            'telefono'=>'required|max:10',
-            'correo'=>'max:70',
-            'passActual'=>'required',
-            'password'=>'required',
-            'cfmPassword'=>'required'
+            'nombre' => 'required|max:255|regex:/[a-zA-Z áéíóúÁÉÍÓÚ]+$/',
+            'correo' => 'email|max:320',
+            'telefono' => 'required|alpha_num|max:50|min:10',
+            'tipo'=>'required',
+            'deal'=>'required',
+            'precio'=>'required'
         ]);
-        // dd('Hola');
-        // try {
-        //     \DB::beginTransaction();
+        try{
+            \DB::beginTransaction();
+            {
+                $solicitud= new Proposal;
+                $solicitud->name = request('nombre');
+                $solicitud->lastname = ' ';
+                $solicitud->email = request('correo');
+                $solicitud->phone_number = request('telefono');
+                $solicitud->propertie_type = request('tipo');
+                $solicitud->deal = request('deal');
+                $solicitud->price = request('precio');
+                $solicitud->status = 'available';
+                $solicitud->save();
 
-        //     $proposal = new C_Proposal;
-
-        //     $proposal->name = $request->nombre;
-        //     $proposal->email = $request->correo;
-        //     $proposal->phone_number = $request->telefono;
-        //     $proposal->comment = $request->comentario;
-
-        //     //encuentra la propiedad
-        //     $propertieP = Propertie::findOrFail($decryptedId);
-            
-        //     $proposal->propertie_id = $propertieP->id;
-
-        //     $proposal->save();
-
-        //     \DB::commit();
-
-        //     return redirect('propiedad/'.$id)->with('status', '¡Solicitud enviada!');
-        //  }catch(\Exception $e){
-        //     \DB::rollback();
-        //     return redirect('propiedad/'.$id)
-        //                 ->withErrors(['No se pudo mandar la solicitud, intentelo más tarde.'])
-        //                 ->withInput();
-        //  }
-        return redirect('contactanos')->withErrors(['No se pudo mandar la solicitud, intentelo más tarde.']);
-        
+                \DB::commit();
+                return redirect('contactanos')->with('status', '¡Solicitud enviada!');
+            }
+        }
+        catch(\Exception $e){
+            \DB::rollback();
+            return redirect('contactanos')->withErrors(['No se pudo mandar la solicitud, intentelo más tarde.']);
+        }
     }
 }

@@ -66,7 +66,7 @@
                 <div class="col-md-6">
                   <label for="inputPhone" class="form-label">Teléfono *</label>
                   <input type="phone" class="form-control" id="inputPhone" required name="telefono" placeholder="Teléfono" value="{{ old('telefono') }}">
-                </div>
+                </div> 
 
                 <div class="col-md-6">
                     <label for="inputEmail" class="form-label">Correo electrónico</label>
@@ -74,16 +74,26 @@
                 </div>
                 <div class="col-md-6">
                     <label for="inputType" class="form-label">Tipo de propiedad *</label>
-                    <input type="text" class="form-control" id="inputType" required name="tipo" placeholder="Tipo de propiedad" value="{{ old('tipo') }}">
+                    <select class="form-control" id="inputType" required name="tipo" placeholder="Tipo de propiedad" value="{{ old('tipo') }}">
+                        <option value="warehouse">Bodega</option>
+                        <option selected value="house">Casa</option>
+                        <option value="department">Departamento</option>
+                        <option value="premises">Local</option>
+                        <option value="office">Oficina</option>
+                        <option value="terrain">Terreno</option>
+                    </select>
                 </div>
 
                 <div class="col-md-6">
                     <label for="inputCost" class="form-label">Renta / Venta *</label>
-                    <input type="text" class="form-control" id="inputCost" required name="deal" placeholder="Renta / Venta" value="{{ old('deal') }}">
+                    <select class="form-control" id="inputCost" required name="deal" placeholder="Renta / Venta" value="{{ old('deal') }}">
+                        <option selected value="rent">Renta</option>
+                        <option value="sale">Venta</option>
+                    </select>
                 </div>
                 <div class="col-md-6">
                     <label for="inputCost" class="form-label">Precio propuesto *</label>
-                    <input type="number"  class="form-control" id="inputCost" required name="precio" placeholder="Precio propuesto (Por mes)" value="{{ old('precio') }}">
+                    <input type="number" min="1" class="form-control" id="inputCost" required name="precio" placeholder="Precio propuesto (Por mes)" value="{{ old('precio') }}">
                 </div>
 
                 
