@@ -86,7 +86,7 @@
                             </div>
                             {{-- DATOS --}}
                             {{-- TITULO --}}
-                            <a href="{{route('propiedad', ['id'=>$propiedad->id])}}" style="text-decoration: none">
+                            <a href="{{route('propiedad', ['id'=>Crypt::encrypt($propiedad->id)])}}" style="text-decoration: none">
                                 <h6 class="px-2 pt-1 text-blue22" style="font-weight: 600;"> 
                                     {{ \Illuminate\Support\Str::limit($propiedad->description, $limit = 65, $end = '...') }}
                                 </h6>    
