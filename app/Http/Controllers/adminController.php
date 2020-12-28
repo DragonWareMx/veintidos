@@ -180,6 +180,34 @@ class adminController extends Controller
     }
 
     public function contactanos(){
+        dd('Hola');
+        // try {
+        //     \DB::beginTransaction();
+
+        //     $proposal = new C_Proposal;
+
+        //     $proposal->name = $request->nombre;
+        //     $proposal->email = $request->correo;
+        //     $proposal->phone_number = $request->telefono;
+        //     $proposal->comment = $request->comentario;
+
+        //     //encuentra la propiedad
+        //     $propertieP = Propertie::findOrFail($decryptedId);
+            
+        //     $proposal->propertie_id = $propertieP->id;
+
+        //     $proposal->save();
+
+        //     \DB::commit();
+
+        //     return redirect('propiedad/'.$id)->with('status', '¡Solicitud enviada!');
+        //  }catch(\Exception $e){
+        //     \DB::rollback();
+        //     return redirect('propiedad/'.$id)
+        //                 ->withErrors(['No se pudo mandar la solicitud, intentelo más tarde.'])
+        //                 ->withInput();
+        //  }
+        return redirect('contactanos')->withErrors(['No se pudo mandar la solicitud, intentelo más tarde.']);
         
     }
 }
