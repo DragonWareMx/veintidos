@@ -24,6 +24,14 @@ Route::get('/notFound', function () {
     return view('notFound');
 });
 
+Route::get('/terminos_y_condiciones', function () {
+    return view('terminos_condiciones');
+});
+
+Route::get('/aviso_de_privacidad', function () {
+    return view('aviso_privacidad');
+});
+
 Route::post('/contactanos','adminController@contactanos')->name('contactanos-mssg');
 
 Route::get('/contactanos', function () {

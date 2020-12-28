@@ -27,8 +27,8 @@
             <a href="https://www.instagram.com/invites/contact/?i=1081ovoalpm0j&utm_content=jygx2jj"><img src="{{ asset('/img/ico/ig.png') }}"></a>
             <a href=""><img src="{{ asset('/img/ico/whats.png') }}"></a>
 
-            <a href="" class="enlace-footer">Aviso de privacidad</a>
-            <a href="" class="enlace-footer">Términos y condiciones</a>
+            <a href="/aviso_de_privacidad" target="_blank" class="enlace-footer">Aviso de privacidad</a>
+            <a href="/terminos_y_condiciones" target="_blank" class="enlace-footer">Términos y condiciones</a>
         </div>
     </div>
     <div class="container-footer">

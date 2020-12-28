@@ -42,11 +42,9 @@
             <p class="text-start txt-tituloForm2">Información de contacto y de la propiedad</p>
             <p class="text-start fs-6">Favor de llenar los siguiente datos y un asesor en breve le contactará. </p>
             @if (session('status'))
-                <div class="row mt-4 px-4">
                     <div class="alert alert-success">
                         {{ session('status') }}
                     </div>
-                </div>
             @endif
             <form class="row g-3" method="POST" action="{{ route('contactanos-mssg')}}" enctype="multipart/form-data">
                 @csrf
@@ -105,7 +103,7 @@
             </div>
         </form>
             <p class="txt-footerContactUs">* Campos obligatorios</p>
-            <p class="txt-footerContactUs">Al hacer clic en "Enviar" aceptas nuestros <a href="#">Términos y condiciones</a>, así como el <a href="#">Aviso de privacidad</a>.</p>
+            <p class="txt-footerContactUs">Al hacer clic en "Enviar" aceptas nuestros <a href="/terminos_y_condiciones" target="_blank">Términos y condiciones</a>, así como el <a href="/aviso_de_privacidad" target="_blank">Aviso de privacidad</a>.</p>
 
         </div>
         <div class="div_FormImg">

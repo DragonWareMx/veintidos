@@ -99,7 +99,7 @@
           ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate 
           velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, 
           sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <button type="button" class="btn btn-outline-primary">COMENZAR<i class="fas fa-caret-right"></i></button>
+          <a href="/inicio" style="float: right"><button type="button" class="btn btn-outline-primary">COMENZAR<i class="fas fa-caret-right"></i></button></a>
       </div>
       <div class="div_imgb">
         <img class="img_big" src="/img/img1.jpg">

@@ -73,7 +73,28 @@ Solicitudes - Veintidós
                         @else
                           <td>Renta</td>
                         @endif
-                        <td>{{$proposal->propertie_type}}</td>
+                        @php
+                            if($proposal->propertie_type=='warehouse'){
+                              echo"<td>Bodega</td>";
+                            }
+                            else if($proposal->propertie_type=='house'){
+                              echo"<td>Casa</td>";
+                            }
+                            else if($proposal->propertie_type=='department'){
+                              echo"<td>Departamento</td>";
+                            }
+                            else if($proposal->propertie_type=='premises'){
+                              echo"<td>Local</td>";
+                            }
+                            else if($proposal->propertie_type=='office'){
+                              echo"<td>Oficina</td>";
+                            }
+                            else{
+                              echo"<td>Terreno</td>";
+                            }
+                              
+                        @endphp
+                        
                     </tr>
                   @endforeach
                   
@@ -102,7 +123,25 @@ Solicitudes - Veintidós
         $('#deal').val('Compra');
       else
         $('#deal').val('Renta');
-      $('#type').val($type);
+      
+      if($type=='warehouse')
+        $('#type').val('Bodega');
+      
+      else if($type=='house')
+        $('#type').val('Casa');
+      
+      else if($type=='department')
+        $('#type').val('Departamento');
+      
+      else if($type=='premises')
+        $('#type').val('Local');
+      
+      else if($type=='office')
+        $('#type').val('Oficina');
+  
+      else if($type=='terrain') 
+      $('#type').val('Terreno');
+               
       $('#price').val($price);
   }
 </script>
