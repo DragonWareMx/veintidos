@@ -22,7 +22,7 @@ class CreateCProposalsTable extends Migration
             $table->string('name');                         //nombre de la persona que hace la propuesta
             $table->string('email', 320)->nullable();       //correo electronico de la persona que hace la propuesta           
             $table->string('comment')->nullable();          //comentario que hace la persona sobre la propuesta
-
+            $table->enum('status', ['reviewed','pending']);  
             $table->foreign('propertie_id')->references('id')->on('properties')->onDelete('set null');
         });
     }

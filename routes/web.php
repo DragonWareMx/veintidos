@@ -18,13 +18,21 @@ Route::get('/', function () {
     return redirect()->route('inicio');
 });
 
-Route::get('/inicio', function () {
-    return view('test');
-})->name('inicio');
+Route::get('/inicio','indexController@index' )->name('inicio');
 
 Route::get('/notFound', function () {
     return view('notFound');
 });
+
+Route::get('/terminos_y_condiciones', function () {
+    return view('terminos_condiciones');
+});
+
+Route::get('/aviso_de_privacidad', function () {
+    return view('aviso_privacidad');
+});
+
+Route::post('/contactanos','adminController@contactanos')->name('contactanos-mssg');
 
 Route::get('/contactanos', function () {
     return view('contactanos');
@@ -61,24 +69,26 @@ Route::get('/sesion', function () {
 // ADMINISTRACIÓN------------------------------------------------------------------------
 Auth::routes(['register' => false]);
 
-Route::get('/admin', function () {
-    return redirect('/admin/inicio');
-})->middleware('auth');
+Route::get('/admin', 'adminController@index')->name('adminIndex');
 
-Route::get('/admin/inicio', function () {
-    return view('admin.inicio');
-})->middleware('auth');
+Route::get('/admin/cuenta', 'adminController@cuenta')->name('cuenta');
 
-Route::get('/admin/cuenta', function () {
-    return view('admin.cuenta');
-})->middleware('auth');
+Route::patch('/admin/cuenta/{id}', 'adminController@cuentaUpdate')->name('cuenta-update');
+
+// Route::get('/admin/inicio', function () {
+//     return view('admin.inicio');
+// })->middleware('auth');
 
 Route::get('/admin/agregar/propiedad', 'adminPropiedades@agregar')->name('agregarPropiedad');
+Route::post('/admin/agregar/propiedad', 'adminPropiedades@agregarPost')->name('agregarPropiedadPost');
+
+Route::get('/admin/solicitudes','adminController@solicitudes')->name('solicitudes');
+Route::patch('/admin/solicitudes','adminController@solicitudesUpdate')->name('solicitudes-update');
+
+Route::get('/admin/mensajes','adminController@mensajes')->name('mensajes');
+Route::patch('/admin/mensajes','adminController@mensajesUpdate')->name('mensajes-update');
 
 
-Route::get('/admin/mensajes', function () {
-    return view('admin.mensajes');
-});
 
 //------------------------ RUTAS PROPIEDADES ------------------------
 // Route::get('/propiedades', function () {

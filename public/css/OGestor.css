@@ -15,6 +15,42 @@
     box-sizing: border-box;
     border-radius: 5px;
 }
+.O-btn-cancel{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #58AD30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 153px;
+    height: 45px;
+}
+.O-btn-save{
+    width: 153px;
+    height: 45px;
+    background: #58AD30;
+    border-radius: 5px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    border:none;
+}
+@media (max-width:767px){
+    .O-images-loader{
+        height: 214px;
+    }
+    .gallery img{
+        width: 70px;
+        height: 70px;
+    }
+}
 .O-inmueble-advise-images{
     font-family: Roboto;
     font-style: italic;
@@ -34,17 +70,29 @@
     color: #222B58;
 }
 
-::-webkit-scrollbar {
+#gallery::-webkit-scrollbar {
     width: 4px;
     margin-right: 50px;
 }
 
-::-webkit-scrollbar-track {
+#gallery::-webkit-scrollbar-track {
     background:none;
 }
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+#gallery::-webkit-scrollbar-thumb {
     background: #C4C4C4;
     border-radius: 3px;
+}
+.gallery img{
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    margin: 5px;
+    border: solid 1px #C4C4C4 ;
+    border-radius: 5px;
+}
+
+.O-mb-6{
+    margin-bottom:60px;
 }

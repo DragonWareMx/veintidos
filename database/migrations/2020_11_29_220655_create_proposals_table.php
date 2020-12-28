@@ -20,7 +20,7 @@ class CreateProposalsTable extends Migration
             
             $table->string('phone_number', 50);                                     //numero de telefono del que hace la propuesta
             $table->string('name');                                                 //nombre(s)
-            $table->string('lastname');                                             //apellido(s)
+            $table->string('lastname')->nullable();                                              //apellido(s)
             $table->string('email', 320)->nullable();                               //correo electrónico (opcional)
             $table->enum('propertie_type',          
                 ['house', 'department','premises','office','terrain','warehouse']); //tipo de propiedad propuesta

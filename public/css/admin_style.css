@@ -125,7 +125,6 @@
 .div-body-info{
     display: flex;
     flex-wrap: wrap;
-    /* background-color: pink; */
     width: 50%;
 }
 .txt-modal-etiq{
@@ -135,7 +134,71 @@
     margin-top: 0px;
 }
 .txt-modal-info{
+    border: none; 
+    font-weight: 300;
+    color:  #222222;
+    font-size:  14px;
+    padding: 0%;
     width: 100%;
     margin-bottom: 0px;
     margin-top: 0px;
+    background-color: transparent !important;
+}
+.div-body-propiedad{
+    width: 50%;
+}
+.div-modal-propiedad{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 2px;
+}
+.img-propiedad-modal{
+    width: 45%;
+    height: 200px;
+}
+.div-info-propiedad{
+    width: 55%;
+    padding: 10px;
+    padding-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+}
+.txt-title-mod-p{
+    color: #222B58;
+    font-weight: 600;
+    font-size: 16px;
+}
+.txt-title-mod-p a{
+    text-decoration: none;
+    color: #222B58;
+}
+#edit-estado-modal, #edit-estado-modal-btns{
+    display: none;
+}
+@media(max-width:1000px){
+    .div-body-propiedad, .div-body-info{
+        width: 100%;
+    }
+    .div-body-propiedad{
+        margin-top: 30px;
+    }
+}
+@media(max-width:500px){
+    .img-propiedad-modal{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .div-info-propiedad{
+        width: 100%;
+    }
+    .div-info-propiedad{
+        padding-bottom: 10px;
+    }
+}
+#password-error, #cfmPassword-error, #passActual-error{
+    font-size: 13px;
+    color:rgb(201, 30, 30);
 }
