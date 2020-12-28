@@ -18,9 +18,7 @@ Route::get('/', function () {
     return redirect()->route('inicio');
 });
 
-Route::get('/inicio', function () {
-    return view('test');
-})->name('inicio');
+Route::get('/inicio','indexController@index' )->name('inicio');
 
 Route::get('/notFound', function () {
     return view('notFound');
@@ -90,4 +88,4 @@ Route::get('/admin/mensajes', function () {
 // });
 Route::get('/propiedades', 'propiedadesController@ver')->name('verPropiedades');
 
-Route::get('/propiedad/{id}', 'propiedadesController@propiedad');
+Route::get('/propiedad/{id}', 'propiedadesController@propiedad')->name('propiedad');
