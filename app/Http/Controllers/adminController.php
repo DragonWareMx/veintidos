@@ -178,4 +178,8 @@ class adminController extends Controller
 
         return view('admin.mensajes', ['mensajes' => $mensajes, 'propiedades' => $propiedades]);
     }
+
+    public function contactanos(){
+        
+    }
 }

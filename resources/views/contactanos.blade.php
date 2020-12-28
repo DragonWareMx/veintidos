@@ -41,44 +41,58 @@
             <p class="text-start w-75 txt-tituloForm">¿TE INTERESA VENDER O RENTAR TU PROPIEDAD?, <b>CONTÁCTANOS</b></p>
             <p class="text-start txt-tituloForm2">Información de contacto y de la propiedad</p>
             <p class="text-start fs-6">Favor de llenar los siguiente datos y un asesor en breve le contactará. </p>
-            <form class="row g-3">
+            @if (session('status'))
+                <div class="row mt-4 px-4">
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                </div>
+            @endif
+            <form class="row g-3" method="POST" action="{{ route('contactanos-mssg')}}" enctype="multipart/form-data">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="col-md-6">
                   <label for="inputName" class="form-label">Nombre *</label>
-                  <input type="text" class="form-control" id="inputName" placeholder="Nombre completo">
+                  <input type="text" class="form-control" id="inputName" required name="nombre" placeholder="Nombre completo" value="{{ old('nombre') }}">
                 </div>
                 <div class="col-md-6">
-                  <label for="inputPhone" class="form-label">Teléfono</label>
-                  <input type="phone" class="form-control" id="inputPhone" placeholder="Teléfono">
+                  <label for="inputPhone" class="form-label">Teléfono *</label>
+                  <input type="phone" class="form-control" id="inputPhone" required name="telefono" placeholder="Teléfono" value="{{ old('telefono') }}">
                 </div>
 
                 <div class="col-md-6">
                     <label for="inputEmail" class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="correo@ejemplo.com">
+                    <input type="email" class="form-control" id="inputEmail" name="correo" placeholder="correo@ejemplo.com" value="{{ old('correo') }}">
                 </div>
                 <div class="col-md-6">
                     <label for="inputType" class="form-label">Tipo de propiedad *</label>
-                    <input type="text" class="form-control" id="inputType" placeholder="Tipo de propiedad">
+                    <input type="text" class="form-control" id="inputType" required name="tipo" placeholder="Tipo de propiedad" value="{{ old('tipo') }}">
                 </div>
 
                 <div class="col-md-6">
                     <label for="inputCost" class="form-label">Renta / Venta *</label>
-                    <input type="text" class="form-control" id="inputCost" placeholder="Renta / Venta">
+                    <input type="text" class="form-control" id="inputCost" required name="deal" placeholder="Renta / Venta" value="{{ old('deal') }}">
                 </div>
                 <div class="col-md-6">
                     <label for="inputCost" class="form-label">Precio propuesto *</label>
-                    <input type="number" class="form-control" id="inputCost" placeholder="Precio propuesto (Por mes)">
+                    <input type="number"  class="form-control" id="inputCost" required name="precio" placeholder="Precio propuesto (Por mes)" value="{{ old('precio') }}">
                 </div>
 
-                <div class="col-md-6">
-                    <label for="inputAdress" class="form-label">Dirección *</label>
-                    <input type="text" class="form-control" id="inputAdress" placeholder="Dirección completa">
-                </div>
+                
 
-            </form>
+            
             <div class="div_btns float-end div_ajustar_btns">
                 <a href="#" class="btn-txt-only">Cancelar</a>
-                <button type="button" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
             </div>
+        </form>
             <p class="txt-footerContactUs">* Campos obligatorios</p>
             <p class="txt-footerContactUs">Al hacer clic en "Enviar" aceptas nuestros <a href="#">Términos y condiciones</a>, así como el <a href="#">Aviso de privacidad</a>.</p>
 

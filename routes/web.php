@@ -24,6 +24,8 @@ Route::get('/notFound', function () {
     return view('notFound');
 });
 
+Route::post('/contactanos','adminController@contactanos')->name('contactanos-mssg');
+
 Route::get('/contactanos', function () {
     return view('contactanos');
 })->name('contactanos');
