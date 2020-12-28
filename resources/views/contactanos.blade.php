@@ -48,7 +48,11 @@
                     </div>
                 </div>
             @endif
+<<<<<<< Updated upstream
             <form class="row g-3" method="POST" action="{{ route('contactanos-mssg')}}" enctype="multipart/form-data">
+=======
+            <form class="row g-3">
+>>>>>>> Stashed changes
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -60,11 +64,19 @@
                 @endif
                 <div class="col-md-6">
                   <label for="inputName" class="form-label">Nombre *</label>
+<<<<<<< Updated upstream
                   <input type="text" class="form-control" id="inputName" required name="nombre" placeholder="Nombre completo" value="{{ old('nombre') }}">
                 </div>
                 <div class="col-md-6">
                   <label for="inputPhone" class="form-label">Teléfono *</label>
                   <input type="phone" class="form-control" id="inputPhone" required name="telefono" placeholder="Teléfono" value="{{ old('telefono') }}">
+=======
+                  <input type="text" class="form-control" id="inputName" name="nombre" placeholder="Nombre completo" value="{{ old('nombre') }}">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputPhone" class="form-label">Teléfono</label>
+                  <input type="phone" class="form-control" id="inputPhone" name="telefono" placeholder="Teléfono" value="{{ old('telefono') }}">
+>>>>>>> Stashed changes
                 </div>
 
                 <div class="col-md-6">
@@ -73,16 +85,28 @@
                 </div>
                 <div class="col-md-6">
                     <label for="inputType" class="form-label">Tipo de propiedad *</label>
+<<<<<<< Updated upstream
                     <input type="text" class="form-control" id="inputType" required name="tipo" placeholder="Tipo de propiedad" value="{{ old('tipo') }}">
+=======
+                    <input type="text" class="form-control" id="inputType" name="tipo" placeholder="Tipo de propiedad" value="{{ old('tipo') }}">
+>>>>>>> Stashed changes
                 </div>
 
                 <div class="col-md-6">
                     <label for="inputCost" class="form-label">Renta / Venta *</label>
+<<<<<<< Updated upstream
                     <input type="text" class="form-control" id="inputCost" required name="deal" placeholder="Renta / Venta" value="{{ old('deal') }}">
                 </div>
                 <div class="col-md-6">
                     <label for="inputCost" class="form-label">Precio propuesto *</label>
                     <input type="number"  class="form-control" id="inputCost" required name="precio" placeholder="Precio propuesto (Por mes)" value="{{ old('precio') }}">
+=======
+                    <input type="text" class="form-control" id="inputCost" name="deal" placeholder="Renta / Venta" value="{{ old('deal') }}">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCost" class="form-label">Precio propuesto *</label>
+                    <input type="number"  class="form-control" id="inputCost" name="precio" placeholder="Precio propuesto (Por mes)" value="{{ old('precio') }}">
+>>>>>>> Stashed changes
                 </div>
 
                 
