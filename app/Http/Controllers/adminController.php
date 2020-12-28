@@ -180,7 +180,15 @@ class adminController extends Controller
     }
 
     public function contactanos(){
-        dd('Hola');
+        $data=request()->validate([
+            'nombre'=>'required|max:191',
+            'telefono'=>'required|max:10',
+            'correo'=>'max:70',
+            'passActual'=>'required',
+            'password'=>'required',
+            'cfmPassword'=>'required'
+        ]);
+        // dd('Hola');
         // try {
         //     \DB::beginTransaction();
 

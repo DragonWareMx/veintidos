@@ -49,6 +49,7 @@
                 </div>
             @endif
             <form class="row g-3" method="POST" action="{{ route('contactanos-mssg')}}" enctype="multipart/form-data">
+                @csrf
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
