@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
         $this->call(properties_table::class);
         $this->call(userSeeder::class);
         $this->call(proposalSeeder::class);
+        $this->call(c_proposalSeeder::class);
     }
 }

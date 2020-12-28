@@ -47,11 +47,11 @@
             <img src="{{ asset('img/sistema/inmuebles.png') }}" alt="" width="20" height="20">
             Propiedades
         </a>
-        <a class="link-veintidos d-flex flex-wrap justify-content-center mx-5" href="#" style="width:40px">
+        <a class="link-veintidos d-flex flex-wrap justify-content-center mx-5" href="{{route('mensajes')}}" style="width:40px">
             <img src="{{ asset('img/sistema/mensajes.png') }}" alt="" width="20" height="20">
             Mensajes
         </a>
-        <a class="link-veintidos d-flex flex-wrap justify-content-center mx-5" href="#" style="width:40px">
+        <a class="link-veintidos d-flex flex-wrap justify-content-center mx-5" href="{{route('solicitudes')}}" style="width:40px">
             <img src="{{ asset('img/sistema/solicitudes.png') }}" alt="" width="20" height="20">
             Solicitudes
         </a>

@@ -14,6 +14,7 @@ use App\House;
 use App\Terrain;
 use App\WareHouse;
 use App\Proposal;
+use App\C_Proposal;
 use App\Premises_Office;
 use Auth;
 
@@ -101,5 +102,47 @@ class adminController extends Controller
         $solicitudes = Proposal::paginate(10);
 
         return view('admin.solicitudes', ['solicitudes' => $solicitudes]);
+    }
+
+    public function solicitudesUpdate ()
+    {
+        $data=request()->validate([
+            'estado'=>'required',
+            'idUp'=>'required'
+        ]);
+        $id=request('idUp');
+        $estadoNum=request('estado');
+
+        if($estadoNum==1){
+            $estadoNum='available';
+        }
+        else if($estadoNum==2){
+            $estadoNum='accepted';
+        }
+        else{
+            $estadoNum='rejected';
+        }
+
+        try{
+            DB::transaction(function() use ($id, $estadoNum)
+            {
+               $solicitudes=Proposal::findOrFail($id);
+               $solicitudes->status=$estadoNum;
+               $solicitudes->save();
+            });
+        }
+        catch(QueryException $ex){
+            return redirect()->back()->withErrors(['error' => 'ERROR: No se pudieron actualizar los datos']);
+        }
+        $solicitudes = Proposal::paginate(10);
+
+        return view('admin.solicitudes', ['solicitudes' => $solicitudes]);
+    }
+
+    public function mensajes()
+    {
+        $mensajes = C_Proposal::paginate(10);
+
+        return view('admin.mensajes', ['mensajes' => $mensajes]);
     }
 }

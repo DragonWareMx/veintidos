@@ -68,7 +68,11 @@ Solicitudes - Veintidós
                         @endif
                         <td>{{$proposal->name}}&nbsp;{{$proposal->lastname}}</td>
                         <td>{{$proposal->phone_number}}</td>
-                        <td>{{$proposal->deal}}</td>
+                        @if($proposal->deal=='sale')
+                          <td>Compra</td>
+                        @else
+                          <td>Renta</td>
+                        @endif
                         <td>{{$proposal->propertie_type}}</td>
                     </tr>
                   @endforeach
@@ -85,6 +89,7 @@ Solicitudes - Veintidós
 <script>
   function enviarId($id, $status , $name, $lastname, $email, $phone, $deal, $type, $price){ 
       $('#id').val($id);
+      $('#idUp').val($id);
       $('.status').val('Rechazado');
       if($status=='available')
         $('.status').val('Disponible');
@@ -93,7 +98,10 @@ Solicitudes - Veintidós
       $('#name').val($name);
       $('#email').val($email);
       $('#phone').val($phone);
-      $('#deal').val($deal);
+      if($deal=='sale')
+        $('#deal').val('Compra');
+      else
+        $('#deal').val('Renta');
       $('#type').val($type);
       $('#price').val($price);
   }
@@ -107,14 +115,18 @@ Solicitudes - Veintidós
           <h5 class="modal-title" id="exampleModalLabel">Solicitudes</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <form action="{{ route('solicitudes-update')}}"  method="POST" enctype="multipart/form-data">
+          @method("PATCH")
+                  @csrf
         <div class="modal-body" style="font-weight: 400; color:#8c8d8f; display:flex; flex-wrap:wrap">
               <p class="txt-modal-etiq">Id:</p>
-              <input class="txt-modal-info" id="id" readonly disabled>
+              <input class="txt-modal-info" id="id" name="id" readonly disabled>
+              <input class="txt-modal-info" id="idUp" name="idUp" style="display: none" readonly>
               <p class="txt-modal-etiq">Estado:</p>
-              <select class="form-select form-control" id="edit-estado-modal" style="width: 50%; margin-bottom:10px" aria-label="Default select example">
+              <select class="form-select form-control" id="edit-estado-modal" name="estado" style="width: 50%; margin-bottom:10px" aria-label="Default select example">
                 <option selected id="status" value="1">Disponible</option>
                 <option value="2">Aceptado</option>
-                <option value="2">Rechazado</option>
+                <option value="3">Rechazado</option>
               </select>
               <input readonly disabled class="txt-modal-info status" id="Noedit-estado-modal"> 
               <p class="txt-modal-etiq">Nombre:</p>
@@ -129,18 +141,16 @@ Solicitudes - Veintidós
               <input readonly disabled class="txt-modal-info" id="type">
               <p class="txt-modal-etiq">Precio propuesto:</p>
               <input readonly disabled class="txt-modal-info" id="price">
-              
-              
-              <a href="#" style="margin-top: 10px; color:#222B58; font-size:14px">Agregar propiedad</a>
+              {{-- <a href="#" style="margin-top: 10px; color:#222B58; font-size:14px">Agregar propiedad</a> --}}
         </div>
 
         <div class="modal-footer">
           <div  id="edit-estado-modal-btns">
             <a href="javascript:noeditar();"><button type="button" class="btn btn-secondary" 
             style="font-size: 15px">Cancelar</button></a>
-          <button type="button" class="btn btn-success" style="font-size: 15px">Guardar</button>
+          <button type="submit" class="btn btn-success" style="font-size: 15px">Guardar</button>
           </div>
-          
+        </form>
           <a href="javascript:editar();"><button type="button" class="btn btn-success"  id="Noedit-estado-modal-btn" style="font-size: 15px">Editar</button></a>
         </div>
       </div>
