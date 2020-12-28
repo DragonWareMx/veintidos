@@ -142,7 +142,40 @@ class adminController extends Controller
     public function mensajes()
     {
         $mensajes = C_Proposal::paginate(10);
+        $propiedades = Propertie::get();
 
-        return view('admin.mensajes', ['mensajes' => $mensajes]);
+        return view('admin.mensajes', ['mensajes' => $mensajes, 'propiedades' => $propiedades]);
+    }
+
+    public function mensajesUpdate()
+    {
+        $data=request()->validate([
+            'estado'=>'required',
+            'idUp'=>'required'
+        ]);
+        $id=request('idUp');
+        $estadoNum=request('estado');
+
+        if($estadoNum==1){
+            $estadoNum='pending';
+        }
+        else{
+            $estadoNum='reviewed';
+        }
+        try{
+            DB::transaction(function() use ($id, $estadoNum)
+            {
+               $mensajes=C_Proposal::findOrFail($id);
+               $mensajes->status=$estadoNum;
+               $mensajes->save();
+            });
+        }
+        catch(QueryException $ex){
+            return redirect()->back()->withErrors(['error' => 'ERROR: No se pudieron actualizar los datos']);
+        }
+        $mensajes = C_Proposal::paginate(10);
+        $propiedades = Propertie::get();
+
+        return view('admin.mensajes', ['mensajes' => $mensajes, 'propiedades' => $propiedades]);
     }
 }

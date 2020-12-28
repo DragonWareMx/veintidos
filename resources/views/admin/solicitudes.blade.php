@@ -4,7 +4,7 @@
 Solicitudes - Veintidós
 @endsection
 
-@section('head')
+@section('head') 
 <script languague="javascript">
   function editar() {
       noed = document.getElementById('Noedit-estado-modal');
@@ -95,7 +95,7 @@ Solicitudes - Veintidós
         $('.status').val('Disponible');
       else if($status=='accepted')
         $('.status').val('Aceptado');
-      $('#name').val($name);
+      $('#name').val($name+' '+$lastname);
       $('#email').val($email);
       $('#phone').val($phone);
       if($deal=='sale')
@@ -143,7 +143,6 @@ Solicitudes - Veintidós
               <input readonly disabled class="txt-modal-info" id="price">
               {{-- <a href="#" style="margin-top: 10px; color:#222B58; font-size:14px">Agregar propiedad</a> --}}
         </div>
-
         <div class="modal-footer">
           <div  id="edit-estado-modal-btns">
             <a href="javascript:noeditar();"><button type="button" class="btn btn-secondary" 

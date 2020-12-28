@@ -76,7 +76,7 @@ Route::get('/admin/solicitudes','adminController@solicitudes')->name('solicitude
 Route::patch('/admin/solicitudes','adminController@solicitudesUpdate')->name('solicitudes-update');
 
 Route::get('/admin/mensajes','adminController@mensajes')->name('mensajes');
-
+Route::patch('/admin/mensajes','adminController@mensajesUpdate')->name('mensajes-update');
 
 
 
