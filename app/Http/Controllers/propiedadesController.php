@@ -90,7 +90,10 @@ class propiedadesController extends Controller
         }
 
         $propiedad=Propertie::find($decryptedId);
-        return view('Propiedades.propiedad',['propiedad'=>$propiedad]);
+
+        $propiedades=Propertie::get();
+
+        return view('Propiedades.propiedad',['propiedad'=>$propiedad, 'propiedades'=>$propiedades]);
     }
 
     public function propuesta(Request $request, $id){

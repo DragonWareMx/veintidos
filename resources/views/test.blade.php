@@ -80,14 +80,14 @@
                                     </div>
                                     <div class="col-4 text-right">
                                         <img class="d-inline mb-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/images.png')}}" alt="">
-                                        <p class="m-1 d-inline text-white font-weight-bold" style="text-shadow: 1px 1px 3px black; font-weight: 500;">{{count($propiedad->photos()->get())}}</p>
+                                        <p class="m-1 d-inline text-white font-weight-bold" style="text-shadow: 1px 1px 3px black; font-weight: 500;">{{count($propiedad->photos()->get()) + 1}}</p>
                                     </div>
                                 </div>
                             </div>
                             {{-- DATOS --}}
                             {{-- TITULO --}}
                             <a href="{{route('propiedad', ['id'=>Crypt::encrypt($propiedad->id)])}}" style="text-decoration: none">
-                                <h6 class="px-2 pt-1 text-blue22" style="font-weight: 600;"> 
+                                <h6 class="px-2 pt-1 text-blue22" style="font-weight: 600; min-height: 52px;"> 
                                     {{ \Illuminate\Support\Str::limit($propiedad->description, $limit = 65, $end = '...') }}
                                 </h6>    
                             </a>

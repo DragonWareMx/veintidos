@@ -109,7 +109,7 @@
 
                                     {{-- Carousel --}}
                                     <div class="mx-auto mt-2" style="width: 95%;">
-                                        <div class="owl-carousel owl-theme mx-auto owl-w">
+                                        <div class="owl-carousel owl-theme mx-auto owl-w" id="galeria-carousel">
                                             <div class="item" style="width:110px; height:80px; background: url('{{ asset($propiedad->photo) }}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset($propiedad->photo) }}'); setIndex(0)"></div>
                                             @php
                                                 $index = 0;
@@ -1162,6 +1162,51 @@
             <div class="Otitle"><h1>PROPIEDADES SIMILARES</h2></div>
 
             <hr>
+
+            <div class="owl-carousel owl-theme" id="propiedades-carousel" style="margin-bottom:3%; margin-top:3%">
+                @foreach ($propiedades as $propiedad)
+                    <div class="olw-item" style="margin:3%">
+                        {{-- TARJETA DE LA PROPIEDAD --}}
+                        <div class="border rounded-bottom shadow-sm bg-white">
+                            <div style="height:auto; min-height: 330px; line-height: 12px !important;">
+                                {{-- IMAGEN --}}
+                                <div  style="
+                                background: url('{{ asset($propiedad->photo)}}') no-repeat center center;
+                                background-size: cover;
+                                height:220px;">
+                                    {{-- DIRECCION Y FOTOS --}}
+                                    <div class="row h-100 align-items-end">
+                                        <div class="col-8 text-left">
+                                            <img class="d-inline mb-1 ml-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/ubicacion.png')}}" alt="">
+                                            <p class="my-1 d-inline text-white" style="text-shadow: 1px 1px 3px black; font-weight: 500;">{{$propiedad->suburb}}, {{$propiedad->city}}</p>
+                                        </div>
+                                        <div class="col-4 text-right">
+                                            <img class="d-inline mb-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/images.png')}}" alt="">
+                                            <p class="m-1 d-inline text-white font-weight-bold" style="text-shadow: 1px 1px 3px black; font-weight: 500;">{{count($propiedad->photos()->get()) + 1}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{-- DATOS --}}
+                                {{-- TITULO --}}
+                                <a href="{{route('propiedad', ['id'=>Crypt::encrypt($propiedad->id)])}}" style="text-decoration: none">
+                                    <h6 class="px-2 pt-1 text-blue22" style="font-weight: 600; min-height: 52px;"> 
+                                        {{ \Illuminate\Support\Str::limit($propiedad->description, $limit = 65, $end = '...') }}
+                                    </h6>    
+                                </a>
+                                {{-- PRECIO Y CLAVE --}}
+                                <div class="row align-items-end px-2">
+                                    <div class="col-7 text-left">
+                                        <p class="m-1">${{number_format($propiedad->price,2)}} </p>
+                                    </div>
+                                    <div class="col-5 text-right">
+                                        <p class="m-1">Clave: <b>{{str_pad($propiedad->id, 4, '0', STR_PAD_LEFT)}}</b></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
 
@@ -1169,11 +1214,28 @@
 
         //OWL CAROUSEL
         $(document).ready(function(){
-            $('.owl-carousel').owlCarousel({
+            $('#galeria-carousel').owlCarousel({
                 margin:10,
                 loop:false,
                 autoWidth:true,
                 items:4,
+            });
+
+            $('#propiedades-carousel').owlCarousel({
+                loop:false,
+                margin:10,
+                nav:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:3
+                    },
+                    1000:{
+                        items:4
+                    }
+                }
             });
 
             $('#formMI').parsley();
