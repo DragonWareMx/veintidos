@@ -148,9 +148,9 @@
                                                 </a> --}}
                                                 
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                    <a class="dropdown-item" href="#">Facebook</a>
-                                                    <a class="dropdown-item" href="#">Instagram</a>
-                                                    <a class="dropdown-item" href="#">Whatsapp</a>
+                                                    <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Facebook">Facebook</a>
+                                                    <a class="dropdown-item" href="https://wa.me/?text={{ urlencode (url()->current()) }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Whatsapp">whatsapp</a>
+                                                    <a class="dropdown-item" data-toggle="tooltip" title="¡Link copiado al portapapeles!" href="{{ url()->current() }}" id="copiarPP">Copiar en el portapapeles</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -1160,6 +1160,8 @@
 
             {{-- AQUI VA EL CARRUSEL DE LAS PROPIEDADES --}}
             <div class="Otitle"><h1>PROPIEDADES SIMILARES</h2></div>
+
+            <hr>
         </div>
     </div>
 
@@ -1202,7 +1204,31 @@
             //         });
             //     }
             // });
+
+            $('#copiarPP').tooltip('disable');
+
+            $('#copiarPP').click(function (e) {
+                e.preventDefault();
+                var copyText = $(this).attr('href');
+
+                document.addEventListener('copy', function(e) {
+                    e.clipboardData.setData('text/plain', copyText);
+                    e.preventDefault();
+                }, true);
+
+                document.execCommand('copy');
+
+                alert("Enlace copiado.");
+            });
         });
+
+        function ttCopiar(){
+            var copyText = '{{ url()->current() }}';
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+            $('#copiarPP').tooltip('show');
+        }
 
         //IMAGEN GALERIA
 
