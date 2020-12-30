@@ -94,6 +94,12 @@ Route::patch('/admin/mensajes','adminController@mensajesUpdate')->name('mensajes
 // Route::get('/propiedades', function () {
 //     return view('propiedades.propiedades');
 // });
+
+//VER TODAS LAS PROPIEDADES
 Route::get('/propiedades', 'propiedadesController@ver')->name('verPropiedades');
 
+//VER UNA PROPIEDAD
 Route::get('/propiedad/{id}', 'propiedadesController@propiedad')->name('propiedad');
+
+//PROPUESTA DE PROPIEDAD
+Route::post('/propiedad/{id}', 'propiedadesController@propuesta');
