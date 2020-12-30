@@ -10,7 +10,7 @@
     <div class="container">
         <div class="Odiv100 d-block">
             <div class="Otitle"><h1>PROPIEDADES | </h1><h2>{{ $tipo }}</h2></div>
-            @if ($propiedades)
+            @if ($propiedades && count($propiedades) > 0)
                 <div class="row">
                     {{-- PROPIEDAD --}}
                     @foreach ($propiedades as $propiedad)
@@ -644,11 +644,16 @@
                         </div>
                     @endforeach
                 </div>
+                <div class="row">
+                    <div class="col my-5">
+                        {{ $propiedades->links() }}
+                    </div>
+                </div>
             @else
                 <div class="container">
                     {{-- NO SE ENCOTRARON RESULTADOS --}}
                     <div class="OGreenText OBR70">No se encontraron resultados</div>
-                    <div class="OBR70 OContactUs">
+                    <div class="OBR70 OContactUs mx-auto">
                         <h1>CONTÁCTANOS</h1>
                         <div class="OContactUsItem">
                             <img class="OContactUsImg" src="{{ asset('img/ico/phone.png') }}" alt="">
@@ -666,7 +671,7 @@
                         </div>
                     </div>
                     <div class="OWidth100 OCenterItem"> 
-                        <a href="#" class="OButtonInicio">
+                        <a href="{{ route('inicio') }}" class="OButtonInicio">
                             <div class="OButtonInicioText">INICIO</div>
                             <img class="OButtonInicioArrow" src="{{ asset('img/ico/next-white.png') }}" alt="">
                         </a>
