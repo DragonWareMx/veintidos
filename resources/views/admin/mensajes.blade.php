@@ -54,8 +54,19 @@ Mensajes - Veintidós
                     </tr>
                 </thead>
                 <tbody>
+                  
                   @foreach ($mensajes as $c_proposal)
-                    <tr data-bs-toggle="modal" data-bs-target="#modalInfo" onclick="enviarId('{{$c_proposal->id}}','{{$c_proposal->status}}','{{$c_proposal->name}}','{{$c_proposal->email}}','{{$c_proposal->phone_number}}','{{$c_proposal->propertie_id}}','{{$c_proposal->comment}}')">
+                    @foreach ($propiedades as $prop)
+                      @php
+                      if($c_proposal->propertie_id == $prop->id){
+                        $tituloP=$prop->title;
+                        $fotoP=$prop->photo;
+                        $calleP=$prop->street . ', ' . $prop->suburb . ', ' . $prop->town;
+                        $precioP=$prop->price;
+                      }
+                      @endphp
+                    @endforeach
+                    <tr data-bs-toggle="modal" data-bs-target="#modalInfo" onclick="enviarId('{{$precioP}}','{{$calleP}}','{{$tituloP}}','{{$fotoP}}','{{$c_proposal->id}}','{{$c_proposal->status}}','{{$c_proposal->name}}','{{$c_proposal->email}}','{{$c_proposal->phone_number}}','{{$c_proposal->propertie_id}}','{{$c_proposal->comment}}')">
                       <th scope="row">{{$c_proposal->id}}</th>
                       @if($c_proposal->status=='pending')
                         <td>Sin revisar</td>
@@ -78,7 +89,7 @@ Mensajes - Veintidós
 </div>
 
 <script>
-  function enviarId($id, $status , $name, $email, $phone, $propertie_id, $comment){ 
+  function enviarId($precioP, $calleP, $tituloP, $fotoP, $id, $status , $name, $email, $phone, $propertie_id, $comment){ 
       $('#id').val($id);
       $('#idUp').val($id);
       if($status=='reviewed')
@@ -89,7 +100,14 @@ Mensajes - Veintidós
       $('#email').val($email);
       $('#phone').val($phone);
       $('#propertie').val($propertie_id);
-      $('#comment').val($comment);
+      $('#comment').val($comment);    
+
+      $('#precio-p').val('$'+$precioP);  
+      $('#titulo-p').val($tituloP);    
+      
+      $('#clave-p').val('Clave: '+$propertie_id);  
+      $('#lugar-p').val($calleP);  
+      document.getElementById("img-p").src='/'+$fotoP;  
   }
 </script>
 
@@ -124,26 +142,18 @@ Mensajes - Veintidós
               <p class="txt-modal-etiq">Comentarios:</p>
               <input readonly disabled class="txt-modal-info" id="comment" style="text-align: justify">
           </div>
-          
-          @php
-              $var = 1;
-          @endphp
-          @foreach ($propiedades as $prop)
-            @if($prop->id==$var)
-              <div class="div-body-propiedad">
-                <div class="div-modal-propiedad">
-                  <img class="img-propiedad-modal" src="{{ asset($prop->photo) }}">
-                  <div class="div-info-propiedad">
-                    <p class="txt-title-mod-p" style="text-transform: uppercase"><a href="#">{{$prop->title}}</a></p>
-                    <p><i class="fas fa-map-marker-alt"></i>{{$prop->street}},&nbsp;{{$prop->suburb}}&nbsp;{{$prop->town}}</p>
-                    <p>${{$prop->price}}</p>
-                    <p style="margin-bottom: 0px">Clave: <b>{{$prop->id}}</b></p>
-                  </div>
-                </div>
+
+          <div class="div-body-propiedad">
+            <div class="div-modal-propiedad">
+              <img class="img-propiedad-modal" id="img-p" src="">
+              <div class="div-info-propiedad">
+                <a href="#"><textarea style="text-transform: uppercase; font-weight:600; font-size:16px; color:#222B58" id="titulo-p" readonly disabled></textarea></a>
+                <input id="lugar-p" readonly disabled>
+                <input id="precio-p" readonly disabled>
+                <input id="clave-p" style="margin-bottom: 0px" readonly disabled>
               </div>
-            @endif
-        @endforeach
-          
+            </div>
+          </div>          
         </div>
         <div class="modal-footer">
           <div  id="edit-estado-modal-btns">
