@@ -5,6 +5,12 @@
 @section('head')
     <link rel="stylesheet" href="{{ asset('/css/O.css') }}">
     <link rel="stylesheet" href="{{ asset('/plugins/bootstrap/css/bootstrap.css') }}">
+
+    <style>
+        .btn-vm:hover{
+            background-color: transparent;
+        }
+    </style>
 @endsection
 @section('content')
     <div class="container">
@@ -632,11 +638,11 @@
 
                                     {{-- BOTONES --}}
                                     <div class="row px-2">
-                                        <div class="col">
-                                            <button type="button" class="btn btn-outline-dark b-blue22 w-100"><b>Ver más</b></button>
+                                        <div class="col-sm mb-3">
+                                            <a type="button" class="btn btn-outline-dark b-blue22 w-100 btn-vm" style="padding-right: 10px; padding-left: 10px;" href="{{ route('propiedad',['id'=>Crypt::encrypt($propiedad->id)]) }}"><b>Ver más</b></a>
                                         </div>
-                                        <div class="col">
-                                            <button type="button" class="btn btn-primary w-100">Me interesa</button>
+                                        <div class="col-sm mb-3">
+                                            <a type="button" class="btn btn-primary w-100" style="padding-right: 10px; padding-left: 10px;" href="{{ route('propiedad',['id'=>Crypt::encrypt($propiedad->id)]) }}">Me interesa</a>
                                         </div>
                                     </div>
                                 </div>
