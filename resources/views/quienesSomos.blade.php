@@ -34,9 +34,11 @@
             <img src="/img/ico/quote.png" class="float-start">
             <p class="txt-titleQ">NUESTRA <b>MISIÓN Y VISIÓN</b></p>
           </div>
-          <p class="txt-info-q">Mantener excelencia en el servicio a través de nuestro equipo de trabajo, con ética y profesionalismo en un ambiente de respeto, confidencialidad y confianza. 
-            Generando clientes satisfechos que nos recomienden en la administración de inmuebles, compra o venta de sus propiedades, facilitando sus procesos de una manera integral y superando sus expectativas.
-            Ser una empresa líder y la mejor alternativa en el Estado Michoacán para todos nuestros clientes; así como la mejor opción de desarrollo para nuestros colaboradores.</p>
+          <p class="txt-info-q">Estamos conscientes que la compra y/o venta de inmuebles son decisiones patrimoniales de gran trascendencia en la vida; es por ello que le brindamos un servicio de alta calidad.
+            Somos una empresa del Estado de Michoacán, dispuestos a brindarle un servicio personalizado, confidencial y de calidad para ayudarle con su operación inmobiliaria. 
+            <br>
+            Nuestra misión es mantener excelencia en el servicio a través de nuestro equipo de trabajo, con ética y profesionalismo en un ambiente de respeto, confidencialidad y confianza. 
+            Generando clientes satisfechos que nos recomienden en la administración de inmuebles, compra o venta de sus propiedades, facilitando sus procesos de una manera integral y superando sus expectativas.</p>
           <a href="#1" >Saber más</a>
         </div>
 
@@ -70,21 +72,18 @@
     <div class="div_vision_mision div_que_hacemos">
       <img src="/img/que_hacemos.jpg" class="float-start">
       <div class="div_info_q">
-        <p class="txt-titleQ" style="color: white">PROMOCIÓN DE TUS <b>PROPIEDADES</b></p>
-        <p style="color: white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod 
-          tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-          exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. </p>
-        <ol>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
+        <p class="txt-titleQ" style="color: white">NUESTROS <b>VALORES</b></p>
+        <ol class="agrandamiento">
+          <li>Honestidad</li>
+          <li>Integridad</li>
+          <li>Responsabilidad</li>
+          <li>Respeto</li>
+          <li>Discreción</li>
+          <li>Servicio</li>
+          <li>Solidaridad</li>
         </ol>
-        <p style="color: white" id="info-more">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod 
-          tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-          exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. </p>
+        <p style="color: white" id="info-more" class="agrandamiento" style="font-size:20px">Estamos comprometidos con tu familia y sabemos la importancia de encontrar un hogar o un lugar para desarrollar tus actividades laborales. Nuestro objetivo es que encuentres un sitio adecuado, 
+              seguro y con las características ideales para tu familia o negocio conforme a tus necesidades.</p>
         <a href="javascript:mostrar();" id="button-more"><button type="button" class="btn btn-outline-secondary" style="margin-bottom: 15px">LEER MÁS<i class="fas fa-caret-right"></i></button></a>
         <a href="javascript:cerrar();" id="button-less"><button type="button" class="btn btn-outline-secondary" style="margin-bottom: 15px">LEER MENOS<i class="fas fa-caret-right"></i></button></a>
       </div>      
@@ -92,11 +91,7 @@
     <div class="div_vision_mision div_busqueda">
       <div class="div_info_busqueda">
         <p class="txt-titleQ txt-busquedaT" style="color:#222B58">BÚSQUEDA DE <b>PROPIEDADES</b></p>
-        <p style="width:100%">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor 
-          incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-          ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate 
-          velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, 
-          sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p style="width:100%">Te ayudamos a encontrar la casa de tus sueños. En nuestro sitio puedes buscar inmuebles para comprar o rentar, elige la ciudad, el rango de precios y mándanos tu solicitud. Estaremos encantados de ayudarte a encontrar tu hogar ideal.</p>
           <a href="/inicio" style="float: right"><button type="button" class="btn btn-outline-primary">COMENZAR<i class="fas fa-caret-right"></i></button></a>
       </div>
       <div class="div_imgb">
@@ -112,9 +107,8 @@
       </div>
       <div class="div_25 text-center div_25-txt">
         <p class="txt-numberS">1</p>
-        <p><b>Lorem ipsum dolor sit amet</b></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor 
-          incidunt ut labore et dolore magna aliqua.
+        <p><b>Consultoria</b></p>
+        <p>Consultoría en la elaboración de contratos de arrendamiento.
         </p>
       </div>
       <div class="div_25">
@@ -122,25 +116,22 @@
       </div>
       <div class="div_25 text-center div_25-txt">
         <p class="txt-numberS">2</p>
-        <p><b>Lorem ipsum dolor sit amet</b></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor 
-          incidunt ut labore et dolore magna aliqua.
+        <p><b>Avalúos de tu propiedad.</b></p>
+        <p>Te ayudamos a saber cuanto cuesta tu inmueble.
       </div>
 
       <div class="div_25 text-center div_25-txt">
         <p class="txt-numberS">3</p>
-        <p><b>Lorem ipsum dolor sit amet</b></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor 
-          incidunt ut labore et dolore magna aliqua.
+        <p><b>Orientación</b></p>
+        <p>Orientación en tu trámite de crédito hipotecario (ISSSTE, Infonavit e Instituciones Bancarias).
       </div>
       <div class="div_25">
         <img class="img_big" src="/img/service3.jpg">
       </div>
       <div class="div_25 text-center div_25-txt">
         <p class="txt-numberS">4</p>
-        <p><b>Lorem ipsum dolor sit amet</b></p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor 
-          incidunt ut labore et dolore magna aliqua.
+        <p><b>Asesoría</b></p>
+        <p>Asesoría y trámites en alineamientos, número oficial, licencias de uso de suelo.
       </div>
       <div class="div_25">
         <img class="img_big" src="/img/service4.jpg">

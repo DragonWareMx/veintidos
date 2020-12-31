@@ -1,6 +1,6 @@
 @extends('layouts.publiSide')
 @section('title')
-    Sin Resultados
+    Propiedades
 @endsection
 @section('head')
     <link rel="stylesheet" href="{{ asset('/css/O.css') }}">
@@ -82,7 +82,7 @@
                                     {{-- PRECIO Y CLAVE --}}
                                     <div class="row align-items-end px-2">
                                         <div class="col-7 text-left">
-                                            <p class="m-1">${{number_format($propiedad->price,2)}} </p>
+                                            <p class="m-1" style="font-weight:bold; color:#448B23;font-size:16px;">${{number_format($propiedad->price,2)}} </p>
                                         </div>
                                         <div class="col-5 text-right">
                                             <p class="m-1">Clave: <b>{{str_pad($propiedad->id, 4, '0', STR_PAD_LEFT)}}</b></p>
