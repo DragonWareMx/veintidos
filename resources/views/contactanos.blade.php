@@ -7,10 +7,6 @@
     <link rel="stylesheet" href="{{ asset('/css/contactanos.css') }}">
 @endsection
 @section('content')
-<div class="container">
-    <h1 class="h1 text-center">CONTÁCTANOS</h1>
-</div>
-
 <section class="contactanos">
     <div class="div_banner container-fluid">
         <img src="/img/whiteHouse.jpg" class="float-start">
