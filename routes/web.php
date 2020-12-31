@@ -32,7 +32,7 @@ Route::get('/aviso_de_privacidad', function () {
     return view('aviso_privacidad');
 });
 
-Route::post('/contactanos','adminController@contactanos')->name('contactanos-mssg');
+Route::post('/contactanos','contactanosController@contactanos')->name('contactanos-mssg');
 
 Route::get('/contactanos', function () {
     return view('contactanos');
