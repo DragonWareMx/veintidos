@@ -30,7 +30,7 @@
 @endsection
 
 @section('content')
-<div style="background-image: url('/img/fondoEdificioBLUE2.png'); width: 100; height: 100vh; ">
+<div style="background: url('/img/fondoEdificioBLUE2.png') no-repeat fixed; width: 100%; height: 100vh; background-size:cover;">
     <div class="bocadillo-cuadrado">
         <h1 id="hola">¡BIENVENIDO!</h1> 
         <p id="txt_hi" style="font-family: Roboto;

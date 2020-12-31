@@ -317,8 +317,8 @@ footer{
     }
     .navigation ul.show{
         display: block;
+        border-bottom:#c4c4c4 solid 2px;
     }
-
     .navigation ul li{
         display: block;
     }
@@ -450,7 +450,7 @@ footer{
 }
 
 .header{
-    z-index: 999;
+    z-index: 1000;
 }
 
 .search-50{

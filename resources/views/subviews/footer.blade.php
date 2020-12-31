@@ -19,13 +19,13 @@
             <a href="{{route('quienesSomos')}}" class="enlace-footer">¿Quiénes somos?</a>
             <br><br>
             <h4>CONTÁCTANOS</h4>
-            <a href="" class="enlace-footer"><i class="fas fa-phone-alt"></i>&nbsp; Tel. 4433370550</a>
-            <a href="" class="enlace-footer"><i class="fas fa-envelope"></i>&nbsp; contacto@veintidos.mx</a>
+            <a href="tel:4433370550" class="enlace-footer" target="_blank"><i class="fas fa-phone-alt"></i>&nbsp; Tel. 4433370550</a>
+            <a href="mailto:contacto@veintidos.mx" class="enlace-footer" target="_blank"><i class="fas fa-envelope"></i>&nbsp; contacto@veintidos.mx</a>
         </div>
         <div class="column4">
-            <a href="https://www.facebook.com/Veintid%C3%B3s-Grupo-Inmobiliario-103029468239947/"><img src="{{ asset('/img/ico/fb.png') }}"></a>
-            <a href="https://www.instagram.com/invites/contact/?i=1081ovoalpm0j&utm_content=jygx2jj"><img src="{{ asset('/img/ico/ig.png') }}"></a>
-            <a href=""><img src="{{ asset('/img/ico/whats.png') }}"></a>
+            <a href="https://www.facebook.com/Veintid%C3%B3s-Grupo-Inmobiliario-103029468239947/" target="_blank"><img src="{{ asset('/img/ico/fb.png') }}"></a>
+            <a href="https://www.instagram.com/veintidosgrupoinmobiliario/" target="_blank"><img src="{{ asset('/img/ico/ig.png') }}"></a>
+            <a href="https://api.whatsapp.com/send?phone=524433370550&text=Hola,%20me%20gustaría%20más%20información%20de%20veintidós,%20grupo%20inmobiliario." target="_blank"><img src="{{ asset('/img/ico/whats.png') }}"></a>
 
             <a href="/aviso_de_privacidad" target="_blank" class="enlace-footer">Aviso de privacidad</a>
             <a href="/terminos_y_condiciones" target="_blank" class="enlace-footer">Términos y condiciones</a>
@@ -33,8 +33,8 @@
     </div>
     <div class="container-footer">
         <p>Copyright © 2020 Veintidós.</p>
-        <a href="https://dragonware.com.mx" target="_blank">
-            <p>Desarrollado por DragonWare. <img src="{{ asset('/img/ico/dragonblanco.png') }}" width="14px" height="14px"></p>        
+        <a href="http://dragonware.com.mx" target="_blank" style="text-decoration:none;">
+            <p>Desarrollado por DragonWare. &nbsp;<img src="{{ asset('/img/ico/dragonblanco.png') }}" width="14px" height="14px"></p>        
         </a>
     </div>
 </footer>

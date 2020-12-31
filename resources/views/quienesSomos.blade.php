@@ -34,11 +34,9 @@
             <img src="/img/ico/quote.png" class="float-start">
             <p class="txt-titleQ">NUESTRA <b>MISIÓN Y VISIÓN</b></p>
           </div>
-          <p class="txt-info-q">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor 
-            incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-            laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse 
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa 
-            qui officia deserunt mollit anim id est laborum.</p>
+          <p class="txt-info-q">Mantener excelencia en el servicio a través de nuestro equipo de trabajo, con ética y profesionalismo en un ambiente de respeto, confidencialidad y confianza. 
+            Generando clientes satisfechos que nos recomienden en la administración de inmuebles, compra o venta de sus propiedades, facilitando sus procesos de una manera integral y superando sus expectativas.
+            Ser una empresa líder y la mejor alternativa en el Estado Michoacán para todos nuestros clientes; así como la mejor opción de desarrollo para nuestros colaboradores.</p>
           <a href="#1" >Saber más</a>
         </div>
 
