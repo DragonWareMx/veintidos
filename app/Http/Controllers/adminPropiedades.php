@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
 use App\Propertie;
 use App\Photo;
 use App\House;
 use App\Department;
 use App\Terrain;
 use App\Premises_Office;
-use App\Wharehouse;
+use App\Warehouse;
+use Illuminate\Support\Facades\DB;
 
 class adminPropiedades extends Controller
 {
@@ -66,68 +68,127 @@ class adminPropiedades extends Controller
             'descripcion' => 'max:700 | required',
             'info' => 'max:700',
         ]);
-        $propiedad = new Propertie();
-        $propiedad->owner_name=$request->owner;
-        $propiedad->description=$request->descripcion;
-        if(isset($request->calle)){$propiedad->street=$request->calle;}
-        if(isset($request->int)){$propiedad->int_number=$request->int;}
-        if(isset($request->ext)){$propiedad->ext_number=$request->ext;}
-        $propiedad->suburb=$request->colonia;
-        $propiedad->town=$request->municipio;
-        if(isset($request->ciudad)){$propiedad->city=$request->ciudad;}
-        $propiedad->state=$request->estado;
-        $propiedad->title=$request->titulo;
-        $propiedad->deal=$request->deal;
-        $propiedad->price=$request->precio;
-        $propiedad->status=$request->estatus;
-        $name = $request->fotos['0']->getClientOriginalName();
-        $name = pathinfo( $name,PATHINFO_FILENAME);
-        $extension = $request->fotos['0']->getClientOriginalExtension();
-        $name=$name.'_'.time().'.'.$extension;
-        $path = $request->fotos['0']->storeAs('/public/img/photos',$name);
-        $propiedad->photo=$name;
-        $propiedad->save();
-        $aux=0;
-        foreach($request->fotos as $foto){
-            if($aux==0){
-                $aux++;
-                continue;
-            }
-            $name = $foto->getClientOriginalName();
-            $name = pathinfo( $name,PATHINFO_FILENAME);
-            $extension = $foto->getClientOriginalExtension();
-            $name=$name.'_'.time().'.'.$extension;
-            $path = $foto->storeAs('/public/img/photos',$name);
-            $image=new Photo();
-            $image->path=$name;
-            $image->propertie_id=$propiedad->id;
-            $image->save();
+        try{
+            DB::transaction(function () use ($request) {
+                $propiedad = new Propertie();
+                $propiedad->owner_name=$request->owner;
+                $propiedad->description=$request->descripcion;
+                if(isset($request->calle)){$propiedad->street=$request->calle;}
+                if(isset($request->int)){$propiedad->int_number=$request->int;}
+                if(isset($request->ext)){$propiedad->ext_number=$request->ext;}
+                $propiedad->suburb=$request->colonia;
+                $propiedad->town=$request->municipio;
+                if(isset($request->ciudad)){$propiedad->city=$request->ciudad;}
+                $propiedad->state=$request->estado;
+                $propiedad->title=$request->titulo;
+                $propiedad->deal=$request->deal;
+                $propiedad->price=$request->precio;
+                $propiedad->status=$request->estatus;
+                $name = $request->fotos['0']->getClientOriginalName();
+                $name = pathinfo( $name,PATHINFO_FILENAME);
+                $extension = $request->fotos['0']->getClientOriginalExtension();
+                $name=$name.'_'.time().'.'.$extension;
+                $path = $request->fotos['0']->storeAs('/public/img/photos',$name);
+                $propiedad->photo='storage/img/photos/'.$name;
+                $propiedad->save();
+                $aux=0;
+                foreach($request->fotos as $foto){
+                    if($aux==0){
+                        $aux++;
+                        continue;
+                    }
+                    $name = $foto->getClientOriginalName();
+                    $name = pathinfo( $name,PATHINFO_FILENAME);
+                    $extension = $foto->getClientOriginalExtension();
+                    $name=$name.'_'.time().'.'.$extension;
+                    $path = $foto->storeAs('/public/img/photos',$name);
+                    $image=new Photo();
+                    $image->path='storage/img/photos/'.$name;
+                    $image->propertie_id=$propiedad->id;
+                    $image->save();
+                }
+                $tipo=$request->tipo;
+                if($tipo=="casa"){
+                    $entidad= new House();
+                    $entidad->propertie_id=$propiedad->id;
+                    $entidad->living_rooms=$request->salas;
+                    $entidad->kitchens=$request->cocinas;
+                    $entidad->integral_kitchen=$request->integrales;
+                    $entidad->dining_rooms=$request->comedores;
+                    $entidad->half_bathrooms=$request->half;
+                    $entidad->bathrooms=$request->bañoC;
+                    $entidad->bedrooms=$request->cuartos;
+                    $entidad->yard=$request->patio;
+                    $entidad->service_yard=$request->pServicio;
+                    $entidad->service_room=$request->cServicio;
+                    $entidad->home_office=$request->estudios;
+                    $entidad->garages=$request->cocheras;
+                    $entidad->security_vigilance=$request->vigilancia;
+                    $entidad->cistern=$request->cisterna;
+                    $entidad->antiquity=$request->antiguedad;
+                    $entidad->construction=$request->construccion;
+                    $entidad->terrain=$request->terreno;
+                    $entidad->floors=$request->pisos;
+                    $entidad->save();
+                }
+                elseif($tipo=="departamento"){
+                    $entidad= new Department();
+                    $entidad->propertie_id=$propiedad->id;
+                    $entidad->living_rooms=$request->salas;
+                    $entidad->kitchens=$request->cocinas;
+                    $entidad->integral_kitchen=$request->integrales;
+                    $entidad->dining_rooms=$request->comedores;
+                    $entidad->half_bathrooms=$request->half;
+                    $entidad->bathrooms=$request->bañoC;
+                    $entidad->bedrooms=$request->cuartos;
+                    $entidad->yard=$request->patio;
+                    $entidad->service_yard=$request->pServicio;
+                    $entidad->service_room=$request->cServicio;
+                    $entidad->home_office=$request->estudios;
+                    $entidad->garages=$request->cocheras;
+                    $entidad->security_vigilance=$request->vigilancia;
+                    $entidad->cistern=$request->cisterna;
+                    $entidad->antiquity=$request->antiguedad;
+                    $entidad->construction=$request->construccion;
+                    $entidad->floors=$request->pisos;
+                    $entidad->floor=$request->piso;
+                    $entidad->elevator=$request->elevador;
+                    $entidad->save();
+                }
+                elseif($tipo=="local" || $tipo=="oficina"){
+                    $entidad= new Premises_Office();
+                    $entidad->propertie_id=$propiedad->id;
+                    $entidad->construction=$request->construccion;
+                    $entidad->half_bathrooms=$request->half;
+                    $entidad->floor=$request->piso;
+                    $entidad->cistern=$request->cisterna;
+                    $entidad->elevator=$request->elevador;
+                    $entidad->security_vigilance=$request->vigilancia;
+                    if($tipo=="local"){$entidad->type='premises';}
+                    else{$entidad->type='office';}
+                    $entidad->save();
+                }
+                elseif($tipo=="terreno"){
+                    $entidad= new Terrain();
+                    $entidad->propertie_id=$propiedad->id;
+                    $entidad->terrain=$request->terreno;
+                    $entidad->access_roads=$request->acceso;
+                    $entidad->save();
+                }
+                elseif($tipo=="bodega"){
+                    $entidad= new Warehouse();
+                    $entidad->propertie_id=$propiedad->id;
+                    $entidad->terrain=$request->terreno;
+                    $entidad->construction=$request->construccion;
+                    $entidad->office=$request->oficina;
+                    $entidad->half_bathrooms=$request->half;
+                    $entidad->save();
+                }
+            });
+            return redirect('/admin/agregar/propiedad')->with('status', '¡Propiedad creada con éxito!');
         }
-        $tipo=$request->tipo;
-        if($tipo=="casa"){
-            $casa= new House();
-            $casa->propertie_id=$propiedad->id;
-            $casa->living_rooms=$request->salas;
-            $casa->kitchens=$request->cocinas;
-            $casa->integral_kitchen=$request->integrales;
-            $casa->dining_rooms=$request->comedores;
-            $casa->half_bathrooms=$request->half;
-            $casa->bathrooms=$request->bañoC;
-            $casa->bedrooms=$request->cuartos;
-            $casa->yard=$request->patio;
-            $casa->service_yard=$request->pServicio;
-            $casa->service_room=$request->cServicio;
-            $casa->home_office=$request->estudios;
-            $casa->garages=$request->cocheras;
-            $casa->security_vigilance=$request->vigilancia;
-            $casa->cistern=$request->cisterna;
-            $casa->antiquity=$request->antiguedad;
-            $casa->construction=$request->construccion;
-            $casa->terrain=$request->terreno;
-            $casa->floors=$request->pisos;
-            $casa->save();
+        catch(QueryException $ex){
+            return redirect()->back()->withErrors(['error' => 'ERROR: Algo salió mal, por favor vuela a intentarlo más tarde.']);
         }
-        dd($propiedad->id);
-        return view('admin.agregarPropiedad');
     }
 }

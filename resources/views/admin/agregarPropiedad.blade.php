@@ -30,6 +30,11 @@
 
 @section('content')
     <div class="card Agregar-propiedades-margin-top mb-3">
+    @if (session()->get('status'))
+        <ul class="alert alert-success" style="margin-top:15px;">
+           <li>{{session()->get('status')}}</li>
+        </ul>
+    @endif
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -56,7 +61,7 @@
                 <div class="col-md-7 col-12 form-row d-flex flex-wrap mb-3">
                     <div class="form-group col-md-6 col-12">
                         <label for="inputTitle" class="O-form-text">Título*</label>
-                        <input type="text" class="form-control" id="inputTitle" placeholder="Título" required name="titulo">
+                        <input type="text" class="form-control" id="inputTitle" placeholder="Título" required name="titulo" value="{{ old('titulo') }}">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputType">Tipo de propiedad*</label>
@@ -72,7 +77,7 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputName" class="O-form-text">Nombre del dueño</label>
-                        <input type="text" class="form-control" id="inputName" placeholder="Responsable de la propiedad" required name="owner">
+                        <input type="text" class="form-control" id="inputName" placeholder="Responsable de la propiedad" required name="owner" value="{{ old('owner') }}">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputSeal">Renta / Venta *</label>
@@ -84,7 +89,7 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputPrice" class="O-form-text">Precio*</label>
-                        <input type="number" class="form-control" id="inputPrice" min="0" placeholder="Precio propuesto (Por mes)" required name="precio"> 
+                        <input type="number" class="form-control" id="inputPrice" min="0" placeholder="Precio propuesto (Por mes)" required name="precio" value="{{ old('precio') }}"> 
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputDisp">Estatus*</label>
@@ -95,35 +100,35 @@
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputCity" class="O-form-text">Ciudad</label>
-                        <input type="text" class="form-control" id="inputCity" placeholder="Ciudad" name="ciudad">
+                        <input type="text" class="form-control" id="inputCity" placeholder="Ciudad" name="ciudad" value="{{ old('ciudad') }}">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputSuburb" class="O-form-text">Colonia*</label>
-                        <input type="text" class="form-control" id="inputSuburb" placeholder="Colonia" required name="colonia">
+                        <input type="text" class="form-control" id="inputSuburb" placeholder="Colonia" required name="colonia" value="{{ old('colonia') }}">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputStreet" class="O-form-text">Calle</label>
-                        <input type="text" class="form-control" id="inputStreet" placeholder="Calle" name="calle">
+                        <input type="text" class="form-control" id="inputStreet" placeholder="Calle" name="calle" value="{{ old('calle') }}">
                     </div>
                     <div class="form-group col-md-3 col-6">
                         <label for="inputInt" class="O-form-text">No. Int.</label>
-                        <input type="text" class="form-control" id="inputInt" placeholder="Número interior" name="int">
+                        <input type="text" class="form-control" id="inputInt" placeholder="Número interior" name="int" value="{{ old('int') }}">
                     </div>
                     <div class="form-group col-md-3 col-6">
                         <label for="inputExt" class="O-form-text">No. Ext.</label>
-                        <input type="text" class="form-control" id="inputExt" placeholder="Número exterior" name="ext">
+                        <input type="text" class="form-control" id="inputExt" placeholder="Número exterior" name="ext" value="{{ old('ext') }}">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputState" class="O-form-text">Estado*</label>
-                        <input type="text" class="form-control" id="inputState" placeholder="Estado" required name="estado">
+                        <input type="text" class="form-control" id="inputState" placeholder="Estado" required name="estado" value="{{ old('estado') }}">
                     </div>
                     <div class="form-group col-md-6 col-12">
                         <label for="inputMunicip" class="O-form-text">Municipio*</label>
-                        <input type="text" class="form-control" id="inputMunicip" placeholder="Municipios" required name="municipio">
+                        <input type="text" class="form-control" id="inputMunicip" placeholder="Municipios" required name="municipio" value="{{ old('municipio') }}">
                     </div>
                     <div class="form-group col-md-3 col-6" style="display:none;" id="terreno">
                         <label for="inputTerrain" class="O-form-text">Terreno</label>
-                        <input type="number" class="form-control" id="inputTerrain" min="0" placeholder="En m2" name="terreno">
+                        <input type="number" class="form-control" id="inputTerrain" min="0" placeholder="En m2" name="terreno" value="0">
                     </div>
                     <div class="form-group col-md-3 col-6" style="display:none;" id="construccion">
                         <label for="inputConstruct" class="O-form-text">Construcción</label>
@@ -235,7 +240,7 @@
                     </div>
                     <div class="form-group w-100">
                         <label for="inputDescription">Descripción*</label>
-                        <textarea class="form-control pt-4  w-md-auto w-100" id="inputDescription" rows="3" placeholder="Descripción" Required name="descripcion"></textarea>
+                        <textarea class="form-control pt-4  w-md-auto w-100" id="inputDescription" rows="3" placeholder="Descripción" Required name="descripcion" value="{{ old('descripcion') }}"></textarea>
                     </div>
                 </div>
             </div>
@@ -243,7 +248,7 @@
                 <div class="col-md-7 col-12">
                     <div class="form-group w-100">
                         <label for="inputInfo" class="font-weight-bold">Información de contacto</label>
-                        <textarea class="form-control pt-4  w-md-auto w-100" id="inputInfo" rows="3" placeholder="Información de contacto" Required name="info"></textarea>
+                        <textarea class="form-control pt-4  w-md-auto w-100" id="inputInfo" rows="3" placeholder="Información de contacto" Required name="info" value="{{ old('info') }}"></textarea>
                     </div>
                 </div>
                 <div class="col-md-5 col-12 d-flex justify-content-end align-items-end mt-mb-0 mt-3">
