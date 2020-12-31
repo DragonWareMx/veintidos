@@ -7,25 +7,30 @@
     <link rel="stylesheet" href="{{ asset('/css/contactanos.css') }}">
 @endsection
 @section('content')
+<div class="container">
+    <h1 class="h1 text-center">CONTÁCTANOS</h1>
+</div>
 <section class="contactanos">
     <div class="div_banner container-fluid">
         <img src="/img/whiteHouse.jpg" class="float-start">
         <img src="/img/salaGris.jpg" class="float-end">
         <div class="div_contactUs" style="max-width: 858px">
-            <p class="text-center txt-aboutHideNot">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.</p>
+            <p class="text-center txt-aboutHideNot">Si necesitas asistencia o tienes alguna pregunta, contáctanos. Estamos para brindarte la mejor alternativa.</p>
             <div class="containerInfo">
                 <div class="div_info1 text-start">
-                    <p class="p-b"><a href="#"><i class="fas fa-phone-alt"></i>Télefono</a></p>
+                    <p class="p-b"><a href="tel:4433370550" ><i class="fas fa-phone-alt"></i>Télefono</a></p>
                     <p>4433370550</p>
-                    <p class="p-b"><a href="#"><i class="fas fa-map-marker-alt"></i>Ubicación</a></p>
-                    <p>Lorem ipsum dolor sit amet, consectetur</p>
-                    <p class="p-b "><a href="#"><i class="fas fa-envelope"></i>Correo electrónico</a></p>
+                    <p class="p-b"><a href="http://maps.google.com/?q=Leona Vicario No. 62,Col. Centro C.P. 58000,Morelia, Michoacán" target="_blank"><i class="fas fa-map-marker-alt"></i>Ubicación</a></p>
+                    <p>Leona Vicario No. 62,
+                        Col. Centro C.P. 58000,
+                        Morelia, Michoacán</p>
+                    <p class="p-b "><a href="mailto:contacto@veintidos.mx"><i class="fas fa-envelope"></i>Correo electrónico</a></p>
                     <p>contacto@veintidos.mx</p>
                 </div>
                 <div class="div_info1 text-center">
                     <p class="text-start p-b">Síguenos</p>
-                    <p class="text-start"><a href="#"><i class="fab fa-facebook-f"></i>Facebook @Veintidós</a></p>
-                    <p class="text-start"><a href="#"><i class="fab fa-instagram"></i>Instagram @Veintidós</a></p>
+                    <p class="text-start"><a href="https://www.facebook.com/Veintid%C3%B3s-Grupo-Inmobiliario-103029468239947/" target="_blank"><i class="fab fa-facebook-f"></i>Facebook @Veintidós</a></p>
+                    <p class="text-start"><a href="https://www.instagram.com/veintidosgrupoinmobiliario/" target="_blank"><i class="fab fa-instagram"></i>Instagram @Veintidós</a></p>
                 </div>
             </div>   
         </div>

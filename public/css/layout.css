@@ -47,7 +47,7 @@ footer{
 .container-footer p{
     font-family: Roboto;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 300;
     font-size: 14px;
     line-height: 16px;
     height: 16px;
@@ -94,10 +94,9 @@ footer{
     font-family: Roboto;
     font-size: 14px;
     font-style: italic;
-    font-weight: 300;
+    font-weight: 900;
     line-height: 16px;
     letter-spacing: 0em;
-    
     color: #222222;
 
 }
@@ -211,6 +210,20 @@ footer{
     color: #FFFFFF;
 }
 
+.header.dark .container .navigation ul li a:after {
+    content:     "";
+    display:     block;
+    margin:      auto;
+    height:      2px;
+    width:       0px;
+    transition:  all .5s;
+}
+
+.header.dark .container .navigation ul li a:hover:after {
+    width:       80%;
+    background:  white;
+}
+
 .header .container .navigation a{
     text-decoration: none;
 }
@@ -240,11 +253,26 @@ footer{
 .navigation ul li a{
     display: block;
     padding: 0.5rem 1.8rem;
-    transition: all 0.2s linear;
+    transition: all 0.2s ;
+}
+
+.navigation ul li a:after {
+    content:     "";
+    display:     block;
+    margin:      auto;
+    height:      2px;
+    width:       0px;
+    transition:  all .5s;
+}
+
+.navigation ul li  a:hover:after {
+    width:       80%;
+    background:  #222b58;
 }
 
 .navigation ul li a:hover{
-    font-weight: 400;
+    /* font-weight: 400;
+    border-bottom: 1px solid #222B58; */
 }
 
 .header .logo img{
