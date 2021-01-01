@@ -8,7 +8,7 @@
 }
 .div_txt_info{
     width: 60%;
-    height: 360px;
+    height: 400px;
     margin-top: auto;
     margin-bottom: auto;
     background: #FFFFFF;
@@ -22,7 +22,7 @@
     background-color: black;
 }
 .div_carrousel img{
-    height: 420px;
+    height: 440px;
     object-fit:      cover;
     object-position: center center;
 }
@@ -142,12 +142,20 @@
 }
 
 /* RESPONSIVE */
-@media(max-width:1000px){
+@media(max-width:1350px){
     .div_txt_info{
         height: 450px;
     }
     .div_carrousel img{
         height: 480px;
+    }
+}
+@media(max-width:1100px){
+    .div_txt_info{
+        height: 500px;
+    }
+    .div_carrousel img{
+        height: 530px;
     }
     .div_que_hacemos{
         padding-left: 1%;
@@ -155,14 +163,20 @@
     }
     .div_que_hacemos img{
         margin-top: 0px;
-        /* border: none; */
-        /* height: 100%; */
         width: 50%;
     }
 }
 @media(max-width:900px){
     .div_25{
         width: 50%;
+    }
+}
+@media(max-width:850px){
+    .div_txt_info{
+        height: 550px;
+    }
+    .div_carrousel img{
+        height: 580px;
     }
 }
 @media(max-width:700px){
@@ -177,16 +191,18 @@
         width: 100%;
     }
 }
-@media(max-width:600px){
+@media(max-width:650px){
     .div_25-txt{
         padding: 0.5%;
     }
     .div_txt_info, .div_carrousel{
         width: 100%;
-        height: 380px;
+    }
+    .div_txt_info{
+        height: 500px;
     }
     .div_carrousel{
-        border: solid 5px white;
+        /* border: solid 5px white; */
         height: 300px;
     }
     .div_carrousel img{
@@ -202,12 +218,25 @@
     .div_que_hacemos img{
         display: none;
     }
+    .agrandamiento li{
+        font-size: 16px;
+    }
+}
+@media(max-width:450px){
+    .div_txt_info{
+        height: 550px;
+    }
+    .agrandamiento li{
+        font-size: 14px;
+    }
 }
 @media(max-width:400px){
-    .div_txt_info{
-        height: 400px;
-    }
     .txt-busquedaT{
         margin-bottom:30px;
+    }
+}
+@media(max-width:350px){
+    .div_txt_info{
+        height: 600px;
     }
 }

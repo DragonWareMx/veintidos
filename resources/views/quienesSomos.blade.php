@@ -4,6 +4,7 @@
 @endsection
 @section('head')
     <link rel="stylesheet" href="{{ asset('/plugins/bootstrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/O.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/quienesSomos.css') }}">
     <script languague="javascript">
       function mostrar() {
@@ -26,11 +27,12 @@
     </script>
 @endsection
 @section('content')
-
-    <h1 class="h1 text-center">¿QUIÉNES SOMOS?</h1>
+    <div class="Odiv100 d-block" style="margin-bottom: 25px">
+      <div class="Otitle"><h1>¿QUIÉNES SOMOS?</h1></div>
+    </div>
     <div class="div_vision_mision">
         <div class="div_txt_info">
-          <div class="div_titleQuote">
+          <div class="div_titleQuote"> 
             <img src="/img/ico/quote.png" class="float-start">
             <p class="txt-titleQ">NUESTRA <b>MISIÓN Y VISIÓN</b></p>
           </div>

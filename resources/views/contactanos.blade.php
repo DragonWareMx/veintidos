@@ -4,11 +4,14 @@
 @endsection
 @section('head')
     <link rel="stylesheet" href="{{ asset('/plugins/bootstrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/O.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/contactanos.css') }}">
 @endsection
 @section('content')
 <div class="container">
-    <h1 class="h1 text-center">CONTÁCTANOS</h1>
+    <div class="Odiv100 d-block" style="margin-bottom: 25px">
+        <div class="Otitle"><h1>CONTÁCTANOS</h1></div>
+    </div>
 </div>
 <section class="contactanos">
     <div class="div_banner container-fluid">
