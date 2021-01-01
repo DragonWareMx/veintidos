@@ -1,0 +1,14 @@
+.admin_top_link{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    text-decoration-line: underline;
+    color: #222B58;
+    margin-top: 128px;
+}
+.content-admin{
+    width: 100%;
+    display: flex;
+}

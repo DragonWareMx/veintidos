@@ -141,6 +141,9 @@
 .sideBar_button:hover{
     cursor: pointer;
 }
+.barra-admin{
+    top: 56px !important;
+}
 .sideBar_button img{
     width: 8.32px;
     height: 30.72px;

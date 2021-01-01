@@ -35,3 +35,9 @@
     white-space: nowrap;
     flex-wrap: nowrap !important;
 }
+
+.admin-propiedades-container{
+    display: flex;
+    width:100%;
+    flex-wrap: wrap;
+}

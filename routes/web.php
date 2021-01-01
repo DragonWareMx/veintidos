@@ -79,6 +79,8 @@ Route::patch('/admin/cuenta/{id}', 'adminController@cuentaUpdate')->name('cuenta
 //     return view('admin.inicio');
 // })->middleware('auth');
 
+Route::get('/admin/propiedades', 'adminPropiedades@ver')->name('propiedades');
+
 Route::get('/admin/agregar/propiedad', 'adminPropiedades@agregar')->name('agregarPropiedad');
 Route::post('/admin/agregar/propiedad', 'adminPropiedades@agregarPost')->name('agregarPropiedadPost');
 

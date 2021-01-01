@@ -43,7 +43,7 @@
             <img src="{{ asset('img/sistema/cuenta.png') }}" alt="" width="20" height="20">
             Cuenta
         </a>
-        <a class="link-veintidos d-flex flex-wrap justify-content-center mx-5" href="#" style="width:40px">
+        <a class="link-veintidos d-flex flex-wrap justify-content-center mx-5" href="{{route('propiedades')}}" style="width:40px">
             <img src="{{ asset('img/sistema/inmuebles.png') }}" alt="" width="20" height="20">
             Propiedades
         </a>

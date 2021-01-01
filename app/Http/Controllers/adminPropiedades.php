@@ -19,7 +19,23 @@ class adminPropiedades extends Controller
     {
         $this->middleware('auth');
     }
+    public function ver(Request $request){
+        if($request->all() != null && !isset($request->page)){
+            $propiedades=Propertie::get();
+            $properties=[];
+            if(isset($request->deal)){
+                switch($request->deal){
+                    case 'sale':break;
+                    case 'rent':break;
 
+                }
+            }
+        }
+        else{
+            $propiedades=Propertie::paginate(4);
+            return view('admin.propiedades',['propiedades'=>$propiedades]);
+        }
+    }
     public function agregar()
     {
         return view('admin.agregarPropiedad');
