@@ -34,7 +34,7 @@
     <div class="container-footer">
         <p>Copyright © 2020 Veintidós.</p>
         <a href="http://dragonware.com.mx" target="_blank" style="text-decoration:none;">
-            <p>Desarrollado por DragonWare. &nbsp;<img src="{{ asset('/img/ico/dragonblanco.png') }}" width="14px" height="14px"></p>        
+            <p>Desarrollado por DragonWare. &nbsp;<img src="{{ asset('/img/ico/dragonblanco.png') }}" width="22px" height="16px"></p>        
         </a>
     </div>
 </footer>

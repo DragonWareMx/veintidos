@@ -4,6 +4,7 @@
 @endsection
 @section('head')
     <link rel="stylesheet" href="{{ asset('/css/O.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/quienesSomos.css') }}">
 @endsection
 @section('content')
     <div class="Odiv100">
@@ -26,11 +27,14 @@
                 <div class="OContactUsValue">contacto@veintidos.mx</div>
             </div>
         </div>
-        <div class="OWidth100 OCenterItem"> 
+        <div class="text-center" style="margin-top: 40px; margin-bottom:40px">
+            <a href="/contactanos"><button type="button" class="btn btn-outline-primary text-center">INICIO<i class="fas fa-caret-right"></i></button></a>
+        </div>
+        {{-- <div class="OWidth100 OCenterItem"> 
             <a href="#" class="OButtonInicio">
                 <div class="OButtonInicioText">INICIO</div>
                 <img class="OButtonInicioArrow" src="{{ asset('img/ico/next-white.png') }}" alt="">
-            </a>
-        </div>  
+            </a> 
+        </div>   --}}
     </div>
 @endsection

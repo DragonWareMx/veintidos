@@ -2,10 +2,11 @@
 @section('title')
     Propiedades
 @endsection
-@section('head')
+@section('head') 
     <link rel="stylesheet" href="{{ asset('/css/O.css') }}">
     <link rel="stylesheet" href="{{ asset('/plugins/bootstrap/css/bootstrap.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('/css/quienesSomos.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/contactanos.css') }}">
     <style>
         .btn-vm:hover{
             background-color: transparent;
@@ -660,10 +661,20 @@
                     {{-- NO SE ENCOTRARON RESULTADOS --}}
                     <div class="OGreenText OBR70">No se encontraron resultados</div>
                     <div class="OBR70 OContactUs mx-auto">
+                        
                         <h1>CONTÁCTANOS</h1>
-                        <div class="OContactUsItem">
+                        <div class="containerNotF">
+                            <div class="" style="width:100% !important"> 
+                                <p class="p-b"><a style="text-decoration:none" href="tel:4433370550" ><i class="fas fa-phone-alt"></i>Télefono</a></p>
+                                <p>4433370550</p>
+                                <p class="p-b "><a style="text-decoration:none" href="mailto:contacto@veintidos.mx" ><i class="fas fa-envelope"></i>Correo electrónico</a></p>
+                                <p>contacto@veintidos.mx</p>
+                            </div>
+                        </div>
+                        
+                        {{-- <div class="OContactUsItem">
                             <img class="OContactUsImg" src="{{ asset('img/ico/phone.png') }}" alt="">
-                            <div class="OContactUsTitle">Teléfono</div>
+                            <div class="OContactUsTitle text-start">Teléfono</div>
                         </div>
                         <div class="OContactUsItem">
                             <div class="OContactUsValue">4433370550</div>
@@ -674,13 +685,10 @@
                         </div>
                         <div class="OContactUsItem">
                             <div class="OContactUsValue">contacto@veintidos.mx</div>
-                        </div>
+                        </div> --}}
                     </div>
-                    <div class="OWidth100 OCenterItem"> 
-                        <a href="{{ route('inicio') }}" class="OButtonInicio">
-                            <div class="OButtonInicioText">INICIO</div>
-                            <img class="OButtonInicioArrow" src="{{ asset('img/ico/next-white.png') }}" alt="">
-                        </a>
+                    <div class="text-center" style="margin-top: 40px; margin-bottom:40px">
+                        <a href="/inicio"><button type="button" class="btn btn-outline-primary text-center">INICIO<i class="fas fa-caret-right"></i></button></a>
                     </div>
                 </div>  
             @endif

@@ -40,19 +40,22 @@
     position:     relative;
     top:          -300px;
 }
-
-.containerInfo a{
+.containerNotF{
+    width: 100%;
+    padding-left: 80px;
+}
+.containerInfo a, .containerNotFa a{
     color:           #222222;
     text-decoration: none;
     transition:      all ease-in-out 0.25s;
 }
 
-.containerInfo a:hover{
+.containerInfo a:hover, .containerNotF a:hover{
     color:      #222b58;
     transition: all ease-in-out 0.25s;
 }
 
-.containerInfo a:after {
+.containerInfo a:after, .containerNotF a:after{
     content:     "";
     display:     block;
     margin:      auto;
@@ -61,10 +64,13 @@
     transition:  all .8s;
     margin-left: 0% !important;
 }
-.containerInfo  a:hover:after {
+.containerInfo  a:hover:after, .containerNotF a:hover::after {
     width:       50%;
     margin-left: 0% !important;
     background:  #222b58;
+}
+.containerNotF a:hover::after {
+    width: 60%;
 }
 
 .div_info1{
@@ -180,7 +186,7 @@
         width: 80%;
         padding-top: 0px !important;
     }
-    .containerInfo{
+    .containerInfo{ 
         flex-wrap: wrap;
         padding-left: 0px;
         top: -380px;

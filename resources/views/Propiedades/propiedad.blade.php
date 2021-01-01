@@ -1107,20 +1107,21 @@
                         </div>
                         <div class="row px-4 d-flex flex-row-reverse my-4">
                             <div style="width: fit-content; display: @if ($errors->any()) none @else block @endif ;" id="btnMI">
-                                <button type="button" class="btn btn-primary" style="background: #58AD30; border-color: #58AD30;" onclick="btnMI()"><b>Me interesa</b></button>
+                                <button type="button" class="btn btn-primary" style="background: #58AD30; border-color: #58AD30; font-weight:400" onclick="btnMI()">Me interesa</button>
                             </div>
                             <div style="width: fit-content; display: @if ($errors->any()) block @else none @endif ;" id="enviarFORM">
-                                <button type="submit" class="btn btn-primary" style="background: #58AD30; border-color: #58AD30;" id="submit"><b>Enviar</b></button>
+                                <button type="submit" class="btn btn-primary" style="background: #58AD30; border-color: #58AD30; font-weight:400" id="submit">Enviar</button>
                             </div>
                             <div style="width: fit-content; display: @if ($errors->any()) block @else none @endif ;" id="btnC">
-                                <button type="button" class="btn btn-link btnC-b" style="color: #58AD30; text-decoration: none;" onclick="btnC()"><b>Cancelar</b></button>
+                                <button type="button" class="btn btn-link btnC-b" style="color: #58AD30; text-decoration: none; font-weight:400" onclick="btnC()">Cancelar</button>
                             </div>
                         </div>
                     </form>
                 </div>
                 <div class="row text-right my-3">
-                    <a href="{{ url()->previous() }}" style="text-decoration: none; font-weight:400;">
-                        <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/backpage.png')}}" alt="">
+                    <a href="{{ url()->previous() }}" style="text-decoration: none; font-weight:400; color:#22222">
+                        <i class="fas fa-angle-left"></i>   
+                        {{-- <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/backpage.png')}}" alt=""> --}}
                         Regresar
                     </a>
                 </div>

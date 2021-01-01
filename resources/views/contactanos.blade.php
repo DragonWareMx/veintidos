@@ -20,7 +20,7 @@
         <div class="div_contactUs" style="max-width: 858px">
             <p class="text-center txt-aboutHideNot">Si necesitas asistencia o tienes alguna pregunta, contáctanos. Estamos para brindarte la mejor alternativa.</p>
             <div class="containerInfo">
-                <div class="div_info1 text-start">
+                <div class="div_info1 text-start"> 
                     <p class="p-b"><a href="tel:4433370550" ><i class="fas fa-phone-alt"></i>Télefono</a></p>
                     <p>4433370550</p>
                     <p class="p-b"><a href="http://maps.google.com/?q=Leona Vicario No. 62,Col. Centro C.P. 58000,Morelia, Michoacán" target="_blank"><i class="fas fa-map-marker-alt"></i>Ubicación</a></p>
