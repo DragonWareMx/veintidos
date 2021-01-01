@@ -91,6 +91,7 @@ footer{
 }
 
 .column1 .slogan{
+    text-transform: initial !important;
     font-family: Roboto;
     font-size: 14px;
     font-style: italic;
