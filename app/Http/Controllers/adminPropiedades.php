@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Database\QueryException;
 use App\Propertie;
 use App\Photo;
@@ -25,14 +26,104 @@ class adminPropiedades extends Controller
             $properties=[];
             if(isset($request->deal)){
                 switch($request->deal){
-                    case 'sale':break;
-                    case 'rent':break;
-
+                    case 'sale':
+                        foreach($propiedades as $propiedad){
+                            if($propiedad->deal=='sale'){
+                                $properties[]=$propiedad;
+                            }
+                        }
+                    break;
+                    case 'rent':
+                        foreach($propiedades as $propiedad){
+                            if($propiedad->deal=='rent'){
+                                $properties[]=$propiedad;
+                            }
+                        }
+                    break;
                 }
+                $propiedades=$properties;
+                $properties=[];
             }
+            if(isset($request->tipo)){
+                switch($request->tipo){
+                    case 'casas':
+                        foreach($propiedades as $propiedad){
+                            if(count($propiedad->house()->get())==1){
+                                $properties[]=$propiedad;
+                            }
+                        }
+                    break;
+                    case 'departamentos':
+                        foreach($propiedades as $propiedad){
+                            if(count($propiedad->department()->get())==1){
+                                $properties[]=$propiedad;
+                            }
+                        }
+                    break;
+                    case 'locales':
+                        foreach($propiedades as $propiedad){
+                            if(count($propiedad->office()->get())==1){
+                                if($propiedad->office->type == 'premises'){
+                                    $properties[]=$propiedad;
+                                }
+                            }
+                        }
+                    break;
+                    case 'oficinas':
+                        foreach($propiedades as $propiedad){
+                            if(count($propiedad->office()->get())==1){
+                                if($propiedad->office->type == 'office'){
+                                    $properties[]=$propiedad;
+                                }
+                            }
+                        }
+                    break;
+                    case 'terrenos':
+                        foreach($propiedades as $propiedad){
+                            if(count($propiedad->terrain()->get())==1){
+                                $properties[]=$propiedad;
+                            }
+                        }
+                    break;
+                    case 'bodegas':
+                        foreach($propiedades as $propiedad){
+                            if(count($propiedad->warehouse()->get())==1){
+                                $properties[]=$propiedad;
+                            }
+                        }
+                    break;
+                }
+                $propiedades=$properties;
+                $properties=[];
+            }
+            if(isset($request->precio)){
+                $rango=explode(',',$request->precio);
+                foreach ($propiedades as $propiedad){
+                    if($propiedad->price >= $rango[0] && $propiedad->price <= $rango[1]){
+                        $properties[]=$propiedad;
+                    }
+                }
+                $propiedades=$properties;
+                $properties=[];
+            }
+            if(isset($request->busqueda)){
+                foreach ($propiedades as $propiedad){
+                    if(stripos($propiedad->description,$request->busqueda) !== false){
+                        $properties[]=$propiedad;
+                    }
+                }
+                $propiedades=$properties;
+                $properties=[];
+            }
+            $ids=[];
+            foreach($propiedades as $propiedad){
+                $ids[]=$propiedad->id;
+            }
+            $propiedades=Propertie::whereIn('id',$ids)->paginate(999999);
+            return view('admin.propiedades',['propiedades'=>$propiedades]);
         }
         else{
-            $propiedades=Propertie::paginate(4);
+            $propiedades=Propertie::paginate(15);
             return view('admin.propiedades',['propiedades'=>$propiedades]);
         }
     }
@@ -105,7 +196,7 @@ class adminPropiedades extends Controller
                 $extension = $request->fotos['0']->getClientOriginalExtension();
                 $name=$name.'_'.time().'.'.$extension;
                 $path = $request->fotos['0']->storeAs('/public/img/photos',$name);
-                $propiedad->photo='storage/img/photos/'.$name;
+                $propiedad->photo='/storage/img/photos/'.$name;
                 $propiedad->save();
                 $aux=0;
                 foreach($request->fotos as $foto){
@@ -119,7 +210,7 @@ class adminPropiedades extends Controller
                     $name=$name.'_'.time().'.'.$extension;
                     $path = $foto->storeAs('/public/img/photos',$name);
                     $image=new Photo();
-                    $image->path='storage/img/photos/'.$name;
+                    $image->path='/storage/img/photos/'.$name;
                     $image->propertie_id=$propiedad->id;
                     $image->save();
                 }
@@ -201,10 +292,16 @@ class adminPropiedades extends Controller
                     $entidad->save();
                 }
             });
-            return redirect('/admin/agregar/propiedad')->with('status', '¡Propiedad creada con éxito!');
+            return redirect('/admin/propiedades')->with('status', '¡Propiedad creada con éxito!');
         }
         catch(QueryException $ex){
             return redirect()->back()->withErrors(['error' => 'ERROR: Algo salió mal, por favor vuela a intentarlo más tarde.']);
         }
+    }
+
+    public function editar($id){
+        $id=Crypt::decrypt($id);
+        $propiedad=Propertie::findOrFail($id);
+        return view('admin.editarPropiedad',['propiedad'=>$propiedad]);
     }
 }

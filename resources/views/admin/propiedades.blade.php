@@ -18,7 +18,7 @@ Propiedades - Veintidós
 @endsection
 
 @section('content')
-<form action="/propiedades" class="barra-busqueda barra-admin" method="get">
+<form action="/admin/propiedades" class="barra-busqueda barra-admin" method="get">
     <div class="search-50 left">
         <select name="deal" id="" class="options-search">
             <option value="" selected disabled hidden>Venta o Renta</option>
@@ -53,6 +53,11 @@ Propiedades - Veintidós
         <input type="image" src="{{ asset('/img/ico/buscar.png') }}" alt="Submit Form" class="search-button" />
     </div>
 </form>
+@if (session()->get('status'))
+        <ul class="alert alert-success" style="margin-top:15px;">
+           <li>{{session()->get('status')}}</li>
+        </ul>
+@endif
 <div class="content-admin">
     <a href="{{Route('agregarPropiedad')}}" class="admin_top_link">Agregar propiedad</a>
 </div>
@@ -112,7 +117,7 @@ Propiedades - Veintidós
                     </div>
                     {{-- DATOS --}}
                     {{-- TITULO --}}
-                    <a href="{{ route('propiedad',['id'=>Crypt::encrypt($propiedad->id)]) }}" style="text-decoration: none;">
+                    <a href="{{ route('editarPropiedad',['id'=>Crypt::encrypt($propiedad->id)]) }}" style="text-decoration: none;">
                         <h5 class="px-2 pt-1 text-blue22" style="font-weight: 600; min-height: 52px;">
                             {{ \Illuminate\Support\Str::limit($propiedad->title, $limit = 65, $end = '...') }}
                         </h5>
