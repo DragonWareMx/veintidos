@@ -31,9 +31,9 @@ class adminController extends Controller
         $departamentos = Department::count();
         $casas = House::count();
         $terrenos = Terrain::count();
-        $bodegas = WareHouse::count();
-        $locales = Premises_Office::count();
-        $oficinas = Premises_Office::count();
+        $bodegas = WareHouse::count(); 
+        $locales = Premises_Office::where('type', '=', 'premises')->count();
+        $oficinas = Premises_Office::where('type', '=', 'office')->count();
         return view('admin.inicio',['propiedades' => $propiedades, 'departamentos' => $departamentos, 'casas' => $casas, 'terrenos' => $terrenos, 'bodegas' => $bodegas, 'locales' => $locales, 'oficinas' => $oficinas]);
     }
 

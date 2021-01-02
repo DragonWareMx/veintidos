@@ -21,8 +21,8 @@
                     <div class="card-img-left d-none d-md-flex" style="background-color: transparent">
                         <div class="vilecard">
                             <p class="iniciar-sesion mt-5">@yield('left-title')</p>
-                            <p class="slogan my-3"> Slogan Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                            <p class="copyright mb-0 mt-auto">Copyright © 2020 Veintidós.</p>
+                            <p class="slogan my-3" style="text-transform: none !important"> De la mano contigo para apoyarte en tus decisiones patrimoniales.</p>
+                            <p class="copyright mb-0 mt-auto" style="color:#8b8b8b">Copyright © 2020 Veintidós.</p>
                         </div>
                     </div>
                     <div class="card-body card-login px-5 ">
