@@ -50,9 +50,9 @@
                 <div class="col-md-5 col-12 mb-3">
                     <div id="gallery" class="gallery col-12 O-images-loader flex-wrap">
                         {{-- PONER AQUÍ IMAGENSITAS--}}
-                        <img src="/{{$propiedad->photo}}" alt="">
+                        <img src="{{$propiedad->photo}}" alt="">
                         @foreach ($propiedad->photos as $photo)
-                            <img src="/{{$photo->path}}" alt="{{$photo->path}}">
+                            <img src="{{$photo->path}}" alt="{{$photo->path}}">
                         @endforeach
                     </div>
                     <div class="O-inmueble-advise-images">
@@ -527,64 +527,340 @@
                             </select>
                         </div>
                     @endif
-                    <div class="form-group col-md-3 col-6" id="estudios" style="display:none;">
-                        <label for="inputStudies" class="O-form-text">Estudios*</label>
-                        <input value="0" type="number" class="form-control" id="inputStudies" min="0" placeholder="Estudios" name="estudios">
-                    </div>
-                    <div class="form-group col-md-3 col-6" id="cocheras" style="display:none;">
-                        <label for="inputGarages" class="O-form-text">Cocheras*</label>
-                        <input value="0" type="number" class="form-control" id="inputGarages" min="0" placeholder="Cocheras" name="cocheras">
-                    </div>
-                    <div class="form-group col-md-3 col-6" id="vigilancia" style="display:none;">
-                        <label for="inputVigilance">Vigilancia</label>
-                        <select id="inputVigilance" class="form-control" name="vigilancia">
-                          <option selected value="0">No</option>
-                          <option value="1">Si</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-3 col-6" id="cisterna" style="display:none;">
-                        <label for="inputCistern">Cisterna</label>
-                        <select id="inputCistern" class="form-control" name="cisterna">
-                          <option selected value="0">No</option>
-                          <option value="1">Si</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-3 col-6" id="antiguedad" style="display:none;">
-                        <label for="inputAnt" class="O-form-text">Antigëdad*</label>
-                        <input value="0" type="number" class="form-control" id="inputAnt" min="0" placeholder="Antigëdad" name="antiguedad">
-                    </div>
-                    <div class="form-group col-md-3 col-6" id="pisos" style="display:none;">
-                        <label for="inputFloors" class="O-form-text">Pisos*</label>
-                        <input value="1" type="number" class="form-control" id="inputFloors" min="0" placeholder="Pisos" name="pisos">
-                    </div>
-                    <div class="form-group col-md-3 col-6" id="piso" style="display:none;">
-                        <label for="inputFloor" class="O-form-text">Piso*</label>
-                        <input value="1" type="number" class="form-control" id="inputFloor" min="0" placeholder="Piso" name="piso">
-                    </div>
-                    <div class="form-group col-md-3 col-6" id="elevador" style="display:none;">
-                        <label for="inputElevator">Elevador</label>
-                        <select id="inputElevator" class="form-control" name="elevador">
-                          <option selected value="0">No</option>
-                          <option value="1">Si</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-3 col-6" id="oficina" style="display:none;">
-                        <label for="inputElevator">Oficina</label>
-                        <select id="inputElevator" class="form-control" name="oficina">
-                          <option selected value="0">No</option>
-                          <option value="1">Si</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-md-3 col-6" id="acceso" style="display:none;">
-                        <label for="inputAccess">Acceso a carretera</label>
-                        <select id="inputAccess" class="form-control" name="acceso">
-                          <option selected value="0">No</option>
-                          <option value="1">Si</option>
-                        </select>
-                    </div>
+                    @if (count($propiedad->house()->get())==1 || count($propiedad->department()->get())==1)
+                        @if (count($propiedad->house()->get())==1)
+                            <div class="form-group col-md-3 col-6" id="estudios">
+                                <label for="inputStudies" class="O-form-text">Estudios*</label>
+                                <input value="{{$propiedad->house->home_office}}" type="number" class="form-control" id="inputStudies" min="0" placeholder="Estudios" name="estudios">
+                            </div>  
+                        @endif
+                        @if (count($propiedad->department()->get())==1)
+                            <div class="form-group col-md-3 col-6" id="estudios">
+                                <label for="inputStudies" class="O-form-text">Estudios*</label>
+                                <input value="{{$propiedad->department->home_office}}" type="number" class="form-control" id="inputStudies" min="0" placeholder="Estudios" name="estudios">
+                            </div>  
+                        @endif
+                    @else
+                        <div class="form-group col-md-3 col-6" id="estudios" style="display:none;">
+                            <label for="inputStudies" class="O-form-text">Estudios*</label>
+                            <input value="0" type="number" class="form-control" id="inputStudies" min="0" placeholder="Estudios" name="estudios">
+                        </div>  
+                    @endif
+                    @if (count($propiedad->house()->get())==1 || count($propiedad->department()->get())==1)
+                        @if (count($propiedad->house()->get())==1)
+                            <div class="form-group col-md-3 col-6" id="cocheras">
+                                <label for="inputGarages" class="O-form-text">Cocheras*</label>
+                                <input value="{{$propiedad->house->garages}}" type="number" class="form-control" id="inputGarages" min="0" placeholder="Cocheras" name="cocheras">
+                            </div>
+                        @endif
+                        @if (count($propiedad->department()->get())==1)
+                            <div class="form-group col-md-3 col-6" id="cocheras">
+                                <label for="inputGarages" class="O-form-text">Cocheras*</label>
+                                <input value="{{$propiedad->department->garages}}" type="number" class="form-control" id="inputGarages" min="0" placeholder="Cocheras" name="cocheras">
+                            </div>
+                        @endif
+                    @else
+                        <div class="form-group col-md-3 col-6" id="cocheras" style="display:none;">
+                            <label for="inputGarages" class="O-form-text">Cocheras*</label>
+                            <input value="0" type="number" class="form-control" id="inputGarages" min="0" placeholder="Cocheras" name="cocheras">
+                        </div>
+                    @endif
+                    @if (count($propiedad->house()->get())==1 || count($propiedad->office()->get())==1 || count($propiedad->department()->get())==1 )
+                        @if (count($propiedad->house()->get())==1)
+                            @if ($propiedad->house->security_vigilance == 0)
+                                <div class="form-group col-md-3 col-6" id="vigilancia">
+                                    <label for="inputVigilance">Vigilancia</label>
+                                    <select id="inputVigilance" class="form-control" name="vigilancia">
+                                    <option selected value="0">No</option>
+                                    <option value="1">Si</option>
+                                    </select>
+                                </div>
+                            @else
+                                <div class="form-group col-md-3 col-6" id="vigilancia">
+                                    <label for="inputVigilance">Vigilancia</label>
+                                    <select id="inputVigilance" class="form-control" name="vigilancia">
+                                    <option value="0">No</option>
+                                    <option selected value="1">Si</option>
+                                    </select>
+                                </div>
+                            @endif
+                        @endif
+                        @if (count($propiedad->office()->get())==1)
+                            @if ($propiedad->office->security_vigilance == 0)
+                                <div class="form-group col-md-3 col-6" id="vigilancia">
+                                    <label for="inputVigilance">Vigilancia</label>
+                                    <select id="inputVigilance" class="form-control" name="vigilancia">
+                                    <option selected value="0">No</option>
+                                    <option value="1">Si</option>
+                                    </select>
+                                </div>
+                            @else
+                                <div class="form-group col-md-3 col-6" id="vigilancia">
+                                    <label for="inputVigilance">Vigilancia</label>
+                                    <select id="inputVigilance" class="form-control" name="vigilancia">
+                                    <option value="0">No</option>
+                                    <option selected value="1">Si</option>
+                                    </select>
+                                </div>
+                            @endif
+                        @endif
+                        @if (count($propiedad->department()->get())==1)
+                            @if ($propiedad->department->security_vigilance == 0)
+                                <div class="form-group col-md-3 col-6" id="vigilancia">
+                                    <label for="inputVigilance">Vigilancia</label>
+                                    <select id="inputVigilance" class="form-control" name="vigilancia">
+                                    <option selected value="0">No</option>
+                                    <option value="1">Si</option>
+                                    </select>
+                                </div>
+                            @else
+                                <div class="form-group col-md-3 col-6" id="vigilancia">
+                                    <label for="inputVigilance">Vigilancia</label>
+                                    <select id="inputVigilance" class="form-control" name="vigilancia">
+                                    <option value="0">No</option>
+                                    <option selected value="1">Si</option>
+                                    </select>
+                                </div>
+                            @endif
+                        @endif
+                    @else
+                        <div class="form-group col-md-3 col-6" id="vigilancia" style="display:none;">
+                            <label for="inputVigilance">Vigilancia</label>
+                            <select id="inputVigilance" class="form-control" name="vigilancia">
+                            <option selected value="0">No</option>
+                            <option value="1">Si</option>
+                            </select>
+                        </div>
+                    @endif
+                    @if (count($propiedad->house()->get())==1 || count($propiedad->office()->get())==1 || count($propiedad->department()->get())==1)
+                        @if (count($propiedad->house()->get())==1)
+                            @if ($propiedad->house->cistern == 0)
+                                <div class="form-group col-md-3 col-6" id="cisterna">
+                                    <label for="inputCistern">Cisterna</label>
+                                    <select id="inputCistern" class="form-control" name="cisterna">
+                                    <option selected value="0">No</option>
+                                    <option value="1">Si</option>
+                                    </select>
+                                </div> 
+                            @else
+                                <div class="form-group col-md-3 col-6" id="cisterna">
+                                    <label for="inputCistern">Cisterna</label>
+                                    <select id="inputCistern" class="form-control" name="cisterna">
+                                    <option value="0">No</option>
+                                    <option selected value="1">Si</option>
+                                    </select>
+                                </div> 
+                            @endif
+                        @endif
+                        @if (count($propiedad->office()->get())==1)
+                            @if ($propiedad->office->cistern == 0)
+                                <div class="form-group col-md-3 col-6" id="cisterna">
+                                    <label for="inputCistern">Cisterna</label>
+                                    <select id="inputCistern" class="form-control" name="cisterna">
+                                    <option selected value="0">No</option>
+                                    <option value="1">Si</option>
+                                    </select>
+                                </div> 
+                            @else
+                                <div class="form-group col-md-3 col-6" id="cisterna">
+                                    <label for="inputCistern">Cisterna</label>
+                                    <select id="inputCistern" class="form-control" name="cisterna">
+                                    <option value="0">No</option>
+                                    <option selected value="1">Si</option>
+                                    </select>
+                                </div> 
+                            @endif
+                        @endif
+                        @if (count($propiedad->department()->get())==1)
+                            @if ($propiedad->department->cistern == 0)
+                                <div class="form-group col-md-3 col-6" id="cisterna">
+                                    <label for="inputCistern">Cisterna</label>
+                                    <select id="inputCistern" class="form-control" name="cisterna">
+                                    <option selected value="0">No</option>
+                                    <option value="1">Si</option>
+                                    </select>
+                                </div> 
+                            @else
+                                <div class="form-group col-md-3 col-6" id="cisterna">
+                                    <label for="inputCistern">Cisterna</label>
+                                    <select id="inputCistern" class="form-control" name="cisterna">
+                                    <option value="0">No</option>
+                                    <option selected value="1">Si</option>
+                                    </select>
+                                </div> 
+                            @endif
+                        @endif
+                    @else
+                        <div class="form-group col-md-3 col-6" id="cisterna" style="display:none;">
+                            <label for="inputCistern">Cisterna</label>
+                            <select id="inputCistern" class="form-control" name="cisterna">
+                            <option selected value="0">No</option>
+                            <option value="1">Si</option>
+                            </select>
+                        </div>   
+                    @endif
+                    @if (count($propiedad->house()->get())==1 || count($propiedad->department()->get())==1)
+                        @if (count($propiedad->house()->get())==1)
+                            <div class="form-group col-md-3 col-6" id="antiguedad">
+                                <label for="inputAnt" class="O-form-text">antigüedad*</label>
+                                <input value="{{$propiedad->house->antiquity}}" type="number" class="form-control" id="inputAnt" min="0" placeholder="antigüedad" name="antiguedad">
+                            </div>
+                        @endif
+                        @if (count($propiedad->department()->get())==1)
+                            <div class="form-group col-md-3 col-6" id="antiguedad">
+                                <label for="inputAnt" class="O-form-text">antigüedad*</label>
+                                <input value="{{$propiedad->department->antiquity}}" type="number" class="form-control" id="inputAnt" min="0" placeholder="antigüedad" name="antiguedad">
+                            </div>
+                        @endif
+                    @else
+                        <div class="form-group col-md-3 col-6" id="antiguedad" style="display:none;">
+                            <label for="inputAnt" class="O-form-text">antigüedad*</label>
+                            <input value="0" type="number" class="form-control" id="inputAnt" min="0" placeholder="antigüedad" name="antiguedad">
+                        </div>
+                    @endif
+                    @if (count($propiedad->house()->get())==1 || count($propiedad->department()->get())==1)
+                        @if (count($propiedad->house()->get())==1)
+                            <div class="form-group col-md-3 col-6" id="pisos">
+                                <label for="inputFloors" class="O-form-text">Pisos*</label>
+                                <input value="{{$propiedad->house->floors}}" type="number" class="form-control" id="inputFloors" min="0" placeholder="Pisos" name="pisos">
+                            </div> 
+                        @endif
+                        @if (count($propiedad->department()->get())==1)
+                            <div class="form-group col-md-3 col-6" id="pisos">
+                                <label for="inputFloors" class="O-form-text">Pisos*</label>
+                                <input value="{{$propiedad->department->floors}}" type="number" class="form-control" id="inputFloors" min="0" placeholder="Pisos" name="pisos">
+                            </div> 
+                        @endif
+                    @else
+                        <div class="form-group col-md-3 col-6" id="pisos" style="display:none;">
+                            <label for="inputFloors" class="O-form-text">Pisos*</label>
+                            <input value="1" type="number" class="form-control" id="inputFloors" min="0" placeholder="Pisos" name="pisos">
+                        </div>   
+                    @endif
+                    @if (count($propiedad->office()->get())==1 || count($propiedad->department()->get())==1)
+                        @if (count($propiedad->office()->get())==1)
+                            <div class="form-group col-md-3 col-6" id="piso">
+                                <label for="inputFloor" class="O-form-text">Piso*</label>
+                                <input value="{{$propiedad->office->floor}}" type="number" class="form-control" id="inputFloor" min="0" placeholder="Piso" name="piso">
+                            </div> 
+                        @endif
+                        @if (count($propiedad->department()->get())==1)
+                            <div class="form-group col-md-3 col-6" id="piso">
+                                <label for="inputFloor" class="O-form-text">Piso*</label>
+                                <input value="{{$propiedad->department->floor}}" type="number" class="form-control" id="inputFloor" min="0" placeholder="Piso" name="piso">
+                            </div> 
+                        @endif
+                    @else
+                        <div class="form-group col-md-3 col-6" id="piso" style="display:none;">
+                            <label for="inputFloor" class="O-form-text">Piso*</label>
+                            <input value="1" type="number" class="form-control" id="inputFloor" min="0" placeholder="Piso" name="piso">
+                        </div> 
+                    @endif
+                    @if (count($propiedad->office()->get())==1 || count($propiedad->department()->get())==1)
+                        @if (count($propiedad->office()->get())==1)
+                            @if ($propiedad->office->elevator == 0)
+                                <div class="form-group col-md-3 col-6" id="elevador">
+                                    <label for="inputElevator">Elevador</label>
+                                    <select id="inputElevator" class="form-control" name="elevador">
+                                    <option selected value="0">No</option>
+                                    <option value="1">Si</option>
+                                    </select>
+                                </div> 
+                            @else
+                                <div class="form-group col-md-3 col-6" id="elevador">
+                                    <label for="inputElevator">Elevador</label>
+                                    <select id="inputElevator" class="form-control" name="elevador">
+                                    <option value="0">No</option>
+                                    <option selected value="1">Si</option>
+                                    </select>
+                                </div> 
+                            @endif
+                        @endif
+                        @if (count($propiedad->department()->get())==1)
+                            @if ($propiedad->department->elevator == 0)
+                                <div class="form-group col-md-3 col-6" id="elevador">
+                                    <label for="inputElevator">Elevador</label>
+                                    <select id="inputElevator" class="form-control" name="elevador">
+                                    <option selected value="0">No</option>
+                                    <option value="1">Si</option>
+                                    </select>
+                                </div> 
+                            @else
+                                <div class="form-group col-md-3 col-6" id="elevador">
+                                    <label for="inputElevator">Elevador</label>
+                                    <select id="inputElevator" class="form-control" name="elevador">
+                                    <option value="0">No</option>
+                                    <option selected value="1">Si</option>
+                                    </select>
+                                </div> 
+                            @endif
+                        @endif
+                    @else
+                        <div class="form-group col-md-3 col-6" id="elevador" style="display:none;">
+                            <label for="inputElevator">Elevador</label>
+                            <select id="inputElevator" class="form-control" name="elevador">
+                            <option selected value="0">No</option>
+                            <option value="1">Si</option>
+                            </select>
+                        </div> 
+                    @endif
+                    @if (count($propiedad->warehouse()->get())==1)
+                        @if ($propiedad->warehouse->office == 0)
+                            <div class="form-group col-md-3 col-6" id="oficina">
+                                <label for="inputElevator">Oficina</label>
+                                <select id="inputElevator" class="form-control" name="oficina">
+                                <option selected value="0">No</option>
+                                <option value="1">Si</option>
+                                </select>
+                            </div>
+                        @else
+                            <div class="form-group col-md-3 col-6" id="oficina">
+                                <label for="inputElevator">Oficina</label>
+                                <select id="inputElevator" class="form-control" name="oficina">
+                                <option value="0">No</option>
+                                <option selected value="1">Si</option>
+                                </select>
+                            </div>
+                        @endif
+                    @else
+                        <div class="form-group col-md-3 col-6" id="oficina" style="display:none;">
+                            <label for="inputElevator">Oficina</label>
+                            <select id="inputElevator" class="form-control" name="oficina">
+                            <option selected value="0">No</option>
+                            <option value="1">Si</option>
+                            </select>
+                        </div>   
+                    @endif
+                    @if (count($propiedad->terrain()->get())==1)
+                        @if ($propiedad->terrain->access_roads == 0)
+                            <div class="form-group col-md-3 col-6" id="acceso">
+                                <label for="inputAccess">Acceso a carretera</label>
+                                <select id="inputAccess" class="form-control" name="acceso">
+                                <option selected value="0">No</option>
+                                <option value="1">Si</option>
+                                </select>
+                            </div> 
+                        @else
+                            <div class="form-group col-md-3 col-6" id="acceso">
+                                <label for="inputAccess">Acceso a carretera</label>
+                                <select id="inputAccess" class="form-control" name="acceso">
+                                <option value="0">No</option>
+                                <option selected value="1">Si</option>
+                                </select>
+                            </div>
+                        @endif
+                    @else
+                        <div class="form-group col-md-3 col-6" id="acceso" style="display:none;">
+                            <label for="inputAccess">Acceso a carretera</label>
+                            <select id="inputAccess" class="form-control" name="acceso">
+                            <option selected value="0">No</option>
+                            <option value="1">Si</option>
+                            </select>
+                        </div> 
+                    @endif
                     <div class="form-group w-100">
                         <label for="inputDescription">Descripción*</label>
-                        <textarea class="form-control pt-4  w-md-auto w-100" id="inputDescription" rows="3" placeholder="Descripción" Required name="descripcion" value="{{ old('descripcion') }}"></textarea>
+                        <textarea class="form-control pt-4  w-md-auto w-100" id="inputDescription" rows="3" placeholder="Descripción" Required name="descripcion">{{$propiedad->description}}</textarea>
                     </div>
                 </div>
             </div>

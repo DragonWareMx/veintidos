@@ -240,7 +240,7 @@
                     </div>
                     <div class="form-group w-100">
                         <label for="inputDescription">Descripción*</label>
-                        <textarea class="form-control pt-4  w-md-auto w-100" id="inputDescription" rows="3" placeholder="Descripción" Required name="descripcion" value="{{ old('descripcion') }}"></textarea>
+                        <textarea class="form-control pt-4  w-md-auto w-100" id="inputDescription" rows="3" placeholder="Descripción" Required name="descripcion">{{ old('descripcion') }}</textarea>
                     </div>
                 </div>
             </div>
