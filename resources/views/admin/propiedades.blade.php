@@ -53,13 +53,15 @@ Propiedades - Veintidós
         <input type="image" src="{{ asset('/img/ico/buscar.png') }}" alt="Submit Form" class="search-button" />
     </div>
 </form>
-@if (session()->get('status'))
-        <ul class="alert alert-success" style="margin-top:15px;">
-           <li>{{session()->get('status')}}</li>
-        </ul>
-@endif
 <div class="content-admin">
     <a href="{{Route('agregarPropiedad')}}" class="admin_top_link">Agregar propiedad</a>
+</div>
+<div class="row">
+    @if (session()->get('status'))
+        <ul class="alert alert-success" style="margin-top:15px;">
+            <li>{{session()->get('status')}}</li>
+        </ul>
+    @endif
 </div>
 <div class="row" style="margin-bottom:77px;">
     @foreach ($propiedades as $propiedad)

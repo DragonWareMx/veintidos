@@ -84,6 +84,8 @@ Route::get('/admin/propiedades', 'adminPropiedades@ver')->name('propiedades');
 Route::get('/admin/agregar/propiedad', 'adminPropiedades@agregar')->name('agregarPropiedad');
 Route::post('/admin/agregar/propiedad', 'adminPropiedades@agregarPost')->name('agregarPropiedadPost');
 Route::get('/admin/editar/propiedad/{id}', 'adminPropiedades@editar')->name('editarPropiedad');
+Route::patch('/admin/editar/propiedad/{id}', 'adminPropiedades@editarPost')->name('editarPropiedadPost');
+Route::delete('/admin/eliminar/propiedad/{id}', 'adminPropiedades@eliminar')->name('eliminarPropiedad');
 
 Route::get('/admin/solicitudes','adminController@solicitudes')->name('solicitudes');
 Route::patch('/admin/solicitudes','adminController@solicitudesUpdate')->name('solicitudes-update');

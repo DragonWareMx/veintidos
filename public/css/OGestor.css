@@ -42,6 +42,22 @@
     color: #FFFFFF;
     border:none;
 }
+.admin_delete_prop{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #58AD30;
+    margin-top: 17px;
+    margin-left:38px;
+    margin-bottom: 23px;
+    width: auto;
+}
+.admin_delete_prop:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
 @media (max-width:767px){
     .O-images-loader{
         height: 214px;

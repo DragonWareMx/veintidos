@@ -248,7 +248,7 @@
                 <div class="col-md-7 col-12">
                     <div class="form-group w-100">
                         <label for="inputInfo" class="font-weight-bold">Información de contacto</label>
-                        <textarea class="form-control pt-4  w-md-auto w-100" id="inputInfo" rows="3" placeholder="Información de contacto" Required name="info" value="{{ old('info') }}"></textarea>
+                        <textarea class="form-control pt-4  w-md-auto w-100" id="inputInfo" rows="3" placeholder="Información de contacto" Required name="info">{{ old('info') }}</textarea>
                     </div>
                 </div>
                 <div class="col-md-5 col-12 d-flex justify-content-end align-items-end mt-mb-0 mt-3">

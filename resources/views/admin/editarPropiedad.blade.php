@@ -44,13 +44,14 @@
         </ul>
     </div>
     @endif
-        <form class="container card-body" action="/admin/agregar/propiedad" method="POST" enctype="multipart/form-data">
+        <form class="container card-body" action="{{ route('editarPropiedadPost',['id'=>Crypt::encrypt($propiedad->id)]) }}" method="POST" enctype="multipart/form-data">
+            @method('PATCH')
             @csrf
             <div class="row d-flex flex-wrap-reverse ps-1 pe-1">
                 <div class="col-md-5 col-12 mb-3">
                     <div id="gallery" class="gallery col-12 O-images-loader flex-wrap">
                         {{-- PONER AQUÍ IMAGENSITAS--}}
-                        <img src="{{$propiedad->photo}}" alt="">
+                        <img src="{{$propiedad->photo}}" alt="{{$propiedad->photo}}">
                         @foreach ($propiedad->photos as $photo)
                             <img src="{{$photo->path}}" alt="{{$photo->path}}">
                         @endforeach
@@ -864,11 +865,11 @@
                     </div>
                 </div>
             </div>
-            <div class="row d-flex flex-wrap O-mb-6 ps-1 pe-1">
+            <div class="row d-flex flex-wrap ps-1 pe-1">
                 <div class="col-md-7 col-12">
                     <div class="form-group w-100">
                         <label for="inputInfo" class="font-weight-bold">Información de contacto</label>
-                        <textarea class="form-control pt-4  w-md-auto w-100" id="inputInfo" rows="3" placeholder="Información de contacto" Required name="info" value="{{ old('info') }}"></textarea>
+                        <textarea class="form-control pt-4  w-md-auto w-100" id="inputInfo" rows="3" placeholder="Información de contacto" Required name="info">{{$propiedad->owner_info}}</textarea>
                     </div>
                 </div>
                 <div class="col-md-5 col-12 d-flex justify-content-end align-items-end mt-mb-0 mt-3">
@@ -877,8 +878,35 @@
                 </div> 
             </div>
         </form>
+        <div class="row">
+            <div class="admin_delete_prop" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Eliminar inmueble
+            </div>
+        </div>
     </div>
-
+    <br>
+    <br>
+    <br>
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar Inmueble</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas eliminar este inmueble? ¡Todos los datos de la propiedad se perderán!
+            </div>
+            <form class="modal-footer" method="post" action="{{ route('eliminarPropiedad',['id'=>Crypt::encrypt($propiedad->id)]) }}">
+                @method('DELETE')
+                @csrf
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-danger">¡Sí, eliminar!</button>
+            </form>
+        </div>
+    </div>
+</div>
 <script>
     function cambio(valor){
         valor=valor.value;
