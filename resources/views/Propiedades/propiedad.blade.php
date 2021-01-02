@@ -17,7 +17,7 @@
     
     <style>
         .owl-w{
-            width: 95%;
+            width: 100%;
         }
         .pswp {
             z-index: 99999;
@@ -26,6 +26,15 @@
         .btnC-b:focus, .btnC-b:active{
             outline: none !important;
             box-shadow: none;
+        }
+        .col-car{
+            width: 50%;
+        }
+        @media (max-width: 1200px){
+            .col-car {
+                width: 100%;
+                flex: 1 0 0%;
+            }
         }
     </style>
 
@@ -69,16 +78,16 @@
     
                     <div class="row mt-4">
                         {{-- AQUI VA LA GALERIA DE FOTOS --}}
-                        <div class="col-xl">
+                        <div class="col-car">
                                 <div class="w-100 h-100">
                                     {{-- IMAGEN SELECCIONADA --}}
-                                    <div id="imagen-seleccionada" class="mx-auto" style="height: 400px; width: 95%; background: url('{{ asset($propiedad->photo) }}') no-repeat center center; background-size: cover;">
+                                    <div id="imagen-seleccionada" class="mx-auto" style="height: 400px; width: 95%; background: url('{{ asset($propiedad->photo) }}') no-repeat center center; background-size: cover; cursor: pointer;">
                                     </div>
 
                                     {{-- Carousel --}}
                                     <div class="mx-auto mt-2" style="width: 95%;">
-                                        <div class="owl-carousel owl-theme mx-auto owl-w" id="galeria-carousel">
-                                            <div class="item" style="width:110px; height:80px; background: url('{{ asset($propiedad->photo) }}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset($propiedad->photo) }}'); setIndex(0)"></div>
+                                        <div class="owl-carousel owl-theme owl-w" id="galeria-carousel">
+                                            <div class="item" style="width:110px; height:80px; background: url('{{ asset($propiedad->photo) }}') no-repeat center center; background-size: cover; cursor: pointer;" onclick="clickImagen('{{ asset($propiedad->photo) }}'); setIndex(0)"></div>
                                             @php
                                                 $index = 0;
                                             @endphp
@@ -86,7 +95,7 @@
                                                 @php
                                                     $index++;
                                                 @endphp
-                                                <div class="item" style="width:110px; height:80px; background: url('{{ asset($photo->path) }}') no-repeat center center; background-size: cover;" onclick="clickImagen('{{ asset($photo->path) }}'); setIndex({{ $index }})"></div>
+                                                <div class="item" style="width:110px; height:80px; background: url('{{ asset($photo->path) }}') no-repeat center center; background-size: cover; cursor: pointer;" onclick="clickImagen('{{ asset($photo->path) }}'); setIndex({{ $index }})"></div>
                                             @endforeach
                                         </div>
                                     </div>
@@ -100,7 +109,7 @@
                             </h5>
 
                             {{-- COSTO CLAVE Y COMPARTIR --}}
-                            <div class="row" style="padding-right: 2rem; padding-left: 0.5rem">
+                            <div class="row" style="padding-right: 2rem;">
                                 <div class="col-sm-7 text-left">
                                     <p class="m-1" style="font-weight: 600; font-size: 24px;">${{ number_format($propiedad->price, 2) }}</p>
                                 </div>
@@ -127,7 +136,7 @@
                             </div>
 
                             {{-- UBICACION --}}
-                            <div class="row" style="padding-right: 2rem; padding-left: 0.5rem">
+                            <div class="row" style="padding-right: 2rem;">
                                 <div class="col-12 text-left d-flex mt-2">
                                     <img class="m-1" style="width:17px; height:17px; " src="{{ asset('img/ico/ubicacion2.png')}}" alt="">
                                     <p class="m-1">{{ $propiedad->street }}
@@ -420,7 +429,6 @@
                                             @endif
                                         </div>
                                         <div class="col">
-                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/casa.png')}}" alt="">
                                             <b>Departamento</b>
                                         </div>
                                         <div class="col">
@@ -682,8 +690,7 @@
                                             @endif
                                         </div>
                                         <div class="col">
-                                            <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/casa.png')}}" alt="">
-                                            <b>Casa</b>
+                                            <b>Terreno</b>
                                         </div>
                                         <div class="col">
                                             <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/terreno2.png')}}" alt="">
@@ -933,7 +940,7 @@
                                             @endif
                                         </div>
                                         <div class="col">
-                                            <b>Oficina</b>
+                                            <b>Local</b>
                                         </div>
                                         <div class="col">
                                             <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/construccion.png')}}" alt="">
@@ -1134,42 +1141,42 @@
                 <hr>
     
                 <div class="owl-carousel owl-theme" id="propiedades-carousel" style="margin-bottom:3%; margin-top:3%">
-                    @foreach ($propiedades as $propiedad)
+                    @foreach ($propiedades as $propiedad1)
                         <div class="olw-item" style="margin:3%">
                             {{-- TARJETA DE LA PROPIEDAD --}}
                             <div class="border rounded-bottom shadow-sm bg-white">
                                 <div style="height:auto; min-height: 330px; line-height: 12px !important;">
                                     {{-- IMAGEN --}}
                                     <div  style="
-                                    background: url('{{ asset($propiedad->photo)}}') no-repeat center center;
+                                    background: url('{{ asset($propiedad1->photo)}}') no-repeat center center;
                                     background-size: cover;
                                     height:220px;">
                                         {{-- DIRECCION Y FOTOS --}}
                                         <div class="row h-100 align-items-end">
                                             <div class="col-8 text-left">
                                                 <img class="d-inline mb-1 ml-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/ubicacion.png')}}" alt="">
-                                                <p class="my-1 d-inline text-white" style="text-shadow: 1px 1px 3px black; font-weight: 500;">{{$propiedad->suburb}}, {{$propiedad->city}}</p>
+                                                <p class="my-1 d-inline text-white" style="text-shadow: 1px 1px 3px black; font-weight: 500;">{{$propiedad1->suburb}}, {{$propiedad1->city}}</p>
                                             </div>
                                             <div class="col-4 text-right">
                                                 <img class="d-inline mb-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/images.png')}}" alt="">
-                                                <p class="m-1 d-inline text-white font-weight-bold" style="text-shadow: 1px 1px 3px black; font-weight: 500;">{{count($propiedad->photos()->get()) + 1}}</p>
+                                                <p class="m-1 d-inline text-white font-weight-bold" style="text-shadow: 1px 1px 3px black; font-weight: 500;">{{count($propiedad1->photos()->get()) + 1}}</p>
                                             </div>
                                         </div>
                                     </div>
                                     {{-- DATOS --}}
                                     {{-- TITULO --}}
-                                    <a href="{{route('propiedad', ['id'=>Crypt::encrypt($propiedad->id)])}}" style="text-decoration: none">
+                                    <a href="{{route('propiedad', ['id'=>Crypt::encrypt($propiedad1->id)])}}" style="text-decoration: none">
                                         <h6 class="px-2 pt-1 text-blue22" style="font-weight: 600; min-height: 52px;"> 
-                                            {{ \Illuminate\Support\Str::limit($propiedad->description, $limit = 65, $end = '...') }}
+                                            {{ \Illuminate\Support\Str::limit($propiedad1->description, $limit = 65, $end = '...') }}
                                         </h6>    
                                     </a>
                                     {{-- PRECIO Y CLAVE --}}
                                     <div class="row align-items-end px-2">
                                         <div class="col-7 text-left">
-                                            <p class="m-1">${{number_format($propiedad->price,2)}} </p>
+                                            <p class="m-1">${{number_format($propiedad1->price,2)}} </p>
                                         </div>
                                         <div class="col-5 text-right">
-                                            <p class="m-1">Clave: <b>{{str_pad($propiedad->id, 4, '0', STR_PAD_LEFT)}}</b></p>
+                                            <p class="m-1">Clave: <b>{{str_pad($propiedad1->id, 4, '0', STR_PAD_LEFT)}}</b></p>
                                         </div>
                                     </div>
                                 </div>
@@ -1190,6 +1197,17 @@
                 loop:false,
                 autoWidth:true,
                 items:4,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:3
+                    },
+                    1000:{
+                        items:4
+                    }
+                }
             });
 
             $('#propiedades-carousel').owlCarousel({
@@ -1387,16 +1405,16 @@
     var openPhotoSwipe = function() {
         var items = [
             {
-                src: '{{asset("/")}}{{ $propiedad->photo }}',
+                src: '{{asset($propiedad->photo)}}',
                 w: 0,
                 h: 0
             },
             @foreach ($propiedad->photos as $photo)
-                {
-                    src: '{{asset("/")}}{{ $photo->path }}',
-                    w: 0,
-                    h: 0
-                },
+            {
+                src: '{{asset($photo->path)}}',
+                w: 0,
+                h: 0
+            },
             @endforeach
         ];
 
