@@ -186,15 +186,17 @@ class propiedadesController extends Controller
         else if ($propiedad->office()->exists()){
             if ($propiedad->office->type == 'office') {
                 $tipo = 'OFICINA';
-                $propiedades = $propiedades->whereHas('office')
-                                        ->where('type','office')
+                $propiedades = $propiedades->whereHas('office', function (Builder $query) {
+                                                $query->where('type', 'office');
+                                            })
                                         ->take(15)
                                         ->get();
             }
             else {
                 $tipo = 'LOCAL';
-                $propiedades = $propiedades->whereHas('office')
-                                        ->where('type','premises')
+                $propiedades = $propiedades->whereHas('office', function (Builder $query) {
+                                                $query->where('type', 'premises');
+                                            })
                                         ->take(15)
                                         ->get();
             }

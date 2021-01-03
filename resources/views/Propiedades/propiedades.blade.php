@@ -11,6 +11,14 @@
         .btn-vm:hover{
             background-color: transparent;
         }
+        .text-ps{
+            line-height: 5px;
+        }
+        @media (max-width: 350px){
+            .text-ps{
+                line-height: 10px;
+            }
+        }
     </style>
 @endsection
 @section('content')
@@ -150,7 +158,7 @@
                                                 </p>
                                             </div>
                                             <div class="col">
-                                                <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                     Baños Completos
                                                 </p>
                                             </div>
@@ -222,7 +230,7 @@
                                                 </p>
                                             </div>
                                             <div class="col">
-                                                <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                     Baños completos
                                                 </p>
                                             </div>
@@ -287,7 +295,7 @@
                                         </div>
                                         <div class="row px-2">
                                             <div class="col">
-                                                <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                     Acceso a Vialidades
                                                 </p>
                                             </div>
@@ -358,7 +366,7 @@
                                         </div>
                                         <div class="row px-2">
                                             <div class="col">
-                                                <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                     Medios Baños
                                                 </p>
                                             </div>
@@ -433,7 +441,7 @@
                                         </div>
                                         <div class="row px-2">
                                             <div class="col">
-                                                <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                     Medios Baños
                                                 </p>
                                             </div>
@@ -461,7 +469,7 @@
                                                 @endif
                                             </div>
                                             <div class="col">
-                                                <b>Oficina</b>
+                                                <b>Local</b>
                                             </div>
                                             <div class="col">
                                                 <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/construccion.png')}}" alt="">
@@ -508,7 +516,7 @@
                                         </div>
                                         <div class="row px-2">
                                             <div class="col">
-                                                <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                                <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                     Medios Baños
                                                 </p>
                                             </div>

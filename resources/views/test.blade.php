@@ -88,7 +88,7 @@
                             {{-- TITULO --}}
                             <a href="{{route('propiedad', ['id'=>Crypt::encrypt($propiedad->id)])}}" style="text-decoration: none">
                                 <h6 class="px-2 pt-1 text-blue22" style="font-weight: 600; min-height: 52px;"> 
-                                    {{ \Illuminate\Support\Str::limit($propiedad->description, $limit = 65, $end = '...') }}
+                                    {{ \Illuminate\Support\Str::limit($propiedad->title, $limit = 65, $end = '...') }}
                                 </h6>    
                             </a>
                             {{-- PRECIO Y CLAVE --}}

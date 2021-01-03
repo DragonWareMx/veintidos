@@ -30,6 +30,14 @@
         .col-car{
             width: 50%;
         }
+        .text-ps{
+            line-height: 5px;
+        }
+        @media (max-width: 350px){
+            .text-ps{
+                line-height: 10px;
+            }
+        }
         @media (max-width: 1200px){
             .col-car {
                 width: 100%;
@@ -217,7 +225,7 @@
                                             </p>
                                         </div>
                                         <div class="col">
-                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                            <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                 Baños Completos
                                             </p>
                                         </div>
@@ -253,7 +261,7 @@
                                             </p>
                                         </div>
                                         <div class="col">
-                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                            <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                 Cocina Integral
                                             </p>
                                         </div>
@@ -289,7 +297,7 @@
                                             </p>
                                         </div>
                                         <div class="col">
-                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                            <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                 Medios Baños
                                             </p>
                                         </div>
@@ -324,12 +332,12 @@
                                     </div>
                                     <div class="row px-2">
                                         <div class="col">
-                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                            <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                 Patio de Servicio
                                             </p>
                                         </div>
                                         <div class="col">
-                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                            <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                 Cuarto de Servicio
                                             </p>
                                         </div>
@@ -478,7 +486,7 @@
                                             </p>
                                         </div>
                                         <div class="col">
-                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                            <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                 Baños completos
                                             </p>
                                         </div>
@@ -514,7 +522,7 @@
                                             </p>
                                         </div>
                                         <div class="col">
-                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                            <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                 Cocina Integral
                                             </p>
                                         </div>
@@ -550,7 +558,7 @@
                                             </p>
                                         </div>
                                         <div class="col">
-                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                            <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                 Medios Baños
                                             </p>
                                         </div>
@@ -585,12 +593,12 @@
                                     </div>
                                     <div class="row px-2">
                                         <div class="col">
-                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                            <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                 Patio de Servicio
                                             </p>
                                         </div>
                                         <div class="col">
-                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                            <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                 Cuarto de Servicio
                                             </p>
                                         </div>
@@ -732,7 +740,7 @@
                                     </div>
                                     <div class="row px-2">
                                         <div class="col">
-                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                            <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                 Acceso a Vialidades
                                             </p>
                                         </div>
@@ -803,7 +811,7 @@
                                     </div>
                                     <div class="row px-2">
                                         <div class="col">
-                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                            <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                 Medios Baños
                                             </p>
                                         </div>
@@ -878,7 +886,7 @@
                                     </div>
                                     <div class="row px-2">
                                         <div class="col">
-                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                            <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                 Medios Baños
                                             </p>
                                         </div>
@@ -987,7 +995,7 @@
                                     </div>
                                     <div class="row px-2">
                                         <div class="col">
-                                            <p class="font-weight-light pt-1" style="color: #818181; font-size: 12px; line-height:5px;">
+                                            <p class="font-weight-light pt-1 text-ps" style="color: #818181; font-size: 12px;">
                                                 Medios Baños
                                             </p>
                                         </div>
@@ -1167,7 +1175,7 @@
                                     {{-- TITULO --}}
                                     <a href="{{route('propiedad', ['id'=>Crypt::encrypt($propiedad1->id)])}}" style="text-decoration: none">
                                         <h6 class="px-2 pt-1 text-blue22" style="font-weight: 600; min-height: 52px;"> 
-                                            {{ \Illuminate\Support\Str::limit($propiedad1->description, $limit = 65, $end = '...') }}
+                                            {{ \Illuminate\Support\Str::limit($propiedad1->title, $limit = 65, $end = '...') }}
                                         </h6>    
                                     </a>
                                     {{-- PRECIO Y CLAVE --}}
