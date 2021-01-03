@@ -33,12 +33,7 @@
 <div style="background: url('/img/fondoEdificioBLUE2.png') no-repeat fixed; width: 100%; height: 100vh; background-size:cover;">
     <div class="bocadillo-cuadrado">
         <h1 id="hola">¡BIENVENIDO!</h1> 
-        <p id="txt_hi" style="font-family: Roboto;
-        font-style: italic;
-        font-weight: 300;
-        font-size: 22px;
-        line-height: 26px;
-        color: #222222;"> Selecciona una opción para continuar </p>
+        <p id="txt_hi" style=""> Selecciona una opción para continuar </p>
         <div class="botonesIndex">
             <div id="btn1" onclick="opcion('next')" class="botonIndex">
                 <p class="btn_txt">Quiero comprar o rentar una propiedad</p> 
@@ -61,7 +56,8 @@
 </div>
 <div>
     <h1 style="text-align: center">NOVEDADES</h1> 
-    <div class="owl-carousel owl-theme" style="margin-bottom:3%; margin-top:3%">
+    <hr style="color:gray: width:400px; margin-bottom:0px">
+    <div class="owl-carousel owl-theme" style="margin-bottom:3%; margin-top:2%">
         @foreach ($propiedades as $propiedad)
             <div class="olw-item" style="margin:3%">
                     {{-- TARJETA DE LA PROPIEDAD --}}

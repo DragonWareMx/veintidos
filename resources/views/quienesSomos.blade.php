@@ -6,6 +6,20 @@
     <link rel="stylesheet" href="{{ asset('/plugins/bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/O.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/quienesSomos.css') }}">
+    {{-- OWL CAROUSEL --}}
+    <link rel="stylesheet" href="{{ asset('/plugins/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/plugins/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css') }}">
+    
+    <script src="{{ asset('/plugins/OwlCarousel2-2.3.4/dist/owl.carousel.min.js') }}"></script>
+    
+    <style>
+        .owl-w{
+            width: 95%;
+        }
+        .pswp {
+            z-index: 99999;
+        }
+    </style>
     <script languague="javascript">
       function mostrar() {
           div = document.getElementById('info-more');
@@ -68,6 +82,125 @@
             </div>
         </div>
     </div>
+
+    <div>
+      <h1 style="text-align: center">NOVEDADES</h1> 
+      <hr style="color:gray: width:400px; margin-bottom:0px">
+      <div class="owl-carousel owl-theme" style="margin-bottom:3%; margin-top:2%">
+          @foreach ($propiedades as $propiedad)
+              <div class="olw-item" style="margin:3%">
+                      {{-- TARJETA DE LA PROPIEDAD --}}
+                      <div class="border rounded-bottom shadow-sm bg-white">
+                          <div style="height:auto; min-height: 330px; line-height: 12px !important;">
+                              {{-- IMAGEN --}}
+                              <div  style="
+                              background: url('{{ asset($propiedad->photo)}}') no-repeat center center;
+                              background-size: cover;
+                              height:220px;">
+                                  {{-- DIRECCION Y FOTOS --}}
+                                  <div class="row h-100 align-items-end">
+                                      <div class="col-8 text-left">
+                                          <img class="d-inline mb-1 ml-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/ubicacion.png')}}" alt="">
+                                          <p class="my-1 d-inline text-white" style="text-shadow: 1px 1px 3px black; font-weight: 500;">{{$propiedad->suburb}}, {{$propiedad->city}}</p>
+                                      </div>
+                                      <div class="col-4 text-right">
+                                          <img class="d-inline mb-1" style="width:16px; height:auto; filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.4));" src="{{ asset('img/ico/images.png')}}" alt="">
+                                          <p class="m-1 d-inline text-white font-weight-bold" style="text-shadow: 1px 1px 3px black; font-weight: 500;">{{count($propiedad->photos()->get()) + 1}}</p>
+                                      </div>
+                                  </div>
+                              </div>
+                              {{-- DATOS --}}
+                              {{-- TITULO --}}
+                              <a href="{{route('propiedad', ['id'=>Crypt::encrypt($propiedad->id)])}}" style="text-decoration: none">
+                                  <h6 class="px-2 pt-1 text-blue22" style="font-weight: 600; min-height: 52px;"> 
+                                      {{ \Illuminate\Support\Str::limit($propiedad->title, $limit = 65, $end = '...') }}
+                                  </h6>    
+                              </a>
+                              {{-- PRECIO Y CLAVE --}}
+                              <div class="row align-items-end px-2">
+                                  <div class="col-7 text-left">
+                                      <p class="m-1">${{number_format($propiedad->price,2)}} </p>
+                                  </div>
+                                  <div class="col-5 text-right">
+                                      <p class="m-1">Clave: <b>{{str_pad($propiedad->id, 4, '0', STR_PAD_LEFT)}}</b></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+              </div>
+          @endforeach
+      </div>
+  </div>
+  
+  <script>
+      $('.owl-carousel').owlCarousel({
+      loop:true,
+      margin:10,
+      nav:false,
+      autoplay:true,
+      autoplayTimeout:2500,
+      autoplayHoverPause:true,
+      
+      responsive:{
+          0:{
+              items:1
+          },
+          600:{
+              items:3
+          },
+          1000:{
+              items:5
+          }
+      }
+      });
+      function opcion(option){
+          switch(option){
+              case "form":
+                  location.href="/contactanos";
+              break;
+              case "next":
+                  btn1=document.getElementById("btn1");
+                  btn2=document.getElementById("btn2");
+                  btn1.innerHTML=" <p class='btn_txt'>Comprar </p>";
+                  btn2.innerHTML="<p class='btn_txt'>Rentar </p>";
+                  document.getElementById("hola").innerHTML="¡CASI LISTOS!";
+                  document.getElementById("txt_hi").innerHTML="Me interesa...";
+                  btn1.setAttribute("onclick", "opcion('comprar')");
+                  btn2.setAttribute("onclick", "opcion('rentar')");
+                  document.getElementById("back").style.display="block";
+              break;
+              case 'rentar':
+                  location.href="/propiedades?deal=rent";
+              break;
+              case 'comprar':
+                  location.href="/propiedades?deal=sale";
+              break;
+              case 'volver':
+                  btn1=document.getElementById("btn1");
+                  btn2=document.getElementById("btn2");
+                  btn1.innerHTML="<p class='btn_txt'>Quiero comprar o rentar una propiedad</p>";
+                  btn2.innerHTML="<p class='btn_txt'>Quiero vender o rentar mi propiedad</p>";
+                  document.getElementById("hola").innerHTML="¡BIENVENIDO!";
+                  document.getElementById("txt_hi").innerHTML="Selecciona una opción para continuar";
+                  btn1.setAttribute("onclick", "opcion('next')");
+                  btn2.setAttribute("onclick", "opcion('form')");
+                  document.getElementById("back").style.display="none";
+              break;       
+          }
+      }
+  
+      if (screen.width < 700){
+          btn1=document.getElementById("btn1");
+          btn2=document.getElementById("btn2");
+          btn1.innerHTML="<p class='btn_txt'>Comprar o rentar</p>";
+          btn2.innerHTML="<p class='btn_txt'>Vender u ofrecer en renta</p>";
+      } 
+  </script>
+
+
+
+
+
 
     <h1 class="h1 text-center" id="1" style="margin-top: 50px;">¿QUÉ HACEMOS?</h1>
 

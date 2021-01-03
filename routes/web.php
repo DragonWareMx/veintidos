@@ -38,9 +38,8 @@ Route::get('/contactanos', function () {
     return view('contactanos');
 })->name('contactanos');
 
-Route::get('/quienes_somos', function () {
-    return view('quienesSomos');
-})->name('quienesSomos');
+Route::get('/quienes_somos','contactanosController@quienes')->name('quienesSomos');
+
 
 Route::get('/veintidos', function () {
     return view('veintidos');

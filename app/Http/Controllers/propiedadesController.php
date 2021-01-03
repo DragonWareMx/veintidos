@@ -212,7 +212,8 @@ class propiedadesController extends Controller
             'nombre' => 'required|max:255|regex:/[a-zA-Z áéíóúÁÉÍÓÚ]+$/',
             'correo' => 'email|max:320',
             'telefono' => 'required|alpha_num|max:50|min:10',
-            'comentario' => 'nullable|max:255|regex:/[a-zA-Z áéíóúÁÉÍÓÚ\,\.]+$/'
+            'comentario' => 'nullable|max:255|regex:/[a-zA-Z áéíóúÁÉÍÓÚ\,\.]+$/',
+            recaptchaFieldName() => recaptchaRuleName()
         ]);
 
         try {
