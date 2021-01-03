@@ -14,7 +14,7 @@
         .text-ps{
             line-height: 5px;
         }
-        @media (max-width: 350px){
+        @media (max-width: 1150px){
             .text-ps{
                 line-height: 10px;
             }

@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="{{ asset('/plugins/bootstrap/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/O.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/contactanos.css') }}">
+
+    {!! htmlScriptTagJsApi([ "lang" => "es" ]) !!}
 @endsection
 @section('content')
 <div class="container">
@@ -97,6 +99,8 @@
                     <label for="inputCost" class="form-label">Precio propuesto *</label>
                     <input type="number" min="1" class="form-control" id="inputCost" required name="precio" placeholder="Precio propuesto (Por mes)" value="{{ old('precio') }}">
                 </div>
+
+                {!! htmlFormSnippet() !!}
 
                 
 
