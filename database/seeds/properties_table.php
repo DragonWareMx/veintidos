@@ -12,8 +12,8 @@ class properties_table extends Seeder
     public function run()
     {
         DB::table('properties')->insert([
-            'owner_name' => 'Oscar Huerta Pantoja de Nivardy',
-            'owner_info' => '4434047222, lomas del tec sierra nevada 205',
+            'owner_name' => Crypt::encryptString('Oscar Huerta Pantoja de Nivardy'),
+            'owner_info' => Crypt::encryptString('4434047222, lomas del tec sierra nevada 205'),
             'description' => 'Casa lujosa de 3 pisos, increíble, buena ubicación, incluye todo lo necesario para una vida de rey, ya trae muebles.',
             'street' => '11 de mayo',
             'int_number'=>null,
@@ -62,8 +62,8 @@ class properties_table extends Seeder
             'floors'=>3,
         ]);
         DB::table('properties')->insert([
-            'owner_name' => 'Lonardo Lopez Castillo',
-            'owner_info' => '4434047222, lomas del tec sierra nevada 205',
+            'owner_name' => Crypt::encryptString('Lonardo Lopez Castillo'),
+            'owner_info' => Crypt::encryptString('4434047222, lomas del tec sierra nevada 205'),
             'description' => 'Departamento en edificio lujoso, muy espacioso, con estacionamiento hasta para dos coches, vive la vida que siempre quisiste, aquí y ahora, se feliz como una lombriz en este increíble departamento, aquí mismo vivió el famoso músico Oscar Huerta Pantoja de Nivardy.',
             'street' => 'La misteriosa',
             'int_number'=>27,
@@ -113,8 +113,8 @@ class properties_table extends Seeder
             'elevator'=>true,
         ]);
         DB::table('properties')->insert([
-            'owner_name' => 'Adrián García Sánches Pedraza',
-            'owner_info' => '4434047222, lomas del tec sierra nevada 205',
+            'owner_name' => Crypt::encryptString('Adrián García Sánches Pedraza'),
+            'owner_info' => Crypt::encryptString('4434047222, lomas del tec sierra nevada 205'),
             'description' => 'Terreno muy grande, excelente ubicación, al rededor hay muchos locales, puedes poner tu casa con negocios y comenzar una vida muy bella.',
             'street' => 'Primitivis',
             'int_number'=>null,
@@ -139,8 +139,8 @@ class properties_table extends Seeder
             'access_roads'=>true,
         ]);
         DB::table('properties')->insert([
-            'owner_name' => 'Adrián García Sánches Pedraza',
-            'owner_info' => '4434047222, lomas del tec sierra nevada 205',
+            'owner_name' => Crypt::encryptString('Adrián García Sánches Pedraza'),
+            'owner_info' => Crypt::encryptString('4434047222, lomas del tec sierra nevada 205'),
             'description' => 'Oficina en lujoso edificio de Morelia.',
             'street' => 'Primitivis',
             'int_number'=>null,
@@ -166,8 +166,8 @@ class properties_table extends Seeder
             'type'=>'office'
         ]);
         DB::table('properties')->insert([
-            'owner_name' => 'Adrián García Sánches Pedraza',
-            'owner_info' => '4434047222, lomas del tec sierra nevada 205',
+            'owner_name' => Crypt::encryptString('Adrián García Sánches Pedraza'),
+            'owner_info' => Crypt::encryptString('4434047222, lomas del tec sierra nevada 205'),
             'description' => 'Local en centro de Morelia.',
             'street' => 'Primitivis',
             'int_number'=>null,
@@ -193,8 +193,8 @@ class properties_table extends Seeder
             'type'=>'premises'
         ]);
         DB::table('properties')->insert([
-            'owner_name' => 'Adrián García Sánches Pedraza',
-            'owner_info' => '4434047222, lomas del tec sierra nevada 205',
+            'owner_name' => Crypt::encryptString('Adrián García Sánches Pedraza'),
+            'owner_info' => Crypt::encryptString('4434047222, lomas del tec sierra nevada 205'),
             'description' => 'Almacén muy grande a las afueras de Morelia!!!!',
             'street' => 'Primitivis',
             'int_number'=>null,

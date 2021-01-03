@@ -18,9 +18,9 @@ class CreateCProposalsTable extends Migration
             $table->timestamps();
 
             $table->unsignedBigInteger('propertie_id')->nullable();     //id de la propiedad asociada
-            $table->string('phone_number', 50);             //numero telefonico de la persona que hace la propuesta
+            $table->string('phone_number');             //numero telefonico de la persona que hace la propuesta
             $table->string('name');                         //nombre de la persona que hace la propuesta
-            $table->string('email', 320)->nullable();       //correo electronico de la persona que hace la propuesta           
+            $table->string('email')->nullable();       //correo electronico de la persona que hace la propuesta           
             $table->string('comment')->nullable();          //comentario que hace la persona sobre la propuesta
             $table->enum('status', ['reviewed','pending']);  
             $table->foreign('propertie_id')->references('id')->on('properties')->onDelete('set null');
