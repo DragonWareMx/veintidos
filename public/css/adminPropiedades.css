@@ -12,3 +12,8 @@
     width: 100%;
     display: flex;
 }
+@media(max-width:768px){
+    .admin_top_link{
+        margin-top: 158px;
+    }
+}

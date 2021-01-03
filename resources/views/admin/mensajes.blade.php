@@ -101,7 +101,7 @@ Mensajes - Veintidós
       $('#phone').val($phone);
       $('#propertie').val($propertie_id);
       $('#comment').val($comment);    
-
+      document.getElementById('link_propiedad').href="/admin/editar/propiedad/"+$propertie_id;
       $('#precio-p').val('$'+$precioP);  
       $('#titulo-p').val($tituloP);    
       
@@ -147,7 +147,7 @@ Mensajes - Veintidós
             <div class="div-modal-propiedad">
               <img class="img-propiedad-modal" id="img-p" src="">
               <div class="div-info-propiedad">
-                <a href="#"><textarea style="text-transform: uppercase; font-weight:600; font-size:16px; color:#222B58" id="titulo-p" readonly disabled></textarea></a>
+                <a id="link_propiedad" href="#"><textarea style="text-transform: uppercase; font-weight:600; font-size:16px; color:#222B58" id="titulo-p" readonly disabled></textarea></a>
                 <input id="lugar-p" readonly disabled>
                 <input id="precio-p" readonly disabled>
                 <input id="clave-p" style="margin-bottom: 0px" readonly disabled>
