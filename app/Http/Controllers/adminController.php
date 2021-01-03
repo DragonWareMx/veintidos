@@ -141,7 +141,7 @@ class adminController extends Controller
 
     public function mensajes()
     {
-        $mensajes = C_Proposal::paginate(10);
+        $mensajes = C_Proposal::whereNotNull('propertie_id')->paginate(10);
         $propiedades = Propertie::get();
 
         return view('admin.mensajes', ['mensajes' => $mensajes, 'propiedades' => $propiedades]);

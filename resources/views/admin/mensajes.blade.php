@@ -107,7 +107,7 @@ Mensajes - Veintidós
       
       $('#clave-p').val('Clave: '+$propertie_id);  
       $('#lugar-p').val($calleP);  
-      document.getElementById("img-p").src='/'+$fotoP;  
+      document.getElementById("img-p").src=$fotoP;  
   }
 </script>
 
