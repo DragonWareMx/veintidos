@@ -18,7 +18,7 @@ class CreatePropertiesTable extends Migration
             $table->timestamps();
 
             $table->string('owner_name');                                           //nombre del dueño o responsable de la propiedad
-            $table->string('owner_info',500);                                           //información del dueño
+            $table->string('owner_info');                                           //información del dueño
             $table->string('description',700);                                      //descripcion de la propiedad
 
             //DATOS DE LA DIRECCION DE LA PROPIEDAD

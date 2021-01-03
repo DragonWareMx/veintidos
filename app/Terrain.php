@@ -8,6 +8,6 @@ class Terrain extends Model
 {
     public function propertie()
     {
-        return $this->hasOne('App\Propertie');
+        return $this->belongsTo('App\Propertie');
     }
 }

@@ -3,9 +3,34 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Crypt;
 
 class Propertie extends Model
 {
+    public function setOwnerNameAttribute($value) {
+        $this->attributes['owner_name'] = Crypt::encryptString($value);
+    }
+
+    public function setOwnerInfoAttribute($value) {
+        $this->attributes['owner_info'] = Crypt::encryptString($value);
+    }
+
+    public function getOwnerNameAttribute($value) {
+        try{
+            return Crypt::decryptString($value);
+        }catch(\Exception $e){
+            return "Error: ¡Datos no válidos!";
+        }
+    }
+
+    public function getOwnerInfoAttribute($value) {
+        try{
+            return Crypt::decryptString($value);
+        }catch(\Exception $e){
+            return "Error: ¡Datos no válidos!";
+        }
+    }
+
     public function house()
     {
         return $this->hasOne('App\House');
@@ -29,5 +54,9 @@ class Propertie extends Model
     public function photos()
     {
         return $this->hasMany('App\Photo');
+    }
+    public function proposals()
+    {
+        return $this->hasMany('App\C_Proposal');
     }
 }
