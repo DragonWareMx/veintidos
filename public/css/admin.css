@@ -41,3 +41,19 @@
     width:100%;
     flex-wrap: wrap;
 }
+.mxA{
+    margin:0 50px;
+}
+
+@media (max-width:660px){
+.mxA{
+    margin:0 25px !important;
+}
+}
+
+@media (max-width:400px){
+    .mxA{
+        margin:0 10px !important;
+        font-size: 0px !important;
+    }
+}

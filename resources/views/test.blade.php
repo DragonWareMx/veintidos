@@ -109,9 +109,13 @@
 
 <script>
     $('.owl-carousel').owlCarousel({
-    loop:false,
+    loop:true,
     margin:10,
-    nav:true,
+    nav:false,
+    autoplay:true,
+    autoplayTimeout:2500,
+    autoplayHoverPause:true,
+    
     responsive:{
         0:{
             items:1
@@ -147,7 +151,7 @@
                 location.href="/propiedades?deal=sale";
             break;
             case 'volver':
-            btn1=document.getElementById("btn1");
+                btn1=document.getElementById("btn1");
                 btn2=document.getElementById("btn2");
                 btn1.innerHTML="<p class='btn_txt'>Quiero comprar o rentar una propiedad</p>";
                 btn2.innerHTML="<p class='btn_txt'>Quiero vender o rentar mi propiedad</p>";
@@ -159,5 +163,12 @@
             break;       
         }
     }
+
+    if (screen.width < 700){
+        btn1=document.getElementById("btn1");
+        btn2=document.getElementById("btn2");
+        btn1.innerHTML="<p class='btn_txt'>Comprar o rentar</p>";
+        btn2.innerHTML="<p class='btn_txt'>Vender u ofrecer en renta</p>";
+    } 
 </script>
 @endsection

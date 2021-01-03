@@ -4,12 +4,12 @@
     left:5%;
     height: 450px;
     width: 70%;
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.9);
     box-shadow: 1px 12px 33px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
 .bocadillo-cuadrado:before {
-    border: 25px solid  rgba(255, 255, 255, 0.6);
+    border: 25px solid  rgba(255, 255, 255, 0.9);
     content: '';
     border-left-color: transparent;
     border-top-color: transparent;
@@ -65,8 +65,9 @@
         
     }
 }
-@media (max-width:350px){
+@media (max-width:400px){
     .btn_txt{
         font-size: 10px; 
     }
+    
 }

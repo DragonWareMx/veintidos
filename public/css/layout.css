@@ -517,6 +517,10 @@ footer{
     box-sizing: border-box;
     border-radius: 5px;
 }
+.options-search.selected{
+    background-color: #58AD30;
+    color:white;
+}
 
 .search-50.left select{
     width: 134px;

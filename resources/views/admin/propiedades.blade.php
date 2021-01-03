@@ -505,7 +505,7 @@ Propiedades - Veintidós
                                 @endif
                             </div>
                             <div class="col">
-                                <b>Oficina</b>
+                                <b>Local</b>
                             </div>
                             <div class="col">
                                 <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/construccion.png')}}" alt="">

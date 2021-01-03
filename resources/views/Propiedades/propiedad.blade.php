@@ -1115,7 +1115,7 @@
                                     * Campos obligatorios       
                                 </p>
                                 <p class="mb-0">
-                                    Al hacer clic en “Enviar” aceptas nuestros Términos y condiciones, asi como el Aviso de privacidad.
+                                    Al hacer clic en “Enviar” aceptas nuestros <a href="/terminos_y_condiciones">Términos y condiciones</a>, asi como el <a href="/aviso_de_privacidad">Aviso de privacidad</a>. 
                                 </p>
                             </div>
 

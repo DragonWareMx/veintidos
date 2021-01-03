@@ -22,8 +22,8 @@
             <option value="1000000,2000000">$1,000,000 - $2,000,000</option>
             <option value="2000000,9999999">$2,000,000 o superior</option>
         </select>
-        <button type="button" onclick="modal('sale')" class="type-search options-search">Venta</button>
-        <button type="button" onclick="modal('rent')" class="type-search options-search">Renta</button>
+        <button id="btn_s" type="button" onclick="modal('sale')" class="type-search options-search">Venta</button>
+        <button id="btn_r" type="button" onclick="modal('rent')" class="type-search options-search">Renta</button>
         <input id="deal" type="hidden"  name="deal" value="">
     </div>
     <div class="search-50 right">
@@ -33,6 +33,14 @@
 </form>
 <script>
     function modal(type){
+        if(type=='sale'){
+            document.getElementById('btn_s').classList.add('selected');
+            document.getElementById('btn_r').classList.remove('selected');
+        }
+        else{
+            document.getElementById('btn_r').classList.add('selected');
+            document.getElementById('btn_s').classList.remove('selected');    
+        }
         deal=document.getElementById('deal');
         deal.value=type;
     }
