@@ -1,6 +1,6 @@
 @extends('layouts.publi')
 @section('title')
-    Sin Resultados
+    Propiedad
 @endsection
 @section('head')
     <link rel="stylesheet" href="{{ asset('/css/O.css') }}">
