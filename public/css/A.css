@@ -26,16 +26,31 @@
     margin-right: 10%;
     margin-left: 10%;
 }
+#txt_hi{
+    font-family: Roboto; 
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 26px;
+    color: #222222;
+}
+
 .botonIndex{
     width: 50%;
     margin: 20px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
-    background: rgba(34, 43, 88, 0.9);
-    padding: 5%;
+    background: rgba(34, 43, 88, 1);
+    padding: 3%;
+    padding-bottom: 3%;
 }
 .botonIndex:hover{
     cursor: pointer;
+    transition: all ease-in-out 0.25s;
+    background: rgb(24, 34, 83);
 }
 .volverbtn:hover{
     cursor: pointer;
@@ -43,7 +58,7 @@
 .btn_txt{
     font-family: Roboto;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 300;
     font-size: 16px;
     line-height: 19px;
     text-align: center;
@@ -63,6 +78,17 @@
         left: 70%;
         bottom: 400px;
         
+    }
+}
+@media(max-width:600px){
+    #txt_hi{
+        font-size: 16px;
+    }
+    .botonIndex{
+        padding-bottom: 1.5% !important;
+    }
+    .btn_txt{
+        font-size: 13px !important;
     }
 }
 @media (max-width:400px){
