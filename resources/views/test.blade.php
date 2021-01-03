@@ -61,7 +61,8 @@
 </div>
 <div>
     <h1 style="text-align: center">NOVEDADES</h1> 
-    <div class="owl-carousel owl-theme" style="margin-bottom:3%; margin-top:3%">
+    <hr style="color:gray: width:400px; margin-bottom:0px">
+    <div class="owl-carousel owl-theme" style="margin-bottom:3%; margin-top:2%">
         @foreach ($propiedades as $propiedad)
             <div class="olw-item" style="margin:3%">
                     {{-- TARJETA DE LA PROPIEDAD --}}

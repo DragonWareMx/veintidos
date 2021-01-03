@@ -544,7 +544,6 @@ footer{
 .type-search:focus, .type-search:active{
     /* background-color: #222b58; */
     outline: none;
-    border: 1px solid #222B58;
 }
 
 .search-50.right{

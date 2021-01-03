@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Crypt;
 use App\Proposal;
+use App\Propertie;
 
 class contactanosController extends Controller
 {
@@ -42,5 +43,10 @@ class contactanosController extends Controller
             \DB::rollback();
             return redirect('contactanos')->withErrors(['No se pudo mandar la solicitud, intentelo más tarde.']);
         }
+    }
+
+    public function quienes(){
+        $propiedades=Propertie::orderby('created_at','desc')->limit(20)->get();
+        return view('quienesSomos',['propiedades'=>$propiedades]);
     }
 }
