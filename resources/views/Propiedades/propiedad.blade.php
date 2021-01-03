@@ -46,6 +46,8 @@
         }
     </style>
 
+    {!! htmlScriptTagJsApi([ "lang" => "es" ]) !!}
+
     {{-- PHOTOSWIPE --}}
 
     <!-- Core CSS file -->
@@ -1102,12 +1104,14 @@
                                         data-parsley-maxlength="50"
                                         data-parsley-minlength-message="El número puede tener como mínimo 10 dígitos."
                                         data-parsley-maxlength-message="El número puede tener como máximo 50 dígitos."
-                                        data-parsley-type-message="Sólo se admiten dígitos." value="{{ old('telefono') }}">
+                                        data-parsley-type-message="Sólo se admiten dígitos." value="{{ old('telefono') }}"
+                                        required>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group mb-3">
                                         <label class="text-blue22" style="font-weight: 600" for="comentario">Comentarios</label>
                                         <textarea class="form-control" id="comentario" name="comentario" rows="3" placeholder="Comentarios (máximo 255 caracteres)" data-parsley-maxlength="255" data-parsley-maxlength-message="El comentario puede tener como máximo 255 caracteres." data-parsley-pattern="[a-zA-Z áéíóúÁÉÍÓÚ\,\.]+$" data-parsley-trigger="keyup">{{ old('comentario') }}</textarea>
                                     </div>
+                                    {!! htmlFormSnippet() !!}
                                 </div>
                             </div>
                             <div class="row">
