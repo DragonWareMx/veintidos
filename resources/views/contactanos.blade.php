@@ -17,8 +17,8 @@
 </div>
 <section class="contactanos">
     <div class="div_banner container-fluid">
-        <img src="/img/whiteHouse.jpg" class="float-start">
-        <img src="/img/salaGris.jpg" class="float-end">
+        <img src="{{asset('/img/whiteHouse.jpg')}}" class="float-start">
+        <img src="{{asset('/img/salaGris.jpg')}}" class="float-end">
         <div class="div_contactUs" style="max-width: 858px">
             <p class="text-center txt-aboutHideNot">Si necesitas asistencia o tienes alguna pregunta, contáctanos. Estamos para brindarte la mejor alternativa.</p>
             <div class="containerInfo">
@@ -44,7 +44,7 @@
 <div class="div_100_contactanos">
     <div class="containerForm">
         <div class="div_FormContactUs">
-            <p class="text-start w-75 txt-tituloForm">¿TE INTERESA VENDER O RENTAR TU PROPIEDAD?, <b>CONTÁCTANOS</b></p>
+            <p class="text-start w-75 txt-tituloForm">¿TE INTERESA VENDER O RENTAR TU PROPIEDAD? <b>CONTÁCTANOS</b></p>
             <p class="text-start txt-tituloForm2">Información de contacto y de la propiedad</p>
             <p class="text-start fs-6">Favor de llenar los siguiente datos y un asesor en breve le contactará. </p>
             @if (session('status'))
@@ -115,7 +115,7 @@
 
         </div>
         <div class="div_FormImg">
-            <img src="/img/contact.jpg">
+            <img src="{{asset('/img/contact.jpg')}}">
         </div>
     </div>
 </div>

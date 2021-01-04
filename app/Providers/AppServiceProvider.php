@@ -7,7 +7,7 @@ use App\Propertie;
 use App\Department;
 use App\House;
 use App\Terrain;
-use App\WareHouse;
+use App\Warehouse;
 use App\Proposal;
 use App\C_Proposal;
 use App\Premises_Office;

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('/css/veintidos.css') }}">
 </head>
 <body>
-    <img src="/img/logos/transparenteBlanco.png" class="float-start logo22">
+    <img src="{{asset('/img/logos/transparenteBlanco.png')}}" class="float-start logo22">
     <p class="text-small">NOS ESTAMOS ACTUALIZANDO PARA DARTE UN <b><b>MEJOR SERVICIO</b></b></p>
     <div class="div_Iconos">
         <a href="https://www.facebook.com/VeintidosGrupoInmobiliario" target="_blank"><img src="/img/ico/fb-circle.png"></a>

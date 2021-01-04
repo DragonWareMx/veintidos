@@ -51,9 +51,9 @@
                 <div class="col-md-5 col-12 mb-3">
                     <div id="gallery" class="gallery col-12 O-images-loader flex-wrap">
                         {{-- PONER AQUÍ IMAGENSITAS--}}
-                        <img src="{{$propiedad->photo}}" alt="{{$propiedad->photo}}">
+                        <img src="{{asset($propiedad->photo)}}" alt="{{$propiedad->photo}}">
                         @foreach ($propiedad->photos as $photo)
-                            <img src="{{$photo->path}}" alt="{{$photo->path}}">
+                            <img src="{{asset($photo->path)}}" alt="{{$photo->path}}">
                         @endforeach
                     </div>
                     <div class="O-inmueble-advise-images">
