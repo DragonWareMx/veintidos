@@ -30,7 +30,7 @@
                         Col. Centro C.P. 58000,
                         Morelia, Michoacán</p>
                     <p class="p-b "><a href="mailto:contacto@veintidos.mx"><i class="fas fa-envelope"></i>Correo electrónico</a></p>
-                    <p>contacto@veintidos.mx</p>
+                    <p>contacto@veintidos.com.mx</p>
                 </div>
                 <div class="div_info1 text-center">
                     <p class="text-start p-b">Síguenos</p>

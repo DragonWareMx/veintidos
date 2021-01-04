@@ -34,6 +34,20 @@ Cuenta - Veintidós
 @section('content')
 <div class="card cardAdmin">
   <div class="card-body">
+    @if (session()->get('status'))
+      <ul class="alert alert-success" style="margin-top:15px;">
+          <li>{{session()->get('status')}}</li>
+      </ul>
+    @endif
+    @if ($errors->any())
+      <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+      </div>
+    @endif
     <div class="div-info-cuenta">
       <div class="div-foto-cuenta">
         <img src="{{ asset('img/sistema/userphoto.png')}}" alt="">
@@ -101,7 +115,7 @@ Cuenta - Veintidós
                 <label for="formEditar" class="form-label">Confirmar contraseña</label>
                 <input type="password" class="form-control"   style="width: 100%" name="cfmPassword" id="cfmPassword">
               </div>
-            </div>
+            </div> 
         </div>
         <div class="modal-footer">
           <a href="javascript:cerrar();"><button type="button" class="btn btn-secondary" 

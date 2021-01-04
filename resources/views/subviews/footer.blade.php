@@ -3,7 +3,7 @@
         <div class="column1">
             <img src="{{ asset('/img/logos/transparente-cut.png') }}">
             <h1>VEINTIDÓS GRUPO INMOBILIARIO</h1>
-            <div class="linea_c1"></div>
+            <div class="linea_c1"></div> 
             <p class="slogan">De la mano contigo para apoyarte en tus decisiones patrimoniales.</p>
         </div>
         <div class="column2">
@@ -20,7 +20,7 @@
             <br><br>
             <h4>CONTÁCTANOS</h4>
             <a href="tel:4433370550" class="enlace-footer"><i class="fas fa-phone-alt"></i>&nbsp; Tel. 4433370550</a>
-            <a href="mailto:contacto@veintidos.mx" class="enlace-footer"><i class="fas fa-envelope"></i>&nbsp; contacto@veintidos.mx</a>
+            <a href="mailto:contacto@veintidos.mx" class="enlace-footer"><i class="fas fa-envelope"></i>&nbsp; contacto@veintidos.com.mx</a>
         </div>
         <div class="column4">
             <a href="https://www.facebook.com/Veintid%C3%B3s-Grupo-Inmobiliario-103029468239947/" target="_blank"><img src="{{ asset('/img/ico/fb.png') }}"></a>

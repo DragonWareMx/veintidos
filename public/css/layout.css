@@ -94,8 +94,8 @@ footer{
     text-transform: initial !important;
     font-family: Roboto;
     font-size: 14px;
-    font-style: italic;
-    font-weight: 900;
+    /* font-style: italic; */
+    font-weight: 300;
     line-height: 16px;
     letter-spacing: 0em;
     color: #222222;
@@ -593,6 +593,13 @@ footer{
     }
     .search-50.left select{
         width: 100px;
+    }
+}
+
+@media(max-width:600px){
+    .column1 .slogan{
+        /* font-weight: 600; */
+        font-size: 12px;
     }
 }
 

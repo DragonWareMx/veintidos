@@ -202,7 +202,7 @@
 
 
 
-    <h1 class="h1 text-center" id="1" style="margin-top: 50px;">¿QUÉ HACEMOS?</h1>
+    <h1 class="h1 text-center" id="1" style="margin-top: 50px;">NOSOTROS</h1>
 
     <div class="div_vision_mision div_que_hacemos">
       <img src="{{asset('/img/que_hacemos.jpg')}}" class="float-start">

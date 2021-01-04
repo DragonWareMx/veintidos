@@ -169,7 +169,7 @@
                     <div class="sideBar_title">CONTACTO</div>
                     <img class="sideBar_logo" src="{{ asset('img/logos/transparente-cut.png')}}" alt="">
                     <div class="sideBar_textA">¿Quieres vender o rentar tu propiedad?</div>
-                    <a class="sideBar_link" href="/inicio">Clic aquí</a>
+                    <a class="sideBar_link" href="{{route('contactanos')}}">Clic aquí</a>
                     <div class="sideBar_textB">Tel. 4433370550</div>
                     <div class="sideBar_textB">contacto@veintidos.mx</div>
                 </div>

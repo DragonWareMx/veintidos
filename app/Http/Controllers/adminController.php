@@ -12,7 +12,7 @@ use App\Propertie;
 use App\Department;
 use App\House;
 use App\Terrain;
-use App\Warehouse;
+use App\Warehouse; 
 use App\Proposal;
 use App\C_Proposal;
 use App\Premises_Office;
@@ -49,52 +49,97 @@ class adminController extends Controller
     }
 
     public function cuentaUpdate($id){
+        
         $data=request()->validate([
             'nombre'=>'required|max:191',
             'apellido'=>'required|max:191',
-            'correo'=>'required',
-            'passActual'=>'required',
-            'password'=>'required',
-            'cfmPassword'=>'required'
+            'correo'=>'required'
         ]);
         $change=0;
         try{
-            DB::transaction(function() use ($id)
+            DB::transaction(function() use ($id, $change)
             {
-               $user=User::findOrFail($id);
-               $user->name=request('nombre');
-               $user->lastname=request('apellido');
-               $user->email=request('correo');
-               if( Hash::check( request('passActual'), $user->password ) ){
+                $user=User::findOrFail($id);
+                if(request('password')==null && request('cfmPassword')==null){
+                    $user->name=request('nombre');
+                    $user->lastname=request('apellido');
+                    $user->email=request('correo');
                     $change=1;
-                    $user->password=bcrypt(request('password'));
+                    $user->save();
+
+                    try { 
+                        $usuario = User::where('id',Auth::id())->get();
+                    } catch(QueryException $ex){ 
+                           return view('errors.404', ['mensaje' => 'No fue posible conectarse con la base de datos']);
+                    }
+                    dd('Sin actualizar contraseña');
+                    return view('admin.cuenta', ['usuario' => $usuario])->with('status', 'Se actualizaron los datos correctamente');
                 }
                 else{
-                    $change=2;
-                }
-               $user->save();
+                    $user->name=request('nombre');
+                    $user->lastname=request('apellido');
+                    $user->email=request('correo');
+                    if( Hash::check( request('passActual'), $user->password ) ){
+                        $change=1;
+                        $user->password=bcrypt(request('password'));
+                        $user->save();
 
+                        try { 
+                            $usuario = User::where('id',Auth::id())->get();
+                        } catch(QueryException $ex){ 
+                               return view('errors.404', ['mensaje' => 'No fue posible conectarse con la base de datos']);
+                        }
+                        dd('Actualizando contraseña bien');
+                        return view('admin.cuenta', ['usuario' => $usuario])->with('status', 'Se actualizaron los datos correctamente');
+                    }
+                    else{
+                        $change=2;
+                        
+                        try { 
+                            $usuario = User::where('id',Auth::id())->get();
+                        } catch(QueryException $ex){ 
+                            return view('errors.404', ['mensaje' => 'No fue posible conectarse con la base de datos']);
+                        }
+                        dd('Actualizando contraseña incorrecta');
+                        return view('admin.cuenta', ['usuario' => $usuario])->withErrors(['La contraseña es incorrecta']);
+                    }
+                }
             });
         }
         catch(QueryException $ex){
-            return redirect()->back()->withErrors(['error' => 'ERROR: No se pudieron actualizar los datos']);
+            try { 
+                $usuario = User::where('id',Auth::id())->get();
+                return view('admin.cuenta', ['usuario' => $usuario])->withErrors(['No se pudieron actualizar los datos']);
+            } catch(QueryException $ex){ 
+                return view('errors.404', ['mensaje' => 'No fue posible conectarse con la base de datos']);
+            }
         }
 
-        try { 
-         $usuario = User::where('id',Auth::id())->get();
-        } catch(QueryException $ex){ 
-            return view('errors.404', ['mensaje' => 'No fue posible conectarse con la base de datos']);
-        }
-
-        if($change == 1){
-            return view('admin.cuenta', ['usuario' => $usuario]);
-        }
-        else if($change == 2){
-            return redirect()->back()->withErrors(['error' => 'ERROR: La contraseña es incorrecta']);
-        }
-        else{
-            return redirect()->back()->withErrors(['error' => 'ERROR: No se pudieron actualizar los datos']);
-        }        
+        // if($change == 1){
+            
+        //     try { 
+        //         $usuario = User::where('id',Auth::id())->get();
+        //         return view('admin.cuenta', ['usuario' => $usuario])->with('status', 'Se actualizaron los datos correctamente');
+        //     } catch(QueryException $ex){ 
+        //            return view('errors.404', ['mensaje' => 'No fue posible conectarse con la base de datos']);
+        //     }
+        // }
+        // else if($change == 2){
+        //     try { 
+        //         $usuario = User::where('id',Auth::id())->get();
+        //         return view('admin.cuenta', ['usuario' => $usuario])->withErrors(['La contraseña es incorrecta']);
+        //     } catch(QueryException $ex){ 
+        //         return view('errors.404', ['mensaje' => 'No fue posible conectarse con la base de datos']);
+        //     }
+        // }
+        // else{
+        //     try { 
+        //     $usuario = User::where('id',Auth::id())->get();
+        //     return view('admin.cuenta', ['usuario' => $usuario])->withErrors(['No se pudieron actualizar los datos']);
+        //     } catch(QueryException $ex){ 
+        //         return view('errors.404', ['mensaje' => 'No fue posible conectarse con la base de datos']);
+        //     }
+        // }        
     }
 
     public function solicitudes()
