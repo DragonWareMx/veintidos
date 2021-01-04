@@ -55,4 +55,8 @@ class Proposal extends Model
             return "Error: ¡Datos no válidos!";
         }
     }
+    public function propertie()
+    {
+        return $this->belongsTo('App\Propertie');
+    }
 }

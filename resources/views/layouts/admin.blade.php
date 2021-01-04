@@ -26,7 +26,7 @@
             Inicio
         </div> --}}
         @yield('navbar')
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{route('adminIndex')}}">
             <img src="{{ asset('img/logos/transparenteBlanco.png') }}" height="30" class="d-inline-block align-top"
                 alt="">
         </a>

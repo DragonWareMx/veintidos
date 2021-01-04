@@ -26,12 +26,12 @@ Inicio - Veintidós
     <p class="txt-resumen">Resumen</p>
     <p class="txt-resumen txt-totalP">Total de propiedades: {{$propiedades}}</p>
     <div class="div-rowP">
-      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/casa2.png')}}" alt="">Casas<div>({{$casas}})</div></a>
-      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/departamentos.png')}}" alt="">Departamentos<div>({{$departamentos}})</div></a>
-      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/local.png')}}" alt="">Locales<div>({{$locales}})</div></a>
-      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/oficina.png')}}" alt="">Oficinas<div>({{$oficinas}})</div></a>
-      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/terreno.png')}}" alt="">Terrenos<div>({{$terrenos}})</div></a>
-      <a href="#" class="a-rowP2"><img src="{{ asset('img/ico/bodega.png')}}" alt="">Bodegas<div>({{$bodegas}})</div></a>
+      <a href="/admin/propiedades?tipo=casas" class="a-rowP2"><img src="{{ asset('img/ico/casa2.png')}}" alt="">Casas<div>({{$casas}})</div></a>
+      <a href="/admin/propiedades?tipo=departamentos" class="a-rowP2"><img src="{{ asset('img/ico/departamentos.png')}}" alt="">Departamentos<div>({{$departamentos}})</div></a>
+      <a href="/admin/propiedades?tipo=locales" class="a-rowP2"><img src="{{ asset('img/ico/local.png')}}" alt="">Locales<div>({{$locales}})</div></a>
+      <a href="/admin/propiedades?tipo=oficinas" class="a-rowP2"><img src="{{ asset('img/ico/oficina.png')}}" alt="">Oficinas<div>({{$oficinas}})</div></a>
+      <a href="/admin/propiedades?tipo=terrenos" class="a-rowP2"><img src="{{ asset('img/ico/terreno.png')}}" alt="">Terrenos<div>({{$terrenos}})</div></a>
+      <a href="/admin/propiedades?tipo=bodegas" class="a-rowP2"><img src="{{ asset('img/ico/bodega.png')}}" alt="">Bodegas<div>({{$bodegas}})</div></a>
     </div>
     <div class="div-cerrar-sesion">
       <a href="#" class="a-cerrar-sesion" data-bs-toggle="modal" data-bs-target="#cerrar-sesion">Cerrar sesión<img

@@ -301,7 +301,6 @@ class adminPropiedades extends Controller
     }
 
     public function editar($id){
-        $id=Crypt::decrypt($id);
         $propiedad=Propertie::findOrFail($id);
         return view('admin.editarPropiedad',['propiedad'=>$propiedad]);
     }
