@@ -676,7 +676,7 @@
                                 <p class="p-b"><a style="text-decoration:none" href="tel:4433370550" ><i class="fas fa-phone-alt"></i>Télefono</a></p>
                                 <p>4433370550</p>
                                 <p class="p-b "><a style="text-decoration:none" href="mailto:contacto@veintidos.mx" ><i class="fas fa-envelope"></i>Correo electrónico</a></p>
-                                <p>contacto@veintidos.mx</p>
+                                <p>contacto@veintidos.com.mx</p>
                             </div>
                         </div>
                         
