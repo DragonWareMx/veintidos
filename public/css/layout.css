@@ -249,6 +249,8 @@ footer{
 
 .navigation ul li{
     display: inline-block;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
 }
 
 .navigation ul li a{
@@ -282,7 +284,7 @@ footer{
 }
 
 /* .main{
-    padding-top:70px; 
+    padding-top:70px;
 } */
 
 .menu-icon{
@@ -355,7 +357,7 @@ footer{
     .navigation ul li{
         display: block;
     }
-    
+
     .header .navigation ul li a{
         display: block;
         padding: 0.5rem 1.8rem;
@@ -371,7 +373,7 @@ footer{
         line-height: 20px;
         color: #222B58 !important;
     }
-    
+
     .navigation ul li a:hover{
         font-weight: 600;
     }
@@ -560,35 +562,35 @@ footer{
     }
     .barra-busqueda{
         padding: 10px 0;
-    }  
+    }
 }
 
 @media only screen and (max-width: 1500px){
     .search-50.left{
         padding-right: 15%;
         padding-left: 25px;
-    } 
+    }
 }
 
 @media only screen and (max-width: 1285px){
     .search-50.left{
         padding-right: 10%;
         padding-left: 20px;
-    } 
+    }
 }
 
 @media only screen and (max-width: 1120px){
     .search-50.left{
         padding-right: 5%;
         padding-left: 15px;
-    } 
+    }
 }
 
 @media only screen and (max-width: 930px){
     .search-50.left{
         padding-right: 10px;
         padding-left: 10px;
-    } 
+    }
     .search-50.left select{
         width: 100px;
     }
@@ -599,7 +601,7 @@ footer{
         padding-right: 6px;
         padding-left: 6px;
         justify-content: space-between !important;
-    } 
+    }
     .search-50.left select{
         width: 100px !important;
         text-indent: 25px;
@@ -616,7 +618,7 @@ footer{
         padding-right: 5px;
         padding-left: 5px;
         justify-content: space-between !important;
-    } 
+    }
     .search-50.left select{
         width: 70px !important;
         text-indent: 12px;
