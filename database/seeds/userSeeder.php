@@ -18,5 +18,12 @@ class userSeeder extends Seeder
             'email' => 'DragonWareOficial@hotmail.com',
             'password' => bcrypt('viledruid9000'),
         ]);
+
+        DB::table('users')->insert([
+            'name' => 'Veintidós',
+            'lastname' => 'Inmmobiliaria',
+            'email' => 'contacto@veintidos.mx',
+            'password' => bcrypt('12345678'),
+        ]);
     }
 }

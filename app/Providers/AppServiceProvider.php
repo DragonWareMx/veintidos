@@ -31,13 +31,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $numProp=[];
-        $numProp['casas']=House::count();
-        $numProp['departamentos']=Department::count();
-        $numProp['terrenos']=Terrain::count();
-        $numProp['bodegas']=Warehouse::count();
-        $numProp['oficinas']=Premises_Office::where('type','office')->count();
-        $numProp['locales']=Premises_Office::where('type','premises')->count();
-        view()->share(['numProp'=>$numProp]);
+        $numProp = [];
+        $numProp['casas'] = House::count();
+        $numProp['departamentos'] = Department::count();
+        $numProp['terrenos'] = Terrain::count();
+        $numProp['bodegas'] = Warehouse::count();
+        $numProp['oficinas'] = Premises_Office::where('type', 'office')->count();
+        $numProp['locales'] = Premises_Office::where('type', 'premises')->count();
+        view()->share(['numProp' => $numProp]);
     }
 }
