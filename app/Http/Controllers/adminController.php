@@ -57,89 +57,41 @@ class adminController extends Controller
         ]);
         $change=0;
         try{
-            DB::transaction(function() use ($id, $change)
+            \DB::beginTransaction();
             {
                 $user=User::findOrFail($id);
                 if(request('password')==null && request('cfmPassword')==null){
                     $user->name=request('nombre');
                     $user->lastname=request('apellido');
                     $user->email=request('correo');
-                    $change=1;
                     $user->save();
-
-                    try { 
-                        $usuario = User::where('id',Auth::id())->get();
-                    } catch(QueryException $ex){ 
-                           return view('errors.404', ['mensaje' => 'No fue posible conectarse con la base de datos']);
-                    }
-                    dd('Sin actualizar contraseña');
-                    return view('admin.cuenta', ['usuario' => $usuario])->with('status', 'Se actualizaron los datos correctamente');
+                    // dd('Sin actualizar contraseña');
+                    \DB::commit();
+                    return redirect('/admin/cuenta')->with('status', 'Se actualizaron los datos correctamente');
                 }
                 else{
                     $user->name=request('nombre');
                     $user->lastname=request('apellido');
                     $user->email=request('correo');
                     if( Hash::check( request('passActual'), $user->password ) ){
-                        $change=1;
                         $user->password=bcrypt(request('password'));
                         $user->save();
-
-                        try { 
-                            $usuario = User::where('id',Auth::id())->get();
-                        } catch(QueryException $ex){ 
-                               return view('errors.404', ['mensaje' => 'No fue posible conectarse con la base de datos']);
-                        }
-                        dd('Actualizando contraseña bien');
-                        return view('admin.cuenta', ['usuario' => $usuario])->with('status', 'Se actualizaron los datos correctamente');
+                        // dd('Actualizando contraseña bien');
+                        \DB::commit();
+                        return redirect('/admin/cuenta')->with('status', 'Se actualizaron los datos correctamente');
                     }
                     else{
-                        $change=2;
-                        
-                        try { 
-                            $usuario = User::where('id',Auth::id())->get();
-                        } catch(QueryException $ex){ 
-                            return view('errors.404', ['mensaje' => 'No fue posible conectarse con la base de datos']);
-                        }
-                        dd('Actualizando contraseña incorrecta');
-                        return view('admin.cuenta', ['usuario' => $usuario])->withErrors(['La contraseña es incorrecta']);
+                        // dd('Actualizando contraseña incorrecta');
+                        return redirect('/admin/cuenta')->withErrors(['La contraseña es incorrecta']);
                     }
                 }
-            });
-        }
-        catch(QueryException $ex){
-            try { 
-                $usuario = User::where('id',Auth::id())->get();
-                return view('admin.cuenta', ['usuario' => $usuario])->withErrors(['No se pudieron actualizar los datos']);
-            } catch(QueryException $ex){ 
-                return view('errors.404', ['mensaje' => 'No fue posible conectarse con la base de datos']);
             }
         }
-
-        // if($change == 1){
+        catch(QueryException $ex){
+            \DB::rollback();
+            return redirect('/admin/cuenta')->withErrors(['No se pudieron actualizar los datos']);
             
-        //     try { 
-        //         $usuario = User::where('id',Auth::id())->get();
-        //         return view('admin.cuenta', ['usuario' => $usuario])->with('status', 'Se actualizaron los datos correctamente');
-        //     } catch(QueryException $ex){ 
-        //            return view('errors.404', ['mensaje' => 'No fue posible conectarse con la base de datos']);
-        //     }
-        // }
-        // else if($change == 2){
-        //     try { 
-        //         $usuario = User::where('id',Auth::id())->get();
-        //         return view('admin.cuenta', ['usuario' => $usuario])->withErrors(['La contraseña es incorrecta']);
-        //     } catch(QueryException $ex){ 
-        //         return view('errors.404', ['mensaje' => 'No fue posible conectarse con la base de datos']);
-        //     }
-        // }
-        // else{
-        //     try { 
-        //     $usuario = User::where('id',Auth::id())->get();
-        //     return view('admin.cuenta', ['usuario' => $usuario])->withErrors(['No se pudieron actualizar los datos']);
-        //     } catch(QueryException $ex){ 
-        //         return view('errors.404', ['mensaje' => 'No fue posible conectarse con la base de datos']);
-        //     }
-        // }        
+        }  
     }
 
     public function solicitudes()
