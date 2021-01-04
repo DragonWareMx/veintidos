@@ -1068,7 +1068,7 @@
                     <form class="Agregar-propiedades-margin-top container" id="formMI" action="{{ route('propiedad',['id'=>Crypt::encrypt($propiedad->id)]) }}" method="POST">
                         @csrf
                         {{-- FORMULARIO --}}
-                        <div class="row px-4" id="formularioMI" @if ($errors->any()) style="display: block" @else style="display: none" @endif>
+                        <div class="row px-4" id="formularioMI" @if ($errors->any() || app('request')->input('mi')) style="display: block" @else style="display: none" @endif>
                             <h5 class="px-2 pt-1 text-blue22" style="font-weight: 600;">
                                 Información de contacto
                             </h5>
@@ -1125,13 +1125,13 @@
 
                         </div>
                         <div class="row px-4 d-flex flex-row-reverse my-4">
-                            <div style="width: fit-content; display: @if ($errors->any()) none @else block @endif ;" id="btnMI">
+                            <div style="width: fit-content; display: @if ($errors->any() || app('request')->input('mi')) none @else block @endif ;" id="btnMI">
                                 <button type="button" class="btn btn-primary" style="background: #58AD30; border-color: #58AD30; font-weight:400" onclick="btnMI()">Me interesa</button>
                             </div>
-                            <div style="width: fit-content; display: @if ($errors->any()) block @else none @endif ;" id="enviarFORM">
+                            <div style="width: fit-content; display: @if ($errors->any() || app('request')->input('mi')) block @else none @endif ;" id="enviarFORM">
                                 <button type="submit" class="btn btn-primary" style="background: #58AD30; border-color: #58AD30; font-weight:400" id="submit">Enviar</button>
                             </div>
-                            <div style="width: fit-content; display: @if ($errors->any()) block @else none @endif ;" id="btnC">
+                            <div style="width: fit-content; display: @if ($errors->any() || app('request')->input('mi')) block @else none @endif ;" id="btnC">
                                 <button type="button" class="btn btn-link btnC-b" style="color: #58AD30; text-decoration: none; font-weight:400" onclick="btnC()">Cancelar</button>
                             </div>
                         </div>
@@ -1281,7 +1281,7 @@
 
                 document.execCommand('copy');
 
-                alert("Enlace copiado.");
+                console.log("Enlace copiado.");
             });
         });
 
@@ -1333,6 +1333,12 @@
             document.getElementById("btnC").style.display = "none";
             document.getElementById("enviarFORM").style.display = "none";
         }
+
+        window.onload = function() {
+            if(@if(app('request')->input('mi')) true @else false @endif){
+                document.getElementById("formMI").scrollIntoView();
+            }
+        };
     </script>
 @endsection
 

@@ -651,7 +651,7 @@
                                             <a type="button" class="btn btn-outline-dark b-blue22 w-100 btn-vm" style="padding-right: 10px; padding-left: 10px;" href="{{ route('propiedad',['id'=>Crypt::encrypt($propiedad->id)]) }}"><b>Ver más</b></a>
                                         </div>
                                         <div class="col-sm mb-3">
-                                            <a type="button" class="btn btn-primary w-100" style="padding-right: 10px; padding-left: 10px;" href="{{ route('propiedad',['id'=>Crypt::encrypt($propiedad->id)]) }}">Me interesa</a>
+                                            <a type="button" class="btn btn-primary w-100" style="padding-right: 10px; padding-left: 10px;" href="{{ route('propiedad',['id'=>Crypt::encrypt($propiedad->id)]) }}?mi=true">Me interesa</a>
                                         </div>
                                     </div>
                                 </div>
