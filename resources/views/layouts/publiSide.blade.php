@@ -171,7 +171,7 @@
                     <div class="sideBar_textA">¿Quieres vender o rentar tu propiedad?</div>
                     <a class="sideBar_link" href="/inicio">Clic aquí</a>
                     <div class="sideBar_textB">Tel. 4433370550</div>
-                    <div class="sideBar_textB">contacto@veintidos.mx</div>
+                    <div class="sideBar_textB">contacto@veintidos.com.mx</div>
                 </div>
                 <button class="sideBar_button"><img src="{{ asset('img/ico/menu-white-v.png')}}" alt=""></button> 
             </div>

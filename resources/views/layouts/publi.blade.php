@@ -135,7 +135,7 @@ preloader
             <a href="{{route('inicio')}}" class="logo blanco"><img src="{{ asset('/img/logos/transparenteBlanco.png') }}"></a>
             <span class="menu-icon azul"><img src="{{ asset('/img/ico/menu2-dark.png') }}"></span>
             <span class="menu-icon blanco"><img src="{{ asset('/img/ico/menu2-white.png') }}"></span>
-            <nav class="navigation">
+            <nav class="navigation"> 
                 <ul>
                     <li><a href="{{route('inicio')}}">INICIO</a></li>
                     <li><a href="{{route('verPropiedades')}}">PROPIEDADES</a></li>
