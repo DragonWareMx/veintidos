@@ -26,7 +26,7 @@
                     <p class="p-b"><a href="tel:4433370550" ><i class="fas fa-phone-alt"></i>Télefono</a></p>
                     <p>4433370550</p>
                     <p class="p-b"><a href="http://maps.google.com/?q=Leona Vicario No. 62,Col. Centro C.P. 58000,Morelia, Michoacán" target="_blank"><i class="fas fa-map-marker-alt"></i>Ubicación</a></p>
-                    <p>Leona Vicario No. 62,
+                    <p>Leona Vicario No. 62, interior 4,
                         Col. Centro C.P. 58000,
                         Morelia, Michoacán</p>
                     <p class="p-b "><a href="mailto:contacto@veintidos.mx"><i class="fas fa-envelope"></i>Correo electrónico</a></p>
