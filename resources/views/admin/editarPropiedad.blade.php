@@ -73,52 +73,22 @@
                         <select id="inputType" class="form-control" required onchange="cambio(this)" name="tipo">
                             @if(count($propiedad->house()->get())==1)
                                 <option value="casa" selected>Casa</option>
-                                <option value="departamento">Departamento</option>
-                                <option value="oficina">Oficina</option>
-                                <option value="local">Local</option>
-                                <option value="terreno">Terreno</option>
-                                <option value="bodega">Bodega</option>
                             @endif
                             @if(count($propiedad->department()->get())==1)
-                                <option value="casa">Casa</option>
                                 <option value="departamento" selected>Departamento</option>
-                                <option value="oficina">Oficina</option>
-                                <option value="local">Local</option>
-                                <option value="terreno">Terreno</option>
-                                <option value="bodega">Bodega</option>
                             @endif
                             @if(count($propiedad->office()->get())==1)
                                 @if ($propiedad->office->type=='office')
-                                    <option value="casa">Casa</option>
-                                    <option value="departamento">Departamento</option>
                                     <option value="oficina" selected>Oficina</option>
-                                    <option value="local">Local</option>
-                                    <option value="terreno">Terreno</option>
-                                    <option value="bodega">Bodega</option> 
                                 @endif
                                 @if ($propiedad->office->type=='premises')
-                                    <option value="casa">Casa</option>
-                                    <option value="departamento">Departamento</option>
-                                    <option value="oficina">Oficina</option>
                                     <option value="local" selected>Local</option>
-                                    <option value="terreno">Terreno</option>
-                                    <option value="bodega">Bodega</option> 
                                 @endif
                             @endif
                             @if(count($propiedad->terrain()->get())==1)
-                                <option value="casa">Casa</option>
-                                <option value="departamento">Departamento</option>
-                                <option value="oficina">Oficina</option>
-                                <option value="local">Local</option>
                                 <option value="terreno" selected>Terreno</option>
-                                <option value="bodega">Bodega</option>
                             @endif
                             @if(count($propiedad->warehouse()->get())==1)
-                                <option value="casa">Casa</option>
-                                <option value="departamento">Departamento</option>
-                                <option value="oficina">Oficina</option>
-                                <option value="local">Local</option>
-                                <option value="terreno">Terreno</option>
                                 <option value="bodega" selected>Bodega</option>
                             @endif
                         </select>

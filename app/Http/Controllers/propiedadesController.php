@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Propertie;
 use App\C_Proposal;
+use App\Mail\newProposal;
 use Illuminate\Database\Eloquent\Builder;
 
 class propiedadesController extends Controller
@@ -208,7 +210,7 @@ class propiedadesController extends Controller
     public function propuesta(Request $request, $id){
         $decryptedId = Crypt::decrypt($id);
         //Validacion backend
-        $request->validate([
+        $data=$request->validate([
             'nombre' => 'required|max:255|regex:/[a-zA-Z áéíóúÁÉÍÓÚ]+$/',
             'correo' => 'email|max:320',
             'telefono' => 'required|alpha_num|max:50|min:10',
@@ -235,6 +237,7 @@ class propiedadesController extends Controller
 
             \DB::commit();
 
+            Mail::to('contacto@veintidos.com.mx')->send(new newProposal($data));
             return redirect('propiedad/'.$id)->with('status', '¡Solicitud enviada!');
          }catch(\Exception $e){
             \DB::rollback();

@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Crypt;
 use App\Proposal;
 use App\Propertie;
-
+use App\Mail\newProposal;
+use App\Mail\newRequest;
 class contactanosController extends Controller
 {
     public function contactanos(){
@@ -21,6 +23,7 @@ class contactanosController extends Controller
             'deal'=>'required',
             'precio'=>'required'
         ]);
+            //
         try{
             \DB::beginTransaction();
             {
@@ -34,8 +37,9 @@ class contactanosController extends Controller
                 $solicitud->price = request('precio');
                 $solicitud->status = 'available';
                 $solicitud->save();
-
                 \DB::commit();
+
+                Mail::to('contacto@veintidos.com.mx')->send(new newRequest($data));
                 return redirect('contactanos')->with('status', '¡Solicitud enviada!');
             }
         }

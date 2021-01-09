@@ -1072,7 +1072,7 @@
                             <h5 class="px-2 pt-1 text-blue22" style="font-weight: 600;">
                                 Información de contacto
                             </h5>
-                            <p>Favor de llenar los siguiente datos y un asesor en breve le contactará.</p>
+                            <p>Por favor llene los siguiente datos y en breve un asesor lo contactará.</p>
 
                             @if ($errors->any())
                                 <div class="alert alert-danger">
