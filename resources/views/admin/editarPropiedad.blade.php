@@ -44,7 +44,12 @@
         </ul>
     </div>
     @endif
-        <form class="container card-body" action="{{ route('editarPropiedadPost',['id'=>Crypt::encrypt($propiedad->id)]) }}" method="POST" enctype="multipart/form-data">
+        <div id="success" class="alert alert-success" role="alert" style="display:none">
+            Propiedad editada con éxito!
+        </div>
+        <div id="errors" class="alert alert-danger" role="alert" style="display:none">
+        </div>
+        <form id="form-propiedad" class="container card-body" action="{{ route('editarPropiedadPost',['id'=>Crypt::encrypt($propiedad->id)]) }}" method="POST" enctype="multipart/form-data">
             @method('PATCH')
             @csrf
             <div class="row d-flex flex-wrap-reverse ps-1 pe-1">
@@ -844,7 +849,7 @@
                 </div>
                 <div class="col-md-5 col-12 d-flex justify-content-end align-items-end mt-mb-0 mt-3">
                     <a href="" class="O-btn-cancel ">Cancelar</a>
-                    <button type="submit" class="O-btn-save">Guardar</button>
+                    <button type="submit" class="O-btn-save" id="btnEnviar">Guardar</button>
                 </div> 
             </div>
         </form>
@@ -984,5 +989,79 @@
         }
     }
     $('#gallery-photo-add').on("change", previewImages);
+</script>
+<script>
+    //ajax del form de nuevo
+    $("#form-propiedad").bind("submit",function(){
+        // Capturamnos el boton de envío
+        var btnEnviar = $("#btnEnviar");
+
+        $.ajax({
+            type: $(this).attr("method"),
+            url: $(this).attr("action"),
+            data: new FormData(this),
+            dataType: "JSON",
+            processData: false,
+            contentType: false,
+            beforeSend: function(data){
+                /*
+                * Esta función se ejecuta durante el envió de la petición al
+                * servidor.
+                * */
+                // btnEnviar.text("Enviando"); Para button
+                btnEnviar.val("Enviando"); // Para input de tipo button
+                btnEnviar.attr("disabled","disabled");
+            },
+            complete:function(data){
+                /*
+                * Se ejecuta al termino de la petición
+                * */
+                btnEnviar.val("Enviar formulario");
+            },
+            success: function(data){
+                /*
+                * Se ejecuta cuando termina la petición y esta ha sido
+                * correcta
+                * */
+                $('#success').css('display', 'flex');
+                $('#errors').css('display', 'none');
+                alert('Propiedad editada con éxito!');
+                setTimeout(
+                function()
+                {
+                    window.location.href = window.location.origin + '/admin/propiedades'
+                }, 2000);
+            },
+            error: function(data){
+                console.log(data);
+                $('#success').css('display', 'none');
+                btnEnviar.removeAttr("disabled");
+                $('#errors').css('display', 'block');
+                var errors = data.responseJSON.errors;
+                var errorsContainer = $('#errors');
+                errorsContainer.innerHTML = '';
+                var errorsList = '';
+                // for (var i = 0; i < errors.length; i++) {
+                // //     //if(errors[i].redirect)
+                // //         //window.location.href = window.location.origin + '/logout'
+                    
+                //     errorsList += '<div class="uk-alert-danger" uk-alert><a class="uk-alert-close" uk-close></a><p>'+ errors[i].errors +'</p></div>';
+                // }
+                for(var key in errors){
+                    var obj=errors[key];
+                    console.log(obj);
+                    for(var yek in obj){
+                        var error=obj[yek];
+                        console.log(error);
+                        errorsList += '<div><a></a><p>'+ error +'</p></div>';
+                    }
+                }
+                errorsContainer.html(errorsList);
+                alert('Problemas al tratar de enviar el formulario');
+            }
+        });
+        // Nos permite cancelar el envio del formulario
+        return false;
+    });
 </script>
 @endsection

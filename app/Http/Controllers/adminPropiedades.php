@@ -301,7 +301,11 @@ class adminPropiedades extends Controller
         }
         catch(QueryException $ex){
             if($request->ajax()){
-                return 'Algo salió mal, vuelva a intentarlo más tarde.';
+                return response()->json([
+                    errors=>[
+                        error=>'Algo salió mal, por favor vuelta a intentarlo más tarde.'
+                    ]
+                ]);
             }
             return redirect()->back()->withErrors(['error' => 'ERROR: Algo salió mal, por favor vuela a intentarlo más tarde.']);
         }
@@ -488,9 +492,20 @@ class adminPropiedades extends Controller
                     $entidad->save();
                 }
             });
+            if($request->ajax()){
+                session()->flash('status','¡Propiedad editada con éxito!');
+                return 200;
+            }
             return redirect('/admin/propiedades')->with('status', '¡Propiedad editada con éxito!');
         }
         catch(QueryException $ex){
+            if($request->ajax()){
+                return response()->json([
+                    errors=>[
+                        error=>'Algo salió mal, por favor vuelta a intentarlo más tarde.'
+                    ]
+                ]);
+            }
             return redirect()->back()->withErrors(['error' => 'ERROR: Algo salió mal, por favor vuela a intentarlo más tarde.']);
         }
     }
