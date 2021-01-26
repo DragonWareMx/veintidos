@@ -301,11 +301,7 @@ class adminPropiedades extends Controller
         }
         catch(QueryException $ex){
             if($request->ajax()){
-                return response()->json([
-                    errors=>[
-                        error=>'Algo salió mal, por favor vuelta a intentarlo más tarde.'
-                    ]
-                ]);
+                return response()->json(['errors' => ['catch' => [0 => 'Ocurrió un error inesperado, intentalo más tarde.']]], 500);
             }
             return redirect()->back()->withErrors(['error' => 'ERROR: Algo salió mal, por favor vuela a intentarlo más tarde.']);
         }
@@ -500,11 +496,7 @@ class adminPropiedades extends Controller
         }
         catch(QueryException $ex){
             if($request->ajax()){
-                return response()->json([
-                    errors=>[
-                        error=>'Algo salió mal, por favor vuelta a intentarlo más tarde.'
-                    ]
-                ]);
+                return response()->json(['errors' => ['catch' => [0 => 'Ocurrió un error inesperado, intentalo más tarde.']]], 500);
             }
             return redirect()->back()->withErrors(['error' => 'ERROR: Algo salió mal, por favor vuela a intentarlo más tarde.']);
         }
