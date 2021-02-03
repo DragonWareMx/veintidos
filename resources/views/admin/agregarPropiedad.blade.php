@@ -166,21 +166,21 @@
                         <label for="inputYard">Patio</label>
                         <select id="inputYard" class="form-control" name="patio">
                           <option selected value="0">No</option>
-                          <option value="1">Si</option>
+                          <option value="1">Sí</option>
                         </select>
                     </div>
                     <div class="form-group col-md-3 col-6" id="pServicio" style="display:none;">
                         <label for="inputServiceY">Patio de servicio</label>
                         <select id="inputServiceY" class="form-control" name="pServicio">
                           <option selected value="0">No</option>
-                          <option value="1">Si</option>
+                          <option value="1">Sí</option>
                         </select>
                     </div>
                     <div class="form-group col-md-3 col-6" id="cServicio" style="display:none;">
                         <label for="inputServiceR">Cuarto de servicio</label>
                         <select id="inputServiceR" class="form-control" name="cServicio">
                           <option selected value="0">No</option>
-                          <option value="1">Si</option>
+                          <option value="1">Sí</option>
                         </select>
                     </div>
                     <div class="form-group col-md-3 col-6" id="estudios" style="display:none;">
@@ -195,14 +195,14 @@
                         <label for="inputVigilance">Vigilancia</label>
                         <select id="inputVigilance" class="form-control" name="vigilancia">
                           <option selected value="0">No</option>
-                          <option value="1">Si</option>
+                          <option value="1">Sí</option>
                         </select>
                     </div>
                     <div class="form-group col-md-3 col-6" id="cisterna" style="display:none;">
                         <label for="inputCistern">Cisterna</label>
                         <select id="inputCistern" class="form-control" name="cisterna">
                           <option selected value="0">No</option>
-                          <option value="1">Si</option>
+                          <option value="1">Sí</option>
                         </select>
                     </div>
                     <div class="form-group col-md-3 col-6" id="antiguedad" style="display:none;">
@@ -221,21 +221,21 @@
                         <label for="inputElevator">Elevador</label>
                         <select id="inputElevator" class="form-control" name="elevador">
                           <option selected value="0">No</option>
-                          <option value="1">Si</option>
+                          <option value="1">Sí</option>
                         </select>
                     </div>
                     <div class="form-group col-md-3 col-6" id="oficina" style="display:none;">
                         <label for="inputElevator">Oficina</label>
                         <select id="inputElevator" class="form-control" name="oficina">
                           <option selected value="0">No</option>
-                          <option value="1">Si</option>
+                          <option value="1">Sí</option>
                         </select>
                     </div>
                     <div class="form-group col-md-3 col-6" id="acceso" style="display:none;">
                         <label for="inputAccess">Acceso a carretera</label>
                         <select id="inputAccess" class="form-control" name="acceso">
                           <option selected value="0">No</option>
-                          <option value="1">Si</option>
+                          <option value="1">Sí</option>
                         </select>
                     </div>
                     <div class="form-group w-100">

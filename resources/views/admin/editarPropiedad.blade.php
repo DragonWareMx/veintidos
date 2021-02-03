@@ -361,7 +361,7 @@
                                     <label for="inputYard">Patio</label>
                                     <select id="inputYard" class="form-control" name="patio">
                                     <option selected value="0">No</option>
-                                    <option value="1">Si</option>
+                                    <option value="1">Sí</option>
                                     </select>
                                 </div>
                             @else
@@ -369,7 +369,7 @@
                                     <label for="inputYard">Patio</label>
                                     <select id="inputYard" class="form-control" name="patio">
                                     <option value="0">No</option>
-                                    <option selected value="1">Si</option>
+                                    <option selected value="1">Sí</option>
                                     </select>
                                 </div>
                             @endif
@@ -380,7 +380,7 @@
                                     <label for="inputYard">Patio</label>
                                     <select id="inputYard" class="form-control" name="patio">
                                     <option selected value="0">No</option>
-                                    <option value="1">Si</option>
+                                    <option value="1">Sí</option>
                                     </select>
                                 </div>
                             @else
@@ -388,7 +388,7 @@
                                     <label for="inputYard">Patio</label>
                                     <select id="inputYard" class="form-control" name="patio">
                                     <option value="0">No</option>
-                                    <option selected value="1">Si</option>
+                                    <option selected value="1">Sí</option>
                                     </select>
                                 </div>
                             @endif
@@ -398,7 +398,7 @@
                             <label for="inputYard">Patio</label>
                             <select id="inputYard" class="form-control" name="patio">
                             <option selected value="0">No</option>
-                            <option value="1">Si</option>
+                            <option value="1">Sí</option>
                             </select>
                         </div>
                     @endif
@@ -409,7 +409,7 @@
                                 <label for="inputServiceY">Patio de servicio</label>
                                 <select id="inputServiceY" class="form-control" name="pServicio">
                                 <option selected value="0">No</option>
-                                <option value="1">Si</option>
+                                <option value="1">Sí</option>
                                 </select>
                             </div>
                            @else
@@ -417,7 +417,7 @@
                                 <label for="inputServiceY">Patio de servicio</label>
                                 <select id="inputServiceY" class="form-control" name="pServicio">
                                 <option value="0">No</option>
-                                <option selected value="1">Si</option>
+                                <option selected value="1">Sí</option>
                                 </select>
                             </div>
                            @endif 
@@ -428,7 +428,7 @@
                                 <label for="inputServiceY">Patio de servicio</label>
                                 <select id="inputServiceY" class="form-control" name="pServicio">
                                 <option selected value="0">No</option>
-                                <option value="1">Si</option>
+                                <option value="1">Sí</option>
                                 </select>
                             </div>
                            @else
@@ -436,7 +436,7 @@
                                 <label for="inputServiceY">Patio de servicio</label>
                                 <select id="inputServiceY" class="form-control" name="pServicio">
                                 <option value="0">No</option>
-                                <option selected value="1">Si</option>
+                                <option selected value="1">Sí</option>
                                 </select>
                             </div>
                            @endif 
@@ -446,7 +446,7 @@
                             <label for="inputServiceY">Patio de servicio</label>
                             <select id="inputServiceY" class="form-control" name="pServicio">
                             <option selected value="0">No</option>
-                            <option value="1">Si</option>
+                            <option value="1">Sí</option>
                             </select>
                         </div>
                     @endif
@@ -457,7 +457,7 @@
                                 <label for="inputServiceR">Cuarto de servicio</label>
                                 <select id="inputServiceR" class="form-control" name="cServicio">
                                 <option selected value="0">No</option>
-                                <option value="1">Si</option>
+                                <option value="1">Sí</option>
                                 </select>
                             </div>
                            @else
@@ -465,7 +465,7 @@
                                 <label for="inputServiceR">Cuarto de servicio</label>
                                 <select id="inputServiceR" class="form-control" name="cServicio">
                                 <option value="0">No</option>
-                                <option selected value="1">Si</option>
+                                <option selected value="1">Sí</option>
                                 </select>
                             </div>
                            @endif    
@@ -476,7 +476,7 @@
                                 <label for="inputServiceR">Cuarto de servicio</label>
                                 <select id="inputServiceR" class="form-control" name="cServicio">
                                 <option selected value="0">No</option>
-                                <option value="1">Si</option>
+                                <option value="1">Sí</option>
                                 </select>
                             </div>
                            @else
@@ -484,7 +484,7 @@
                                 <label for="inputServiceR">Cuarto de servicio</label>
                                 <select id="inputServiceR" class="form-control" name="cServicio">
                                 <option value="0">No</option>
-                                <option selected value="1">Si</option>
+                                <option selected value="1">Sí</option>
                                 </select>
                             </div>
                            @endif    
@@ -494,7 +494,7 @@
                             <label for="inputServiceR">Cuarto de servicio</label>
                             <select id="inputServiceR" class="form-control" name="cServicio">
                             <option selected value="0">No</option>
-                            <option value="1">Si</option>
+                            <option value="1">Sí</option>
                             </select>
                         </div>
                     @endif
@@ -543,7 +543,7 @@
                                     <label for="inputVigilance">Vigilancia</label>
                                     <select id="inputVigilance" class="form-control" name="vigilancia">
                                     <option selected value="0">No</option>
-                                    <option value="1">Si</option>
+                                    <option value="1">Sí</option>
                                     </select>
                                 </div>
                             @else
@@ -551,7 +551,7 @@
                                     <label for="inputVigilance">Vigilancia</label>
                                     <select id="inputVigilance" class="form-control" name="vigilancia">
                                     <option value="0">No</option>
-                                    <option selected value="1">Si</option>
+                                    <option selected value="1">Sí</option>
                                     </select>
                                 </div>
                             @endif
@@ -562,7 +562,7 @@
                                     <label for="inputVigilance">Vigilancia</label>
                                     <select id="inputVigilance" class="form-control" name="vigilancia">
                                     <option selected value="0">No</option>
-                                    <option value="1">Si</option>
+                                    <option value="1">Sí</option>
                                     </select>
                                 </div>
                             @else
@@ -570,7 +570,7 @@
                                     <label for="inputVigilance">Vigilancia</label>
                                     <select id="inputVigilance" class="form-control" name="vigilancia">
                                     <option value="0">No</option>
-                                    <option selected value="1">Si</option>
+                                    <option selected value="1">Sí</option>
                                     </select>
                                 </div>
                             @endif
@@ -581,7 +581,7 @@
                                     <label for="inputVigilance">Vigilancia</label>
                                     <select id="inputVigilance" class="form-control" name="vigilancia">
                                     <option selected value="0">No</option>
-                                    <option value="1">Si</option>
+                                    <option value="1">Sí</option>
                                     </select>
                                 </div>
                             @else
@@ -589,7 +589,7 @@
                                     <label for="inputVigilance">Vigilancia</label>
                                     <select id="inputVigilance" class="form-control" name="vigilancia">
                                     <option value="0">No</option>
-                                    <option selected value="1">Si</option>
+                                    <option selected value="1">Sí</option>
                                     </select>
                                 </div>
                             @endif
@@ -599,7 +599,7 @@
                             <label for="inputVigilance">Vigilancia</label>
                             <select id="inputVigilance" class="form-control" name="vigilancia">
                             <option selected value="0">No</option>
-                            <option value="1">Si</option>
+                            <option value="1">Sí</option>
                             </select>
                         </div>
                     @endif
@@ -610,7 +610,7 @@
                                     <label for="inputCistern">Cisterna</label>
                                     <select id="inputCistern" class="form-control" name="cisterna">
                                     <option selected value="0">No</option>
-                                    <option value="1">Si</option>
+                                    <option value="1">Sí</option>
                                     </select>
                                 </div> 
                             @else
@@ -618,7 +618,7 @@
                                     <label for="inputCistern">Cisterna</label>
                                     <select id="inputCistern" class="form-control" name="cisterna">
                                     <option value="0">No</option>
-                                    <option selected value="1">Si</option>
+                                    <option selected value="1">Sí</option>
                                     </select>
                                 </div> 
                             @endif
@@ -629,7 +629,7 @@
                                     <label for="inputCistern">Cisterna</label>
                                     <select id="inputCistern" class="form-control" name="cisterna">
                                     <option selected value="0">No</option>
-                                    <option value="1">Si</option>
+                                    <option value="1">Sí</option>
                                     </select>
                                 </div> 
                             @else
@@ -637,7 +637,7 @@
                                     <label for="inputCistern">Cisterna</label>
                                     <select id="inputCistern" class="form-control" name="cisterna">
                                     <option value="0">No</option>
-                                    <option selected value="1">Si</option>
+                                    <option selected value="1">Sí</option>
                                     </select>
                                 </div> 
                             @endif
@@ -648,7 +648,7 @@
                                     <label for="inputCistern">Cisterna</label>
                                     <select id="inputCistern" class="form-control" name="cisterna">
                                     <option selected value="0">No</option>
-                                    <option value="1">Si</option>
+                                    <option value="1">Sí</option>
                                     </select>
                                 </div> 
                             @else
@@ -656,7 +656,7 @@
                                     <label for="inputCistern">Cisterna</label>
                                     <select id="inputCistern" class="form-control" name="cisterna">
                                     <option value="0">No</option>
-                                    <option selected value="1">Si</option>
+                                    <option selected value="1">Sí</option>
                                     </select>
                                 </div> 
                             @endif
@@ -666,7 +666,7 @@
                             <label for="inputCistern">Cisterna</label>
                             <select id="inputCistern" class="form-control" name="cisterna">
                             <option selected value="0">No</option>
-                            <option value="1">Si</option>
+                            <option value="1">Sí</option>
                             </select>
                         </div>   
                     @endif
@@ -734,7 +734,7 @@
                                     <label for="inputElevator">Elevador</label>
                                     <select id="inputElevator" class="form-control" name="elevador">
                                     <option selected value="0">No</option>
-                                    <option value="1">Si</option>
+                                    <option value="1">Sí</option>
                                     </select>
                                 </div> 
                             @else
@@ -742,7 +742,7 @@
                                     <label for="inputElevator">Elevador</label>
                                     <select id="inputElevator" class="form-control" name="elevador">
                                     <option value="0">No</option>
-                                    <option selected value="1">Si</option>
+                                    <option selected value="1">Sí</option>
                                     </select>
                                 </div> 
                             @endif
@@ -753,7 +753,7 @@
                                     <label for="inputElevator">Elevador</label>
                                     <select id="inputElevator" class="form-control" name="elevador">
                                     <option selected value="0">No</option>
-                                    <option value="1">Si</option>
+                                    <option value="1">Sí</option>
                                     </select>
                                 </div> 
                             @else
@@ -761,7 +761,7 @@
                                     <label for="inputElevator">Elevador</label>
                                     <select id="inputElevator" class="form-control" name="elevador">
                                     <option value="0">No</option>
-                                    <option selected value="1">Si</option>
+                                    <option selected value="1">Sí</option>
                                     </select>
                                 </div> 
                             @endif
@@ -771,7 +771,7 @@
                             <label for="inputElevator">Elevador</label>
                             <select id="inputElevator" class="form-control" name="elevador">
                             <option selected value="0">No</option>
-                            <option value="1">Si</option>
+                            <option value="1">Sí</option>
                             </select>
                         </div> 
                     @endif
@@ -781,7 +781,7 @@
                                 <label for="inputElevator">Oficina</label>
                                 <select id="inputElevator" class="form-control" name="oficina">
                                 <option selected value="0">No</option>
-                                <option value="1">Si</option>
+                                <option value="1">Sí</option>
                                 </select>
                             </div>
                         @else
@@ -789,7 +789,7 @@
                                 <label for="inputElevator">Oficina</label>
                                 <select id="inputElevator" class="form-control" name="oficina">
                                 <option value="0">No</option>
-                                <option selected value="1">Si</option>
+                                <option selected value="1">Sí</option>
                                 </select>
                             </div>
                         @endif
@@ -798,7 +798,7 @@
                             <label for="inputElevator">Oficina</label>
                             <select id="inputElevator" class="form-control" name="oficina">
                             <option selected value="0">No</option>
-                            <option value="1">Si</option>
+                            <option value="1">Sí</option>
                             </select>
                         </div>   
                     @endif
@@ -808,7 +808,7 @@
                                 <label for="inputAccess">Acceso a carretera</label>
                                 <select id="inputAccess" class="form-control" name="acceso">
                                 <option selected value="0">No</option>
-                                <option value="1">Si</option>
+                                <option value="1">Sí</option>
                                 </select>
                             </div> 
                         @else
@@ -816,7 +816,7 @@
                                 <label for="inputAccess">Acceso a carretera</label>
                                 <select id="inputAccess" class="form-control" name="acceso">
                                 <option value="0">No</option>
-                                <option selected value="1">Si</option>
+                                <option selected value="1">Sí</option>
                                 </select>
                             </div>
                         @endif
@@ -825,7 +825,7 @@
                             <label for="inputAccess">Acceso a carretera</label>
                             <select id="inputAccess" class="form-control" name="acceso">
                             <option selected value="0">No</option>
-                            <option value="1">Si</option>
+                            <option value="1">Sí</option>
                             </select>
                         </div> 
                     @endif
