@@ -185,7 +185,7 @@
                                             </div>
                                             <div class="col">
                                                 @if ($propiedad->department->elevator)
-                                                    <b>Si</b>
+                                                    <b>Sí</b>
                                                 @else
                                                     <b>No</b>
                                                 @endif
@@ -354,7 +354,7 @@
                                             </div>
                                             <div class="col">
                                                 @if ($propiedad->warehouse->office)
-                                                    <b>Si</b>
+                                                    <b>Sí</b>
                                                 @else
                                                     <b>No</b>
                                                 @endif
@@ -426,14 +426,14 @@
                                             <div class="col">
                                                 <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cistern.png')}}" alt="">
                                                 @if ($propiedad->office->cistern)
-                                                    <b>Si</b>
+                                                    <b>Sí</b>
                                                 @else
                                                     <b>No</b>
                                                 @endif
                                             </div>
                                             <div class="col">
                                                 @if ($propiedad->office->elevator)
-                                                    <b>Si</b>
+                                                    <b>Sí</b>
                                                 @else
                                                     <b>No</b>
                                                 @endif
@@ -501,14 +501,14 @@
                                             <div class="col">
                                                 <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cistern.png')}}" alt="">
                                                 @if ($propiedad->office->cistern)
-                                                    <b>Si</b>
+                                                    <b>Sí</b>
                                                 @else
                                                     <b>No</b>
                                                 @endif
                                             </div>
                                             <div class="col">
                                                 @if ($propiedad->office->elevator)
-                                                    <b>Si</b>
+                                                    <b>Sí</b>
                                                 @else
                                                     <b>No</b>
                                                 @endif

@@ -246,7 +246,7 @@
                                         <div class="col">
                                             {{-- <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/bath.png')}}" alt=""> --}}
                                             @if ($propiedad->house->integral_kitchen)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -286,7 +286,7 @@
                                         <div class="col">
                                             <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/patio.png')}}" alt="">
                                             @if ($propiedad->house->yard)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -314,7 +314,7 @@
                                         <div class="col">
                                             {{-- <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cama.png')}}" alt=""> --}}
                                             @if ($propiedad->house->service_yard)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -322,7 +322,7 @@
                                         <div class="col">
                                             {{-- <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/bath.png')}}" alt=""> --}}
                                             @if ($propiedad->house->service_room)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -358,7 +358,7 @@
                                         <div class="col">
                                             <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cistern.png')}}" alt="">
                                             @if ($propiedad->house->cistern)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -390,7 +390,7 @@
                                         <div class="col">
                                             <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/security.png')}}" alt="">
                                             @if ($propiedad->house->security_vigilance)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -443,7 +443,7 @@
                                         </div>
                                         <div class="col">
                                             @if ($propiedad->department->elevator)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -507,7 +507,7 @@
                                         <div class="col">
                                             {{-- <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/bath.png')}}" alt=""> --}}
                                             @if ($propiedad->department->integral_kitchen)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -547,7 +547,7 @@
                                         <div class="col">
                                             <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/patio.png')}}" alt="">
                                             @if ($propiedad->department->yard)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -575,7 +575,7 @@
                                         <div class="col">
                                             {{-- <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cama.png')}}" alt=""> --}}
                                             @if ($propiedad->department->service_yard)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -583,7 +583,7 @@
                                         <div class="col">
                                             {{-- <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/bath.png')}}" alt=""> --}}
                                             @if ($propiedad->department->service_room)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -619,7 +619,7 @@
                                         <div class="col">
                                             <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cistern.png')}}" alt="">
                                             @if ($propiedad->department->cistern)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -651,7 +651,7 @@
                                         <div class="col">
                                             <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/security.png')}}" alt="">
                                             @if ($propiedad->department->security_vigilance)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -728,7 +728,7 @@
                                     <div class="row px-2 mt-2">
                                         <div class="col">
                                             @if ($propiedad->terrain->access_roads)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -801,7 +801,7 @@
                                         </div>
                                         <div class="col">
                                             @if ($propiedad->warehouse->office)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -873,14 +873,14 @@
                                         <div class="col">
                                             <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cistern.png')}}" alt="">
                                             @if ($propiedad->office->cistern)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
                                         </div>
                                         <div class="col">
                                             @if ($propiedad->office->elevator)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -908,7 +908,7 @@
                                         <div class="col">
                                             <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/security.png')}}" alt="">
                                             @if ($propiedad->office->security_vigilance)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -982,14 +982,14 @@
                                         <div class="col">
                                             <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/cistern.png')}}" alt="">
                                             @if ($propiedad->office->cistern)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
                                         </div>
                                         <div class="col">
                                             @if ($propiedad->office->elevator)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
@@ -1017,7 +1017,7 @@
                                         <div class="col">
                                             <img class="d-inline mb-1" style="width:16px; height:auto;" src="{{ asset('img/ico/security.png')}}" alt="">
                                             @if ($propiedad->office->security_vigilance)
-                                                <b>Si</b>
+                                                <b>Sí</b>
                                             @else
                                                 <b>No</b>
                                             @endif
