@@ -293,9 +293,16 @@ class adminPropiedades extends Controller
                     $entidad->save();
                 }
             });
+            if($request->ajax()){
+                session()->flash('status','¡Propiedad creada con éxito!');
+                return 200;
+            }
             return redirect('/admin/propiedades')->with('status', '¡Propiedad creada con éxito!');
         }
         catch(QueryException $ex){
+            if($request->ajax()){
+                return response()->json(['errors' => ['catch' => [0 => 'Ocurrió un error inesperado, intentalo más tarde.']]], 500);
+            }
             return redirect()->back()->withErrors(['error' => 'ERROR: Algo salió mal, por favor vuela a intentarlo más tarde.']);
         }
     }
@@ -481,9 +488,16 @@ class adminPropiedades extends Controller
                     $entidad->save();
                 }
             });
+            if($request->ajax()){
+                session()->flash('status','¡Propiedad editada con éxito!');
+                return 200;
+            }
             return redirect('/admin/propiedades')->with('status', '¡Propiedad editada con éxito!');
         }
         catch(QueryException $ex){
+            if($request->ajax()){
+                return response()->json(['errors' => ['catch' => [0 => 'Ocurrió un error inesperado, intentalo más tarde.']]], 500);
+            }
             return redirect()->back()->withErrors(['error' => 'ERROR: Algo salió mal, por favor vuela a intentarlo más tarde.']);
         }
     }

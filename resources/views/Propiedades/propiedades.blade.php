@@ -14,7 +14,7 @@
         .text-ps{
             line-height: 5px;
         }
-        @media (max-width: 1150px){
+        @media (max-width: 1400px){
             .text-ps{
                 line-height: 10px;
             }
@@ -281,7 +281,7 @@
                                         <div class="row px-2 mt-2">
                                             <div class="col">
                                                 @if ($propiedad->terrain->access_roads)
-                                                    <b>Si</b>
+                                                    <b>Sí</b>
                                                 @else
                                                     <b>No</b>
                                                 @endif

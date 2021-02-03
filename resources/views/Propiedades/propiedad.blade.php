@@ -13,7 +13,7 @@
     <script src="{{ asset('/plugins/OwlCarousel2-2.3.4/dist/owl.carousel.min.js') }}"></script>
 
     {{-- VALIDACION --}}
-    <script src="http://parsleyjs.org/dist/parsley.js"></script>
+    <script src="{{ asset('/plugins/parsley.js') }}"></script>
     
     <style>
         .owl-w{
@@ -137,7 +137,7 @@
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                     <a class="dropdown-item" href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Facebook">Facebook</a>
                                                     <a class="dropdown-item" href="https://wa.me/?text={{ urlencode (url()->current()) }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" title="Share on Whatsapp">WhatsApp</a>
-                                                    <a class="dropdown-item" data-toggle="tooltip" title="¡Link copiado al portapapeles!" href="{{ url()->current() }}" id="copiarPP">Copiar en el portapapeles</a>
+                                                    <a class="dropdown-item" data-toggle="tooltip" title="¡Link copiado al portapapeles!" data-link="{{ url()->current() }}" id="copiarPP">Copiar en el portapapeles</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -1272,7 +1272,7 @@
 
             $('#copiarPP').click(function (e) {
                 e.preventDefault();
-                var copyText = $(this).attr('href');
+                var copyText = $(this).data('link');
 
                 document.addEventListener('copy', function(e) {
                     e.clipboardData.setData('text/plain', copyText);
