@@ -135,7 +135,7 @@ class adminPropiedades extends Controller
     public function agregarPost(Request $request)
     {  
         $request->validate([
-            'fotos.*' => 'image|required|mimes:jpeg,jpg,png,PNG,bmp,gif,svg',
+            'fotos.*' => 'image|required|mimes:jpeg,jpg,png,PNG,bmp,gif,svg|max:20480',
             'titulo'=> 'max:255 |required |regex:/[a-zA-Z áéíóúÁÉÍÓÚ\,\.]+$/',
             'tipo' => 'required',
             'owner' => 'required|max:255|regex:/[a-zA-Z áéíóúÁÉÍÓÚ\,\.]+$/',
@@ -192,13 +192,21 @@ class adminPropiedades extends Controller
                 $propiedad->deal=$request->deal;
                 $propiedad->price=$request->precio;
                 $propiedad->status=$request->estatus;
+
+                //PRIMER FOTO
                 $name = $request->fotos['0']->getClientOriginalName();
                 $name = pathinfo( $name,PATHINFO_FILENAME);
                 $extension = $request->fotos['0']->getClientOriginalExtension();
                 $name=$name.'_'.time().'.'.$extension;
+                
+                //se guarda la foto en el servidor
                 $path = $request->fotos['0']->storeAs('/public/img/photos',$name);
+
                 $propiedad->photo='/storage/img/photos/'.$name;
+
                 $propiedad->save();
+
+                //AQUI SE SUBE CADA FOTO
                 $aux=0;
                 foreach($request->fotos as $foto){
                     if($aux==0){
@@ -215,6 +223,7 @@ class adminPropiedades extends Controller
                     $image->propertie_id=$propiedad->id;
                     $image->save();
                 }
+
                 $tipo=$request->tipo;
                 if($tipo=="casa"){
                     $entidad= new House();
