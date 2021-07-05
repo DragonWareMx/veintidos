@@ -13,6 +13,7 @@ use App\Terrain;
 use App\Premises_Office;
 use App\Warehouse;
 use Illuminate\Support\Facades\DB;
+use Image;
 
 class adminPropiedades extends Controller
 {
@@ -135,7 +136,7 @@ class adminPropiedades extends Controller
     public function agregarPost(Request $request)
     {  
         $request->validate([
-            'fotos.*' => 'image|required|mimes:jpeg,jpg,png,PNG,bmp,gif,svg|max:20480',
+            'fotos.*' => 'file|image|required|mimes:jpeg,jpg,png,PNG,bmp,svg|max:10240',
             'titulo'=> 'max:255 |required |regex:/[a-zA-Z áéíóúÁÉÍÓÚ\,\.]+$/',
             'tipo' => 'required',
             'owner' => 'required|max:255|regex:/[a-zA-Z áéíóúÁÉÍÓÚ\,\.]+$/',
@@ -192,20 +193,34 @@ class adminPropiedades extends Controller
                 $propiedad->deal=$request->deal;
                 $propiedad->price=$request->precio;
                 $propiedad->status=$request->estatus;
-
+                
+                
                 //PRIMER FOTO
                 $name = $request->fotos['0']->getClientOriginalName();
                 $name = pathinfo( $name,PATHINFO_FILENAME);
                 $extension = $request->fotos['0']->getClientOriginalExtension();
                 $name=$name.'_'.time().'.'.$extension;
+                //guarda la foto con el tamano original en el servidor
+                $path = $request->fotos['0']->storeAs('/public/img/originals',$name);
                 
-                //se guarda la foto en el servidor
-                $path = $request->fotos['0']->storeAs('/public/img/photos',$name);
-
-                $propiedad->photo='/storage/img/photos/'.$name;
-
+                //guarda la foto comprimida
+                $image = $request->fotos['0'];
+                $input['imagename'] = pathinfo($image->getClientOriginalName(),PATHINFO_FILENAME).'_'.time().'.'.$image->getClientOriginalExtension();
+                
+                $destinationPath = public_path('/storage/img/photos');
+                $img = Image::make($image->getRealPath());
+                $img->resize(768, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->save($destinationPath.'/'.$input['imagename']);
+                //------------------------
+                
+                //borar la foto orignial
+                unlink(public_path().'/storage/img/originals/'.$name);
+                
+                $propiedad->photo='/storage/img/photos/'.$img->basename;
+                
                 $propiedad->save();
-
+                
                 //AQUI SE SUBE CADA FOTO
                 $aux=0;
                 foreach($request->fotos as $foto){
@@ -217,13 +232,29 @@ class adminPropiedades extends Controller
                     $name = pathinfo( $name,PATHINFO_FILENAME);
                     $extension = $foto->getClientOriginalExtension();
                     $name=$name.'_'.time().'.'.$extension;
-                    $path = $foto->storeAs('/public/img/photos',$name);
+                    $path = $foto->storeAs('/public/img/originals',$name);
+                    
+                    //guarda la foto comprimida
+                    $image = $foto;
+                    $input['imagename'] = pathinfo($image->getClientOriginalName(),PATHINFO_FILENAME).'_'.time().$aux.'.'.$image->getClientOriginalExtension();
+                    
+                    $destinationPath = public_path('/storage/img/photos');
+                    $img = Image::make($image->getRealPath());
+                    $img->resize(768, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($destinationPath.'/'.$input['imagename']);
+                    //------------------------
+                    
+                    //borar la foto orignial
+                    unlink(public_path().'/storage/img/originals/'.$name);
+                    
                     $image=new Photo();
-                    $image->path='/storage/img/photos/'.$name;
+                    $image->path='/storage/img/photos/'.$img->basename;
                     $image->propertie_id=$propiedad->id;
                     $image->save();
+                    $aux++;
                 }
-
+                
                 $tipo=$request->tipo;
                 if($tipo=="casa"){
                     $entidad= new House();
@@ -314,6 +345,12 @@ class adminPropiedades extends Controller
             }
             return redirect()->back()->withErrors(['error' => 'ERROR: Algo salió mal, por favor vuela a intentarlo más tarde.']);
         }
+        catch(\Throwable $ex){
+            if($request->ajax()){
+                return response()->json(['errors' => ['catch' => [0 => 'Ocurrió un error inesperado, intentalo más tarde.']]], 500);
+            }
+            return redirect()->back()->withErrors(['error' => 'ERROR: Algo salió mal, por favor vuela a intentarlo más tarde.']);
+        }
     }
 
     public function editar($id){
@@ -381,7 +418,9 @@ class adminPropiedades extends Controller
                 $propiedad->deal=$request->deal;
                 $propiedad->price=$request->precio;
                 $propiedad->status=$request->estatus;
+
                 if(isset($request->fotos)){ 
+                    //borra la foto anterior
                     $oldFile=public_path().$propiedad->photo;
                     if(file_exists($oldFile)){
                         unlink($oldFile);
@@ -390,10 +429,26 @@ class adminPropiedades extends Controller
                     $name = pathinfo( $name,PATHINFO_FILENAME);
                     $extension = $request->fotos['0']->getClientOriginalExtension();
                     $name=$name.'_'.time().'.'.$extension;
-                    $path = $request->fotos['0']->storeAs('/public/img/photos',$name);
-                    $propiedad->photo='/storage/img/photos/'.$name;
+                    $path = $request->fotos['0']->storeAs('/public/img/originals',$name);
+
+                    //guarda la foto comprimida
+                    $image = $request->fotos['0'];
+                    $input['imagename'] = pathinfo($image->getClientOriginalName(),PATHINFO_FILENAME).'_'.time().'.'.$image->getClientOriginalExtension();
+                
+                    $destinationPath = public_path('/storage/img/photos');
+                    $img = Image::make($image->getRealPath());
+                    $img->resize(768, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->save($destinationPath.'/'.$input['imagename']);
+                    //------------------------
+
+                    //borar la foto orignial
+                    unlink(public_path().'/storage/img/originals/'.$name);
+
+                    $propiedad->photo='/storage/img/photos/'.$img->basename;
                 }
                 $propiedad->save();
+
                 if(isset($request->fotos)){
                     $aux=0;
                     foreach($propiedad->photos as $photo){
@@ -412,11 +467,27 @@ class adminPropiedades extends Controller
                         $name = pathinfo( $name,PATHINFO_FILENAME);
                         $extension = $foto->getClientOriginalExtension();
                         $name=$name.'_'.time().'.'.$extension;
-                        $path = $foto->storeAs('/public/img/photos',$name);
+                        $path = $foto->storeAs('/public/img/originals',$name);
+
+                        //guarda la foto comprimida
+                        $image = $foto;
+                        $input['imagename'] = pathinfo($image->getClientOriginalName(),PATHINFO_FILENAME).'_'.time().$aux.'.'.$image->getClientOriginalExtension();
+                    
+                        $destinationPath = public_path('/storage/img/photos');
+                        $img = Image::make($image->getRealPath());
+                        $img->resize(768, null, function ($constraint) {
+                            $constraint->aspectRatio();
+                        })->save($destinationPath.'/'.$input['imagename']);
+                        //------------------------
+
+                        //borar la foto orignial
+                        unlink(public_path().'/storage/img/originals/'.$name);
+
                         $image=new Photo();
-                        $image->path='/storage/img/photos/'.$name;
+                        $image->path='/storage/img/photos/'.$img->basename;
                         $image->propertie_id=$propiedad->id;
                         $image->save();
+                        $aux++;
                     }
                 }
                 $tipo=$request->tipo;

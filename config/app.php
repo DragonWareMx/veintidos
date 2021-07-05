@@ -176,6 +176,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Biscolab\ReCaptcha\ReCaptchaServiceProvider::class,
+
+        Intervention\Image\ImageServiceProvider::class,
     ],
 
     /*
@@ -229,6 +231,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'ReCaptcha' => Biscolab\ReCaptcha\Facades\ReCaptcha::class,
+
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];
